@@ -12,7 +12,8 @@ module.exports.init = () => {
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
         useNewUrlParser: true
-    });
+    }).then(() => console.log("DB Connected!"))
+       .catch(err => console.log(err));
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
 
@@ -22,7 +23,9 @@ module.exports.init = () => {
     // enable request logging for development debugging
     app.use(morgan('dev'));
 
+
     // body parsing middleware
+    app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
     // add a router
