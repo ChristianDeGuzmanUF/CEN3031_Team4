@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
     userName: {
@@ -13,6 +13,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     groupID: {
         type: String,
         required: true
@@ -21,7 +25,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
+    createDate: {
+        type: Date,
+        default: Date.now
+    },
+    birthDate: {
         type: Date,
         default: Date.now
     },
@@ -31,4 +39,4 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-export default mongoose.model('users', UserSchema)
+module.exports = User = mongoose.model('users', UserSchema)
