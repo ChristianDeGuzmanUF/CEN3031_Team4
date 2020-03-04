@@ -21,15 +21,21 @@
   "author": "Dakota Rennemann",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.10",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
     "express": "^4.17.1",
-    "mongoose": "^5.7.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.2.1",
+    "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.10",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
-    "mocha": "^6.2.1"
+    "validator": "^12.2.0"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }

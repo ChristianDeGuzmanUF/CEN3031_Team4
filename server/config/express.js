@@ -4,6 +4,8 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     exampleRouter = require('../routes/examples.server.routes');
+    passport = require("passport");
+    users = require('../routes/users');
 
 module.exports.init = () => {
     /* 
@@ -12,7 +14,8 @@ module.exports.init = () => {
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
         useNewUrlParser: true
-    });
+    }).then(() => console.log("DB Connected!"))
+       .catch(err => console.log(err));
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
 
@@ -22,8 +25,16 @@ module.exports.init = () => {
     // enable request logging for development debugging
     app.use(morgan('dev'));
 
+
     // body parsing middleware
+    app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
+
+    // passport middleware
+    app.use(passport.initialize());
+    // require("passport")(passport);
+
+    app.use('/users', users);
 
     // add a router
     app.use('/api/example', exampleRouter);
