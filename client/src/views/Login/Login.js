@@ -1,20 +1,19 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
-import './Home.css';
+import './Login.css';
 
-function Home() {
+function Login() {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+            <header className="App-header">                
                 <p>
-                    Home Page
+                    Login Page.
                 </p>
                 <a className="App-link" href="/Register">Register</a>
-                <a className="App-link" href="/Login">Login</a>
+                <a className="App-link" href="/RecoverPassword">Recover Password</a>                
             </header>
         </div>
     );
 }
 
-export default Home;
+export default Login;
