@@ -1,12 +1,12 @@
 const validator = require('validator');
 const isEmpty = require('is-empty');
 
+// this function validates that all the required fields for a user to login are completed
 module.exports = function validateUserLoginInput(input) {
     let errors = {};
 
     input.userName = !isEmpty(input.userName) ? input.userName : "";
     input.password = !isEmpty(input.password) ? input.password : "";
-
 
     if (validator.isEmpty(input.userName)) {
         errors.userName = "Username is required";

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// per user account records
 const UserSchema = new mongoose.Schema({
     userName: {
         type: String,
@@ -17,9 +18,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    groupID: {
+    teacherUserName: {
         type: String,
-        required: true
+        default: "",
     },
     password: {
         type: String,
@@ -29,10 +30,12 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    /*
     birthDate: {
         type: Date,
         default: Date.now
     },
+    */
     isAdmin: {
         type: Boolean,
         default: false

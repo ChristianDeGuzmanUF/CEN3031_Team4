@@ -51,49 +51,46 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-    // Form validation
-  const { errors, isValid } = validateUserLoginInput(req.body);
-  // Check validation
+
+    // call function to validate the user-provided values, and store returned 
+    // errors. isValid is a boolean to indicate whether errors are present
+    const { errors, isValid } = validateUserLoginInput(req.body);
+
+    // return erorrs if validation fails empty string checks
     if (!isValid) {
       return res.status(400).json(errors);
     }
-  const userName = req.body.userName;
+
+    // locate user in DB if present. return error if not found. hash password provided, and check against
+    // hashed password in DB. finally, return login token if a match, otherwise return a mismatch error.
+    const userName = req.body.userName;
     const password = req.body.password;
-  // Find user 
     User.findOne({ userName: req.body.userName }).then(user => {
-      // Check if user exists
-      if (!user) {
-        return res.status(404).json({ userName: "Username not found" });
-      }
-  // Check password
-      bcrypt.compare(password, user.password).then(isMatch => {
-        if (isMatch) {
-          // User matched
-          // Create JWT Payload
-          const payload = {
-            id: user.id,
-            name: user.name
-          };
-  // Sign token
-          jwt.sign(
-            payload,
-            config.secretOrKey,
-            {
-              expiresIn: 31556926 // 1 year in seconds
-            },
-            (err, token) => {
-              res.json({
-                success: true,
-                token: "Bearer " + token
-              });
+
+        if (!user) {
+            return res.status(404).json({ userName: "Username not found" }); // TODO: set username and password failures to the same error returned
+        };
+
+        bcrypt.compare(password, user.password).then(isMatch => {
+            if (isMatch) {
+                const payload = {
+                    id: user.id,
+                    name: user.name
+                };
+                jwt.sign( payload, config.secretOrKey, {
+                    expiresIn: 31556926 }, (err, token) => {
+                        res.json({
+                            success: true,
+                            token: "Bearer " + token
+                        });
+                    }
+                );
+            } else {
+                return res
+                    .status(400)
+                    .json({ password_incorrect: "Password incorrect" });
             }
-          );
-        } else {
-          return res
-            .status(400)
-            .json({ passwordincorrect: "Password incorrect" });
-        }
-      });
+        });
     });
   });
 

@@ -32,7 +32,6 @@ module.exports.init = () => {
 
     // passport middleware
     app.use(passport.initialize());
-    // require("passport")(passport);
 
     app.use('/users', users);
 
