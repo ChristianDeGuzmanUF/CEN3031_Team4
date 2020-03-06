@@ -3,7 +3,7 @@
         {
             "clusterName": "Agriculture, food, and natural resources",
             "description": "The Agriculture, Food & Natural Resources career cluster is for people interested in the production, processing, marketing, distribution, financing, anddevelopment of agricultural commodities and resources. Their interests inthe field might include food, fuel, fiber, wood products, natural resources,horticulture, and other plant and animal products/resources.",
-            "occupation": [
+            "occupations": [
                 {
                     "name": "Agricultural Communications Specialist",
                     "education": "High School"
@@ -17,7 +17,7 @@
         {
             "clusterName": "Architecture and construction",
             "description": "People in the Architecture & Construction cluster careers design, plan, manage, build, and maintain the built environment. Take a look around you. Thehouses across the street, the roads that cars drive on, and the parks that youwalk through every day were created or maintained by the people performing jobs in this cluster and its pathways.",
-            "occupation": [
+            "occupations": [
                 {
                     "name": "Architect",
                     "education": "Bachelors"
