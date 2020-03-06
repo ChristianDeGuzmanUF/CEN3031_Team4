@@ -1,6 +1,7 @@
 const validator = require('validator');
 const isEmpty = require('is-empty');
 
+// this function validates that all the required fields for a user to login are completed
 module.exports = function validateUserLoginInput(input) {
     let errors = {};
 
