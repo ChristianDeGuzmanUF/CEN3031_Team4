@@ -47,7 +47,7 @@ async function loadJSONCluster() {
     }
     const mongoClusterRecords = Clusters.find({}, function(err, clusters) {
         if (err) throw err;
-        console.log(JSON.stringify(clusters));
+        // console.log(clusters);
     })
 }
 async function loadJSONInvites() {
@@ -59,7 +59,7 @@ async function loadJSONInvites() {
     }
     const mongoInviteRecords = Invites.find({}, function(err, invites) {
         if (err) throw err;
-        console.log(JSON.stringify(invites));
+        // console.log(invites);
     })
 }
 
