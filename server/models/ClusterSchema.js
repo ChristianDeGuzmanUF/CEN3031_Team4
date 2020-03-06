@@ -7,7 +7,6 @@ const clusterSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
     },
     occupations: [
         {
@@ -17,8 +16,15 @@ const clusterSchema = new mongoose.Schema({
             },
             education: {
                 type: String,
-                required: true
-            }
+            },
+            averageSalary: {
+                type: Number
+            },
+            skills: [
+                {
+                    type: String
+                }
+            ]
         }
     ]
 });
