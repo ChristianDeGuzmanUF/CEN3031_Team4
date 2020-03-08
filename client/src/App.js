@@ -11,7 +11,6 @@ import NavBar from "./components/Header/NavBar";
 const App = () => {
   return (
     <div>
-      <NavBar />
       <Switch>
         <Route exact path="/Home" component={Home} />
 		<Route exact path="/Login" component={Login} />

@@ -1,27 +1,132 @@
 body {
-    margin: 0;
+    margin: 0.4px;
 }
 
-.App {
+p {
+    display: block;
+    margin-block-start: 0.65em;
+    margin-block-end: 0.65em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.Home {
     text-align: center;
-    background: #282c34;
+    background: #000032;
+    font-family: Verdana;
 }
 
-.App-logo {
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+.Home-header {
+    background-color: ghostwhite;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    font-size: calc(60px + 2vmin);
+    color: #000032;
+    font-weight: bold;
 }
 
-.App-link {
-    color: #09d3ac;
+.Home-welcome {
+    background: url("/home-pic.jpg");
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(7px + 2vmin);
+    color: #000032;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 45px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+.Welcome-text {
+    background-color: rgba(248, 248, 255, 0.88);
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(8px + 2vmin);
+    color: #000032;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+button {
+    background: #42cd42;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(10px + 2vmin);
+    padding: 0.6rem 1rem;
+    border: solid 1px #c7c7c7;
+    margin: 1rem 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+}
+button:hover {
+    background: #8b8b8b;
+}
+
+.Links {
+    columns: 2;
+}
+
+.Registration-link {
+    min-height: 8vh;
+    display: inline-grid;
+    font-size: calc(7px + 2vmin);
+    color: lightgrey;
+    float: left;
+    width: 50%;
+    padding: 2px;
+}
+
+.Login-link {
+    min-height: 8vh;
+    display: inline-grid;
+    font-size: calc(7px + 2vmin);
+    color: lightgrey;
+    float: right;
+    width: 50%;
+    padding: 2px;
+}
+
+.Career-cards-container {
+    background-color: #000032;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(30px + 1vmin);
+    color: ghostwhite;
+    font-weight: bold;
+}
+
+.Career-cards {
+    columns: 4;
+}
+
+.card {
+
+}
+
+.credits {
+    background-color: #000032;
+    min-height: 4vh;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(5px + 1vmin);
+    text-align: left;
+    color: ghostwhite;
 }
