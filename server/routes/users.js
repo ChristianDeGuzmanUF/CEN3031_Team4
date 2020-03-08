@@ -63,7 +63,7 @@ router.post("/login", (req, res) => {
     User.findOne({ userName: req.body.userName }).then(user => {
       // Check if user exists
       if (!user) {
-        return res.status(404).json({ userName: "Username not found" });
+        return res.status(404).json({ userNameNotFound: "Username not found" });
       }
   // Check password
       bcrypt.compare(password, user.password).then(isMatch => {
@@ -72,12 +72,12 @@ router.post("/login", (req, res) => {
           // Create JWT Payload
           const payload = {
             id: user.id,
-            name: user.name
+            userName: user.userName
           };
   // Sign token
           jwt.sign(
             payload,
-            config.secretOrKey,
+            process.env.SECRETORKEY || config.secretOrKey,           
             {
               expiresIn: 31556926 // 1 year in seconds
             },
@@ -91,7 +91,7 @@ router.post("/login", (req, res) => {
         } else {
           return res
             .status(400)
-            .json({ passwordincorrect: "Password incorrect" });
+            .json({ passwordIncorrect: "Password incorrect" });
         }
       });
     });
