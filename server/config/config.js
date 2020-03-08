@@ -3,7 +3,7 @@
 
 module.exports = {
     db: {
-        uri: process.env.DB_URI //place the URI of your mongo database here.        
+        uri: 'mongodb+srv://user:test@cen3031-spring-2020-ppk8p.mongodb.net/test?retryWrites=true&w=majority' //place the URI of your mongo database here.        
     },
-    secretOrKey: process.env.SECRETORKEY
+    secretOrKey: 'secret'
 };
