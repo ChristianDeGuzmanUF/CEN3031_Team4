@@ -2,81 +2,30 @@ body {
     margin: 0.4px;
 }
 
-.Register {
-    text-align: center;
-    background: #000032;
-    font-family: Verdana;
+h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.Register-header {
-    background-color: #000032;
+
+h4 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 25px;
     justify-content: center;
 }
 
-.Register-container {
-    background-color: ghostwhite;
-    min-height: 500px;
-    display: table;
-    width: 65%;
-    color: #000032;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-.icon {
-    background: url("/");
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+input {
     font-size: calc(7px + 2vmin);
-    color: #000032;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-top: 45px;
-    margin-right: 25px;
-    margin-left: 25px;
-    margin-bottom: 10px;
-
+    width: 85%;
+    padding: 2px;
+    margin-top: 15px;
 }
 
-.Home-welcome {
-    background: url("/home-pic.jpg");
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(7px + 2vmin);
-    color: #000032;
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-top: 45px;
-    margin-right: 25px;
-    margin-left: 25px;
-    margin-bottom: 10px;
-}
-
-.Welcome-text {
-    background-color: rgba(248, 248, 255, 0.88);
-    min-height: 25vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(8px + 2vmin);
-    color: #000032;
-    padding-left: 45px;
-    padding-right: 45px;
-    margin-top: 100px;
-    margin-right: 100px;
-    margin-left: 100px;
-    margin-bottom: 50px;
-}
 
 button {
     background: #42cd42;
@@ -94,48 +43,51 @@ button:hover {
     background: #8b8b8b;
 }
 
-.Links {
-    columns: 2;
+.Register {
+    text-align: center;
+    justify-content: center;
+    background: #000032;
+    font-family: Verdana;
+    display: flex;
 }
 
-.Registration-link {
-    min-height: 8vh;
-    display: inline-grid;
-    font-size: calc(7px + 2vmin);
-    color: lightgrey;
-    float: left;
-    width: 50%;
-    padding: 2px;
+.Register-container {
+    background-color: ghostwhite;
+    display: table;
+    color: #000032;
+    min-width: 50%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 25px;
 }
 
-.Login-link {
-    min-height: 8vh;
-    display: inline-grid;
-    font-size: calc(7px + 2vmin);
-    color: lightgrey;
-    float: right;
-    width: 50%;
-    padding: 2px;
-}
-
-.Career-cards-container {
-    background-color: #000032;
-    min-height: 15vh;
+.icon {
+    min-height: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(30px + 1vmin);
-    color: ghostwhite;
-    font-weight: bold;
 }
 
-.Career-cards {
-    columns: 4;
+.Register-form {
+    columns: 2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 1px;
 }
 
-.card {
+.Register-form-col-1 {
+    display: inline-grid;
+    width: 50%;
+}
 
+.Register-form-col-2 {
+    display: inline-grid;
+    width: 50%;
 }
 
 .credits {
@@ -146,34 +98,5 @@ button:hover {
     font-size: calc(5px + 1vmin);
     text-align: left;
     color: ghostwhite;
-}
-
-
-
-body {
-    margin: 0;
-}
-
-.App {
-    text-align: center;
-    background: #282c34;
-}
-
-.App-logo {
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #09d3ac;
+    padding-top: 5px;
 }
