@@ -77,7 +77,7 @@ router.post("/login", (req, res) => {
                 };
                 jwt.sign(
                     payload,
-                    config.secretOrKey, { expiresIn: 31556926 }, (err, token) => {
+                    process.env.SECRETORKEY || config.secretOrKey, { expiresIn: 31556926 }, (err, token) => {
                         res.json({
                             success: true,
                             token: "Bearer " + token
