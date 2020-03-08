@@ -11,8 +11,7 @@ class Register extends Component {
         super();
         this.state = {
             firstName: "",
-            lastName: "",
-            groupID: "",
+            lastName: "",            
             userName: "",
             email: "",
             password1: "",
@@ -45,8 +44,7 @@ class Register extends Component {
 
         const newUser = {
             firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            groupID: this.state.groupID,
+            lastName: this.state.lastName,            
             userName: this.state.userName,
             email: this.state.email,
             password1: this.state.password1,
@@ -95,20 +93,6 @@ class Register extends Component {
                                     })}
                                 />
                                 <span className="red-text">{errors.lastName}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.groupID}
-                                    error={errors.groupID}
-                                    id="groupID"
-                                    placeholder="group ID"
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.groupID
-                                    })}
-                                />
-                                <span className="red-text">{errors.groupID}</span>
                             </div>
                             <div>
                                 <input

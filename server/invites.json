@@ -1,0 +1,8 @@
+{
+    "invites": [
+        {
+            "studentInviteCodes": ["123456789", "987654321"],
+            "adminInviteCodes": ["00", "11"]
+        }
+    ]
+}

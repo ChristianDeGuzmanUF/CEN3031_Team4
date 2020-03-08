@@ -1,0 +1,89 @@
+{
+    "clusters": [
+        {
+            "clusterName": "Agriculture, food, and natural resources",
+            "description": "The Agriculture, Food & Natural Resources career cluster is for people interested in the production, processing, marketing, distribution, financing, and development of agricultural commodities and resources. Their interests in the field might include food, fuel, fiber, wood products, natural resources, horticulture, and other plant and animal products/resources.",
+            "occupations": [
+                {
+                    "name": "Agricultural Communications Specialist",
+                    "education": "High School"
+                },    
+                {
+                    "name": "Animal Scientist",
+                    "education": "Doctorate"
+                },
+                {
+                    "name": "Embryo Technologist"
+                },
+                {
+                    "name": "Feed Sales Representative"
+                },
+                {
+                    "name": "Fish and Game Warden"
+                },
+                {
+                    "name": "Food Scientist"
+                },
+                {
+                    "name": "Livestock Buyer"
+                },
+                {
+                    "name": "Logging Equipment Operator"
+                },
+                {
+                    "name": "Tree Trimmer and Pruner"
+                }
+            ]
+        },
+        {
+            "clusterName": "Architecture and construction",
+            "description": "People in the Architecture & Construction cluster careers design, plan, manage, build, and maintain the built environment. Take a look around you. The houses across the street, the roads that cars drive on, and the parks that you walk through every day were created or maintained by the people performing jobs in this cluster and its pathways.",
+            "occupations": [
+                {
+                    "name": "Architect",
+                    "education": "Bachelors"
+                },
+                {
+                    "name": "Architectural and Civil Drafter",
+                    "education": "Bachelors"
+                },
+                {
+                    "name": "Carpenter",
+                    "education": "High School"
+                },
+                {
+                    "name": "Civil Engineer",
+                    "education": "Bachelors",
+                    "skills": [
+                        "Math",
+                        "Physics"
+                    ]
+                },
+                {
+                    "name": "Civil Engineering Technician"
+                },
+                {
+                    "name": "Code Official"
+                },
+                {
+                    "name": "Computer Aided Drafter (CAD)"
+                },
+                {
+                    "name": "Concrete Finisher"
+                },
+                {
+                    "name": "Construction Laborer"
+                },
+                {
+                    "name": "Cost Estimator"
+                },
+                {
+                    "name": "Drywall and Ceiling Tile Installers"
+                },
+                {
+                    "name": "Pipe Layer"
+                }
+            ]
+        }
+    ]
+}

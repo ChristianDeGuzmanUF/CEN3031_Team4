@@ -12,8 +12,7 @@ module.exports = function validateUserRegInput(input) {
     input.email = !isEmpty(input.email) ? input.email : "";
     input.password1 = !isEmpty(input.password1) ? input.password1 : "";
     input.password2 = !isEmpty(input.password2) ? input.password2 : "";
-    input.groupID = !isEmpty(input.groupID) ? input.groupID : "";
-
+    
 
     // return error values for empty name fields
     if (validator.isEmpty(input.firstName)) {
@@ -32,11 +31,6 @@ module.exports = function validateUserRegInput(input) {
     }
     else if (!validator.isEmail(input.email)) {
         errors.email = "Email address is invalid";
-    };
-
-    // return errors values for empty groupID field
-    if (validator.isEmpty(input.groupID)) {
-        errors.groupID = "GroupID is required";
     };
 
     // return error for mismatched or empty passwords
