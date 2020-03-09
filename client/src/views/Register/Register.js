@@ -19,7 +19,7 @@ function Register() {
                 <form className="Register-form">
                     <div className="Register-form-col-1">
                         <input type="text" placeholder="First Name"/>
-                        <input type="text" placeholder="UserName"/>
+                        <input type="text" placeholder="Username"/>
                         <input type="text" placeholder="Password"/>
                         <input type="text" placeholder="Confirm Password"/>
                     </div>

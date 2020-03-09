@@ -23,7 +23,7 @@ function Login() {
                 </div>
                 <form className="Login-form">
                     <div className="Login-form-col-1">
-                        <input type="text" placeholder="UserName"/>
+                        <input type="text" placeholder="Username"/>
                         <input type="text" placeholder="Password"/>
                     </div>
                 </form>
@@ -31,7 +31,10 @@ function Login() {
                     <button onClick={dashboard}>Submit</button>
                 </div>
                 <div>
-                    <a href=onClick={dashboard}>Submit</a>
+                    <a className="Link" href="/Register">Register</a>
+                </div>
+                <div>
+                    <a className="Link" href="/RecoverPassword">Forgot Username/Password</a>
                 </div>
                 <div className="credits">
                     Photo by Christin Hume on Unsplash
