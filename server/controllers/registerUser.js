@@ -1,4 +1,4 @@
-const validator = require('validator'); 
+const validator = require('validator');
 const isEmpty = require('is-empty');
 
 // this function ensures all the required inputs are entered for a user that is registering
@@ -12,8 +12,7 @@ module.exports = function validateUserRegInput(input) {
     input.email = !isEmpty(input.email) ? input.email : "";
     input.password1 = !isEmpty(input.password1) ? input.password1 : "";
     input.password2 = !isEmpty(input.password2) ? input.password2 : "";
-    input.groupID = !isEmpty(input.groupID) ? input.groupID : "";
-
+    
 
     // return error values for empty name fields
     if (validator.isEmpty(input.firstName)) {
@@ -34,11 +33,6 @@ module.exports = function validateUserRegInput(input) {
         errors.email = "Email address is invalid";
     };
 
-    // return errors values for empty groupID field
-    if (validator.isEmpty(input.groupID)) {
-        errors.groupID = "GroupID is required";
-    };
-
     // return error for mismatched or empty passwords
     if (validator.isEmpty(input.password1)) {
         errors.password1 = "Password is required";
@@ -47,7 +41,7 @@ module.exports = function validateUserRegInput(input) {
         errors.password2 = "Password confirmation is required";
     };
 
-    if (!validator.isLength(input.password1, {min: 6, max: 16})) {
+    if (!validator.isLength(input.password1, { min: 6, max: 16 })) {
         errors.password1 = "Password must be 6 - 16 characters in length";
     };
 

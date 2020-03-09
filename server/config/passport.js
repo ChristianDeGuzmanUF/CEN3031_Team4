@@ -3,12 +3,12 @@ import { ExtractJwt } from "passport-jwt";
 import mongoose from 'mongoose';
 import config from '../config/config';
 
-const Users = mongoose.model("users");
+const User = mongoose.model("users");
 
 const opts = {};
 
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = config.secretOrKey;
+opts.secretOrKey = process.env.SECRETORKEY || config.secretOrKey;
 module.exports = passport => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {

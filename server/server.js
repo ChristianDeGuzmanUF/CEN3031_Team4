@@ -27,7 +27,7 @@ let inviteObject = fs.readFileSync('./server/invites.json', 'utf8');
         inviteData = {"data": "missing"};
     }
 mongoose.set('bufferCommands', false);
-db = mongoose.connect(config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
+db = mongoose.connect(process.env.DB_URI || config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // on restart, clear the DB of Cluster and Invite records
 const deleteAllClusterRecords = Clusters.deleteMany({}, function(err, clusters) {

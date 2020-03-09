@@ -66,18 +66,18 @@ router.post("/login", (req, res) => {
     const password = req.body.password;
     User.findOne({ userName: req.body.userName }).then(user => {
         if (!user) {
-            return res.status(404).json({ userName: "Username not found" });
+            return res.status(404).json({ userNameNotFound: "Username not found" });
         }
 
         bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
                 const payload = {
                     id: user.id,
-                    name: user.name
+                    userName: user.userName
                 };
                 jwt.sign(
                     payload,
-                    config.secretOrKey, { expiresIn: 31556926 }, (err, token) => {
+                    process.env.SECRETORKEY || config.secretOrKey, { expiresIn: 31556926 }, (err, token) => {
                         res.json({
                             success: true,
                             token: "Bearer " + token
@@ -87,7 +87,7 @@ router.post("/login", (req, res) => {
             } else {
               return res
                 .status(400)
-                .json({ passwordincorrect: "Password incorrect" });
+                .json({ passwordIncorrect: "Password incorrect" });
             }
         });
     });
