@@ -21,7 +21,6 @@ form {
 
 input {
     font-size: calc(7px + 2vmin);
-    width: 85%;
     padding: 2px;
     margin-top: 15px;
 }
@@ -31,7 +30,7 @@ button {
     background: #42cd42;
     color: #000032;
     font-weight: bold;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(10px + 1vmin);
     padding: 0.6rem 1rem;
     border: solid 1px #c7c7c7;
     margin: 1rem 0;
@@ -71,8 +70,9 @@ button:hover {
     justify-content: center;
 }
 
-.Register-form {
-    columns: 2;
+.Login-form {
+    columns: 1;
+    justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 25px;
@@ -82,7 +82,15 @@ button:hover {
 
 .Login-form-col-1 {
     display: inline-grid;
-    width: 50%;
+    width: 70%;
+}
+
+.Link {
+    display: flex;
+    font-size: calc(7px + 1vmin);
+    justify-content: left;
+    padding: 5px;
+    color: #000032;
 }
 
 .credits {
