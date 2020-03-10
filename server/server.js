@@ -49,7 +49,7 @@ async function loadJSONCluster() {
         if (err) throw err;
         // console.log(clusters);
     })
-}
+};
 async function loadJSONInvites() {
     try {
         await Invites.insertMany(inviteData.invites);
@@ -61,7 +61,7 @@ async function loadJSONInvites() {
         if (err) throw err;
         // console.log(invites);
     })
-}
+};
 
 
 loadJSONCluster();
