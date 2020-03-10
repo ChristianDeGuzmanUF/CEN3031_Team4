@@ -1,6 +1,5 @@
 html,
 body {
-<<<<<<< HEAD
     margin: 0.4px;
 }
 
@@ -104,8 +103,6 @@ button:hover {
     text-align: left;
     color: ghostwhite;
     padding-top: 5px;
-=======
-  height: 100%;
 }
 
 .loginBody {
@@ -157,5 +154,4 @@ button:hover {
     font-size:48px;
     color:gray;
     padding: 10px;
->>>>>>> master
 }

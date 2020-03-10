@@ -13,32 +13,27 @@ h4 {
     margin-bottom: 1px;
 }
 
-form {
-    display: flex;
-    margin-top: 25px;
-    justify-content: center;
-}
-
 input {
     font-size: calc(7px + 2vmin);
-    width: 85%;
+    width: 95%;
     padding: 2px;
     margin-top: 15px;
 }
-
 
 button {
     background: #42cd42;
     color: #000032;
     font-weight: bold;
     font-size: calc(10px + 2vmin);
-    padding: 0.6rem 1rem;
     border: solid 1px #c7c7c7;
     margin: 1rem 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
     outline: none;
+    padding: 10px;
+    width: 95%
 }
+
 button:hover {
     background: #8b8b8b;
 }
@@ -53,7 +48,6 @@ button:hover {
 
 .Register-container {
     background-color: ghostwhite;
-    display: table;
     color: #000032;
     min-width: 50%;
     margin-left: 150px;
@@ -65,14 +59,12 @@ button:hover {
 
 .icon {
     min-height: 50px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .Register-form {
-    columns: 2;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 25px;
@@ -83,11 +75,13 @@ button:hover {
 .Register-form-col-1 {
     display: inline-grid;
     width: 50%;
+    margin: 5px;
 }
 
 .Register-form-col-2 {
     display: inline-grid;
     width: 50%;
+    margin: 5px;
 }
 
 .credits {

@@ -15,25 +15,6 @@ import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
 
-<<<<<<< HEAD
-const App = () => {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/Home" component={Home} />
-		<Route exact path="/Login" component={Login} />
-		<Route exact path="/RecoverPassword" component={RecoverPassword} />
-		<Route exact path="/ResetPassword" component={ResetPassword} />
-		<Route exact path="/Register" component={Register} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
-  );
-=======
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
 	// Set auth token header auth
@@ -79,7 +60,6 @@ class App extends Component {
 			</Provider>
 		);
 	}
->>>>>>> master
 }
 
 export default App;

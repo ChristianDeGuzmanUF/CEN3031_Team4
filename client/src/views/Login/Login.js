@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 import React from 'react';
 import login from '../reg-pic.jpg'
 import './Login.css';
@@ -46,7 +46,7 @@ function Login() {
 }
 
 export default Login;
-=======
+=======*/
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -172,5 +172,3 @@ export default connect(
     mapStateToProps,
     { loginUser }
 )(Login);
-
->>>>>>> master
