@@ -24,10 +24,10 @@ function Landing() {
                     </p>
                     <div className="Links">
 						<div>
-                            <button onClick={register}>Register</button>
+                            <button className="Home-button" onClick={register}>Register</button>
 						</div>
 						<div>
-                            <button onClick={login}>Login</button>
+                            <button className="Home-button" onClick={login}>Login</button>
 						</div>
                     </div>
                 </div>

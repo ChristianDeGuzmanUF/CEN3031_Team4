@@ -81,6 +81,7 @@ class Register extends Component {
                                     invalid: errors.firstName
                                 })}
                             />
+                            <span className="red-text">{errors.firstName}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password1}
@@ -92,6 +93,7 @@ class Register extends Component {
                                     invalid: errors.password1
                                 })}
                             />
+                            <span className="red-text">{errors.password1}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password2}
@@ -103,6 +105,7 @@ class Register extends Component {
                                     invalid: errors.password2
                                 })}
                             />
+                            <span className="red-text">{errors.password2}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.invitationCode}
@@ -114,6 +117,7 @@ class Register extends Component {
                                     invalid: errors.invitationCode
                                 })}
                             />
+                            <span className="red-text">{errors.invitationCode}</span>
                         </div>
                         <div className="Register-form-col-2">
                             <input
@@ -127,7 +131,8 @@ class Register extends Component {
                                     invalid: errors.lastName
                                 })}
                             />
-                            <input
+                            <span className="red-text">{errors.lastName}</span>
+                            <input className="Register-input"
                                 onChange={this.onChange}
                                 value={this.state.userName}
                                 error={errors.userName}
@@ -138,6 +143,7 @@ class Register extends Component {
                                     invalid: errors.userName
                                 })}
                             />
+                            <span className="red-text">{errors.userName}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.email}
@@ -149,7 +155,8 @@ class Register extends Component {
                                     invalid: errors.email
                                 })}
                             />
-                            <button type="submit">Submit</button>
+                            <span className="red-text">{errors.email}</span>
+                            <button className="Register-button" type="submit">Submit</button>
                         </div>
                     </form>
                     <div className="credits">
