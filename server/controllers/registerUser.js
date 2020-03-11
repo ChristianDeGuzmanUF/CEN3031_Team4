@@ -55,7 +55,7 @@ module.exports = async function validateUserRegInput(input) {
 
     // check for empty group ID, and match in DB
     if (validator.isEmpty(input.inviteCode)) {
-        errors.inviteCode = "Invite code is required";
+        //errors.inviteCode = "Invite code is required";
     }
     else {
         await Invite.find({codes: input.inviteCode}).then(code => {
@@ -68,7 +68,7 @@ module.exports = async function validateUserRegInput(input) {
                 }
             }
             else {
-                errors.inviteCode = "Invalid invite code";
+                //errors.inviteCode = "Invalid invite code";
             }
         });
     };
