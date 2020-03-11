@@ -1,9 +1,12 @@
 const validator = require('validator');
 const isEmpty = require('is-empty');
+const Invite = require('../models/InviteSchema');
+
 
 // this function ensures all the required inputs are entered for a user that is registering
-module.exports = function validateUserRegInput(input) {
+module.exports = async function validateUserRegInput(input) {
     let errors = {};
+    let isAdminUser = false;
 
     // to use Validator, empty entries have to be set to emptry strings
     input.firstName = !isEmpty(input.firstName) ? input.firstName : "";
@@ -12,6 +15,7 @@ module.exports = function validateUserRegInput(input) {
     input.email = !isEmpty(input.email) ? input.email : "";
     input.password1 = !isEmpty(input.password1) ? input.password1 : "";
     input.password2 = !isEmpty(input.password2) ? input.password2 : "";
+    input.inviteCode = !isEmpty(input.inviteCode) ? input.inviteCode : "";
     
 
     // return error values for empty name fields
@@ -49,10 +53,28 @@ module.exports = function validateUserRegInput(input) {
         errors.password2 = "Passwords do not match";
     };
 
+    // check for empty group ID, and match in DB
+    if (validator.isEmpty(input.inviteCode)) {
+        //errors.inviteCode = "Invite code is required";
+    }
+    else {
+        await Invite.find({codes: input.inviteCode}).then(code => {
+            if (code.length) {
+                if (code[0].adminCode) {
+                    isAdminUser = true;
+                }
+                else {
+                    isAdminUser = false;
+                }
+            }
+            else {
+                //errors.inviteCode = "Invalid invite code";
+            }
+        });
+    };
+
     // return the array of errors, and boolean value representing presence of errors
     return {
-        errors, isValid: isEmpty(errors)
+        errors, isValid: isEmpty(errors), isAdminUser
     };
 };
-
-
