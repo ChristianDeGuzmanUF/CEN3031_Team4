@@ -1,23 +1,64 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
 import './Landing.css';
 import ThumbnailCareers from "../../components/Body/ThumbnailCareers";
 import data from '../../data/data';
 
-function Landing() {	
-
+function Landing() {
+    const register = () =>{
+        window.location.href = "/Register";
+    };
+    const login = () =>{
+        window.location.href = "/Login";
+    };
 	return (
-		<main role="main">
-			<section className="jumbotron text-center">
-				<div className="container">
-					<h1 className="jumbotron-heading">Career Finder</h1>
-					<p className="lead text-muted">Career Finder is a website to help students find a career, answer questions about their interest and find a matching career based on interest</p>
-					<p>
+		<div className="Home">
+			<header className="Home-header">
+                <p>
+                    Welcome to Career Finder
+                </p>
+            </header>
+			<div className="Home-welcome">
+				<div className="Welcome-text">
+                    <p>
+                        Discover career paths that match your strengths and interests. <br/><br/>Explore Career Finder to learn about the day-to-day experiences, salaries, and responsibilities in a variety of professional areas. Get started below or register to find your best matches!
+                    </p>
+                    <div className="Links">
+						<div>
+                            <button className="Home-button" onClick={register}>Register</button>
+						</div>
+						<div>
+                            <button className="Home-button" onClick={login}>Login</button>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="Career-cards-container">
+                <p>
+                    Imagine the Possibilities
+                </p>
+                <div className="Career-cards-rows">
+                    <div className="container">
+                        <div className="card">
+                            <ThumbnailCareers data={data} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="credits">
+                Photo by Marvin Meyer on Unsplash
+            </div>
+        </div>
+    );
+}
+export default Landing;
+
+
+			/*
 						<a href="#" className="btn btn-primary my-2" href="/login">Login</a>&nbsp;
 						<a href="#" className="btn btn-secondary my-2" href="/register">Register</a>
 					</p>
 				</div>
-			</section>
 			<div className="album py-5 bg-light">
 				<div className="container">
 					<div className="row">
@@ -27,8 +68,6 @@ function Landing() {
 					</div>
 				</div>
 			</div>
-		</main>
-	);
-}
+		</div>
+	);*/
 
-export default Landing;

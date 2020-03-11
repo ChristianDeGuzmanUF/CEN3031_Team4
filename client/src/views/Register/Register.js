@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
-
+import reg from '../reg-pic.jpg'
+import './Register.css';
 
 class Register extends Component {
     constructor() {
@@ -16,6 +17,7 @@ class Register extends Component {
             email: "",
             password1: "",
             password2: "",
+            invitationCode: "",
             errors: {}
         };
     }
@@ -48,7 +50,8 @@ class Register extends Component {
             userName: this.state.userName,
             email: this.state.email,
             password1: this.state.password1,
-            password2: this.state.password2
+            password2: this.state.password2,
+            invitationCode: this.state.invitationCode
         };
 
         this.props.registerUser(newUser, this.props.history);
@@ -58,104 +61,106 @@ class Register extends Component {
         const { errors } = this.state;
 
         return (
-            <div>
-                <div>
-                    <div>
-                        <Link to="/">Career Finder</Link>
-                        <div>
-                            <b>Register account</b>
+            <div className="Register">
+                <div className="Register-container">
+                    <div className="Icon">
+                        <img src={reg} alt="Logo" />
+                        <h1>Career Finder</h1>
+                        <h4>Register for an Account</h4>
+                    </div>
+                    <form className="Register-form" noValidate onSubmit={this.onSubmit}>
+                        <div className="Register-form-col-1">
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.firstName}
+                                error={errors.firstName}
+                                id="firstName"
+                                placeholder="First Name"
+                                type="text"
+                                className={classnames("", {
+                                    invalid: errors.firstName
+                                })}
+                            />
+                            <span className="red-text">{errors.firstName}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.password1}
+                                error={errors.password1}
+                                id="password1"
+                                placeholder="Password"
+                                type="password"
+                                className={classnames("", {
+                                    invalid: errors.password1
+                                })}
+                            />
+                            <span className="red-text">{errors.password1}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.password2}
+                                error={errors.password2}
+                                id="password2"
+                                placeholder="Confirm Password"
+                                type="password"
+                                className={classnames("", {
+                                    invalid: errors.password2
+                                })}
+                            />
+                            <span className="red-text">{errors.password2}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.invitationCode}
+                                error={errors.invitationCode}
+                                id="invitationCode"
+                                placeholder="Invitation Code"
+                                type="Invitation Code"
+                                className={classnames("", {
+                                    invalid: errors.invitationCode
+                                })}
+                            />
+                            <span className="red-text">{errors.invitationCode}</span>
                         </div>
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.firstName}
-                                    error={errors.firstName}
-                                    id="firstName"
-                                    placeholder="first name"
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.firstName
-                                    })}
-                                />
-                                <span className="red-text">{errors.firstName}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.lastName}
-                                    error={errors.lastName}
-                                    id="lastName"
-                                    placeholder="last name"
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.lastName
-                                    })}
-                                />
-                                <span className="red-text">{errors.lastName}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.userName}
-                                    error={errors.userName}
-                                    id="userName"
-                                    placeholder="username"
-                                    type="text"
-                                    className={classnames("", {
-                                        invalid: errors.userName
-                                    })}
-                                />
-                                <span className="red-text">{errors.userName}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.email}
-                                    error={errors.email}
-                                    id="email"
-                                    placeholder="email"
-                                    type="email"
-                                    className={classnames("", {
-                                        invalid: errors.email
-                                    })}
-                                />
-                                <span className="red-text">{errors.email}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password1}
-                                    error={errors.password1}
-                                    id="password1"
-                                    placeholder="password"
-                                    type="password"
-                                    className={classnames("", {
-                                        invalid: errors.password1
-                                    })}
-                                />
-                                <span className="red-text">{errors.password1}</span>
-                            </div>
-                            <div>
-                                <input
-                                    onChange={this.onChange}
-                                    value={this.state.password2}
-                                    error={errors.password2}
-                                    id="password2"
-                                    placeholder="confirm password"
-                                    type="password"
-                                    className={classnames("", {
-                                        invalid: errors.password2
-                                    })}
-                                />
-                                <span className="red-text">{errors.password2}</span>
-                            </div>
-                            <div>
-                                <button type="submit">
-                                    Register
-                                </button>
-                            </div>
-                        </form>
+                        <div className="Register-form-col-2">
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.lastName}
+                                error={errors.lastName}
+                                id="lastName"
+                                placeholder="Last Name"
+                                type="text"
+                                className={classnames("", {
+                                    invalid: errors.lastName
+                                })}
+                            />
+                            <span className="red-text">{errors.lastName}</span>
+                            <input className="Register-input"
+                                onChange={this.onChange}
+                                value={this.state.userName}
+                                error={errors.userName}
+                                id="userName"
+                                placeholder="Username"
+                                type="text"
+                                className={classnames("", {
+                                    invalid: errors.userName
+                                })}
+                            />
+                            <span className="red-text">{errors.userName}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.email}
+                                error={errors.email}
+                                id="email"
+                                placeholder="Email"
+                                type="email"
+                                className={classnames("", {
+                                    invalid: errors.email
+                                })}
+                            />
+                            <span className="red-text">{errors.email}</span>
+                            <button className="Register-button" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <div className="credits">
+                        Photo by Christin Hume on Unsplash
                     </div>
                 </div>
             </div>

@@ -1,55 +1,100 @@
 html,
 body {
-  height: 100%;
+    margin: 0.4px;
 }
 
-.loginBody {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+h4 {
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
-.svgletter {
-    font-size:48px;
-    color:gray;
-    padding: 10px;
+form {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.Login-button {
+    background: #42cd42;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(10px + 1vmin);
+    padding: 0.6rem 1rem;
+    border: solid 1px #c7c7c7;
+    margin: 1rem 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+}
+button:hover {
+    background: #8b8b8b;
+}
+
+.Login {
+    text-align: center;
+    justify-content: center;
+    background: #000032;
+    font-family: Verdana;
+    display: flex;
+}
+
+.Login-container {
+    background-color: ghostwhite;
+    display: table;
+    color: #000032;
+    min-width: 50%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+
+.icon {
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login-form {
+    columns: 1;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 1px;
+}
+
+.Login-form-col-1 {
+    display: inline-grid;
+    width: 70%;
+}
+
+.Link {
+    display: flex;
+    font-size: calc(7px + 1vmin);
+    justify-content: left;
+    padding: 5px;
+    color: #000032;
+    width: max-content;
+}
+
+.credits {
+    background-color: #000032;
+    min-height: 4vh;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(5px + 1vmin);
+    text-align: left;
+    color: ghostwhite;
+    padding-top: 5px;
 }
