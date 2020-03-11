@@ -15,7 +15,7 @@ module.exports = async function validateUserRegInput(input) {
     input.email = !isEmpty(input.email) ? input.email : "";
     input.password1 = !isEmpty(input.password1) ? input.password1 : "";
     input.password2 = !isEmpty(input.password2) ? input.password2 : "";
-    input.inviteCode = !isEmpty(input.inviteCode) ? input.inviteCode : "";
+    input.invitationCode = !isEmpty(input.invitationCode) ? input.invitationCode : "";
     
 
     // return error values for empty name fields
@@ -54,11 +54,11 @@ module.exports = async function validateUserRegInput(input) {
     };
 
     // check for empty group ID, and match in DB
-    if (validator.isEmpty(input.inviteCode)) {
-        //errors.inviteCode = "Invite code is required";
+    if (validator.isEmpty(input.invitationCode)) {
+        errors.invitationCode = "Invite code is required";
     }
     else {
-        await Invite.find({codes: input.inviteCode}).then(code => {
+        await Invite.find({codes: input.invitationCode}).then(code => {
             if (code.length) {
                 if (code[0].adminCode) {
                     isAdminUser = true;
@@ -68,7 +68,7 @@ module.exports = async function validateUserRegInput(input) {
                 }
             }
             else {
-                //errors.inviteCode = "Invalid invite code";
+                errors.invitationCode = "Invalid invite code";
             }
         });
     };
