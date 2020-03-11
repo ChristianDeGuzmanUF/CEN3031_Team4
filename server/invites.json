@@ -1,8 +1,14 @@
 {
     "invites": [
         {
-            "studentInviteCodes": ["123456789", "987654321"],
-            "adminInviteCodes": ["00", "11"]
+            "name": "studentInviteCodes",
+            "codes": ["123456789", "987654321"],
+            "adminCode": false
+        },
+        {
+            "name": "adminInviteCodes",
+            "codes": ["00", "11"],
+            "adminCode": true
         }
     ]
 }
