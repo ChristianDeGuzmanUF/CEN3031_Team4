@@ -6,12 +6,12 @@ const ThumbnailCareers = (props) => {
         window.location.href = "/Careers/" + name;
 	};
 
-    const thumbnailCareers = props.data.map(career => {  
-        console.log(career.name);
-		console.log(career.description);
+    const thumbnailCareers = props.data.map(cluster => {  
+        console.log(cluster.clusterName);
+		console.log(cluster.description);
 		
 		var opts = {};
-		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + career.name;
+		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.clusterName;
 		
         return (    
 			<div className="col-md-3">
