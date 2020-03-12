@@ -30,10 +30,6 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    birthDate: {
-        type: Date,
-        default: Date.now
-    },
     isAdmin: {
         type: Boolean,
         default: false

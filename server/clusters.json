@@ -84,6 +84,486 @@
                     "name": "Pipe Layer"
                 }
             ]
+        },
+        {
+            "clusterName": "Arts, audio/video technology, and communications",
+            "description": "Have you ever wanted to design, produce, exhibit, perform, write, and pub- lish anything by making music or creating multimedia visual content? Do you love the performing arts? You could be dreaming of becoming an actress on the stage or television. Or perhaps you would rather be a world- renowned painter. Then again, your interest might be in journalism as the next star anchor of the evening news or a respected blogger, or in communi- cations as a public relations specialist working behind the scenes to guide the careers of the rich and famous. If so, this cluster field is for you.",
+            "occupations": [
+                {
+                    "name": "Broadcast Technician"
+                },
+                {
+                    "name": "Cinematographer"
+                },
+                {
+                    "name": "Graphics and Printing Equipment Operator"
+                },
+                {
+                    "name": "Publisher, Editor, Journalist or Reporter"
+                },
+                {
+                    "name": "Video Graphics, Special Effects, and Animation Technician"
+                },
+                {
+                    "name": "Video Systems Technician"
+                }
+            ]
+        },
+        {
+            "clusterName": "Business management and administration",
+            "description": "Every business hires individuals to manage its operations. Businesses need office managers and accountants to ensure that the phones get answered and that the books are in order. These businesses can range in size from small convenience stores to large hospitals. They all need employees who ensure that operations run smoothly within the organization. The employees in the jobs and industries of the Business, Management & Administration cluster play this role.",
+            "occupations": [
+                {
+                    "name": "Accounting Manager"
+                },
+                {
+                    "name": "Accounts Payable Manager"
+                },
+                {
+                    "name": "Assistant Credit Manager"
+                },
+                {
+                    "name": "Billing Manager"
+                },
+                {
+                    "name": "Business and Development Manager"
+                },
+                {
+                    "name": "Chief Executive Officer"
+                },
+                {
+                    "name": "Compensation and Benefits Manager"
+                },
+                {
+                    "name": "Credit and Collections Manager"
+                },
+                {
+                    "name": "Entrepreneur"
+                },
+                {
+                    "name": "General Manager"
+                },
+                {
+                    "name": "Payroll Manager"
+                },
+                {
+                    "name": "Risk Manager"
+                }
+            ]
+        },
+        {
+            "clusterName": "Education and training",
+            "description": "Much thought and care go into planning, managing, and providing educa- tion as well as training and related learning support services. People employed in this field serve children and adults. Workers in this cluster need patience and good customer service skills to be effective in their jobs.",
+            "occupations": [
+                {
+                    "name": "College President, Dean, Department Chair, Program Coordinator"
+                },
+                {
+                    "name": "Corporate Trainer"
+                },
+                {
+                    "name": "Curriculum Specialist"
+                },
+                {
+                    "name": "Education Researcher, Test Measurement Specialist/ Assessment Specialist"
+                },
+                {
+                    "name": "Elementary and Secondary Superintendent, Principal, Administrator"
+                },
+                {
+                    "name": "Post-Secondary Administrator"
+                },
+                {
+                    "name": "Supervisor and Instructional Coordinator"
+                },
+                {
+                    "name": "Teacher"
+                },
+                {
+                    "name": "Textbook Author"
+                }
+            ]
+        },
+        {
+            "clusterName": "Finance",
+            "description": "Finance is often linked to banking alone, but there are many facets of the industry because there are so many different types of financial institutions. Employees in this field provide services for financial and investment bank- ing, insurance products, business/financial management, and more.",
+            "occupations": [
+                {
+                    "name": "Brokerage Representative"
+                },
+                {
+                    "name": "Development Officer"
+                },
+                {
+                    "name": "Investment Advisor"
+                },
+                {
+                    "name": "Personal Financial Advisor"
+                },
+                {
+                    "name": "Sales Agent, Securities and Commodities"
+                },
+                {
+                    "name": "Securities/Investments Analyst"
+                },
+                {
+                    "name": "Stock Broker"
+                },
+                {
+                    "name": "Tax Preparation Specialist"
+                }
+            ]
+        },
+        {
+            "clusterName": "Government and public administration",
+            "description": "Local, state, and federal governments need employees to perform functions that include governance, national security, foreign service, planning, revenue flows and taxation, regulation, and management and administration.",
+            "occupations": [
+                {
+                    "name": "Air Crew Member"
+                },
+                {
+                    "name": "Aircraft Launch and Recovery Officer"
+                },
+                {
+                    "name": "Assessor"
+                },
+                {
+                    "name": "Congressional Aide"
+                },
+                {
+                    "name": "Detective"
+                },
+                {
+                    "name": "Equal Opportunity Representative"
+                },
+                {
+                    "name": "Legislative Aide"
+                },
+                {
+                    "name": "Postal Service Clerk"
+                },
+                {
+                    "name": "President"
+                },
+                {
+                    "name": "Radar and Sonar Technician"
+                },
+                {
+                    "name": "Special Forces Officer"
+                },
+                {
+                    "name": "Transportation Inspector"
+                },
+                {
+                    "name": "Urban and Regional Planner"
+                },
+                {
+                    "name": "Vice President"
+                }
+            ]
+        },
+        {
+            "clusterName": "Health science",
+            "description": "Health Science cluster employees plan, manage, and deliver therapeutic serv- ices, diagnostic services, health informatics, support services, and biotech- nology research and development to individuals throughout the United States. They work in cities, suburbs, rural areas, and other communities to provide crucial services to a diverse client base.",
+            "occupations": [
+                {
+                    "name": "Acupuncturist"
+                },
+                {
+                    "name": "Anesthesia Technologist/Technician"
+                },
+                {
+                    "name": "Anesthesiologist/Assistant"
+                },
+                {
+                    "name": "Art/Music/Dance Therapist"
+                },
+                {
+                    "name": "Athletic Trainer"
+                },
+                {
+                    "name": "Audiologist"
+                },
+                {
+                    "name": "Certified Nursing Assistant"
+                },
+                {
+                    "name": "Chiropractic Assistant"
+                },
+                {
+                    "name": "Chiropractor"
+                },
+                {
+                    "name": "Dental Assistant/Hygienist"
+                },
+                {
+                    "name": "Dental Lab Technician"
+                },
+                {
+                    "name": "Dietitian/Nutritionist"
+                }
+            ]
+
+        },
+        {
+            "clusterName": "Hospitality and tourism",
+            "description": "Hospitality and tourism careers comprise the world’s largest industry. Its workers manage, market, and operate restaurants and other food services, lodging, attractions, recreation events, and travel-related services. They are very busy people who cater to the needs of individuals that visit your town, city, state, and other countries of the world as tourists.",
+            "occupations": [
+                {
+                    "name": "Baggage Porter and Bellhop"
+                },
+                {
+                    "name": "Concierge"
+                },
+                {
+                    "name": "Kitchen Manager"
+                },
+                {
+                    "name": "Catering and Banquet Manager"
+                },
+                {
+                    "name": "Service Manager"
+                },
+                {
+                    "name": "Switchboard Operator"
+                },
+                {
+                    "name": "Restaurant Owner"
+                },
+                {
+                    "name": "Animal Trainer"
+                },
+                {
+                    "name": "Museum Curator"
+                },
+                {
+                    "name": "Gaming Dealer"
+                },
+                {
+                    "name": "Convention Planner"
+                }
+            ]
+        },
+        {
+            "clusterName": "Human services",
+            "description": "Human services careers prepare individuals for employment in pathways that relate to families and human needs. They work in daycare centers, drive the elderly and disabled to their appointments, provide massages in spas, and counsel those in need of emotional support.",
+            "occupations": [
+                {
+                    "name": "Barber"
+                },
+                {
+                    "name": "Clergy"
+                },
+                {
+                    "name": "Elementary School Counselor"
+                },
+                {
+                    "name": "Embalmer"
+                },
+                {
+                    "name": "Hairdresser/Cosmetologist"
+                },
+                {
+                    "name" : "Loan Counselor"
+                },
+                {
+                    "name": "Manicurist and Pedicurist"
+                },
+                {
+                    "name": "Sociologist"
+                },
+                {
+                    "name": "Tailor"
+                }
+            ]
+
+        },
+        {
+            "clusterName": "Information technology",
+            "description": "Individuals employed in this cluster build the bridges between people and technology. They design, develop, support, and manage hardware, software, multimedia, and systems integration services that allow you to have access to the Internet, operate your remote control device, and use your iPod.",
+            "occupations": [
+                {
+                    "name": "Computer Programmer"
+                },
+                {
+                    "name": "Network Designer"
+                },
+                {
+                    "name": "Web Administrator"
+                },
+                {
+                    "name": "Administration Associate"
+                },
+                {
+                    "name": "Analyst"
+                },
+                {
+                    "name": "Developer"
+                },
+                {
+                    "name": "Computer Security Specialist"
+                },
+                {
+                    "name": "Modeler"
+                },
+                {
+                    "name": "Network Developer"
+                }
+            ]
+        },
+        {
+            "clusterName": "Law, public safety, corrections, and security",
+            "description": "There are individuals who plan, manage, and provide legal, public safety, protective services, and homeland security, including professional and tech- nical support services, in your community. They are police officers, lawyers, security guards, and firefighters, and they deliver the services that make you feel a little safer in times of crisis.",
+            "occupations": [
+                {
+                    "name": "Arbitrator, Mediator and Conciliator"
+                },
+                {
+                    "name": "Correctional Officer and Jailer"
+                },
+                {
+                    "name": "Crossing Guard"
+                },
+                {
+                    "name": "Detective and Investigator"
+                },
+                {
+                    "name": "Dispatchers"
+                },
+                {
+                    "name": "Fire Fighter"
+                },
+                {
+                    "name": "Immigration and Custom Inspector"
+                },
+                {
+                    "name": "Judge"
+                },
+                {
+                    "name": "Lawyer"
+                },
+                {
+                    "name": "Paramedic"
+                },
+                {
+                    "name": "Police Officer"
+                },
+                {
+                    "name": "Social Worker"
+                }
+            ]
+        },
+        {
+            "clusterName": "Manufacturing",
+            "description": "Products ranging from plastic bottles to cars are built in factories and devel- oped in manufacturing plants all over the world through specific processes. Those employed in the manufacturing cluster perform the steps that go into intermediate or final products and related professional and technical sup- port activities such as production planning and control, maintenance, and manufacturing/process engineering.",
+            "occupations": [
+                {
+                    "name": "Assembler"
+                },
+                {
+                    "name": "Automated Manufacturing Technician"
+                },
+                {
+                    "name": "Bookbinder"
+                },
+                {
+                    "name": "Calibration Technician"
+                },
+                {
+                    "name": "Electrical Installer and Repairer"
+                },
+                {
+                    "name": "Electromechanical Equipment Assembler"
+                },
+                {
+                    "name": "Extruding and Drawing Machine Setter/Set-Up Operator"
+                }
+            ]
+        },
+        {
+            "clusterName": "Marketing",
+            "description": "Marketing professionals plan, manage, and perform activities to reach orga- nizational objectives. Their work can range from handing out flyers to publi- cizing an event or working in an office to research consumers’ spending habits.",
+            "occupations": [
+                {
+                    "name": "Market Research Analyst"
+                },
+                {
+                    "name": "Fashion Designer"
+                },
+                {
+                    "name": "Merchandise Displayer and Window Trimmer"
+                },
+                {
+                    "name": "Real Estate Agent"
+                },
+                {
+                    "name": "Sales Representative"
+                },
+                {
+                    "name": "Telemarketer"
+                },
+                {
+                    "name": "Key Account Manager"
+                },
+                {
+                    "name": "Wholesale and Retail Buyer"
+                },
+                {
+                    "name": "Account Executive"
+                }
+            ]
+        },
+        {
+            "clusterName": "Science, technology, engineering, and mathematics",
+            "description": "Can you see yourself planning, managing, and providing scientific research as a career? Are you interested in laboratory and testing services or in research and development? If so, are you also willing to earn the certification or advanced education necessary to work in this career cluster? If your answer is a “yes” to any of these questions, then take a closer look at these pathways and occupations.",
+            "occupations": [
+                {
+                    "name": "Anthropologist"
+                },
+                {
+                    "name": "Biological Scientist"
+                },
+                {
+                    "name": "Food Science Technologist"
+                },
+                {
+                    "name": "Mathematician"
+                },
+                {
+                    "name": "Microbiologist"
+                },
+                {
+                    "name": "Park Naturalist"
+                },
+                {
+                    "name": "Physicist"
+                },
+                {
+                    "name": "Statistician"
+                },
+                {
+                    "name": "Technical Writer"
+                }
+            ]
+        },
+        {
+            "clusterName": "Transportation, distribution, and logistics",
+            "description": "Careers in this cluster involve moving people and products from one place to another.",
+            "occupations": [
+                {
+                    "name": "Parking lot attendant"
+                },
+                {
+                    "name": "Air traffic controller"
+                },
+                {
+                    "name": "Taxi driver"
+                },
+                {
+                    "name": "Airplane pilot"
+                }
+
+            ]
         }
     ]
 }

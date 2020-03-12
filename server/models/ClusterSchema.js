@@ -14,6 +14,9 @@ const clusterSchema = new mongoose.Schema({
                 type: String,
                 required: true
             },
+            description: {
+                type: String
+            },
             education: {
                 type: String,
             },

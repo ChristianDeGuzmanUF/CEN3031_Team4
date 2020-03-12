@@ -1,27 +1,97 @@
 body {
-    margin: 0;
+    margin: 0.4px;
 }
 
-.App {
+h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+h4 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+button:hover {
+    background: #8b8b8b;
+}
+
+.Register {
     text-align: center;
-    background: #282c34;
-}
-
-.App-logo {
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
+    justify-content: center;
+    background: #000032;
+    font-family: Verdana;
     display: flex;
+}
+
+.Register-container {
+    background-color: ghostwhite;
+    color: #000032;
+    min-width: 50%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+
+.icon {
+    min-height: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
-.App-link {
-    color: #09d3ac;
+.Register-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 1px;
+}
+
+.Register-form-col-1 {
+    display: inline-grid;
+    width: 50%;
+    margin: 5px;
+}
+
+.Register-form-col-2 {
+    display: inline-grid;
+    width: 50%;
+    margin: 5px;
+}
+
+
+.Register-button {
+    background: #42cd42;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(8px + 2vmin);
+    border: solid 1px #c7c7c7;
+    margin: 1rem 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+    padding: 8px;
+    width: 95%
+}
+
+input {
+    font-size: calc(7px + 2vmin);
+    width: 95%;
+    padding: 2px;
+    margin-top: 15px;
+}
+
+.credits {
+    background-color: #000032;
+    min-height: 4vh;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(5px + 1vmin);
+    text-align: left;
+    color: ghostwhite;
+    padding-top: 5px;
 }
