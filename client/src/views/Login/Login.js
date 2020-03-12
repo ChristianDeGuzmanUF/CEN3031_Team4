@@ -59,7 +59,7 @@ class Login extends Component {
             <div className="Login">
                 <div class="Login-container">
                     <div className="Icon">
-                        <img src={login} alt="Logo" />
+                        <a href="/"><img src={login} alt="Logo" /></a>
                         <h1>Career Finder</h1>
                         <h4>Account Login</h4>
                     </div>

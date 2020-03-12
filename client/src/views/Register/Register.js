@@ -12,7 +12,7 @@ class Register extends Component {
         super();
         this.state = {
             firstName: "",
-            lastName: "",            
+            lastName: "",
             userName: "",
             email: "",
             password1: "",
@@ -46,7 +46,7 @@ class Register extends Component {
 
         const newUser = {
             firstName: this.state.firstName,
-            lastName: this.state.lastName,            
+            lastName: this.state.lastName,
             userName: this.state.userName,
             email: this.state.email,
             password1: this.state.password1,
@@ -64,7 +64,7 @@ class Register extends Component {
             <div className="Register">
                 <div className="Register-container">
                     <div className="Icon">
-                        <img src={reg} alt="Logo" />
+                        <a href="/"><img src={reg} alt="Logo" /></a>
                         <h1>Career Finder</h1>
                         <h4>Register for an Account</h4>
                     </div>
@@ -77,11 +77,23 @@ class Register extends Component {
                                 id="firstName"
                                 placeholder="First Name"
                                 type="text"
-                                className={classnames("", {
+                                className={classnames("Register-input", {
                                     invalid: errors.firstName
                                 })}
                             />
-                            <span className="red-text">{errors.firstName}</span>
+                            <span className="text-danger">{errors.firstName}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.userName}
+                                error={errors.userName}
+                                id="userName"
+                                placeholder="Username"
+                                type="text"
+                                className={classnames("Register-input", {
+                                    invalid: errors.userName
+                                })}
+                            />
+                            <span className="text-danger">{errors.userName}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password1}
@@ -89,11 +101,11 @@ class Register extends Component {
                                 id="password1"
                                 placeholder="Password"
                                 type="password"
-                                className={classnames("", {
+                                className={classnames("Register-input", {
                                     invalid: errors.password1
                                 })}
                             />
-                            <span className="red-text">{errors.password1}</span>
+                            <span className="text-danger">{errors.password1}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password2}
@@ -101,23 +113,11 @@ class Register extends Component {
                                 id="password2"
                                 placeholder="Confirm Password"
                                 type="password"
-                                className={classnames("", {
+                                className={classnames("Register-input", {
                                     invalid: errors.password2
                                 })}
                             />
-                            <span className="red-text">{errors.password2}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.invitationCode}
-                                error={errors.invitationCode}
-                                id="invitationCode"
-                                placeholder="Invitation Code"
-                                type="Invitation Code"
-                                className={classnames("", {
-                                    invalid: errors.invitationCode
-                                })}
-                            />
-                            <span className="red-text">{errors.invitationCode}</span>
+                            <span className="text-danger">{errors.password2}</span>
                         </div>
                         <div className="Register-form-col-2">
                             <input
@@ -127,23 +127,11 @@ class Register extends Component {
                                 id="lastName"
                                 placeholder="Last Name"
                                 type="text"
-                                className={classnames("", {
+                                className={classnames("Register-input", {
                                     invalid: errors.lastName
                                 })}
                             />
-                            <span className="red-text">{errors.lastName}</span>
-                            <input className="Register-input"
-                                onChange={this.onChange}
-                                value={this.state.userName}
-                                error={errors.userName}
-                                id="userName"
-                                placeholder="Username"
-                                type="text"
-                                className={classnames("", {
-                                    invalid: errors.userName
-                                })}
-                            />
-                            <span className="red-text">{errors.userName}</span>
+                            <span className="text-danger">{errors.lastName}</span>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.email}
@@ -151,11 +139,23 @@ class Register extends Component {
                                 id="email"
                                 placeholder="Email"
                                 type="email"
-                                className={classnames("", {
+                                className={classnames("Register-input", {
                                     invalid: errors.email
                                 })}
                             />
-                            <span className="red-text">{errors.email}</span>
+                            <span className="text-danger">{errors.email}</span>
+                            <input
+                                onChange={this.onChange}
+                                value={this.state.invitationCode}
+                                error={errors.invitationCode}
+                                id="invitationCode"
+                                placeholder="Invitation Code"
+                                type="Invitation Code"
+                                className={classnames("Register-input", {
+                                    invalid: errors.invitationCode
+                                })}
+                            />
+                            <span className="text-danger">{errors.invitationCode}</span>
                             <button className="Register-button" type="submit">Submit</button>
                         </div>
                     </form>
