@@ -160,7 +160,7 @@ class Register extends Component {
                         </div>
                     </form>
                     <div className="credits">
-                        Photo by Christin Hume on Unsplash
+                        Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
                     </div>
                 </div>
             </div>

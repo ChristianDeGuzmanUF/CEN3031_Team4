@@ -23,10 +23,12 @@ button:hover {
     background: #000032;
     font-family: Verdana;
     display: flex;
+    min-height: 100vh;
 }
 
-.Register-container {
+.Register-container{
     background-color: ghostwhite;
+    display: table;
     color: #000032;
     min-width: 50%;
     margin-left: 150px;
@@ -94,4 +96,9 @@ input {
     text-align: left;
     color: ghostwhite;
     padding-top: 5px;
+}
+
+.credit_link {
+    color: ghostwhite;
+    text-decoration: underline;
 }
