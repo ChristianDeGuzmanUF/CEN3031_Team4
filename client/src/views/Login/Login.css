@@ -27,7 +27,6 @@ form {
     font-size: calc(10px + 1vmin);
     padding: 0.6rem 1rem;
     border: solid 1px #c7c7c7;
-    margin: 1rem 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
     outline: none;
@@ -72,12 +71,13 @@ button:hover {
     padding-bottom: 10px;
     padding-right: 25px;
     padding-left: 25px;
-    margin-top: 1px;
+    margin-top: 10px;
 }
 
 .Login-form-col-1 {
     display: inline-grid;
     width: 70%;
+    min-height: 35vh;
 }
 
 .Link {

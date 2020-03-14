@@ -17,6 +17,10 @@ button:hover {
     background: #8b8b8b;
 }
 
+input {
+    width: 95%;
+}
+
 .Register {
     text-align: center;
     justify-content: center;
@@ -57,12 +61,14 @@ button:hover {
     display: inline-grid;
     width: 50%;
     margin: 5px;
+    min-height: 45vh;
 }
 
 .Register-form-col-2 {
     display: inline-grid;
     width: 50%;
     margin: 5px;
+    min-height: 45vh;
 }
 
 
@@ -72,19 +78,11 @@ button:hover {
     font-weight: bold;
     font-size: calc(8px + 2vmin);
     border: solid 1px #c7c7c7;
-    margin: 1rem 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
     outline: none;
     padding: 8px;
     width: 95%
-}
-
-input {
-    font-size: calc(7px + 2vmin);
-    width: 95%;
-    padding: 2px;
-    margin-top: 15px;
 }
 
 .credits {

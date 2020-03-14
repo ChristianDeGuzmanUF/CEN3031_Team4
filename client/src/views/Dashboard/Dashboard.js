@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import './Dashboard.css';
 
 class Dashboard extends Component {
     onLogoutClick = e => {
@@ -10,24 +11,25 @@ class Dashboard extends Component {
     };
 
     render() {
-        const { user } = this.props.auth;
+        const {user} = this.props.auth;
 
         return (
-            <main role="main" class="container">
-                <div class="starter-template">
-                    <h1>Dashboard</h1>
-                    <p class="lead">Use this document as a way to quickly start any new project.<br /> All you get is this text and a mostly barebones HTML document.</p>
+            <div className="Dashboard">
+                <div className="Toolbar">
+                    <div className="Welcome-box">
+                        Welcome, {user.userName.split(" ")[0]}!
+                    </div>
+                    <div>
+                        <input className="Search-bar" placeholder="type a keyword to search" />
+                    </div>
+                    <div>
+                        <button className="Dashboard-button" onClick={this.onLogoutClick}>Logout</button>
+                    </div>
                 </div>
-                <div>
-                    <h4>
-                        <b>Hey there,</b> {user.userName.split(" ")[0]}
-                        <p className="flow-text grey-text text-darken-1">
-                            You are logged into a Career Finder
-                        </p>
-                    </h4>
-                    <button onClick={this.onLogoutClick}>Logout</button>
+                <div className="Dashboard-container">
+                    You are logged in to your dashboard on Career Finder
                 </div>
-            </main>
+            </div>
         );
     }
 }
