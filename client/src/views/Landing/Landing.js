@@ -46,7 +46,7 @@ function Landing() {
                 </div>
             </div>
             <div className="credits">
-                Photo by Marvin Meyer on Unsplash
+                Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
             </div>
         </div>
     );

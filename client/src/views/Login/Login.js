@@ -112,7 +112,7 @@ class Login extends Component {
                         <a className="Link" href="/RecoverPassword">Forgot Username/Password</a>
                     </div>
                     <div className="credits">
-                        Photo by Christin Hume on Unsplash
+                        Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
                     </div>
                 </div>
             </div>

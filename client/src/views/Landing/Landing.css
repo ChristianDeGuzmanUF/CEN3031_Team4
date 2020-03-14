@@ -121,4 +121,9 @@ button:hover {
   text-align: left;
   color: ghostwhite;
 }
+
+.credit_link {
+  color: ghostwhite;
+  text-decoration: underline;
+}
   
