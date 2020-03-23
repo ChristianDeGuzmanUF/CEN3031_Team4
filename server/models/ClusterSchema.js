@@ -5,6 +5,10 @@ const clusterSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    shortName: {
+        type: String,
+        default: ""
+    },
     description: {
         type: String,
     },
