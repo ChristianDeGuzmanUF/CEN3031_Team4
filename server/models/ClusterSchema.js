@@ -12,6 +12,11 @@ const clusterSchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    skills: [
+        {
+            type: String
+        }
+    ],
     occupations: [
         {
             name: {
