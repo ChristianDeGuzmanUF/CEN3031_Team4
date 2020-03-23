@@ -82,6 +82,22 @@ const userSchema = new mongoose.Schema({
         law: {
             type: Boolean,
             default: false
+        },
+        manufacturing: {
+            type: Boolean,
+            default: false
+        },
+        marketing: {
+            type: Boolean,
+            default: false
+        },
+        science: {
+            type: Boolean,
+            default: false
+        },
+        logistics: {
+            type: Boolean,
+            default: false
         }
     }
 });
