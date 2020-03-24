@@ -29,7 +29,7 @@ let inviteObject = fs.readFileSync('./server/invites.json', 'utf8');
 mongoose.set('bufferCommands', false);
 db = mongoose.connect(process.env.DB_URI || config.db.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
-// on restart, clear the DB of Cluster and Invite records
+// clear the DB of Cluster and Invite records
 const deleteAllClusterRecords = Clusters.deleteMany({}, function(err, clusters) {
     if (err) throw err;
 });
@@ -47,7 +47,6 @@ async function loadJSONCluster() {
     }
     const mongoClusterRecords = Clusters.find({}, function(err, clusters) {
         if (err) throw err;
-        // console.log(clusters);
     })
 };
 async function loadJSONInvites() {
@@ -59,7 +58,6 @@ async function loadJSONInvites() {
     }
     const mongoInviteRecords = Invites.find({}, function(err, invites) {
         if (err) throw err;
-        // console.log(invites);
     })
 };
 
