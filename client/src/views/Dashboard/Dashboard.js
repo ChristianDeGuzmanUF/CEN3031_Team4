@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import './Dashboard.css';
+import data from '../../data/data';
+import ThumbnailCareers from '../../components/Body/ThumbnailCareers';
 
 class Dashboard extends Component {
     onLogoutClick = e => {
@@ -27,8 +29,19 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="Dashboard-container">
-                    You are logged in to your dashboard on Career Finder
+                   <div className="Career-cards-container">
+                   <p>
+                       Imagine the Possibilities
+                   </p>
+                   <div className="Career-cards-rows">
+                       <div className="container">
+                           <div className="card">
+                               <ThumbnailCareers data={data} />
+                           </div>
+                       </div>
+                   </div>
                 </div>
+               </div>
             </div>
         );
     }
