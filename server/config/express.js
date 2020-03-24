@@ -3,9 +3,10 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes');
-    passport = require("passport");
-    users = require('../routes/users');
+    // exampleRouter = require('../routes/examples.server.routes'),
+    passport = require("passport"),
+    users = require('../routes/users'),
+    clusters = require('../routes/clusters');
 
 module.exports.init = () => {
     /* 
@@ -30,13 +31,16 @@ module.exports.init = () => {
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
+
     // passport middleware
     app.use(passport.initialize());
 
     app.use('/users', users);
+    app.use('/clusters', clusters);
+
 
     // add a router
-    app.use('/api/example', exampleRouter);
+    // app.use('/api/example', exampleRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
