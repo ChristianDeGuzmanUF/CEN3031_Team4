@@ -11,7 +11,7 @@ const ThumbnailCareers = (props) => {
 		// console.log(cluster.description);
 		
 		var opts = {};
-		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.clusterName;
+		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.shortName;
 		
         return (    
 			<div className="col-md-3">
