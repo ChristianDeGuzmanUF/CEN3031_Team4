@@ -8,7 +8,7 @@ export default [
             {
                 "name": "Agricultural Communications Specialist",
                 "education": "High School"
-            },    
+            },
             {
                 "name": "Animal Scientist",
                 "education": "Doctorate"
@@ -318,7 +318,7 @@ export default [
                 "name": "Dietitian/Nutritionist"
             }
         ]
-    
+
     },
     {
         "id": 9,
@@ -395,7 +395,7 @@ export default [
                 "name": "Tailor"
             }
         ]
-    
+
     },
     {
         "id": 11,
@@ -593,7 +593,7 @@ export default [
             {
                 "name": "Airplane pilot"
             }
-    
+
         ]
     }
 ];

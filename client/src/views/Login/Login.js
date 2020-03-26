@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import './Login.css';
 import login from '../reg-pic.jpg'
 
 class Login extends Component {
@@ -56,25 +55,21 @@ class Login extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="Login">
-                <div class="Login-container">
-                    <div className="Icon">
+            <div className="main-theme">
+                <div class="form-container">
+                    <div className="icon">
                         <a href="/"><img src={login} alt="Logo" /></a>
                         <h1>Career Finder</h1>
                         <h4>Account Login</h4>
                     </div>
-                    <form className="Login-form" noValidate onSubmit={this.onSubmit}>
-                        <div className="Login-form-col-1">
+                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                        <div className="single-column-col-1">
                             <input
                                 onChange={this.onChange}
                                 value={this.state.userName}
                                 error={errors.userName}
                                 id="userName"
                                 type="text"
-                                className={classnames("form-control", {
-                                    invalid: errors.userName || errors.userNameNotFound
-                                })}
-                                className="form-control"
                                 placeholder="Username"
                             />
                             <span className="text-danger">
@@ -87,10 +82,6 @@ class Login extends Component {
                                 error={errors.password}
                                 id="password"
                                 type="password"
-                                className={classnames("form-control", {
-                                    invalid: errors.password || errors.passwordIncorrect
-                                })}
-                                className="form-control"
                                 placeholder="Password"
                             />
                             <span className="text-danger">
@@ -102,18 +93,18 @@ class Login extends Component {
                         <input type="checkbox" value="remember-me" /> Remember me
                         </label>
                     </div> */}
-                            <button className="Login-button" type="submit">Sign in</button>
+                            <button className="regular-button" type="submit">Sign in</button>
                         </div>
                     </form>
                     <div>
-                        <a className="Link" href="/Register">Register</a>
+                        <a className="link" href="/Register">Register</a>
                     </div>
                     <div>
-                        <a className="Link" href="/RecoverPassword">Forgot Username/Password</a>
+                        <a className="link" href="/RecoverPassword">Forgot Username/Password</a>
                     </div>
-                    <div className="credits">
-                        Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
-                    </div>
+                </div>
+                <div className="credits">
+                    Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
                 </div>
             </div>
         );

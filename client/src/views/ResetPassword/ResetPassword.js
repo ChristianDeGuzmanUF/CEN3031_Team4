@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import reset from '../reset-pic.jpg';
-import './ResetPassword.css';
 
 class ResetPassword extends Component {
     constructor() {
@@ -52,15 +51,15 @@ class ResetPassword extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="Reset">
-                <div class="Reset-container">
-                    <div className="Icon">
+            <div className="main-theme">
+                <div class="form-container">
+                    <div className="icon">
                         <a href="/"><img src={reset} alt="Logo" /></a>
                         <h1>Career Finder</h1>
                         <h4>Reset Your Password</h4>
                     </div>
-                    <form className="Reset-form" noValidate onSubmit={this.onSubmit}>
-                        <div className="Reset-form-col-1">
+                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                        <div className="single-column-col-1">
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password1}
@@ -68,9 +67,6 @@ class ResetPassword extends Component {
                                 id="password1"
                                 placeholder="New Password"
                                 type="password"
-                                className={classnames("Register-input", {
-                                    invalid: errors.password1
-                                })}
                             />
                             <span className="text-danger">{errors.password1}</span>
                             <input
@@ -85,12 +81,12 @@ class ResetPassword extends Component {
                                 })}
                             />
                             <span className="text-danger">{errors.password2}</span>
-                            <button className="Reset-button" onClick={this.goToLogin}>Reset Password</button>
+                            <button className="regular-button" onClick={this.goToLogin}>Reset Password</button>
                         </div>
                     </form>
-                    <div className="credits">
-                        Photo by Adrià Tormo on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
-                    </div>
+                </div>
+                <div className="credits">
+                    Photo by Adrià Tormo on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
                 </div>
             </div>
         );
