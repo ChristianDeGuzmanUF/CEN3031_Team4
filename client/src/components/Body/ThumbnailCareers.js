@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './ThumbnailCareers.css'
 
 const ThumbnailCareers = (props) => {
+	/*
 	const goToCareer = (name) => {
         window.location.href = "/Careers/" + name;
 	};
+	*/
 
     const thumbnailCareers = props.data.map(cluster => {  
 		

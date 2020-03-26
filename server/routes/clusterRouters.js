@@ -3,9 +3,7 @@ const Clusters = require('../models/ClusterSchema');
 
 const clustersRouter = express.Router();
 
-//clustersRouter.get("/clusters", clusters.list);
-
-clustersRouter.get('/', async (req, res) => {
+clustersRouter.get('/clusters', async (req, res) => {
     Clusters.find({})
         .then(clusters => res.send(clusters))
         .catch(err => console.log(err));
@@ -55,7 +53,5 @@ clustersRouter.put('/:clusterID', async (req, res) => {
             });
         });
 });
-
-
 
 module.exports = clustersRouter;

@@ -3,10 +3,9 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    // exampleRouter = require('../routes/examples.server.routes'),
     passport = require("passport"),
     users = require('../routes/users'),
-    clusters = require('../routes/clusters');
+    clusters = require('../routes/clusterRouters');
 
 module.exports.init = () => {
     /* 
@@ -36,11 +35,7 @@ module.exports.init = () => {
     app.use(passport.initialize());
 
     app.use('/users', users);
-    app.use('/clusters', clusters);
-
-
-    // add a router
-    // app.use('/api/example', exampleRouter);
+    app.use('/api/', clusters);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

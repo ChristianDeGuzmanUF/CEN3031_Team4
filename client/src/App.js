@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
-import NavBar from "./components/Header/NavBar";
+//import NavBar from "./components/Header/NavBar";
 import Landing from "./views/Landing/Landing";
 import Login from "./views/Login/Login";
 import Register from "./views/Register/Register";
@@ -14,6 +14,9 @@ import ResetPassword from "./views/ResetPassword/ResetPassword";
 import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
+import Admin from "./views/Admin/Admin";
+import clusterService from './actions/clusterService';
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -39,27 +42,37 @@ if (localStorage.jwtToken) {
 	}
 }
 
-class App extends Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<Router>
-					<div>
-						{/* <NavBar /> */}
-						<Switch>
-							<Route exact path="/" component={Landing} />
-							<Route exact path="/Login" component={Login} />
-							<Route exact path="/Register" component={Register} />
-							<Route exact path="/RecoverPassword" component={RecoverPassword} />
-							<Route exact path="/ResetPassword" component={ResetPassword} />
-							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
-							<Route component={NotFound} />
-						</Switch>
-					</div>
-				</Router>
-			</Provider>
-		);
+const App = (props) => {
+	const [clusters, setClusters] = useState(null);
+	useEffect(() => {
+		if(!clusters) {
+			getClusters();
+		};
+	});
+
+	const getClusters = async () => {
+		let res = await clusterService.getAll();
+		setClusters(res);
 	}
-}
+	return (
+		<Provider store={store}>
+			<Router>
+				<div>
+					{/* <NavBar /> */}
+					<Switch>
+						<Route exact path="/" component={Landing} />
+						<Route exact path="/Login" component={Login} />
+						<Route exact path="/Register" component={Register} />
+						<Route exact path="/RecoverPassword" component={RecoverPassword} />
+						<Route exact path="/ResetPassword" component={ResetPassword} />
+						<PrivateRoute exact path="/Dashboard" component={Dashboard} />
+						<PrivateRoute exact path="/Admin" component={Admin} clusters={clusters}/>
+						<Route component={NotFound} />
+					</Switch>
+				</div>
+			</Router>
+		</Provider>
+	);
+};
 
 export default App;
