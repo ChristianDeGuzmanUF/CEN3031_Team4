@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
@@ -15,6 +15,7 @@ import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
 import Admin from "./views/Admin/Admin";
+import clusterService from './actions/clusterService';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -40,7 +41,28 @@ if (localStorage.jwtToken) {
 	}
 }
 
+
 class App extends Component {
+	// const [clusters, setClusters] = useState(null);
+	constructor() {
+		super();
+		this.state = {
+			clusters: null
+		};
+	}
+
+
+	getClusters = async () => {
+		let res = await clusterService.getAll();
+		this.state.clusters = res;
+	}
+
+	componentDidMount = async () => {
+		if (!this.state.clusters) {
+			this.getClusters();
+		}
+	};
+
 	render() {
 		return (
 			<Provider store={store}>
@@ -54,7 +76,7 @@ class App extends Component {
 							<Route exact path="/RecoverPassword" component={RecoverPassword} />
 							<Route exact path="/ResetPassword" component={ResetPassword} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
-							<PrivateRoute exact path="/Admin" component={Admin} />
+							<PrivateRoute exact path="/Admin" component={Admin} clusters={this.state.clusters} />
 							<Route component={NotFound} />
 						</Switch>
 					</div>
