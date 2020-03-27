@@ -39,8 +39,8 @@ class Dashboard extends Component {
                                <ThumbnailCareers data={data} />
                            </div>
                        </div>
-                   </div>
-                </div>
+                    </div>
+                    </div>
                </div>
             </div>
         );

@@ -33,7 +33,11 @@ clustersRouter.get('/:clusterID', async (req, res) => {
 clustersRouter.put('/:clusterID', async (req, res) => {
 
     Clusters.findByIdAndUpdate(req.params.clusterID, {
-        description: req.body.description
+        clusterName: req.body.clusterName,
+        shortName: req.body.shortName,
+        description: req.body.description,
+        skills: req.body.skills,
+        occupations: req.body.occupations
     }, {new: true})
         .then(cluster => {
             if(!cluster) {

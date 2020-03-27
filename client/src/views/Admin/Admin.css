@@ -1,0 +1,108 @@
+body {
+    margin: 0.4px;
+}
+
+h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+h4 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+button:hover {
+    background: #8b8b8b;
+}
+
+.Dashboard {
+    text-align: center;
+    background: #000032;
+    font-family: Verdana;
+    display: table;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.Dashboard-container{
+    background-color: ghostwhite;
+    display: table;
+    color: #000032;
+    padding: 25px;
+    margin-top: 60px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.icon {
+    min-height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Dashboard-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 1px;
+}
+
+.Dashboard-button {
+    background: ghostwhite;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(3px + 2vmin);
+    border: solid 1px #c7c7c7;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+    float: right;
+}
+.Toolbar {
+    columns: 3;
+    background: #42cd42;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(6px + 2vmin);
+    outline: none;
+    padding: 8px;
+}
+
+.Welcome-box {
+    font-size: calc(3px + 2vmin);
+    padding: 2px;
+    margin: 2px;
+    text-align: left;
+}
+
+.Search-bar {
+    font-size: calc(3px + 2vmin);
+    border: solid 1px #c7c7c7;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+    padding: 2px;
+    min-height: 5vh;
+    justify-content: right;
+    float: right;
+}
+
+.credits {
+    background-color: #000032;
+    min-height: 4vh;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(5px + 1vmin);
+    text-align: left;
+    color: ghostwhite;
+    padding-top: 5px;
+}
+
+.credit_link {
+    color: ghostwhite;
+    text-decoration: underline;
+}
