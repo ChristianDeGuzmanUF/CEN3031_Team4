@@ -32,18 +32,11 @@ function Landing() {
                     </div>
                 </div>
             </div>
-
             <div className="career-cards-container">
                 <p>
                     Imagine the Possibilities
                 </p>
-                <div className="career-cards-rows">
-                    <div className="c-container">
-                        <div className="card">
-                            <ThumbnailCareers data={data} />
-                        </div>
-                    </div>
-                </div>
+                <ThumbnailCareers data={data} />
             </div>
             <div className="credits">
                 Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
