@@ -1,11 +1,3 @@
-.view-button {
-    background: #000032;
-    color: ghostwhite;
-    border: 0px;
-    padding: 0px;
-    margin-top: 1px;
-    font-size: calc(6px + 2vmin);
-}
-button:hover {
-    background: #8b8b8b;
+.card {
+    background-color: #42cd42;
 }

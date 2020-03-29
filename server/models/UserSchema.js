@@ -33,6 +33,72 @@ const userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    clusters: {
+        agriculture: {
+            type: Boolean,
+            default: false
+        },
+        architecture: {
+            type: Boolean,
+            default: false
+        },
+        arts: {
+            type: Boolean,
+            default: false
+        },
+        business: {
+            type: Boolean,
+            default: false
+        },
+        education: {
+            type: Boolean,
+            default: false
+        },
+        finance: {
+            type: Boolean,
+            default: false
+        },
+        government: {
+            type: Boolean,
+            default: false
+        },
+        health: {
+            type: Boolean,
+            default: false
+        },
+        hospitality: {
+            type: Boolean,
+            default: false
+        },
+        human: {
+            type: Boolean,
+            default: false
+        },
+        infotech: {
+            type: Boolean,
+            default: false
+        },
+        law: {
+            type: Boolean,
+            default: false
+        },
+        manufacturing: {
+            type: Boolean,
+            default: false
+        },
+        marketing: {
+            type: Boolean,
+            default: false
+        },
+        science: {
+            type: Boolean,
+            default: false
+        },
+        logistics: {
+            type: Boolean,
+            default: false
+        }
     }
 });
 

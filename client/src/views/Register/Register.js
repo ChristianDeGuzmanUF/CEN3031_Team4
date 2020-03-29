@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import reg from '../reg-pic.jpg'
-import './Register.css';
 
 class Register extends Component {
     constructor() {
@@ -61,15 +60,15 @@ class Register extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="Register">
-                <div className="Register-container">
-                    <div className="Icon">
+            <div className="main-theme">
+                <div className="form-container">
+                    <div className="icon">
                         <a href="/"><img src={reg} alt="Logo" /></a>
                         <h1>Career Finder</h1>
                         <h4>Register for an Account</h4>
                     </div>
-                    <form className="Register-form" noValidate onSubmit={this.onSubmit}>
-                        <div className="Register-form-col-1">
+                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                        <div className="double-column-col-1">
                             <input
                                 onChange={this.onChange}
                                 value={this.state.firstName}
@@ -77,9 +76,6 @@ class Register extends Component {
                                 id="firstName"
                                 placeholder="First Name"
                                 type="text"
-                                className={classnames("Register-input", {
-                                    invalid: errors.firstName
-                                })}
                             />
                             <span className="text-danger">{errors.firstName}</span>
                             <input
@@ -89,9 +85,6 @@ class Register extends Component {
                                 id="userName"
                                 placeholder="Username"
                                 type="text"
-                                className={classnames("Register-input", {
-                                    invalid: errors.userName
-                                })}
                             />
                             <span className="text-danger">{errors.userName}</span>
                             <input
@@ -101,9 +94,6 @@ class Register extends Component {
                                 id="password1"
                                 placeholder="Password"
                                 type="password"
-                                className={classnames("Register-input", {
-                                    invalid: errors.password1
-                                })}
                             />
                             <span className="text-danger">{errors.password1}</span>
                             <input
@@ -113,13 +103,10 @@ class Register extends Component {
                                 id="password2"
                                 placeholder="Confirm Password"
                                 type="password"
-                                className={classnames("Register-input", {
-                                    invalid: errors.password2
-                                })}
                             />
                             <span className="text-danger">{errors.password2}</span>
                         </div>
-                        <div className="Register-form-col-2">
+                        <div className="double-column-col-2">
                             <input
                                 onChange={this.onChange}
                                 value={this.state.lastName}
@@ -127,9 +114,6 @@ class Register extends Component {
                                 id="lastName"
                                 placeholder="Last Name"
                                 type="text"
-                                className={classnames("Register-input", {
-                                    invalid: errors.lastName
-                                })}
                             />
                             <span className="text-danger">{errors.lastName}</span>
                             <input
@@ -139,9 +123,6 @@ class Register extends Component {
                                 id="email"
                                 placeholder="Email"
                                 type="email"
-                                className={classnames("Register-input", {
-                                    invalid: errors.email
-                                })}
                             />
                             <span className="text-danger">{errors.email}</span>
                             <input
@@ -151,17 +132,14 @@ class Register extends Component {
                                 id="invitationCode"
                                 placeholder="Invitation Code"
                                 type="Invitation Code"
-                                className={classnames("Register-input", {
-                                    invalid: errors.invitationCode
-                                })}
                             />
                             <span className="text-danger">{errors.invitationCode}</span>
-                            <button className="Register-button" type="submit">Submit</button>
+                            <button className="regular-button" type="submit">Submit</button>
                         </div>
                     </form>
-                    <div className="credits">
-                        Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
-                    </div>
+                </div>
+                <div className="credits">
+                    Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
                 </div>
             </div>
         );

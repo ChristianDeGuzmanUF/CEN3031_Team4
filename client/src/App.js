@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import React, {Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
-import NavBar from "./components/Header/NavBar";
+//import NavBar from "./components/Header/NavBar";
 import Landing from "./views/Landing/Landing";
 import Login from "./views/Login/Login";
 import Register from "./views/Register/Register";
@@ -15,6 +15,8 @@ import ClusterSurvey from "./views/ClusterSurvey/ClusterSurvey";
 import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
+import Admin from "./views/Admin/Admin";
+import clusterService from './actions/clusterService';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -40,7 +42,28 @@ if (localStorage.jwtToken) {
 	}
 }
 
+
 class App extends Component {
+	// const [clusters, setClusters] = useState(null);
+	constructor() {
+		super();
+		this.state = {
+			clusters: null
+		};
+	}
+
+
+	getClusters = async () => {
+		let res = await clusterService.getAll();
+		this.state.clusters = res;
+	}
+
+	componentDidMount = async () => {
+		if (!this.state.clusters) {
+			this.getClusters();
+		}
+	};
+
 	render() {
 		return (
 			<Provider store={store}>
@@ -55,6 +78,7 @@ class App extends Component {
 							<Route exact path="/ResetPassword" component={ResetPassword} />
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
+							<PrivateRoute exact path="/Admin" component={Admin} clusters={this.state.clusters} />
 							<Route component={NotFound} />
 						</Switch>
 					</div>
@@ -62,6 +86,6 @@ class App extends Component {
 			</Provider>
 		);
 	}
-}
+};
 
 export default App;

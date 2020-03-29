@@ -11,39 +11,32 @@ function Landing() {
         window.location.href = "/Login";
     };
 	return (
-		<div className="Home">
-			<header className="Home-header">
+		<div className="main-theme">
+			<header className="home-header">
                 <p>
                     Welcome to Career Finder
                 </p>
             </header>
-			<div className="Home-welcome">
-				<div className="Welcome-text">
+			<div className="home-welcome">
+				<div className="welcome-text">
                     <p>
                         Discover career paths that match your strengths and interests. <br/><br/>Explore Career Finder to learn about the day-to-day experiences, salaries, and responsibilities in a variety of professional areas. Get started below or register to find your best matches!
                     </p>
-                    <div className="Links">
+                    <div className="nav-links">
 						<div>
-                            <button className="Home-button" onClick={register}>Register</button>
+                            <button className="large-button" onClick={register}>Register</button>
 						</div>
 						<div>
-                            <button className="Home-button" onClick={login}>Login</button>
+                            <button className="large-button" onClick={login}>Login</button>
 						</div>
                     </div>
                 </div>
             </div>
-
-            <div className="Career-cards-container">
+            <div className="career-cards-container">
                 <p>
                     Imagine the Possibilities
                 </p>
-                <div className="Career-cards-rows">
-                    <div className="container">
-                        <div className="card">
-                            <ThumbnailCareers data={data} />
-                        </div>
-                    </div>
-                </div>
+                <ThumbnailCareers data={data} />
             </div>
             <div className="credits">
                 Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>

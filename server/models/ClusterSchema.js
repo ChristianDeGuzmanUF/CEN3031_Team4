@@ -5,9 +5,18 @@ const clusterSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    shortName: {
+        type: String,
+        default: ""
+    },
     description: {
         type: String,
     },
+    skills: [
+        {
+            type: String
+        }
+    ],
     occupations: [
         {
             name: {
