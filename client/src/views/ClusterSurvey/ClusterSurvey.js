@@ -180,7 +180,7 @@ class ClusterSurvey extends Component {
 							<ClusterQuestions data={data} />              
 						</div>  
 						<br />
-						<button className="Login-button" type="submit">Submit</button>
+						<button className="large-button" type="submit">Submit</button>
 						<br />
 						<br />
 						<footer>

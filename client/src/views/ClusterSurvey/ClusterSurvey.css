@@ -1,3 +1,7 @@
+body {
+	background-color:white;
+}
+
 table {
 	//background-color:yellow;
 	width:100%;
@@ -14,7 +18,7 @@ th {
 }
 
 td {
-	//background-color:blue;
+	background-color: #aefcae;
 	text-align:left;
 	border: solid black;
 	padding: 10px;
@@ -25,5 +29,6 @@ input[type='checkbox'] {
 }
 
 .spacer {
+	background-color:white;
 	border: 0;
 }
