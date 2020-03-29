@@ -16,6 +16,7 @@ const ClusterList = (props) => {
                 return (
                     <tr key={cluster._id} onClick={(e) => clickHandler(cluster._id, e)}>
                         <td>{cluster.shortName} </td>
+                        <td>{cluster.description}</td>
                     </tr>
                 );
             }

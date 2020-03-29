@@ -11,17 +11,19 @@ const Admin = () => {
     const [clusters, setClusters] = useState(null);
     const [selectedCluster, setSelectedCluster] = useState(0);
 
-	useEffect(() => {
-		if(!clusters) {
-			getClusters();
-		};
-    });
-
 	const getClusters = async () => {
 		let res = await clusterService.getAll();
 		setClusters(res);
     }
 
+	useEffect(() => {
+		if(!clusters) {
+			getClusters();
+        };
+    });
+
+
+    /*
     const renderCluster = cluster => {
         return (
             <li key={cluster._id} className=''>
@@ -29,6 +31,7 @@ const Admin = () => {
             </li>
         );
     };
+    */
 
     return (
         <div className="Admin">
@@ -41,13 +44,12 @@ const Admin = () => {
                 setFilterText={setFilterText} 
             />
             <main>
-                <div className="row">
-                    <div className="column1">
-                        <div className="tableWrapper">
-                            <table className="table table-striped table-hover">
                                 <tr>
                                     <td>
-                                        <b>Cluster Name </b>
+                                        <b>Career Name </b>
+                                    </td>
+                                    <td>
+                                        <b>Description </b>
                                     </td>
                                 </tr>
                                 <ClusterList
@@ -56,16 +58,12 @@ const Admin = () => {
                                     selectedCluster={selectedCluster}
                                     setSelectedCluster={setSelectedCluster}
                                 />
-                            </table>
-                        </div>
-                    </div>
                     <div className="column2">
                         <ViewCluster
                             selectedCluster={selectedCluster}
                             clusters={clusters}
                         />
                     </div>
-                </div>
             </main>
         </div>
     );
