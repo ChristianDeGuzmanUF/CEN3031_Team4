@@ -1,0 +1,29 @@
+table {
+	//background-color:yellow;
+	width:100%;
+}
+
+tr {
+	//background-color:green;
+}
+
+th {	
+	background-color: #000032;
+	color: ghostwhite;
+	border: solid black;
+}
+
+td {
+	//background-color:blue;
+	text-align:left;
+	border: solid black;
+	padding: 10px;
+}
+
+input[type='checkbox'] {
+	width: 20px;
+}
+
+.spacer {
+	border: 0;
+}

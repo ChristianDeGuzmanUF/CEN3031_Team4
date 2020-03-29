@@ -11,6 +11,7 @@ import Login from "./views/Login/Login";
 import Register from "./views/Register/Register";
 import RecoverPassword from "./views/RecoverPassword/RecoverPassword";
 import ResetPassword from "./views/ResetPassword/ResetPassword";
+import ClusterSurvey from "./views/ClusterSurvey/ClusterSurvey";
 import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
@@ -52,6 +53,7 @@ class App extends Component {
 							<Route exact path="/Register" component={Register} />
 							<Route exact path="/RecoverPassword" component={RecoverPassword} />
 							<Route exact path="/ResetPassword" component={ResetPassword} />
+							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
 							<Route component={NotFound} />
 						</Switch>
