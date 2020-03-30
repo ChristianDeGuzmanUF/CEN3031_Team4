@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ClusterList = (props) => {
+class ClusterList extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-    function clickHandler(id, e) {
+    clickHandler(id, e) {
         e.preventDefault();
-        props.setSelectedCluster(id);
+        this.props.setSelectedCluster(id);
     };
 
+    render() {
     var clusterList = null;
 
-    if (props.clusters && props.clusters.length > 0) {
-        clusterList = props.clusters.map(cluster => {
-            if(cluster.clusterName.toLowerCase().includes(props.filterText.toLowerCase())
-            || cluster.description.toLowerCase().includes(props.filterText.toLowerCase())) {
+    if (this.props.clusters && this.props.clusters.length > 0) {
+        clusterList = this.props.clusters.map(cluster => {
+            if(cluster.clusterName.toLowerCase().includes(this.props.filterText.toLowerCase())
+            || cluster.description.toLowerCase().includes(this.props.filterText.toLowerCase())) {
                 return (
-                    <tr key={cluster._id} onClick={(e) => clickHandler(cluster._id, e)}>
+                    <tr key={cluster._id} onClick={(e) => this.clickHandler(cluster._id, e)}>
                         <td>{cluster.shortName} </td>
                         <td>{cluster.description}</td>
                     </tr>
@@ -25,5 +29,6 @@ const ClusterList = (props) => {
     }
 
     return <div>{clusterList}</div>;
+};
 };
 export default ClusterList;

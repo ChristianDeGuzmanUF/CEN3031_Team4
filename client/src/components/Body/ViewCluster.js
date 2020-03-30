@@ -1,21 +1,22 @@
 import React from 'react';
 
 const ViewCluster = (props) => {
-    if (props.selectedCluster !== 0 && props.selectedCluster !== "")
-    {
-        // TODO: better way to do this?... 
-        var result;
-        for (var i = 0; i < props.clusters.length; i++) {
-            if (props.clusters[i]._id === props.selectedCluster) {
-                result = props.clusters[i];
+    if (props.clusters && props.clusters > 0) {
+        if (props.selectedCluster !== 0 && props.selectedCluster !== "") {
+            // TODO: better way to do this?... 
+            var result;
+            for (var i = 0; i < props.clusters.length; i++) {
+                if (props.clusters[i]._id === props.selectedCluster) {
+                    result = props.clusters[i];
+                }
             }
-        }
-        return (
-            // TODO: pretty print
-            <div>
-                {JSON.stringify(result)}
-            </div>
-        );
+            return (
+                // TODO: pretty print
+                <div>
+                    {JSON.stringify(result)}
+                </div>
+            );
+        };
     };
     return (
         <div>

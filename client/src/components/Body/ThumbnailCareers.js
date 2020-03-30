@@ -7,8 +7,8 @@ const ThumbnailCareers = props => {
 	};
 	var thumbnailCareers = null;
 
-	if (props.data && props.data.length > 0) {
-    thumbnailCareers = props.data.map(cluster => {  
+	if (props.clusters && props.clusters.length > 0) {
+    thumbnailCareers = props.clusters.map(cluster => {  
 		
 		var opts = {};
 		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.shortName;

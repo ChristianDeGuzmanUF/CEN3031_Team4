@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import './Dashboard.css';
-import data from '../../data/data';
+//import data from '../../data/data';
 import ThumbnailCareers from '../../components/Body/ThumbnailCareers';
 import clusterService from '../../actions/clusterService';
 
@@ -12,8 +12,10 @@ class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-            clusters: null
+            clusters: null,
+            filterText: ""
         };
+        this.getClusters = this.getClusters.bind(this);
     }
 
     onLogoutClick = e => {
@@ -23,7 +25,7 @@ class Dashboard extends Component {
 
     getClusters = async () => {
 		let res = await clusterService.getAll();
-		this.state.clusters = res;
+		this.setState({clusters: res});
 	}
 
 	componentDidMount = async () => {
@@ -42,7 +44,13 @@ class Dashboard extends Component {
                         Welcome, {user.userName.split(" ")[0]}!
                     </div>
                     <div>
-                        <input className="Search-bar" placeholder="type a keyword to search" />
+                        <input className="Search-bar"
+                               placeholder="type a keyword to search"
+                               value={this.props.input}
+                               onChange={(e) => {
+                                   this.setState({filterText: e.target.value})
+                               }}
+                               />
                     </div>
                     <div>
                         <button className="Dashboard-button" onClick={this.onLogoutClick}>Logout</button>
@@ -56,7 +64,7 @@ class Dashboard extends Component {
                    <div className="Career-cards-rows">
                        <div className="container">
                            <div className="card">
-                               <ThumbnailCareers data={data} cluster={this.state.clusters} />
+                               <ThumbnailCareers clusters={this.state.clusters} />
                            </div>
                        </div>
                     </div>
@@ -69,11 +77,11 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
     logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth,
+    auth: state.auth
 });
 
 export default connect(
