@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import clusterService from '../../actions/clusterService';
 import ClusterList from '../../components/Body/ClusterList';
 import ViewCluster from '../../components/Body/ViewCluster';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
 import './Admin.css';
 
 class Admin extends Component {
@@ -81,4 +84,14 @@ class Admin extends Component {
         );
     };
 };
-export default Admin;
+Admin.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+export default connect(
+    mapStateToProps,
+    { logoutUser }
+)(Admin)
