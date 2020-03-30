@@ -1,12 +1,14 @@
 import React from 'react';
 import './ThumbnailCareers.css'
 
-const ThumbnailCareers = (props) => {
+const ThumbnailCareers = props => {
 	const goToCareer = (name) => {
         console.log('click on ' + name);
-    };
+	};
+	var thumbnailCareers = null;
 
-    const thumbnailCareers = props.data.map(cluster => {  
+	if (props.data && props.data.length > 0) {
+    thumbnailCareers = props.data.map(cluster => {  
 		
 		var opts = {};
 		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.shortName;
@@ -20,7 +22,10 @@ const ThumbnailCareers = (props) => {
 				</div>
 			</div>
         );            
-    });
+	});
+	} else {
+		return <div></div>;
+	}
 
     return <div className="row">{thumbnailCareers}</div>;
 };

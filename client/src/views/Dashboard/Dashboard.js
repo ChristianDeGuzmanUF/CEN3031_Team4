@@ -5,11 +5,31 @@ import { logoutUser } from "../../actions/authActions";
 import './Dashboard.css';
 import data from '../../data/data';
 import ThumbnailCareers from '../../components/Body/ThumbnailCareers';
+import clusterService from '../../actions/clusterService';
 
 class Dashboard extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            clusters: null
+        };
+    }
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
+    };
+
+    getClusters = async () => {
+		let res = await clusterService.getAll();
+		this.state.clusters = res;
+	}
+
+	componentDidMount = async () => {
+		if (!this.state.clusters) {
+			this.getClusters();
+		}
     };
 
     render() {
@@ -36,7 +56,7 @@ class Dashboard extends Component {
                    <div className="Career-cards-rows">
                        <div className="container">
                            <div className="card">
-                               <ThumbnailCareers data={data} />
+                               <ThumbnailCareers data={data} cluster={this.state.clusters} />
                            </div>
                        </div>
                     </div>
@@ -49,11 +69,11 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
     logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+    auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
 });
 
 export default connect(

@@ -13,10 +13,10 @@ import RecoverPassword from "./views/RecoverPassword/RecoverPassword";
 import ResetPassword from "./views/ResetPassword/ResetPassword";
 import ClusterSurvey from "./views/ClusterSurvey/ClusterSurvey";
 import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
+import AdminRoute from "./views/AdminRoute/AdminRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
 import Admin from "./views/Admin/Admin";
-import clusterService from './actions/clusterService';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -44,25 +44,7 @@ if (localStorage.jwtToken) {
 
 
 class App extends Component {
-	// const [clusters, setClusters] = useState(null);
-	constructor() {
-		super();
-		this.state = {
-			clusters: null
-		};
-	}
 
-
-	getClusters = async () => {
-		let res = await clusterService.getAll();
-		this.state.clusters = res;
-	}
-
-	componentDidMount = async () => {
-		if (!this.state.clusters) {
-			this.getClusters();
-		}
-	};
 
 	render() {
 		return (
@@ -78,7 +60,7 @@ class App extends Component {
 							<Route exact path="/ResetPassword" component={ResetPassword} />
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
-							<PrivateRoute exact path="/Admin" component={Admin} clusters={this.state.clusters} />
+							<AdminRoute exact path="/Admin" component={Admin} />
 							<Route component={NotFound} />
 						</Switch>
 					</div>
