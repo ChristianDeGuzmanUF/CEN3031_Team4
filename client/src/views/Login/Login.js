@@ -22,7 +22,9 @@ class Login extends Component {
         if (this.props.auth.isAuthenticated) {
             if (this.props.auth.user.admin) {
                 this.props.history.push("/admin");
-            } else { this.props.history.push("/dashboard")};
+            } else { 
+                this.props.history.push("/dashboard");
+            };
         }
     };
 
@@ -30,7 +32,9 @@ class Login extends Component {
         if (this.props.auth.isAuthenticated) {
             if (this.props.auth.user.admin) {
                 this.props.history.push("/admin");
-            } else { this.props.history.push("/dashboard")};
+            } else { 
+                this.props.history.push("/dashboard");
+            };
         }
 
         if (nextProps.errors) {
@@ -41,6 +45,7 @@ class Login extends Component {
     };
 
     onChange = e => {
+        e.preventDefault();
         this.setState({ [e.target.id]: e.target.value });
     };
 

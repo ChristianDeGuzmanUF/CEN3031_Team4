@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     userName: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+        dropDups: true
     },
     firstName: {
         type: String,
@@ -16,7 +18,9 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+        dropDups: true
     },
     teacherUserName: {
         type: String,
@@ -33,6 +37,20 @@ const userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    topMatches: {
+        one: {
+            type: String,
+            default: ""
+        },
+        two: {
+            type: String,
+            default: ""
+        },
+        three: {
+            type: String,
+            default: ""
+        }
     },
     clusters: {
         agriculture: {

@@ -25,11 +25,9 @@ module.exports.init = () => {
     // enable request logging for development debugging
     app.use(morgan('dev'));
 
-
     // body parsing middleware
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
-
 
     // passport middleware
     app.use(passport.initialize());

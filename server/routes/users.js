@@ -8,6 +8,52 @@ const User = require('../models/UserSchema');
 
 const router = express.Router();
 
+router.get("/matches", async (req, res) => {
+    const userName = req.body.userName;
+
+    User.findOne({ userName: req.body.userName }).then(user => {
+        if (!user) {
+            return res.status(200).json({ userNameNotFound: "Username not found" });
+        }
+        res.status(200).json({
+            one: user.topMatches.one,
+            two: user.topMatches.two,
+            three: user.topMatches.three
+        });
+        }).catch(err => {
+            return res.status(500).send({
+                error: "Error retrieving top matches for user " + req.body.userName
+            });
+        });
+});
+
+router.post("/matches", (req, res) => {
+    const one = req.body.one;
+    const two = req.body.two;
+    const three = req.body.three;
+    User.findOneAndUpdate({ userName: req.body.userName }, 
+        {
+            topMatches: { one: req.body.one,
+                          two: req.body.two,
+                          three: req.body.three
+        }},
+        {new: true}
+    ).then(user => {
+        if (!user) {
+            return res.status(404).json({ userNameNotFound: "Username not found" });
+        }
+        res.status(200).json({
+            one: user.topMatches.one,
+            two: user.topMatches.two,
+            three: user.topMatches.three
+        });
+    }).catch(err => {
+        return res.status(500).send({
+            error: "Error updating top matches for user " + req.body.userName
+        });
+    });
+});
+
 router.post("/register", async (req, res) => {
 
     // call function to validate registration input, and store returned errors
