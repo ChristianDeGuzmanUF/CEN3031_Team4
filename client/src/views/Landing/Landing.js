@@ -46,21 +46,3 @@ function Landing() {
 }
 export default Landing;
 
-
-			/*
-						<a href="#" className="btn btn-primary my-2" href="/login">Login</a>&nbsp;
-						<a href="#" className="btn btn-secondary my-2" href="/register">Register</a>
-					</p>
-				</div>
-			<div className="album py-5 bg-light">
-				<div className="container">
-					<div className="row">
-
-						<ThumbnailCareers data={data} />
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	);*/
-

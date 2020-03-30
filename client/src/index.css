@@ -80,6 +80,7 @@ form {
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
     outline: none;
+    cursor: pointer;
 }
 .regular-button {
     background: #42cd42;
@@ -91,6 +92,7 @@ form {
     border: solid 1px #c7c7c7;
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
+    cursor: pointer;
 }
 .wide-button {
     background: #42cd42;
@@ -102,6 +104,7 @@ form {
     border: solid 1px #c7c7c7;
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
+    cursor: pointer;
 }
 
 /*forms*/
