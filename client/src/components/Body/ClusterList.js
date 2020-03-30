@@ -3,15 +3,18 @@ import React, { Component } from 'react';
 class ClusterList extends Component {
     constructor(props) {
         super(props);
+        this.clickHandler = this.clickHandler.bind(this);
     }
 
     clickHandler(id, e) {
         e.preventDefault();
-        this.props.setSelectedCluster(id);
+        //this.props.setSelectedCluster(id);
+        this.props.updateSelectedCluster(id);
     };
 
     render() {
     var clusterList = null;
+    const selectedCluster = this.props.selectedCluster;
 
     if (this.props.clusters && this.props.clusters.length > 0) {
         clusterList = this.props.clusters.map(cluster => {

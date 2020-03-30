@@ -13,6 +13,7 @@ class Admin extends Component {
             selectedCluster: null
         };
         this.getClusters = this.getClusters.bind(this);
+        this.updateSelectedCluster = this.updateSelectedCluster.bind(this);
     }
 
     onLogoutClick = e => {
@@ -30,6 +31,10 @@ class Admin extends Component {
 			this.getClusters();
 		}
     };
+
+    updateSelectedCluster(id) {
+        this.setState({selectedCluster: id})
+    }
 
     render() {
         return (
@@ -63,7 +68,7 @@ class Admin extends Component {
                                     <ClusterList
                                         clusters={this.state.clusters}
                                         filterText={this.state.filterText}
-                                        selectedCluster={this.state.selectedCluster}
+                                        updateSelectedCluster={this.updateSelectedCluster}
                                     />
                         <div className="column2">
                             <ViewCluster
