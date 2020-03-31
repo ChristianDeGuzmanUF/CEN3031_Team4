@@ -32,6 +32,11 @@ class Dashboard extends Component {
         if (!this.state.clusters) {
             this.getClusters();
         }
+		
+		var s = document.createElement('script'); 
+		s.type = 'text/javascript'; s.async = true; 
+		s.src = 'https://widget.botcopy.com/js/injection.js'; 
+		document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
     };
 
     render() {
@@ -40,12 +45,20 @@ class Dashboard extends Component {
         return (
             <div className="main-theme">
                 <NavBar/>
+				
                 <div className="career-cards-container">
                     <p>
                         Your dashboard is here.
                     </p>
+					<h6><a href="/ClusterSurvey">Take a Survey</a></h6>
                     <ThumbnailCareers clusters={this.state.clusters} />
                 </div>
+				<script type="text/javascript"
+					id="botcopy-embedder-d7lcfheammjct"
+					class="botcopy-embedder-d7lcfheammjct" 
+					data-botId="5e77c514099273f574d8d4b0">					
+				</script>
+				<div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             </div>
         );
     }

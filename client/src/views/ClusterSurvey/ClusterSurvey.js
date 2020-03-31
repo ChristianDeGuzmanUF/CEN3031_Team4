@@ -172,6 +172,7 @@ class ClusterSurvey extends Component {
 					<div>						
 						<div>
 							<h4>Career Cluster Survey</h4>
+							<h6><a href="/Dashboard">Back to Dashboard</a></h6>
 						</div>	
 						<div>
 							<ClusterSurveyResult surveyResults={this.state} />         
