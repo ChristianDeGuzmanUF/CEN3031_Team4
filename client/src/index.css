@@ -37,6 +37,9 @@ form {
     margin-top: 25px;
     justify-content: center;
 }
+a:hover {
+    color: ghostwhite;
+}
 
 /*classes*/
 
@@ -47,6 +50,7 @@ form {
     font-family: Verdana;
     display: table;
     min-width: 98vw;
+    min-height: 100vh;
 }
 
 .icon {
@@ -66,6 +70,16 @@ form {
     position: relative;
     bottom: 0;
     left: 0;
+}
+.user-welcome {
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    color: ghostwhite;
+    font-size: calc(7px + 1vmin);
 }
 
 /*buttons*/
@@ -156,7 +170,6 @@ form {
 
 /*photo-credits*/
 .credits {
-    background-color: #000032;
     align-items: left;
     justify-content: left;
     position: relative;

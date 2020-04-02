@@ -1,3 +1,25 @@
-.card {
+.cc {
+    display: flex;
     background-color: #42cd42;
+    min-height: 150px;
+    min-width: 225px;
+    justify-content: center;
+    align-items: center;
+}
+.cluster-link {
+    color: #000032;
+    font-size: calc(10px + 2vmin);
+}
+.career-cards-container {
+    background-color: #000032;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(30px + 1vmin);
+    color: ghostwhite;
+    font-weight: bold;
+    margin-left: 45px;
+    margin-right: 45px;
 }

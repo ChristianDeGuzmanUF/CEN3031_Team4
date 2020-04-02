@@ -17,6 +17,7 @@ import AdminRoute from "./views/AdminRoute/AdminRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
 import Admin from "./views/Admin/Admin";
+import ClusterEdit from "./views/ClusterEdit/ClusterEdit";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -60,7 +61,8 @@ class App extends Component {
 							<Route exact path="/ResetPassword" component={ResetPassword} />
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
-							<AdminRoute exact path="/Admin" component={Admin} />
+                            <AdminRoute exact path="/Admin" component={Admin} />
+                            <AdminRoute exact path="/Admin/Cluster" component={ClusterEdit} />
 							<Route component={NotFound} />
 						</Switch>
 					</div>
@@ -68,6 +70,6 @@ class App extends Component {
 			</Provider>
 		);
 	}
-};
+}
 
 export default App;

@@ -10,35 +10,19 @@ class NavBar extends Component {
         this.props.logoutUser();
     };
 
-    openFunction() {
-        document.getElementById("myAccount").classList.toggle("show");
-    }
-
     render() {
-        const {user} = this.props.auth;
-
         return (
             <div className="navbar">
-                <a href="/Dashboard" className="back-to-dash">
-                    {user.userName.split(" ")[0]}'s dashboard!
-                </a>
-                <div>
-                    <input className="Search-bar"
-                           placeholder="type a keyword to search"
-                           value={this.props.input}
-                           onChange={(e) => {
-                               this.setState({filterText: e.target.value})
-                           }}
-                    />
+                <div className='take-back-links'>
+                    <a href="/">
+                        <i className="fa fa-home"></i>
+                    </a>
+                    <a href="/Dashboard" className="back-to-dash">
+                        dashboard
+                    </a>
                 </div>
-                <div className="dropdown">
-                    <button className="dropbtn" onClick={this.openFunction}>My Account &nbsp;
-                        <i className="fa fa-caret-down"></i>
-                    </button>
-                    <div className="dropdown-content" id="myAccount">
-                        <a href="#">Update Account</a>
-                        <a href="#" onClick={this.onLogoutClick}>Logout</a>
-                    </div>
+                <div>
+                    <button className="logout-button" onClick={this.onLogoutClick}>Logout</button>
                 </div>
             </div>
         );

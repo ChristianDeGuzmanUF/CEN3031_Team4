@@ -1,48 +1,68 @@
-import React from 'react';
+import React, { Component } from "react";
 import './Landing.css';
 import ThumbnailCareers from "../../components/Body/ThumbnailCareers";
-import data from '../../data/data';
+import clusterService from "../../actions/clusterService";
 
-function Landing() {
-    const register = () =>{
+class Landing extends Component {
+    constructor() {
+        super();
+        this.state = {
+            clusters: null,
+            filterText: ""
+        };
+        this.getClusters = this.getClusters.bind(this);
+    }
+    goToRegister = () =>{
         window.location.href = "/Register";
     };
-    const login = () =>{
+    goToLogin = () =>{
         window.location.href = "/Login";
     };
-	return (
-		<div className="main-theme">
-			<header className="home-header">
-                <p>
-                    Welcome to Career Finder
-                </p>
-            </header>
-			<div className="home-welcome">
-				<div className="welcome-text">
+    getClusters = async () => {
+        let res = await clusterService.getAll();
+        this.setState({clusters: res});
+    };
+    componentDidMount = async () => {
+        if (!this.state.clusters) {
+            this.getClusters();
+        }
+    };
+
+    render() {
+        return (
+            <div className="main-theme">
+                <header className="home-header">
                     <p>
-                        Discover career paths that match your strengths and interests. <br/><br/>Explore Career Finder to learn about the day-to-day experiences, salaries, and responsibilities in a variety of professional areas. Get started below or register to find your best matches!
+                        Welcome to Career Finder
                     </p>
-                    <div className="nav-links">
-						<div>
-                            <button className="large-button" onClick={register}>Register</button>
-						</div>
-						<div>
-                            <button className="large-button" onClick={login}>Login</button>
-						</div>
+                </header>
+                <div className="home-welcome">
+                    <div className="welcome-text">
+                        <p>
+                            Discover career paths that match your strengths and interests. <br/><br/>Explore Career Finder to learn about the day-to-day experiences, salaries, and responsibilities in a variety of professional areas. Get started below or register to find your best matches!
+                        </p>
+                        <div className="nav-links">
+                            <div>
+                                <button className="large-button" onClick={this.goToRegister}>Register</button>
+                            </div>
+                            <div>
+                                <button className="large-button" onClick={this.goToLogin}>Login</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div className="career-cards-container">
+                    <p>
+                        Imagine the Possibilities
+                    </p>
+                    <ThumbnailCareers clusters={this.state.clusters}/>
+                </div>
+                <div className="credits">
+                    Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                </div>
             </div>
-            <div className="career-cards-container">
-                <p>
-                    Imagine the Possibilities
-                </p>
-                <ThumbnailCareers data={data} />
-            </div>
-            <div className="credits">
-                Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 export default Landing;
 

@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './ThumbnailCareers.css'
 
-const ThumbnailCareers = props => {
-	const goToCareer = (name) => {
-        console.log('click on ' + name);
-	};
-	var thumbnailCareers = null;
+class ThumbnailCareers extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-	if (props.clusters && props.clusters.length > 0) {
-    thumbnailCareers = props.clusters.map(cluster => {  
-		
-		var opts = {};
-		opts['data-src'] = "holder.js/100px225?size=20&theme=thumb&bg=42cd42&fg=f8f8ff&text=" + cluster.shortName;
-		var linkName = "/Clusters/" + cluster.shortName;
-        return (
-			<div className="col-md-3 col-sm-6 col-xs-12">
-				<div className="card mb-3">
-					<a href={linkName}>
-                        <img className="card-img-top" {...opts} alt="Card image cap"/>
-					</a>
-				</div>
-			</div>
-        );            
-	});
-	} else {
-		return <div></div>;
-	}
+    render() {
+        let thumbnailCareers = null;
 
-    return <div className="row">{thumbnailCareers}</div>;
-};
+        if (this.props.clusters && this.props.clusters.length > 0) {
+            thumbnailCareers = this.props.clusters.map(cluster => {
+                let linkName = "/Clusters/" + cluster.shortName;
+                return (
+                    <div className="col-md-3">
+                        <div className="card mb-3 cc">
+							<a href={linkName} className="cluster-link">
+								{cluster.shortName}
+								</a>
+						</div>
+                    </div>
+				);
+            });
+        }
+        else {
+            return <div>Oops. Nothing to see here.</div>;
+        }
+        return <div className="row">{thumbnailCareers}</div>;
+    };
+}
 
 export default ThumbnailCareers;
