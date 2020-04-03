@@ -5,7 +5,7 @@ class ViewCluster extends Component {
         super(props);
     }
     render() {
-        if (this.props.clusters && this.props.clusters > 0) {
+        if (this.props.clusters && this.props.clusters.length > 0) {
             if (this.props.selectedCluster !== 0 && this.props.selectedCluster !== "") {
                 // TODO: better way to do this?... 
                 var result;
