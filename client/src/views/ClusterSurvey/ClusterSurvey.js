@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { submitSurvey } from "../../actions/surveyActions";
-import classnames from "classnames";
 import './ClusterSurvey.css';
 import ClusterQuestions from "../../components/Body/ClusterQuestions";
 import ClusterSurveyResult from "../../components/Body/ClusterSurveyResult";
-import data from '../../data/clusterSurvey';
+import data from '../../data/clusterSurvey'
+import NavBar from "../../components/Body/NavBar";
 
 
 class ClusterSurvey extends Component {
@@ -63,7 +62,7 @@ class ClusterSurvey extends Component {
 		}
 		
 		if(clusterAnswered < 3){
-			alert("Please make sure to answer at least one question from any 3 BOX sections");
+			alert("Please make sure to answer at least one question from any 3 sections.");
 			
 			// scroll all the way up
 			document.body.scrollTop = 0; // For Safari
@@ -167,28 +166,29 @@ class ClusterSurvey extends Component {
         const { errors } = this.state;
 
         return (
-            <div>               
+            <div className="main-theme">
+				<NavBar/>
+                <div className="survey-header">
+                    Career Cluster Survey
+                </div>
+				<div className="instructions-text">
+					<h4>Instructions</h4>
+					<p>For the best career matches, answer all questions below. It is ok to leave a question blank if it does not apply to you, but you must answer one question from at least three of the sections to get matched.</p>
+				</div>
 				<form noValidate onSubmit={this.onSubmit} id="surveryForm">
-					<div>						
-						<div>
-							<h4>Career Cluster Survey</h4>
-							<h6><a href="/Dashboard">Back to Dashboard</a></h6>
-						</div>	
+					<div>
 						<div>
 							<ClusterSurveyResult surveyResults={this.state} />         
 						</div>
 						<div>              
 							<ClusterQuestions data={data} />              
-						</div>  
-						<br />
+						</div>
 						<button className="large-button" type="submit">Submit</button>
-						<br />
-						<br />
-						<footer>
-						Source: <cite><a href="https://cte.careertech.org/sites/default/files/StudentInterestSurvey-English.pdf" target="_blank">Career Clusters Interest Survey</a></cite> from careertech.org
-						</footer>
 					</div>				
-				</form>                
+				</form>
+                <div className="credits">
+                    Source <cite><a className="credit_link" href ="https://cte.careertech.org/sites/default/files/StudentInterestSurvey-English.pdf" target="_blank">Career Clusters Interest Survey</a></cite> from careertech.org
+                </div>
             </div>
         );
     }

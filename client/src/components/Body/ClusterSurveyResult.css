@@ -6,6 +6,27 @@
     margin-top: 1px;
     font-size: calc(6px + 2vmin);
 }
-button:hover {
-    background: #8b8b8b;
+.results-text {
+    background-color: #42cd42;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(4.5px + 2vmin);
+    font-weight: bold;
+    color: #000032;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-bottom: 0px;
+}
+.result {
+    background-color: ghostwhite;
+    color: #000032;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(4.5px + 2vmin);
 }

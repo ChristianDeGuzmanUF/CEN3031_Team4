@@ -1,34 +1,31 @@
-body {
-	background-color:white;
-}
-
-table {
-	//background-color:yellow;
-	width:100%;
-}
-
-tr {
-	//background-color:green;
-}
-
-th {	
-	background-color: #000032;
-	color: ghostwhite;
-	border: solid black;
-}
-
-td {
-	background-color: #aefcae;
-	text-align:left;
-	border: solid black;
-	padding: 10px;
-}
-
 input[type='checkbox'] {
 	width: 20px;
 }
-
-.spacer {
-	background-color:white;
-	border: 0;
+.survey-header {
+	background-color: #000032;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(30px + 2vmin);
+	color: ghostwhite;
+	font-weight: bold;
+	margin-top: 30px;
+}
+.instructions-text {
+	background-color: ghostwhite;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: calc(4.5px + 2vmin);
+	color: #000032;
+	padding-right: 25px;
+	padding-left: 25px;
+	margin-top: 30px;
+	margin-right: 250px;
+	margin-left: 250px;
+	margin-bottom: 30px;
+}
+.bottom-marg {
+	margin-bottom: 30px;
 }

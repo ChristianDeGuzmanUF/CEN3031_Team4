@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './ClusterQuestions.css'
 import parse from 'html-react-parser';
 
-
 const ClusterQuestions = (props) => {
 
     const clusterQuestions = props.data.map(cluster => {  
@@ -40,11 +39,10 @@ const ClusterQuestions = (props) => {
 		
 		
         return (    
-			<table>
-				<tr><td class='spacer'>&nbsp;</td></tr>
-				<tr>
-					<th>
-						BOX {cluster.id}
+			<table className="survey-table">
+				<tr className="survey-tr">
+					<th className="survey-th">
+						Section {cluster.id}
 						{parse("<input type='hidden' name='hidden_" + clusterId + "' value='" + cluster.clusterName + "'>")}
 					</th>
 				</tr>	

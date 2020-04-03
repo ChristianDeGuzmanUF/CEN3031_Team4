@@ -1,3 +1,10 @@
+td {
+    background-color: ghostwhite;
+    text-align:left;
+    border: solid #000032;
+    border-width: 20px;
+    padding: 30px;
+}
 .view-button {
     background: #000032;
     color: ghostwhite;
@@ -6,6 +13,17 @@
     margin-top: 1px;
     font-size: calc(6px + 2vmin);
 }
-button:hover {
-    background: #8b8b8b;
+.survey-table {
+    width: 100%;
+}
+.survey-tr {
+    background-color: ghostwhite;
+}
+.survey-th {
+    background-color: #42cd42;
+    color: #000032;
+    border: solid #000032;
+    font-size: calc(8px + 2vmin);
+    padding: 15px;
+    min-width: 65vw;
 }

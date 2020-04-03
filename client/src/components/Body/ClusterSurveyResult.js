@@ -18,19 +18,19 @@ const ClusterSurveryResult = (props) => {
 	//alert(cluster_top1);
 	
 	if(cluster_top1 != ""){
-		clusterSurveryResult += "<br /><b>Here Are Your Top Matches</b><br />";
-		clusterSurveryResult += "1: " + cluster_top1_name + "<br />";		
+		clusterSurveryResult += "<br /><div class='results-text'>Here Are Your Top Matches</div><div class='result'><br />";
+		clusterSurveryResult += "1: " + cluster_top1_name + "<br /></div><div class='result'>";
 	}
 	
 	if(cluster_top2 != ""){
-		clusterSurveryResult += "2: " + cluster_top2_name + "<br />";		
+		clusterSurveryResult += "2: " + cluster_top2_name + "<br /></div><div class='result'>";
 	}
 	
 	if(cluster_top3 != ""){
-		clusterSurveryResult += "3: " + cluster_top3_name + "<br />";		
+		clusterSurveryResult += "3: " + cluster_top3_name + "<br /></div>";
 	}      
     
-    return <div>{parse(clusterSurveryResult)}</div>;
+    return <div className='bottom-marg'>{parse(clusterSurveryResult)}</div>;
 };
 
 export default ClusterSurveryResult;
