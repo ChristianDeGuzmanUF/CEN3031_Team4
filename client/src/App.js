@@ -5,7 +5,6 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
-//import NavBar from "./components/Header/NavBar";
 import Landing from "./views/Landing/Landing";
 import Login from "./views/Login/Login";
 import Register from "./views/Register/Register";
@@ -17,7 +16,10 @@ import AdminRoute from "./views/AdminRoute/AdminRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/NotFound";
 import Admin from "./views/Admin/Admin";
+import StudentEdit from "./views/StudentEdit/StudentEdit.js";
+import AdminEdit from "./views/AdminEdit/AdminEdit.js";
 import ClusterEdit from "./views/ClusterEdit/ClusterEdit";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -52,7 +54,6 @@ class App extends Component {
 			<Provider store={store}>
 				<Router>
 					<div>
-						{/* <NavBar /> */}
 						<Switch>
 							<Route exact path="/" component={Landing} />
 							<Route exact path="/Login" component={Login} />
@@ -62,6 +63,8 @@ class App extends Component {
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
                             <AdminRoute exact path="/Admin" component={Admin} />
+                            <AdminRoute exact path="/Admin/Student" component={StudentEdit} />
+                            <AdminRoute exact path="/Admin/Admin" component={AdminEdit} />
                             <AdminRoute exact path="/Admin/Cluster" component={ClusterEdit} />
 							<Route component={NotFound} />
 						</Switch>

@@ -34,11 +34,7 @@ class ClusterEdit extends Component {
             this.getClusters();
         }
     };
-
-    goToClusterEdit = () =>{
-        window.location.href = "/Admin/Cluster";
-    };
-
+    
     updateSelectedCluster(id) {
         this.setState({selectedCluster: id})
     }
@@ -47,25 +43,6 @@ class ClusterEdit extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
-                <div>
-                    <div className="welcome-text">
-                        <div className="h4">Account Details</div>
-                        <div className="h4">Users Account Details here (compact)</div>
-                        <button className="regular-button">Update Account</button>
-                    </div>
-                </div>
-                <div className="welcome-text">
-                    <div className="h4">Admin Control Options</div>
-                    <div> Make less ugly, group into columns</div>
-                    <button className="regular-button">Get A Student Invite Code</button>
-                    <button className="regular-button">Get An Administrator Invite Code</button>
-                    <div> Invites trigger creation of a code + storage in db + pop up that shows code #TODO need popups</div>
-                    <button className="regular-button">Add, Edit, or Delete Students</button>
-                    <button className="regular-button">Add or Delete Administrators</button>
-                    <button className="regular-button" onClick={this.goToClusterEdit}>Add, Edit, or Delete Career Clusters</button>
-                    <div>These crud buttons just take to page based on bootcamp 4, list on side, filter at top, click shows detail</div>
-                    <div>These crud buttons just take to page based on bootcamp 4, list on side, filter at top, click shows detail w/ button to edit add or delete</div>
-                </div>
                 <div className="Toolbar">
                     <div className="Welcome-box">
                     </div>
@@ -118,4 +95,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { logoutUser }
-)(ClusterList)
+)(ClusterEdit)

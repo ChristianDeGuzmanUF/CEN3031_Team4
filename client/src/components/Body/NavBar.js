@@ -11,13 +11,21 @@ class NavBar extends Component {
     };
 
     render() {
+        let dash;
+
+        if (this.props.auth.user.admin) {
+            dash = "/Admin";
+        }
+        else {
+            dash = "Dashboard";
+        }
         return (
             <div className="navbar">
                 <div className='take-back-links'>
                     <a href="/">
                         <i className="fa fa-home"></i>
                     </a>
-                    <a href="/Dashboard" className="back-to-dash">
+                    <a href={dash} className="back-to-dash">
                         dashboard
                     </a>
                 </div>
