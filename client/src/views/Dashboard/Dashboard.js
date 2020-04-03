@@ -41,36 +41,32 @@ class Dashboard extends Component {
                     Welcome 'first name'!
                 </div>
                 <div className="user-welcome">
-                    Remove this ? &nbsp;
-                    <a href="/ClusterSurvey" className="credit_link">Take a Survey</a>
+                    <a href="/ClusterSurvey" className="credit_link">Take the career matcher survey!</a>
                 </div>
                 <div className="user-welcome">
                     Progress Bar
                 </div>
-                <div className="user-welcome">
-                    Make all the stuff below this look good
-                </div>
                 <div>
-                    <div className="welcome-text">
-                        <div className="h4">Your top match is blah blah blah</div>
-                        <div className="h4">You got this match because you're good at stuff...like nunchuck skills, bo hunting skills, computer hacking skills. Girls only like guys who have great skills.</div>
+                    <div className="temp-todo-box">
+                        <div>Your top match is blah blah blah</div>
+                        <div>You got this match because you're good at stuff...like nunchuck skills, bo hunting skills, computer hacking skills. Girls only like guys who have great skills.</div>
                     </div>
                 </div>
                 <div>
-                    <div className="welcome-text">
-                        <div className="h4">You have a jillion points, keep it up!</div>
+                    <div className="temp-todo-box">
+                        <div>You have a jillion points, keep it up!</div>
                     </div>
                 </div>
                 <div>
-                    <div className="welcome-text">
-                        <div className="h4">Account Details</div>
+                    <div className="temp-todo-box">
+                        <div>Account Details</div>
                         <button className="regular-button">Update Account</button>
                         <button className="regular-button">Add teacher</button>
-                        <div className="h4">Clicking button takes to acct update page or list of filterable admin with add buttons next to name</div>
+                        <div>Clicking button takes to acct update page or list of filterable admin with add buttons next to name</div>
                     </div>
                 </div>
-                <div className="welcome-text">
-                    <div className="h4">Get rid of the cards and show top matches or pie chart or something</div>
+                <div className="user-welcome">
+                    <div>Get rid of the cards and show top matches or pie chart or something.</div>
                 </div>
                 <div className="career-cards-container">
                     <ThumbnailCareers clusters={this.state.clusters} />

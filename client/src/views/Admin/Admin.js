@@ -17,16 +17,19 @@ class Admin extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
+                <div className="user-welcome">
+                    Welcome 'first name'!
+                </div>
                 <div>
-                    <div className="welcome-text">
-                        <div className="h4">Account Details</div>
-                        <div className="h4">Users Account Details here (compact)</div>
+                    <div className="temp-todo-box">
+                        <div>Account Details</div>
+                        <div>Users Account Details here (compact)</div>
                         <button className="regular-button">Update Account</button>
-                        <div className="h4">Clicking button takes to acct update page</div>
+                        <div>Clicking button takes to acct update page</div>
                     </div>
                 </div>
-                <div className="welcome-text">
-                    <div className="h4">Admin Control Options</div>
+                <div className="temp-todo-box">
+                    <div>Admin Control Options</div>
                     <div> Make less ugly, group into columns</div>
                     <button className="regular-button">Get A Student Invite Code</button>
                     <button className="regular-button">Get An Administrator Invite Code</button>
