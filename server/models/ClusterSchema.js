@@ -7,7 +7,7 @@ const clusterSchema = new mongoose.Schema({
     },
     shortName: {
         type: String,
-        default: ""
+        unique: true
     },
     description: {
         type: String,
