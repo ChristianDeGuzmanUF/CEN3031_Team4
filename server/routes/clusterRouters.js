@@ -58,4 +58,36 @@ clustersRouter.put('/:clusterID', async (req, res) => {
         });
 });
 
+
+clustersRouter.get('/cluster/:shortName', async (req, res) => {
+
+    Clusters.findOne({shortName: req.params.shortName})
+        .then(cluster => res.send(cluster))
+        .catch(err => console.log(err));
+});
+
+clustersRouter.put('/clusterupdate/:shortName', async (req, res) => {
+
+    Clusters.findOneAndUpdate({shortName: req.params.shortName}, {
+        description: req.body.description,
+    }, {new: true})
+        .then(cluster => {
+            if(!cluster) {
+                return res.status(200).send({
+                    error: "ID not found with name " + req.params.shortName
+                });
+            }
+            res.send(cluster);
+        }).catch(err => {
+            if(err.kind === 'ObjectId') {
+                return res.status(200).send({
+                    error: "ID not found with shortName " + req.params.shortName
+                });
+            }
+            return res.status(500).send({
+                error: "Error updating ID with shortName " + req.params.shortName
+            });
+        });
+});
+
 module.exports = clustersRouter;
