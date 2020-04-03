@@ -18,69 +18,51 @@ class ClusterEdit extends Component {
         this.getClusters = this.getClusters.bind(this);
         this.updateSelectedCluster = this.updateSelectedCluster.bind(this);
     }
-
-    onLogoutClick = e => {
-        e.preventDefault();
-        this.props.logoutUser();
-    };
-
     getClusters = async () => {
         let res = await clusterService.getAll();
         this.setState({clusters: res});
     };
-
     componentDidMount = async () => {
         if (!this.state.clusters) {
             this.getClusters();
         }
     };
-    
     updateSelectedCluster(id) {
         this.setState({selectedCluster: id})
     }
-
     render() {
         return (
             <div className="main-theme">
                 <Navbar/>
-                <div className="Toolbar">
-                    <div className="Welcome-box">
+                <div className="row">
+                    <div className="column1">
+                        <div className="tableWrapper">
+                            <table className="table table-striped table-hover">
+                                <div className="crud-search">
+                                    <div className="crud-title">Career Clusters</div>
+                                    <input className="search-bar"
+                                           placeholder="type a keyword to filter items below"
+                                           value={this.props.input}
+                                           onChange={(e) => {
+                                               this.setState({filterText: e.target.value})
+                                           }}
+                                    />
+                                </div>
+                                <ClusterList
+                                    clusters={this.state.clusters}
+                                    filterText={this.state.filterText}
+                                    updateSelectedCluster={this.updateSelectedCluster}
+                                />
+                            </table>
+                        </div>
                     </div>
-                    <div>
-                        <input className="Search-bar"
-                               placeholder="type a keyword to search"
-                               value={this.props.input}
-                               onChange={(e) => {
-                                   this.setState({filterText: e.target.value})
-                               }}
-                        />
-                    </div>
-                    <div>
-                        <button className="Dashboard-button" onClick={this.onLogoutClick}>Logout</button>
-                    </div>
-                </div>
-
-                <main>
-                    <tr>
-                        <td>
-                            <b>Career Name </b>
-                        </td>
-                        <td>
-                            <b>Description </b>
-                        </td>
-                    </tr>
-                    <ClusterList
-                        clusters={this.state.clusters}
-                        filterText={this.state.filterText}
-                        updateSelectedCluster={this.updateSelectedCluster}
-                    />
                     <div className="column2">
                         <ViewCluster
                             selectedCluster={this.state.selectedCluster}
                             clusters={this.state.clusters}
                         />
                     </div>
-                </main>
+                </div>
             </div>
         );
     };

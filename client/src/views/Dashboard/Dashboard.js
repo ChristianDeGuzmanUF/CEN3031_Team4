@@ -59,10 +59,9 @@ class Dashboard extends Component {
                 </div>
                 <div>
                     <div className="temp-todo-box">
-                        <div>Account Details</div>
+                        <div>User's Account Details</div>
                         <button className="regular-button">Update Account</button>
-                        <button className="regular-button">Add teacher</button>
-                        <div>Clicking button takes to acct update page or list of filterable admin with add buttons next to name</div>
+                        {/*TODO if teacher gets added <button className="regular-button">Add teacher</button>*/}
                     </div>
                 </div>
                 <div className="user-welcome">

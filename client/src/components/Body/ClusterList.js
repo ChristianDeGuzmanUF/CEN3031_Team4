@@ -13,7 +13,7 @@ class ClusterList extends Component {
     };
 
     render() {
-    var clusterList = null;
+    let clusterList = null;
     const selectedCluster = this.props.selectedCluster;
 
     if (this.props.clusters && this.props.clusters.length > 0) {
@@ -22,8 +22,14 @@ class ClusterList extends Component {
             || cluster.description.toLowerCase().includes(this.props.filterText.toLowerCase())) {
                 return (
                     <tr key={cluster._id} onClick={(e) => this.clickHandler(cluster._id, e)}>
-                        <td>{cluster.shortName} </td>
-                        <td>{cluster.description}</td>
+                        <td>
+                            <tr className="attrib-title">
+                                {cluster.shortName}
+                            </tr>
+                            <tr className="attrib-detail">
+                                {cluster.description}
+                            </tr>
+                        </td>
                     </tr>
                 );
             }
@@ -33,5 +39,5 @@ class ClusterList extends Component {
 
     return <div>{clusterList}</div>;
 };
-};
+}
 export default ClusterList;

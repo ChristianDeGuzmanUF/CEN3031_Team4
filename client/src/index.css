@@ -183,7 +183,7 @@ a:hover {
     padding-top: 25px;
 }
 
-/*photo-credits*/
+/*credits*/
 .credits {
     align-items: left;
     justify-content: left;
@@ -197,4 +197,56 @@ a:hover {
 .credit_link {
     color: ghostwhite;
     text-decoration: underline;
+}
+
+/*crud pages*/
+.crud-search {
+    background-color: #000032;
+    min-height: 50px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000032;
+    margin: 35px;
+    margin-bottom: 20px;
+}
+.crud-title {
+    text-align: center;
+    color: ghostwhite;
+    font-size: calc(20px + 3vmin);
+    font-weight: bold;
+    margin: 15px;
+}
+.search-bar {
+    color: #000032;
+    padding: 5px;
+    width: 90%;
+    margin: 15px;
+    margin-top: 0;
+    border: solid #42cd42;
+    border-width: 5px;
+}
+.column1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    color: ghostwhite;
+}
+.tableWrapper {
+    max-height: max-content;
+    overflow: hidden;
+}
+tr.attrib-title{
+    font-size: calc(8px + 2vmin);
+    font-weight: bold;
+    text-decoration: underline;
+}
+tr.attrib-detail {
+    font-size: calc(9px + 1vmin);
 }

@@ -8,18 +8,18 @@ td {
 .view-button {
     background: #000032;
     color: ghostwhite;
-    border: 0px;
-    padding: 0px;
+    border: 0;
+    padding: 0;
     margin-top: 1px;
     font-size: calc(6px + 2vmin);
 }
-.survey-table {
+table.survey-table {
     width: 100%;
 }
-.survey-tr {
+tr.survey-tr{
     background-color: ghostwhite;
 }
-.survey-th {
+th.survey-th {
     background-color: #42cd42;
     color: #000032;
     border: solid #000032;

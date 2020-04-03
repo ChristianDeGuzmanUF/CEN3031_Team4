@@ -31,6 +31,7 @@ class AdminEdit extends Component {
     }
 
     render() {
+        //TODO doing cluster update first, this should be similar
         return (
             <div className="main-theme">
                 <Navbar/>
