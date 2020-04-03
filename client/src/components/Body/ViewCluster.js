@@ -16,9 +16,16 @@ class ViewCluster extends Component {
                 }
                 return (
                     // TODO: pretty print
-                    <div>
-                        {JSON.stringify(result)}
-                    </div>
+                    <table className="table table-striped table-hover">
+                         <td>
+                            <tr className="attrib-title">
+                                {result.shortName}
+                            </tr>
+                            <tr className="attrib-detail">
+                                {result.description}
+                            </tr>
+                        </td>         
+                    </table>
                 );
             };
         };
