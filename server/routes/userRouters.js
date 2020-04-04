@@ -45,6 +45,7 @@ usersRouter.put('/users/:userID', async (req, res) => {
                     error: "ID not found with id " + req.params.userID
                 });
             }
+            console.log(res);
             res.send(user);
         }).catch(err => {
         if(err.kind === 'ObjectId') {

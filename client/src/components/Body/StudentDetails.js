@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import userService from '../../actions/userService';
 
 
-class AccountDetails extends Component {
+class StudentDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userName: "",
+            id: "",
             firstName: "",
             lastName: "",
             email: "",
@@ -15,27 +16,26 @@ class AccountDetails extends Component {
     }
     onSubmit = e => {
         e.preventDefault();
-
         if (this.state.userName === "") {
-            this.state.userName = this.props.user.userName;
+            this.state.userName = this.props.selectedUserData.userName;
         }
         else {
             this.state.userName = document.getElementById('userName').innerText;
         }
         if (this.state.firstName === "") {
-            this.state.fistName = this.props.user.firstName;
+            this.state.firstName = this.props.selectedUserData.firstName;
         }
         else {
             this.state.firstName = document.getElementById('firstName').innerText;
         }
         if (this.state.lastName === "") {
-            this.state.lastName = this.props.user.lastName;
+            this.state.lastName = this.props.selectedUserData.lastName;
         }
         else {
             this.state.lastName = document.getElementById('lastName').innerText;
         }
         if (this.state.email === "") {
-            this.state.email = this.props.user.email;
+            this.state.email = this.props.selectedUserData.email;
         }
         else {
             this.state.email = document.getElementById('email').innerText;
@@ -48,18 +48,19 @@ class AccountDetails extends Component {
             email: this.state.email
         };
 
-        userService.updateOne(this.props.user.id, userData);
-        this.props.getUser(this.props.user.id);
+        userService.updateOne(this.props.selectedUser, userData);
+        this.props.getUsers();
     };
 
     render() {
         const { errors } = this.state;
         let thisUser = null;
 
-        if (this.props.user && this.props.user !== null) {
-            thisUser = this.props.user;
+        if (this.props.users && this.props.users.length > 0 &&
+            this.props.selectedUser !== null && this.props.selectedUser !== ""
+            && this.props.selectedUserData !== null && this.props.selectedUserData !== {}) {
+            thisUser = this.props.selectedUserData;
             let admin = thisUser.isAdmin ? "Yes" : "No";
-
             return (
                 <div>
                     <div className="crud-form-container">
@@ -134,4 +135,4 @@ class AccountDetails extends Component {
     };
 }
 
-export default AccountDetails;
+export default StudentDetails;

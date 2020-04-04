@@ -8,7 +8,7 @@ class AdminList extends Component {
 
     clickHandler(id, e) {
         e.preventDefault();
-        this.props.updateSelectedUser();
+        this.props.updateSelectedUser(id);
     };
 
     render() {
@@ -19,7 +19,7 @@ class AdminList extends Component {
                 if((admin.firstName !== null && admin.firstName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (admin.firstName !== null && admin.userName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (admin.firstName !== null && admin.lastName.toLowerCase().includes(this.props.filterText.toLowerCase()))
-                && admin.isAdmin) {
+                && admin.isAdmin === true) {
                     return (
                         <tr key={admin._id} onClick={(e) => this.clickHandler(admin._id, e)}>
                             <td className="user-title">

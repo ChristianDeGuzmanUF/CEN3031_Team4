@@ -23,7 +23,7 @@ class AccountDetails extends Component {
             this.state.userName = document.getElementById('userName').innerText;
         }
         if (this.state.firstName === "") {
-            this.state.fistName = this.props.user.firstName;
+            this.state.firstName = this.props.user.firstName;
         }
         else {
             this.state.firstName = document.getElementById('firstName').innerText;
@@ -48,8 +48,8 @@ class AccountDetails extends Component {
             email: this.state.email
         };
 
-        userService.updateOne(this.props.user.id, userData);
-        this.props.getUser(this.props.user.id);
+        userService.updateOne(this.props.user._id, userData);
+        this.props.getUser(this.props.user._id);
     };
 
     render() {
