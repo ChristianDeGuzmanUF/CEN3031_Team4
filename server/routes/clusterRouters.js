@@ -10,7 +10,7 @@ clustersRouter.get('/clusters', async (req, res) => {
 });
 
 clustersRouter.get('/clusters/:clusterID', async (req, res) => {
-    console.log(req.params.clisterID);
+    console.log(req.params.clusterID);
     Clusters.findById(req.params.clusterID)
         .then(cluster => {
             if(!cluster) {

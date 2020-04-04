@@ -3,8 +3,33 @@ import Navbar from  '../../components/Body/NavBar';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import userService from "../../actions/userService";
+import Welcome from '../../components/Body/UserWelcome';
+import AccountDetails from '../../components/Body/AccountDetails';
 
 class Admin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: null,
+        };
+        this.getUser = this.getUser.bind(this);
+    }
+    getUser = async (id) => {
+        let res = await userService.getOne(id);
+        this.setState({user: res});
+    };
+    componentDidMount = async () => {
+        if (!this.state.user || this.state.user === null) {
+            this.getUser(this.props.auth.user.id);
+        }
+    };
+    studentInvite = () => {
+        alert('Your student Invitation Code is: 123456789.');
+    };
+    adminInvite = () => {
+        alert('Your administrator Invitation Code is: 00.');
+    };
     goToStudentEdit = () =>{
         window.location.href = "/Admin/Student";
     };goToAdminEdit = () =>{
@@ -17,23 +42,28 @@ class Admin extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
-                <div className="user-welcome">
-                    Welcome 'first name'!
-                </div>
-                <div>
-                    <div className="temp-todo-box">
-                        <div>User's Account Details here</div>
-                        <button className="regular-button">Update Account</button>
+                <Welcome user={this.state.user}/>
+                <div className="row">
+                    <div className="column1">
+                        <div className="tableWrapper">
+                            <table className="table table-striped table-hover">
+                                <AccountDetails
+                                    user={this.state.user}
+                                    getUser={this.getUser}
+                                />
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div className="temp-todo-box">
-                    <div>Admin Control Options</div>
-                    <button className="regular-button">Get A Student Invite Code</button>
-                    <button className="regular-button">Get An Administrator Invite Code</button>
-                    <div> Invites trigger creation of a code + storage in db + pop up that shows code</div>
-                    <button className="regular-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
-                    <button className="regular-button" onClick={this.goToAdminEdit}>View or Delete Administrators</button>
-                    <button className="regular-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
+                    <div className="column2">
+                        <div className="options-title-small"> Administrator Control Options</div>
+                        <div className="crud-single-column-col-1">
+                            <button className="large-button" onClick={this.studentInvite}>Get A Student Invite Code</button>
+                            <button className="large-button" onClick={this.adminInvite}>Get An Administrator Invite Code</button>
+                            <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
+                            <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
+                            <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

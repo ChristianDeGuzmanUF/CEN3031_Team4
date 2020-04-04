@@ -1,43 +1,78 @@
 import React, { Component } from 'react';
-import clusterService from '../../actions/clusterService';
+import userService from '../../actions/userService';
+import AdminList from '../../components/Body/AdminList';
 import Navbar from  '../../components/Body/NavBar';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import AdminDetails from "../../components/Body/AdminDetails";
 
 class AdminEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clusters: null,
+            users: null,
             filterText: "",
-            selectedCluster: null
+            selectedUser: null,
+            selectedUserData: null
         };
-        this.getClusters = this.getClusters.bind(this);
-        this.updateSelectedCluster = this.updateSelectedCluster.bind(this);
+        this.getUsers = this.getUsers.bind(this);
+        this.updateSelectedUser = this.updateSelectedUser.bind(this);
     }
-    getClusters = async () => {
-        let res = await clusterService.getAll();
-        this.setState({clusters: res});
+    getUsers = async () => {
+        let res = await userService.getAll();
+        this.setState({users: res});
     };
-
+    getOneUser = async (id) => {
+        return await userService.getOne(id);
+    };
     componentDidMount = async () => {
-        if (!this.state.clusters) {
-            this.getClusters();
+        if (!this.state.users) {
+            this.getUsers();
         }
     };
-
-    updateSelectedCluster(id) {
-        this.setState({selectedCluster: id})
-    }
+    updateSelectedUser(id) {
+        this.setState({selectedUser: id});
+        this.getOneUser(id).then(res => {this.setState({selectedUserData: res})})
+    };
 
     render() {
-        //TODO doing cluster update first, this should be similar
         return (
             <div className="main-theme">
                 <Navbar/>
-                <div className="welcome-text">
-                    Oops! Sorry, we're still working on this one. Come back soon!
+                <div className="row">
+                    <div className="column1">
+                        <div className="tableWrapper">
+                            <table className="table table-striped table-hover">
+                                <div className="crud-search">
+                                    <div className="crud-title">Administrators</div>
+                                    <input className="search-bar"
+                                           placeholder="type a keyword to filter items below"
+                                           value={this.props.input}
+                                           onChange={(e) => {
+                                               this.setState({filterText: e.target.value})
+                                           }}
+                                    />
+                                </div>
+                                <table className="users">
+                                    <AdminList
+                                        users={this.state.users}
+                                        filterText={this.state.filterText}
+                                        selectedUser={this.state.selectedUser}
+                                        updateSelectedUser={this.updateSelectedUser}
+                                    />
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+                    <div className="column2">
+                        <AdminDetails
+                            selectedUser={this.state.selectedUser}
+                            selectedUserData={this.state.selectedUserData}
+                            users={this.state.users}
+                            getUsers={this.getUsers}
+                        />
+                    </div>
                 </div>
             </div>
         );

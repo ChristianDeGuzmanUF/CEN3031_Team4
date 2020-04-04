@@ -94,6 +94,7 @@ class ViewCluster extends Component {
                                 <span className="text-danger">
                                         {errors.description}
                                         </span>
+                                {/* TODO find way to display/update
                                 <div className="crud-form-title">
                                     Skills for {theChosenOne.shortName}:
                                 </div>
@@ -113,7 +114,7 @@ class ViewCluster extends Component {
                                      >{JSON.stringify(theChosenOne.occupations)}</div>
                                 <span className="text-danger">
                                         {errors.occupations}
-                                        </span>
+                                        </span>*/}
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
                             </div>

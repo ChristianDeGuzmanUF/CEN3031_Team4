@@ -5,7 +5,8 @@ const path = require('path'),
     bodyParser = require('body-parser'),
     passport = require("passport"),
     users = require('../routes/users'),
-    clusters = require('../routes/clusterRouters');
+    clusters = require('../routes/clusterRouters'),
+    user = require('../routes/userRouters');
 
 module.exports.init = () => {
     /* 
@@ -34,6 +35,7 @@ module.exports.init = () => {
 
     app.use('/users', users);
     app.use('/api/', clusters);
+    app.use('/api/', user);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files

@@ -97,6 +97,19 @@ a:hover {
     margin-bottom: 25px;
 }
 
+.detail-box {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    font-size: calc(8px + 2vmin);
+    color: #000032;
+    margin-top: 15px;
+    padding: 15px;
+}
+
 /*buttons*/
 .large-button {
     background: #42cd42;
@@ -225,6 +238,20 @@ a:hover {
     font-weight: bold;
     margin: 15px;
 }
+.options-title-small {
+    text-align: center;
+    color: ghostwhite;
+    font-size: calc(10px + 3vmin);
+    font-weight: bold;
+    margin: 15px;
+}
+.crud-title-tiny {
+    text-align: center;
+    color: #000032;
+    font-size: calc(7px + 2vmin);
+    font-weight: bold;
+    margin: 15px;
+}
 .crud-view-default {
     text-align: center;
     color: ghostwhite;
@@ -245,7 +272,7 @@ a:hover {
     display: table;
     color: #000032;
     min-width: 75%;
-    margin-left: auto;
+    margin-left: 30px;
     margin-right: 30px;
     margin-top: 50px;
     margin-bottom: 25px;
@@ -292,12 +319,28 @@ tr.attrib-title{
 tr.attrib-detail {
     font-size: calc(9px + 1vmin);
 }
+user-list {
+    width: 500px;
+}
+tr.user-titles {
+    font-size: calc(8px + 2vmin);
+    font-weight: bold;
+}
+td.user-title {
+    font-size: calc(8px + 2vmin);
+    font-weight: bold;
+    padding: 25px;
+    text-align: center;
+}
+table.users {
+    margin-left: 55px;
+}
 .textareaElement {
     background-color: white;
     min-height: 20px;
     text-align: left;
     border: 1px solid black;
-    max-height: 250px;
+    max-height: 2500px;
     overflow-x: hidden;
     overflow-y: auto;
 }
