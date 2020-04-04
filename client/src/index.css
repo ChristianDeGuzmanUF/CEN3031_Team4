@@ -252,7 +252,7 @@ a:hover {
 }
 .crud-single-column-col-1 {
     display: inline-grid;
-    width: 80%;
+    width: 90%;
     padding-top: 8px;
 }
 .crud-form-title {
@@ -292,9 +292,12 @@ tr.attrib-title{
 tr.attrib-detail {
     font-size: calc(9px + 1vmin);
 }
-textarea {
-    resize: none;
-    overflow: hidden;
-    min-height: 50px;
-    max-height: 1000px;
+.textareaElement {
+    background-color: white;
+    min-height: 20px;
+    text-align: left;
+    border: 1px solid black;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
