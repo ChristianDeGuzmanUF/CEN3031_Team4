@@ -33,6 +33,7 @@ class ViewCluster extends Component {
         };
 
         clusterService.updateOne(this.props.selectedCluster, clusterData); 
+        this.props.getClusters();
     };
 
     render() {
