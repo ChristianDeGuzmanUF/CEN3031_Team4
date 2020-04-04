@@ -20,6 +20,7 @@ class AdminEdit extends Component {
         let res = await clusterService.getAll();
         this.setState({clusters: res});
     };
+
     componentDidMount = async () => {
         if (!this.state.clusters) {
             this.getClusters();

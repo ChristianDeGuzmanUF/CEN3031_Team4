@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import clusterService from '../../actions/clusterService';
 
 class ViewCluster extends Component {
     constructor(props) {
@@ -15,13 +16,13 @@ class ViewCluster extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const userData = {
-            userName: this.state.userName,
-            password: this.state.password,
-            admin: this.state.admin
+        const clusterData = {
+            clusterName: this.state.clusterName,
+            shortName: this.state.shortName,
+            description: this.state.description
         };
 
-        this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+        clusterService.updateOne(this.props.selectedCluster, clusterData); 
     };
 
     render() {
