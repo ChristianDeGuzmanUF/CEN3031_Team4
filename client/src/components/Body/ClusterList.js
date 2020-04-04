@@ -8,13 +8,11 @@ class ClusterList extends Component {
 
     clickHandler(id, e) {
         e.preventDefault();
-        //this.props.setSelectedCluster(id);
         this.props.updateSelectedCluster(id);
     };
 
     render() {
     let clusterList = null;
-    const selectedCluster = this.props.selectedCluster;
 
     if (this.props.clusters && this.props.clusters.length > 0) {
         clusterList = this.props.clusters.map(cluster => {

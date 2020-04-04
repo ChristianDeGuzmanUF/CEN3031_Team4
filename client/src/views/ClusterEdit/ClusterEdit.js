@@ -13,7 +13,8 @@ class ClusterEdit extends Component {
         this.state = {
             clusters: null,
             filterText: "",
-            selectedCluster: null
+            selectedCluster: null,
+            selectedClusterData: null
         };
         this.getClusters = this.getClusters.bind(this);
         this.updateSelectedCluster = this.updateSelectedCluster.bind(this);
@@ -22,6 +23,9 @@ class ClusterEdit extends Component {
         let res = await clusterService.getAll();
         this.setState({clusters: res});
     };
+    getOneCluster = async (id) => {
+        return await clusterService.getOne(id);
+    };
     componentDidMount = async () => {
         if (!this.state.clusters) {
             this.getClusters();
@@ -29,7 +33,9 @@ class ClusterEdit extends Component {
     };
     updateSelectedCluster(id) {
         this.setState({selectedCluster: id})
-    }
+        this.getOneCluster(id).then(res => {this.setState({selectedClusterData: res})})
+    };
+
     render() {
         return (
             <div className="main-theme">
@@ -48,17 +54,21 @@ class ClusterEdit extends Component {
                                            }}
                                     />
                                 </div>
-                                <ClusterList
-                                    clusters={this.state.clusters}
-                                    filterText={this.state.filterText}
-                                    updateSelectedCluster={this.updateSelectedCluster}
-                                />
+                                <table>
+                                    <ClusterList
+                                        clusters={this.state.clusters}
+                                        filterText={this.state.filterText}
+                                        selectedCluster={this.state.selectedCluster}
+                                        updateSelectedCluster={this.updateSelectedCluster}
+                                    />
+                                </table>
                             </table>
                         </div>
                     </div>
                     <div className="column2">
                         <ViewCluster
                             selectedCluster={this.state.selectedCluster}
+                            selectedClusterData={this.state.selectedClusterData}
                             clusters={this.state.clusters}
                         />
                     </div>
