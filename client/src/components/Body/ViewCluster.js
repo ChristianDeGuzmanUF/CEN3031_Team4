@@ -16,6 +16,16 @@ class ViewCluster extends Component {
     onSubmit = e => {
         e.preventDefault();
 
+        if (this.state.clusterName === "") {
+            this.state.clusterName = this.props.selectedClusterData.clusterName;
+        }
+        if (this.state.shortName === "") {
+            this.state.shortName = this.props.selectedClusterData.shortName;
+        }
+        if (this.state.description === "") {
+            this.state.description = this.props.selectedClusterData.description;
+        }
+
         const clusterData = {
             clusterName: this.state.clusterName,
             shortName: this.state.shortName,
@@ -45,7 +55,7 @@ class ViewCluster extends Component {
 
                                     </div>
                                     <textarea placeholder={theChosenOne.clusterName}
-                                              value={theChosenOne.clusterName}
+                                              value={this.props.input}
                                               onChange={(e) => {
                                                   this.setState({clusterName: e.target.value})
                                               }}
@@ -57,7 +67,7 @@ class ViewCluster extends Component {
                                         Short name for the cluster (appears as the title):
                                     </div>
                                     <textarea placeholder={theChosenOne.shortName}
-                                              value={theChosenOne.shortName}
+                                              value={this.props.input}
                                               onChange={(e) => {
                                                   this.setState({shortName: e.target.value})
                                               }}
@@ -69,7 +79,7 @@ class ViewCluster extends Component {
                                         Cluster Description:
                                     </div>
                                     <textarea placeholder={theChosenOne.description}
-                                              value={theChosenOne.description}
+                                              value={this.props.input}
                                               onChange={(e) => {
                                                   this.setState({description: e.target.value})
                                               }}
