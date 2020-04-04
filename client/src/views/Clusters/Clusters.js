@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
 import clusterService from '../../actions/clusterService';
 import VisitorNavBar from  '../../components/Body/VisitorNavBar';
+import NavBar from '../../components/Body/NavBar';
+import './Clusters.css';
 
 class ClusterInfo extends Component {
     constructor(props) {
@@ -27,11 +32,18 @@ class ClusterInfo extends Component {
     render() {
 		let singleCluster = null;
 		singleCluster =	<div className="welcome-text">Oops. Nothing to see here.</div>;
+		
+		let navHeader = null;
+		navHeader = <VisitorNavBar/>;
+		
+		if (this.props.auth.isAuthenticated) {
+			navHeader = <NavBar/>;
+		}
 					
         if (this.state.cluster != null) {
             singleCluster = 
 				 <div className="main-theme">
-					<VisitorNavBar/>
+					{navHeader}
 					<div className="welcome-text">
 						<table>
 							<tr className="attrib-title">
@@ -49,4 +61,16 @@ class ClusterInfo extends Component {
     };
 }
 
-export default ClusterInfo;
+ClusterInfo.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(
+    mapStateToProps,
+    { logoutUser }
+)(ClusterInfo);

@@ -7,10 +7,8 @@ import { connect } from "react-redux";
 class VisitorNavBar extends Component {
     render() {       
         return (
-            <div className="navbar">
-                <div className='take-back-links'>
-					&nbsp;
-					&nbsp;
+            <div className="navbar">				
+                <div className='take-back-links'>					
                     <a href="/">
                         <i className="fa fa-home"></i>
                     </a>                   

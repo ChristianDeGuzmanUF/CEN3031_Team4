@@ -17,7 +17,7 @@ class NavBar extends Component {
             dash = "/Admin";
         }
         else {
-            dash = "Dashboard";
+            dash = "/Dashboard";
         }
         return (
             <div className="navbar">
