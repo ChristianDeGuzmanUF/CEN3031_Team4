@@ -6,7 +6,7 @@ export default {
         return res.data || [];
     },
     getOne: async (_id) => {
-        console.log('get to ' +`/api/users/` + _id);
+        console.log('get to /api/users/' + _id);
         let res = await axios.get(`/api/users/` + _id);
         console.log(res);
         return res.data || [];
@@ -14,6 +14,18 @@ export default {
     updateOne: async (_id, update) => {
         console.log('put to ' + `/api/users/` + _id);
         let res = await axios.put(`/api/users/`+ _id, update);
+        console.log(res);
+        return res.data || [];
+    },
+    getUserClusterViews: async (userName) => {
+        console.log('get to /users/clusters/');
+        let res = await axios.get(`/users/clusters`, userName);
+        console.log(res);
+        return res.data || [];
+    },
+    setUserClusterViews: async (update) => {
+        console.log('post to /users/clusters');
+        let res = await axios.post(`users/clusters`, update);
         console.log(res);
         return res.data || [];
     }
