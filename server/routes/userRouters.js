@@ -5,7 +5,7 @@ const usersRouter = express.Router();
 
 usersRouter.get('/users', async (req, res) => {
     Users.find({})
-        .then(users => res.send(users))
+        .then(users => res.send(users)) //TODO: This should NOT send back the passwords
         .catch(err => console.log(err));
 });
 
@@ -18,7 +18,7 @@ usersRouter.get('/users/:userID', async (req, res) => {
                     message: "id not found with id " + req.params.userID
                 });
             }
-            res.send(user);
+            res.send(user); //TODO: this should NOT send back the password
         }).catch(err => {
         if (err.kind === 'ObjectId') {
             return res.status(200).send({

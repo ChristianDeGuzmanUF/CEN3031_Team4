@@ -54,6 +54,89 @@ router.post("/matches", (req, res) => {
     });
 });
 
+router.get("/clusters", async (req, res) => {
+    const userName = req.body.userName;
+
+    User.findOne({ userName: req.body.userName }).then(user => {
+        if (!user) {
+            return res.status(200).json({ userNameNotFound: "Username not found" });
+        }
+        res.status(200).json({
+            agriculture: user.clusters.agriculture,
+            architecture: user.clusters.architecture,
+            arts: user.clusters.arts,
+            business: user.clusters.business,
+            education: user.clusters.education,
+            finance: user.clusters.finance,
+            government: user.clusters.government,
+            health: user.clusters.health,
+            hospitality: user.clusters.hospitality,
+            human: user.clusters.human,
+            infotech: user.clusters.infotech,
+            law: user.clusters.law,
+            manufacturing: user.clusters.manufacturing,
+            marketing: user.clusters.marketing,
+            science: user.clusters.science,
+            logistics: user.clusters.logistics
+        });
+        }).catch(err => {
+            return res.status(500).send({
+                error: "Error retrieving top matches for user " + req.body.userName
+            });
+        });
+});
+
+router.post("/clusters", (req, res) => {
+    User.findOneAndUpdate({ userName: req.body.userName }, 
+        {
+            clusters: { 
+                agriculture: req.body.agriculture,
+                architecture: req.body.architecture,
+                arts: req.body.arts,
+                business: req.body.business,
+                education: req.body.education,
+                finance: req.body.finance,
+                government: req.body.government,
+                health: req.body.health,
+                hospitality: req.body.hospitality,
+                human: req.body.human,
+                infotech: req.body.infotech,
+                law: req.body.law,
+                manufacturing: req.body.manufacturing,
+                marketing: req.body.marketing,
+                science: req.body.science,
+                logistics: req.body.logistics
+        }},
+        {new: true}
+    ).then(user => {
+        if (!user) {
+            return res.status(404).json({ userNameNotFound: "Username not found" });
+        }
+        res.status(200).json({
+            agriculture: user.clusters.agriculture,
+            architecture: user.clusters.architecture,
+            arts: user.clusters.arts,
+            business: user.clusters.business,
+            education: user.clusters.education,
+            finance: user.clusters.finance,
+            government: user.clusters.government,
+            health: user.clusters.health,
+            hospitality: user.clusters.hospitality,
+            human: user.clusters.human,
+            infotech: user.clusters.infotech,
+            law: user.clusters.law,
+            manufacturing: user.clusters.manufacturing,
+            marketing: user.clusters.marketing,
+            science: user.clusters.science,
+            logistics: user.clusters.logistics
+        });
+    }).catch(err => {
+        return res.status(500).send({
+            error: "Error updating top matches for user " + req.body.userName
+        });
+    });
+});
+
 router.post("/register", async (req, res) => {
 
     // call function to validate registration input, and store returned errors
