@@ -33,4 +33,4 @@ const occupationSchema = new mongoose.Schema({
     ]
 });
 
-module.exports = Occupation = mongoose.model('occupations', occupationSchema)
+module.exports = Occupation = mongoose.model('occupations', occupationSchema);
