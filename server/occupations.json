@@ -1,0 +1,612 @@
+{
+    "occupations": [
+       {
+           "name": "Agricultural Communications Specialist",
+           "cluster": "Agriculture"
+       },    
+       {
+           "name": "Animal Scientist",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Embryo Technologist",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Feed Sales Representative",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Fish and Game Warden",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Food Scientist",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Livestock Buyer",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Logging Equipment Operator",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Tree Trimmer and Pruner",
+           "cluster": "Agriculture"
+       },
+       {
+           "name": "Architect",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Architectural and Civil Drafter",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Carpenter",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Civil Engineer",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Civil Engineering Technician",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Code Official",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Computer Aided Drafter (CAD)",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Concrete Finisher",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Construction Laborer",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Cost Estimator",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Drywall and Ceiling Tile Installers",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Pipe Layer",
+           "cluster": "Architecture"
+       },
+       {
+           "name": "Broadcast Technician",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Cinematographer",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Graphics and Printing Equipment Operator",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Publisher, Editor, Journalist or Reporter",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Video Graphics, Special Effects, and Animation Technician",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Video Systems Technician",
+           "cluster": "Arts"
+       },
+       {
+           "name": "Accounting Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Accounts Payable Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Assistant Credit Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Billing Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Business and Development Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Chief Executive Officer",
+           "cluster": "Business"
+       },
+       {
+           "name": "Compensation and Benefits Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Credit and Collections Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Entrepreneur",
+           "cluster": "Business"
+       },
+       {
+           "name": "General Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Payroll Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "Risk Manager",
+           "cluster": "Business"
+       },
+       {
+           "name": "College President, Dean, Department Chair, Program Coordinator",
+           "cluster": "Education"
+       },
+       {
+           "name": "Corporate Trainer",
+           "cluster": "Education"
+       },
+       {
+           "name": "Curriculum Specialist",
+           "cluster": "Education"
+       },
+       {
+           "name": "Education Researcher, Test Measurement Specialist/ Assessment Specialist",
+           "cluster": "Education"
+       },
+       {
+           "name": "Elementary and Secondary Superintendent, Principal, Administrator",
+           "cluster": "Education"
+       },
+       {
+           "name": "Post-Secondary Administrator",
+           "cluster": "Education"
+       },
+       {
+           "name": "Supervisor and Instructional Coordinator",
+           "cluster": "Education"
+       },
+       {
+           "name": "Teacher",
+           "cluster": "Education"
+       },
+       {
+           "name": "Textbook Author",
+           "cluster": "Education"
+       },
+       {
+           "name": "Brokerage Representative",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Development Officer",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Investment Advisor",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Personal Financial Advisor",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Sales Agent, Securities and Commodities",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Securities/Investments Analyst",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Stock Broker",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Tax Preparation Specialist",
+           "cluster": "Finance"
+       },
+       {
+           "name": "Air Crew Member",
+           "cluster": "Government"
+       },
+       {
+           "name": "Aircraft Launch and Recovery Officer",
+           "cluster": "Government"
+       },
+       {
+           "name": "Assessor",
+           "cluster": "Government"
+       },
+       {
+           "name": "Congressional Aide",
+           "cluster": "Government"
+       },
+       {
+           "name": "Detective",
+           "cluster": "Government"
+       },
+       {
+           "name": "Equal Opportunity Representative",
+           "cluster": "Government"
+       },
+       {
+           "name": "Legislative Aide",
+           "cluster": "Government"
+       },
+       {
+           "name": "Postal Service Clerk",
+           "cluster": "Government"
+       },
+       {
+           "name": "President",
+           "cluster": "Government"
+       },
+       {
+           "name": "Radar and Sonar Technician",
+           "cluster": "Government"
+       },
+       {
+           "name": "Special Forces Officer",
+           "cluster": "Government"
+       },
+       {
+           "name": "Transportation Inspector",
+           "cluster": "Government"
+       },
+       {
+           "name": "Urban and Regional Planner",
+           "cluster": "Government"
+       },
+       {
+           "name": "Vice President",
+           "cluster": "Government"
+       },
+       {
+           "name": "Acupuncturist",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Anesthesia Technologist/Technician",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Anesthesiologist/Assistant",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Art/Music/Dance Therapist",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Athletic Trainer",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Audiologist",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Certified Nursing Assistant",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Chiropractic Assistant",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Chiropractor",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Dental Assistant/Hygienist",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Dental Lab Technician",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Dietitian/Nutritionist",
+           "cluster": "Health Sciences"
+       },
+       {
+           "name": "Baggage Porter and Bellhop",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Concierge",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Kitchen Manager",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Catering and Banquet Manager",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Service Manager",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Switchboard Operator",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Restaurant Owner",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Animal Trainer",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Museum Curator",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Gaming Dealer",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Convention Planner",
+           "cluster": "Hospitality"
+       },
+       {
+           "name": "Barber",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Clergy",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Elementary School Counselor",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Embalmer",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Hairdresser/Cosmetologist",
+           "cluster": "Human Services"
+       },
+       {
+           "name" : "Loan Counselor",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Manicurist and Pedicurist",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Sociologist",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Tailor",
+           "cluster": "Human Services"
+       },
+       {
+           "name": "Computer Programmer",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Network Designer",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Web Administrator",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Administration Associate",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Analyst",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Developer",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Computer Security Specialist",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Modeler",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Network Developer",
+           "cluster": "Information Technology"
+       },
+       {
+           "name": "Arbitrator, Mediator and Conciliator",
+           "cluster": "Law"
+       },
+       {
+           "name": "Correctional Officer and Jailer",
+           "cluster": "Law"
+       },
+       {
+           "name": "Crossing Guard",
+           "cluster": "Law"
+       },
+       {
+           "name": "Detective and Investigator",
+           "cluster": "Law"
+       },
+       {
+           "name": "Dispatchers",
+           "cluster": "Law"
+       },
+       {
+           "name": "Fire Fighter",
+           "cluster": "Law"
+       },
+       {
+           "name": "Immigration and Custom Inspector",
+           "cluster": "Law"
+       },
+       {
+           "name": "Judge",
+           "cluster": "Law"
+       },
+       {
+           "name": "Lawyer",
+           "cluster": "Law"
+       },
+       {
+           "name": "Paramedic",
+           "cluster": "Law"
+       },
+       {
+           "name": "Police Officer",
+           "cluster": "Law"
+       },
+       {
+           "name": "Social Worker",
+           "cluster": "Law"
+       },
+       {
+           "name": "Assembler",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Automated Manufacturing Technician",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Bookbinder",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Calibration Technician",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Electrical Installer and Repairer",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Electromechanical Equipment Assembler",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Extruding and Drawing Machine Setter/Set-Up Operator",
+           "cluster": "Manufacturing"
+       },
+       {
+           "name": "Market Research Analyst",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Fashion Designer",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Merchandise Displayer and Window Trimmer",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Real Estate Agent",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Sales Representative",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Telemarketer",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Key Account Manager",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Wholesale and Retail Buyer",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Account Executive",
+           "cluster": "Marketing"
+       },
+       {
+           "name": "Anthropologist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Biological Scientist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Food Science Technologist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Mathematician",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Microbiologist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Park Naturalist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Physicist",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Statistician",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Technical Writer",
+           "cluster": "Science and Technology"
+       },
+       {
+           "name": "Parking lot attendant",
+           "cluster": "Logistics"
+       },
+       {
+           "name": "Air traffic controller",
+           "cluster": "Logistics"
+       },
+       {
+           "name": "Taxi driver",
+           "cluster": "Logistics"
+       },
+       {
+           "name": "Airplane pilot",
+           "cluster": "Logistics"
+       }
+    ]
+}
