@@ -20,6 +20,7 @@ import Admin from "./views/Admin/Admin";
 import StudentEdit from "./views/StudentEdit/StudentEdit.js";
 import AdminEdit from "./views/AdminEdit/AdminEdit.js";
 import ClusterEdit from "./views/ClusterEdit/ClusterEdit";
+import UpdateAccount from "./views/UpdateAccount/UpdateAccount";
 
 
 // Check for token to keep user logged in
@@ -63,6 +64,7 @@ class App extends Component {
 							<Route exact path="/RecoverPassword" component={RecoverPassword} />
 							<Route exact path="/ResetPassword" component={ResetPassword} />
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
+							<Route exact path="/UpdateAccount" component={UpdateAccount} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
                             <AdminRoute exact path="/Admin" component={Admin} />
                             <AdminRoute exact path="/Admin/Student" component={StudentEdit} />

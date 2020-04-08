@@ -51,6 +51,13 @@ class StudentDetails extends Component {
         userService.updateOne(this.props.selectedUser, userData);
         this.props.getUsers();
     };
+    deleteUser = e => {
+        e.preventDefault();
+        userService.deleteOne(this.props.selectedUser);
+        this.props.updateSelectedUser(null);
+        this.props.getUsers();
+
+    };
 
     render() {
         const { errors } = this.state;
@@ -116,7 +123,15 @@ class StudentDetails extends Component {
                                     Is a site administrator: {admin}
                                 </div>
                                 <br></br>
-                                <button className="wide-button" type="submit">Update</button>
+                                <div>
+                                    <button className="regular-button" type="submit">Update</button>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                        <i className="fa 10x fa-trash" onClick={this.deleteUser}></i>
+                                        <button className="clear-button" onClick={this.deleteUser}> Delete {thisUser.firstName}'s Account</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>

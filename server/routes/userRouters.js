@@ -59,4 +59,27 @@ usersRouter.put('/users/:userID', async (req, res) => {
     });
 });
 
+usersRouter.delete('/users/:userID', async (req, res) => {
+
+    Users.findByIdAndDelete(req.params.userID)
+        .then(user => {
+            if(!user) {
+                return res.status(404).send({
+                    error: "ID not found with id " + req.params.userID
+                });
+            }
+            console.log(res);
+            res.send({message: "User successfully deleted."});
+        }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === "NotFound") {
+            return res.status(404).send({
+                error: "ID not found with id " + req.params.userID
+            });
+        }
+        return res.status(500).send({
+            error: "Error deleting ID with id " + req.params.userID
+        });
+    });
+});
+
 module.exports = usersRouter;

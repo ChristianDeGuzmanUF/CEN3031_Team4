@@ -159,6 +159,17 @@ a:hover {
     border-radius: 3px;
     cursor: pointer;
 }
+.clear-button {
+    background: ghostwhite;
+    color: #000032;
+    text-decoration: underline;
+    font-size: calc(10px + 1vmin);
+    width: auto;
+    justify-self: center;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
 .wide-button {
     background: #42cd42;
     color: #000032;
@@ -170,6 +181,21 @@ a:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
     border-radius: 3px;
     cursor: pointer;
+}
+.account-update-button {
+    background: ghostwhite;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(3px + 2vmin);
+    border: solid 1px #c7c7c7;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    position: absolute;
+    top: 60px;
+    right: 5px;
 }
 
 /*forms*/
@@ -266,7 +292,7 @@ a:hover {
     color: ghostwhite;
     font-size: calc(10px + 3vmin);
     font-weight: bold;
-    margin: 15px;
+    margin-top: 45px;
 }
 .crud-title-tiny {
     text-align: center;
@@ -341,9 +367,6 @@ tr.attrib-title{
 }
 tr.attrib-detail {
     font-size: calc(9px + 1vmin);
-}
-user-list {
-    width: 500px;
 }
 tr.user-titles {
     font-size: calc(8px + 2vmin);

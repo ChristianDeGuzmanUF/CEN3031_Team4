@@ -71,6 +71,7 @@ class StudentEdit extends Component {
                             selectedUserData={this.state.selectedUserData}
                             users={this.state.users}
                             getUsers={this.getUsers}
+                            updateSelectedUser={this.updateSelectedUser}
                         />
                     </div>
                 </div>

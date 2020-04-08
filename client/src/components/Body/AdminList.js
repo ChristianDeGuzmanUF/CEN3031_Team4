@@ -16,10 +16,10 @@ class AdminList extends Component {
 
         if (this.props.users && this.props.users.length > 0) {
             adminList = this.props.users.map(admin => {
-                if((admin.firstName !== null && admin.firstName.toLowerCase().includes(this.props.filterText.toLowerCase()))
+                if(admin.isAdmin === true &&
+                    ((admin.firstName !== null && admin.firstName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (admin.firstName !== null && admin.userName.toLowerCase().includes(this.props.filterText.toLowerCase()))
-                    || (admin.firstName !== null && admin.lastName.toLowerCase().includes(this.props.filterText.toLowerCase()))
-                && admin.isAdmin === true) {
+                    || (admin.firstName !== null && admin.lastName.toLowerCase().includes(this.props.filterText.toLowerCase())))) {
                     return (
                         <tr key={admin._id} onClick={(e) => this.clickHandler(admin._id, e)}>
                             <td className="user-title">

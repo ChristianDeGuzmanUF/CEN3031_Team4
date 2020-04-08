@@ -28,5 +28,11 @@ export default {
         let res = await axios.post(`users/clusters`, update);
         console.log(res);
         return res.data || [];
-    }
+    },
+    deleteOne: async (_id, update) => {
+        console.log('delete to /api/users/' + _id);
+        let res = await axios.delete(`/api/users/`+ _id, update);
+        console.log(res);
+        return res.data || [];
+    },
 };

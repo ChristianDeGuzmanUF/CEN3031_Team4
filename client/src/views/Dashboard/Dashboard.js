@@ -7,7 +7,6 @@ import NavBar from '../../components/Body/NavBar';
 import clusterService from '../../actions/clusterService';
 import userService from "../../actions/userService";
 import Welcome from '../../components/Body/UserWelcome';
-import AccountDetails from '../../components/Body/AccountDetails';
 
 class Dashboard extends Component {
 
@@ -30,7 +29,6 @@ class Dashboard extends Component {
         let res = await userService.getOne(id);
         this.setState({user: res});
     };
-
     componentDidMount = async () => {
         if (!this.state.clusters) {
             this.getClusters();
@@ -44,39 +42,28 @@ class Dashboard extends Component {
 		s.src = 'https://widget.botcopy.com/js/injection.js'; 
 		document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
     };
+    updateAccount = () => {
+        window.location.href = "UpdateAccount";
+    };
 
     render() {
         return (
             <div className="main-theme">
                 <NavBar/>
-                <Welcome user={this.state.user}/>
-                {/*<div className="user-welcome">
-                    Progress Bar
-                </div>*/}
-                <div className="row">
-                    <div className="column1">
-                        <div className="tableWrapper">
-                            <table className="table table-striped table-hover">
-                                <AccountDetails
-                                    user={this.state.user}
-                                    getUser={this.getUser}
-                                />
-                            </table>
-                        </div>
-                    </div>
-                    <div className="column2">
-                        <div className="temp-todo-box2">
-                            <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
-                        </div>
-                        <div className="temp-todo-box2">
-                            <div>Your top match is 'cluster'</div>
-                            <div>You got this match because you're good at many things.</div>
-                        </div>
-                        <div>
-                            <div className="temp-todo-box2">
-                                <div>You have '#' points, keep it up!</div>
-                            </div>
-                        </div>
+                <div className="welcome-row">
+                    <Welcome user={this.state.user}/>
+                    <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
+                </div>
+                <div className="temp-todo-box2">
+                    <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
+                </div>
+                <div className="temp-todo-box2">
+                    <div>Your top match is 'cluster'</div>
+                    <div>You got this match because you're good at many things.</div>
+                </div>
+                <div>
+                    <div className="temp-todo-box2">
+                        <div>You have '#' points, keep it up!</div>
                     </div>
                 </div>
                 <div className="career-cards-container">

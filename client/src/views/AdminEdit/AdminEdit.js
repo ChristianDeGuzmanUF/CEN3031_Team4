@@ -69,6 +69,7 @@ class AdminEdit extends Component {
                         <AdminDetails
                             selectedUser={this.state.selectedUser}
                             selectedUserData={this.state.selectedUserData}
+                            updateSelectedUser={this.updateSelectedUser}
                             users={this.state.users}
                             getUsers={this.getUsers}
                         />

@@ -33,3 +33,6 @@
 .fa-home {
     color: #000032;
 }
+.fa-home:hover {
+    color: #8b8b8b;
+}

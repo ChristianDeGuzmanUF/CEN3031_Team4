@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import userService from "../../actions/userService";
 import Welcome from '../../components/Body/UserWelcome';
-import AccountDetails from '../../components/Body/AccountDetails';
 
 class Admin extends Component {
     constructor(props) {
@@ -23,6 +22,9 @@ class Admin extends Component {
         if (!this.state.user || this.state.user === null) {
             this.getUser(this.props.auth.user.id);
         }
+    };
+    updateAccount = () => {
+        window.location.href = "UpdateAccount";
     };
     studentInvite = () => {
         alert('Your student Invitation Code is: 123456789.');
@@ -42,28 +44,17 @@ class Admin extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
-                <Welcome user={this.state.user}/>
-                <div className="row">
-                    <div className="column1">
-                        <div className="tableWrapper">
-                            <table className="table table-striped table-hover">
-                                <AccountDetails
-                                    user={this.state.user}
-                                    getUser={this.getUser}
-                                />
-                            </table>
-                        </div>
-                    </div>
-                    <div className="column2">
-                        <div className="options-title-small"> Administrator Control Options</div>
-                        <div className="crud-single-column-col-1">
-                            <button className="large-button" onClick={this.studentInvite}>Get A Student Invite Code</button>
-                            <button className="large-button" onClick={this.adminInvite}>Get An Administrator Invite Code</button>
-                            <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
-                            <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
-                            <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
-                        </div>
-                    </div>
+                <div className="welcome-row">
+                    <Welcome user={this.state.user}/>
+                    <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
+                </div>
+                <div className="options-title-small"> Administrator Control Options</div>
+                <div className="crud-single-column-col-1">
+                    <button className="large-button" onClick={this.studentInvite}>Get A Student Invite Code</button>
+                    <button className="large-button" onClick={this.adminInvite}>Get An Administrator Invite Code</button>
+                    <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
+                    <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
+                    <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
                 </div>
             </div>
         );

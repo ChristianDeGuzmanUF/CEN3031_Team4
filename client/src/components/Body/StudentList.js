@@ -16,10 +16,9 @@ class StudentList extends Component {
 
         if (this.props.users && this.props.users.length > 0) {
             studentList = this.props.users.map(student => {
-                if((student.firstName !== null && student.firstName.toLowerCase().includes(this.props.filterText.toLowerCase()))
+                if (student.isAdmin === false && ((student.firstName !== null && student.firstName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (student.firstName !== null && student.userName.toLowerCase().includes(this.props.filterText.toLowerCase()))
-                    || (student.firstName !== null && student.lastName.toLowerCase().includes(this.props.filterText.toLowerCase()))
-                    && student.isAdmin === false) {
+                    || (student.firstName !== null && student.lastName.toLowerCase().includes(this.props.filterText.toLowerCase())))) {
                     return (
                         <tr key={student._id} onClick={(e) => this.clickHandler(student._id, e)}>
                             <td className="user-title">
