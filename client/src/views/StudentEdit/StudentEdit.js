@@ -54,7 +54,7 @@ class StudentEdit extends Component {
                                            }}
                                     />
                                 </div>
-                                <table className="users">
+                                <table className="user-cards-container">
                                     <StudentList
                                         users={this.state.users}
                                         filterText={this.state.filterText}

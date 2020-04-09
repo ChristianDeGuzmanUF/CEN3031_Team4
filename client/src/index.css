@@ -211,6 +211,18 @@ a:hover {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+.small-form-container{
+    background-color: ghostwhite;
+    display: table;
+    color: #000032;
+    min-width: 50%;
+    min-height: 65vh;
+    padding-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 .general-form-area {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -309,6 +321,27 @@ a:hover {
     margin: 55px;
     margin-top: 250px
 }
+.user-cards-container {
+    background-color: #000032;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: calc(15px + 1vmin);
+    color: #000032;
+    font-weight: bold;
+    margin: 15px;
+}
+.user-tiles {
+    display: flex;
+    background-color: ghostwhite;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    min-height: 50px;
+    margin-bottom: 35px;
+}
 .update-instructions{
     text-align: center;
     color: #000032;
@@ -371,15 +404,12 @@ tr.attrib-detail {
 tr.user-titles {
     font-size: calc(8px + 2vmin);
     font-weight: bold;
+    text-align: center;
 }
 td.user-title {
     font-size: calc(8px + 2vmin);
     font-weight: bold;
-    padding: 25px;
     text-align: center;
-}
-table.users {
-    margin-left: 55px;
 }
 .textareaElement {
     background-color: white;

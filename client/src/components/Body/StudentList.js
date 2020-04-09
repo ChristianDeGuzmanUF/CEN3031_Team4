@@ -20,13 +20,13 @@ class StudentList extends Component {
                     || (student.firstName !== null && student.userName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (student.firstName !== null && student.lastName.toLowerCase().includes(this.props.filterText.toLowerCase())))) {
                     return (
-                        <tr key={student._id} onClick={(e) => this.clickHandler(student._id, e)}>
-                            <td className="user-title">
-                                <tr className="user-titles">
+                        <div className="col-md-8" key={student._id} onClick={(e) => this.clickHandler(student._id, e)}>
+                            <div className="card mb-1 user-tiles">
+                                <div>
                                     {student.firstName} {student.lastName}
-                                </tr>
-                            </td>
-                        </tr>
+                                </div>
+                            </div>
+                        </div>
                     );
                 }
                 return null;

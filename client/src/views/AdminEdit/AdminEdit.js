@@ -54,7 +54,7 @@ class AdminEdit extends Component {
                                            }}
                                     />
                                 </div>
-                                <table className="users">
+                                <table className="user-cards-container">
                                     <AdminList
                                         users={this.state.users}
                                         filterText={this.state.filterText}
