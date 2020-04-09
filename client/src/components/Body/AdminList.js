@@ -21,12 +21,8 @@ class AdminList extends Component {
                     || (admin.firstName !== null && admin.userName.toLowerCase().includes(this.props.filterText.toLowerCase()))
                     || (admin.firstName !== null && admin.lastName.toLowerCase().includes(this.props.filterText.toLowerCase())))) {
                     return (
-                        <div className="col-md-8" key={admin._id} onClick={(e) => this.clickHandler(admin._id, e)}>
-                            <div className="card mb-1 user-tiles">
-                                <div>
-                                    {admin.firstName} {admin.lastName}
-                                </div>
-                            </div>
+                        <div className="user-tiles" key={admin._id} onClick={(e) => this.clickHandler(admin._id, e)}>
+                            {admin.firstName} {admin.lastName}
                         </div>
                     );
                 }

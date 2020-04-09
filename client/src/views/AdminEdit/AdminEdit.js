@@ -42,27 +42,23 @@ class AdminEdit extends Component {
                 <Navbar/>
                 <div className="row">
                     <div className="column1">
-                        <div className="tableWrapper">
-                            <table className="table table-striped table-hover">
-                                <div className="crud-search">
-                                    <div className="crud-title">Administrators</div>
-                                    <input className="search-bar"
-                                           placeholder="type a keyword to filter items below"
-                                           value={this.props.input}
-                                           onChange={(e) => {
-                                               this.setState({filterText: e.target.value})
-                                           }}
-                                    />
-                                </div>
-                                <table className="user-cards-container">
-                                    <AdminList
-                                        users={this.state.users}
-                                        filterText={this.state.filterText}
-                                        selectedUser={this.state.selectedUser}
-                                        updateSelectedUser={this.updateSelectedUser}
-                                    />
-                                </table>
-                            </table>
+                        <div className="crud-search">
+                            <div className="crud-title">Administrators</div>
+                            <input className="search-bar"
+                                   placeholder="type a keyword to filter items below"
+                                   value={this.props.input}
+                                   onChange={(e) => {
+                                       this.setState({filterText: e.target.value})
+                                   }}
+                            />
+                        </div>
+                        <div className="user-cards-container">
+                            <AdminList
+                                users={this.state.users}
+                                filterText={this.state.filterText}
+                                selectedUser={this.state.selectedUser}
+                                updateSelectedUser={this.updateSelectedUser}
+                            />
                         </div>
                     </div>
                     <div className="column2">

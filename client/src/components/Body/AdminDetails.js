@@ -128,8 +128,8 @@ class AdminDetails extends Component {
                                     <br></br>
                                     <br></br>
                                     <div>
-                                        <i className="fa 10x fa-trash" onClick={this.deleteUser}></i>
-                                        <button className="clear-button" onClick={this.deleteUser}> Delete {thisUser.firstName}'s Account</button>
+                                        <i className="fa 10x fa-trash" onClick={(e) =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteUser(e)}}></i>
+                                        <button className="clear-button" onClick={(e) =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteUser(e)}}> Delete {thisUser.firstName}'s Account</button>
                                     </div>
                                 </div>
                             </div>

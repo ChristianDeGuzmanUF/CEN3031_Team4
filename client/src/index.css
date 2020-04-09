@@ -277,7 +277,7 @@ a:hover {
 .crud-search {
     background-color: #000032;
     min-height: 50px;
-    display: block;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -323,24 +323,26 @@ a:hover {
 }
 .user-cards-container {
     background-color: #000032;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
     justify-content: center;
-    align-content: center;
     font-size: calc(15px + 1vmin);
     color: #000032;
     font-weight: bold;
     margin: 15px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 .user-tiles {
     display: flex;
     background-color: ghostwhite;
     justify-content: center;
+    align-content: center;
     align-items: center;
-    min-width: 400px;
     min-height: 50px;
-    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 85%;
 }
 .update-instructions{
     text-align: center;
