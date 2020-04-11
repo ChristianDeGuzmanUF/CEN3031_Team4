@@ -21,6 +21,19 @@ export const registerUser = (userData, history) => dispatch => {
         );
 };
 
+// Reset Password
+export const resetPassword = (userData, history) => dispatch => {
+    axios
+        .post("/users/resetPassword", userData)
+        .then(res => history.push("/login")) // re-direct to login on successful register
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+};
+
 // Recover User
 export const recoverUser = (userData, history) => dispatch => {
     axios

@@ -62,7 +62,7 @@ class App extends Component {
 							<Route exact path="/Login" component={Login} />
 							<Route exact path="/Register" component={Register} />
 							<Route exact path="/RecoverPassword" component={RecoverPassword} />
-							<Route exact path="/ResetPassword" component={ResetPassword} />
+							<Route exact path="/ResetPassword/:token" component={ResetPassword} />
 							<Route exact path="/ClusterSurvey" component={ClusterSurvey} />
 							<Route exact path="/UpdateAccount" component={UpdateAccount} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />

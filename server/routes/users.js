@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const validateUserRegInput = require('../controllers/registerUser');
 const validateUserRecoverInput = require('../controllers/recoverUser');
+const validateUserResetPasswordInput = require('../controllers/resetPasswordUser');
 const validateUserLoginInput = require('../controllers/login');
 const User = require('../models/UserSchema');
 
@@ -146,6 +147,53 @@ router.post("/register", async (req, res) => {
     // call function to validate registration input, and store returned errors
     // isValid is a boolean to indicate whether errors are present
     const {errors, isValid, isAdminUser} = await validateUserRegInput(req.body);
+
+    // if errors during registration, return 400 and json object of errors written
+    if (!isValid) {
+        return res.status(400).json(errors);
+    };
+
+	User.findOne({email: req.body.email}).then(user => {
+		if (user) {
+            return res.status(400).json({email: "Email already exists"});
+        }
+	});
+	
+    User.findOne({userName: req.body.userName}).then(user => {
+        if (user) {
+            return res.status(400).json({userName: "Username already exists"});
+        }
+        else {
+            // console.log("Is this an admin user? " + isAdminUser);
+            const newUser = new User({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                userName: req.body.userName,
+                email: req.body.email,
+                password: req.body.password1,
+                isAdmin: isAdminUser
+            });
+
+            // Hash password before saving in database
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                    if (err) throw err;
+                    newUser.password = hash;
+                    newUser
+                      .save()
+                      .then(user => res.json(user))
+                      .catch(err => console.log(err));
+                });
+            });
+        };
+    });
+});
+
+router.post("/resetPassword", async (req, res) => {
+
+    // call function to validate registration input, and store returned errors
+    // isValid is a boolean to indicate whether errors are present
+    const {errors, isValid} = await validateUserResetPasswordInput(req.body);
 
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {

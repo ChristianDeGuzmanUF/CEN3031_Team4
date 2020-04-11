@@ -31,6 +31,28 @@ usersRouter.get('/users/:userID', async (req, res) => {
     });
 });
 
+usersRouter.get('/usersByToken/:token', async (req, res) => {
+    console.log(req.params.token);
+	Users.findOne({resetPasswordToken: req.params.token})    
+        .then(user => {
+            if(!user) {
+                return res.status(404).send({
+                    message: "token not found with token " + req.params.token
+                });
+            }
+            res.send(user); //TODO: this should NOT send back the password
+        }).catch(err => {
+        if (err.kind === 'ObjectId') {
+            return res.status(200).send({
+                error: "Token not found with token " + req.params.token
+            });
+        }
+        return res.status(500).send({
+            error : "Error retrieving user with token " + req.params.token
+        });
+    });
+});
+
 usersRouter.put('/users/:userID', async (req, res) => {
 
     Users.findByIdAndUpdate(req.params.userID, {

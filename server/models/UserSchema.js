@@ -38,6 +38,14 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+	resetPasswordToken: {
+        type: String,
+        default: ""
+    },    
+    resetPasswordExpires: {
+        type: Date,
+        default: Date.now
+    },
     topMatches: {
         one: {
             type: String,

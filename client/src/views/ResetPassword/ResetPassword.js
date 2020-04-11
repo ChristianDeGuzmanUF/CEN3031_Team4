@@ -2,7 +2,8 @@ import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { loginUser } from "../../actions/authActions";
+import { resetPassword } from "../../actions/authActions";
+import userService from "../../actions/userService";
 import classnames from "classnames";
 import reset from '../reset-pic.jpg';
 
@@ -10,11 +11,26 @@ class ResetPassword extends Component {
     constructor() {
         super();
         this.state = {
+			token: props.match.params.token,
             password1: "",
             password2: "",
-            errors: {}
+            errors: {},
+			user:null,
         };
+		
+		this.getUserByToken = this.getUserByToken.bind(this);   
     }
+	
+	getUserByToken = async (token) => {
+        let res = await userService.getOneByToken(token);
+        this.setState({user: res});
+    };
+	
+	componentDidMount = async () => {      
+        if (!this.state.user || this.state.user === null) {
+            this.getUserByToken(this.state.token);
+        }
+    };
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
@@ -41,10 +57,6 @@ class ResetPassword extends Component {
         };
 
         this.props.resetPassword(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-    };
-
-    goToLogin = () => {
-        window.location.href = "/Login";
     };
 
     render() {
@@ -81,7 +93,7 @@ class ResetPassword extends Component {
                                 })}
                             />
                             <span className="text-danger">{errors.password2}</span>
-                            <button className="regular-button" onClick={this.goToLogin}>Reset Password</button>
+                            <button className="regular-button" type="submit">Reset Password</button>
                         </div>
                     </form>
                 </div>
@@ -106,5 +118,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { loginUser }
+    { resetPassword }
 )(ResetPassword);

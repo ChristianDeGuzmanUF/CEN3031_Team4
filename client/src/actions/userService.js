@@ -11,6 +11,12 @@ export default {
         console.log(res);
         return res.data || [];
     },
+	getOneByToken: async (_token) => {
+        console.log('get to /api/usersByToken/' + _token);
+        let res = await axios.get(`/api/usersByToken/` + _token);
+        console.log(res);
+        return res.data || [];
+    },
     updateOne: async (_id, update) => {
         console.log('put to /api/users/' + _id);
         let res = await axios.put(`/api/users/`+ _id, update);
