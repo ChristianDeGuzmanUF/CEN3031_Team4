@@ -3,6 +3,7 @@ import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import {
     GET_ERRORS,
+	GET_MESSAGES,
     SET_CURRENT_USER,
     USER_LOADING
 } from "./types";
@@ -12,6 +13,31 @@ export const registerUser = (userData, history) => dispatch => {
     axios
         .post("/users/register", userData)
         .then(res => history.push("/login")) // re-direct to login on successful register
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+};
+
+// Recover User
+export const recoverUser = (userData, history) => dispatch => {
+    axios
+        .post("/users/recover", userData)        
+		.then(res => {           
+            dispatch({
+                type: GET_MESSAGES,              
+                payload: res.data
+            });
+			
+			// clear messases
+			dispatch({
+                type: GET_ERRORS,
+                //payload: err.response.data
+                payload: {}
+            })
+        })
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,

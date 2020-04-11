@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const validateUserRegInput = require('../controllers/registerUser');
+const validateUserRecoverInput = require('../controllers/recoverUser');
 const validateUserLoginInput = require('../controllers/login');
 const User = require('../models/UserSchema');
 
@@ -174,6 +175,35 @@ router.post("/register", async (req, res) => {
                       .catch(err => console.log(err));
                 });
             });
+        };
+    });
+});
+
+router.post("/recover", async (req, res) => {
+
+    // call function to validate registration input, and store returned errors
+    // isValid is a boolean to indicate whether errors are present
+    const {errors, isValid} = await validateUserRecoverInput(req.body);
+	let messages = {};
+	
+    // if errors during registration, return 400 and json object of errors written
+    if (!isValid) {
+        return res.status(400).json(errors);
+    };
+
+    User.findOne({email: req.body.email}).then(user => {
+        if (user) {
+			// send email
+			console.log("send email");
+			messages.emailSent = "Recovery email sent";
+			
+            return res.status(200).json(messages);          
+        }
+        else {
+			// email not found
+			messages.emailNotRecognized = "Email address is not recognized.";
+			
+            return res.status(200).json(messages);           
         };
     });
 });
