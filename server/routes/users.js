@@ -1,3 +1,6 @@
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -201,9 +204,48 @@ router.post("/recover", async (req, res) => {
         if (user) {
 			// send email
 			console.log("send email");
-			messages.emailSent = "Recovery email sent";
 			
-            return res.status(200).json(messages);          
+			const token = crypto.randomBytes(20).toString('hex');
+			console.log(token);
+			user.update({
+				resetPasswordToken: token,
+				resetPasswordExpires: Date.now() + 360000
+			});
+			
+			let username = process.env.EMAIL_ADDRESS || config.email.address;
+			let password = process.env.EMAIL_PASSWORD || config.email.password;
+			
+			const transporter = nodemailer.createTransport({
+				service: 'gmail',
+				auth: {
+					user: `${username}`,
+					pass: `${password}`
+				}
+			});
+			
+			const mailOptions = {
+				from: `${username}`,
+				to: `${user.email}`,
+				subject: `Link to Reset Password`,
+				text: 
+					`You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n` +
+					`Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n` +
+					`http://localhost:3000/ResetPassword/${token}\n\n` +
+					`If you did not request this, please ignore this email and your password will remain unchanged.\n`
+			}
+			
+			console.log('sending mail');
+			
+			transporter.sendMail(mailOptions, (err, response) => {
+				if(err){
+					console.error('there was an error: ', err);
+				} else {
+					console.log('here is the res: ', response);					
+					messages.emailSent = "Recovery email sent";
+			
+					return res.status(200).json(messages);   
+				}
+			});				       
         }
         else {
 			// email not found
