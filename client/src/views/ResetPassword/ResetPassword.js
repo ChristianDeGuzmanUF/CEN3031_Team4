@@ -8,25 +8,31 @@ import classnames from "classnames";
 import reset from '../reset-pic.jpg';
 
 class ResetPassword extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+		console.log(props.match.params.token);
         this.state = {
 			token: props.match.params.token,
             password1: "",
             password2: "",
             errors: {},
-			user:null,
+			user: null
         };
 		
 		this.getUserByToken = this.getUserByToken.bind(this);   
     }
 	
 	getUserByToken = async (token) => {
-        let res = await userService.getOneByToken(token);
-        this.setState({user: res});
+        let res = await userService.getOneByToken(token);		
+        this.setState({user: res});		
+
+		if (this.state.user.resetPasswordToken == null) {
+			console.log("expired token!!!");
+			this.props.history.push("/pagehasexpired");
+        }
     };
 	
-	componentDidMount = async () => {      
+	componentDidMount = async () =>  {      
         if (!this.state.user || this.state.user === null) {
             this.getUserByToken(this.state.token);
         }
@@ -50,17 +56,20 @@ class ResetPassword extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+		
+		console.log(this.state.user.id);
 
         const userData = {
+			id: this.state.user.id,
             password1: this.state.password1,
             password2: this.state.password2,
         };
 
-        this.props.resetPassword(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+        this.props.resetPassword(userData, this.props.history);
     };
 
     render() {
-        const { errors } = this.state;
+        const { errors } = this.state;	
 
         return (
             <div className="main-theme">

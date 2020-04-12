@@ -199,40 +199,43 @@ router.post("/resetPassword", async (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     };
-
-	User.findOne({email: req.body.email}).then(user => {
-		if (user) {
-            return res.status(400).json({email: "Email already exists"});
-        }
-	});
 	
-    User.findOne({userName: req.body.userName}).then(user => {
-        if (user) {
-            return res.status(400).json({userName: "Username already exists"});
-        }
-        else {
-            // console.log("Is this an admin user? " + isAdminUser);
-            const newUser = new User({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                userName: req.body.userName,
-                email: req.body.email,
-                password: req.body.password1,
-                isAdmin: isAdminUser
-            });
-
-            // Hash password before saving in database
-            bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(newUser.password, salt, (err, hash) => {
-                    if (err) throw err;
-                    newUser.password = hash;
-                    newUser
-                      .save()
-                      .then(user => res.json(user))
-                      .catch(err => console.log(err));
+	let id = req.body.id
+	let newpassword = req.body.password1;
+	let hashpassword = "";
+	
+	// Hash password before saving in database
+	bcrypt.genSalt(10, (err, salt) => {
+		bcrypt.hash(req.body.password1, salt, (err, hash) => {
+			if (err) throw err;
+			hashpassword = hash;			
+		});
+	});	
+	
+	//console.log(id);
+	//console.log(newpassword);
+	//console.log(hashpassword);
+	
+    User.findByIdAndUpdate(id, {        
+        password: hashpassword
+    }, {new: true})
+        .then(user => {
+            if(!user) {
+                return res.status(200).send({
+                    error: "ID not found with id " + id
                 });
+            }
+            console.log(res);
+            res.send(user);
+        }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(200).send({
+                error: "ID not found with id " + id
             });
-        };
+        }
+        return res.status(500).send({
+            error: "Error updating ID with id " + id
+        });
     });
 });
 
@@ -243,22 +246,25 @@ router.post("/recover", async (req, res) => {
     const {errors, isValid} = await validateUserRecoverInput(req.body);
 	let messages = {};
 	
+	const token = crypto.randomBytes(20).toString('hex');
+	console.log(token);
+				
+	const updateParams = {
+	  "$set": {
+		"resetPasswordToken": token,
+		"resetPasswordExpires": Date.now() + 360000
+	  }
+	};
+	
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {
         return res.status(400).json(errors);
     };
 
-    User.findOne({email: req.body.email}).then(user => {
+    User.findOneAndUpdate({email: req.body.email}, updateParams, {new: true}).then(user => {
         if (user) {
 			// send email
-			console.log("send email");
-			
-			const token = crypto.randomBytes(20).toString('hex');
-			console.log(token);
-			user.update({
-				resetPasswordToken: token,
-				resetPasswordExpires: Date.now() + 360000
-			});
+			console.log("send email");	
 			
 			let username = process.env.EMAIL_ADDRESS || config.email.address;
 			let password = process.env.EMAIL_PASSWORD || config.email.password;

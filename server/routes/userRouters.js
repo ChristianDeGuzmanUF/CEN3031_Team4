@@ -35,11 +35,11 @@ usersRouter.get('/usersByToken/:token', async (req, res) => {
     console.log(req.params.token);
 	Users.findOne({resetPasswordToken: req.params.token})    
         .then(user => {
-            if(!user) {
-                return res.status(404).send({
-                    message: "token not found with token " + req.params.token
-                });
-            }
+            if(!user) {				
+				// return empty user
+                return res.status(200).send({});
+            }			
+			
             res.send(user); //TODO: this should NOT send back the password
         }).catch(err => {
         if (err.kind === 'ObjectId') {
