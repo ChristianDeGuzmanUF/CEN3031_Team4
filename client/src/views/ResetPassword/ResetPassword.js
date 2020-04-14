@@ -10,9 +10,10 @@ import reset from '../reset-pic.jpg';
 class ResetPassword extends Component {
     constructor(props) {
         super(props);
-		console.log(props.match.params.token);
+		
         this.state = {
 			token: props.match.params.token,
+			userid: null,
             password1: "",
             password2: "",
             errors: {},
@@ -26,8 +27,7 @@ class ResetPassword extends Component {
         let res = await userService.getOneByToken(token);		
         this.setState({user: res});		
 
-		if (this.state.user.resetPasswordToken == null) {
-			console.log("expired token!!!");
+		if (this.state.user.resetPasswordToken == null) {			
 			this.props.history.push("/pagehasexpired");
         }
     };
@@ -57,10 +57,9 @@ class ResetPassword extends Component {
     onSubmit = e => {
         e.preventDefault();
 		
-		console.log(this.state.user.id);
-
+		// setup request variables
         const userData = {
-			id: this.state.user.id,
+			userid: this.state.user._id,
             password1: this.state.password1,
             password2: this.state.password2,
         };
@@ -80,7 +79,7 @@ class ResetPassword extends Component {
                         <h4>Reset Your Password</h4>
                     </div>
                     <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
-                        <div className="single-column-col-1">
+                        <div className="single-column-col-1">							
                             <input
                                 onChange={this.onChange}
                                 value={this.state.password1}

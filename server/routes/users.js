@@ -200,59 +200,54 @@ router.post("/resetPassword", async (req, res) => {
         return res.status(400).json(errors);
     };
 	
-	let id = req.body.id
+	let id = req.body.userid
 	let newpassword = req.body.password1;
-	let hashpassword = "";
-	
-	// Hash password before saving in database
-	bcrypt.genSalt(10, (err, salt) => {
-		bcrypt.hash(req.body.password1, salt, (err, hash) => {
-			if (err) throw err;
-			hashpassword = hash;			
-		});
-	});	
-	
-	//console.log(id);
-	//console.log(newpassword);
-	//console.log(hashpassword);
-	
-    User.findByIdAndUpdate(id, {        
-        password: hashpassword
-    }, {new: true})
-        .then(user => {
-            if(!user) {
-                return res.status(200).send({
-                    error: "ID not found with id " + id
+		
+    User.findByIdAndUpdate(id, { password: newpassword }, {new: true}).then(user => {
+		if(!user) {
+			return res.status(200).send({
+				error: "ID not found with id " + id
+			});
+		} else {
+			// Hash password before saving in database
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(user.password, salt, (err, hash) => {
+                    if (err) throw err;
+					
+                    user.password = hash;					
+                    user
+                      .save()
+                      .then(user => res.json(user))
+                      .catch(err => console.log(err));
                 });
-            }
-            console.log(res);
-            res.send(user);
-        }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(200).send({
-                error: "ID not found with id " + id
             });
-        }
-        return res.status(500).send({
-            error: "Error updating ID with id " + id
-        });
+		}
+			
+        //res.send(user);
+	}).catch(err => {
+		if(err.kind === 'ObjectId') {
+			return res.status(200).send({
+				error: "ID not found with id " + id
+			});
+		}
+		return res.status(500).send({
+			error: "Error updating ID with id " + id
+		});
     });
 });
 
 router.post("/recover", async (req, res) => {
-
-    // call function to validate registration input, and store returned errors
+    // call function to validate recover page inputs, and store returned errors
     // isValid is a boolean to indicate whether errors are present
     const {errors, isValid} = await validateUserRecoverInput(req.body);
 	let messages = {};
 	
 	const token = crypto.randomBytes(20).toString('hex');
-	console.log(token);
-				
+					
 	const updateParams = {
 	  "$set": {
 		"resetPasswordToken": token,
-		"resetPasswordExpires": Date.now() + 360000
+		"resetPasswordExpires": Date.now() + 3600000 // 1hr - in milliseconds
 	  }
 	};
 	
@@ -263,9 +258,8 @@ router.post("/recover", async (req, res) => {
 
     User.findOneAndUpdate({email: req.body.email}, updateParams, {new: true}).then(user => {
         if (user) {
-			// send email
-			console.log("send email");	
-			
+			// send email	
+			// set this up in heroku environment variables
 			let username = process.env.EMAIL_ADDRESS || config.email.address;
 			let password = process.env.EMAIL_PASSWORD || config.email.password;
 			
@@ -288,13 +282,11 @@ router.post("/recover", async (req, res) => {
 					`If you did not request this, please ignore this email and your password will remain unchanged.\n`
 			}
 			
-			console.log('sending mail');
-			
+						
 			transporter.sendMail(mailOptions, (err, response) => {
 				if(err){
 					console.error('there was an error: ', err);
-				} else {
-					console.log('here is the res: ', response);					
+				} else {									
 					messages.emailSent = "Recovery email sent";
 			
 					return res.status(200).json(messages);   

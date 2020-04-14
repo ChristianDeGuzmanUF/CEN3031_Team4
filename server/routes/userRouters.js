@@ -33,12 +33,19 @@ usersRouter.get('/users/:userID', async (req, res) => {
 
 usersRouter.get('/usersByToken/:token', async (req, res) => {
     console.log(req.params.token);
-	Users.findOne({resetPasswordToken: req.params.token})    
+	Users.findOne({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}})    
         .then(user => {
             if(!user) {				
 				// return empty user
                 return res.status(200).send({});
             }			
+			
+			// check password token expiration
+			
+			if(!user) {				
+				// return empty user
+                return res.status(200).send({});
+            }	
 			
             res.send(user); //TODO: this should NOT send back the password
         }).catch(err => {
