@@ -77,50 +77,52 @@ class RecoverPassword extends Component {
 		}
 
         return (
-            <div className="main-theme">
-                <div class="form-container">
-                    <div className="icon">
-                        <a href="/"><img src={recover} alt="Logo" /></a>
-                        <h1>Career Finder</h1>
-                        <h4>Account Recovery</h4>
+            <div>
+                <div className="main-theme">
+                    <div class="form-container">
+                        <div className="icon">
+                            <a href="/"><img src={recover} alt="Logo" /></a>
+                            <h1>Career Finder</h1>
+                            <h4>Account Recovery</h4>
+                        </div>
+                        <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                            <div className="single-input-form">
+                                {showEmailSent === false && (
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.email}
+                                    error={errors.email}
+                                    id="email"
+                                    type="text"
+                                    placeholder="Enter Recovery Email Address"
+                                />
+                                )}
+
+                                <span className="text-danger">{errors.email}</span>
+
+                                {showEmailSent === false && (
+                                <button className="wide-button" type="Submit">Send Recovery Email</button>
+                                )}
+
+                                {showEmailNotRecognized && (
+                                <span className="text-danger">{errors.emailNotFound}</span>
+                                )}
+
+                                {showEmailNotRecognized && (
+                                <p>{messages.emailNotRecognized}</p>
+                                )}
+
+                                {showEmailNotRecognized && (
+                                <button className="wide-button" onClick={this.goToRegister}>Register</button>
+                                )}
+
+                                {showEmailSent && (
+                                <p>{messages.emailSent} to {this.state.email}</p>
+                                )}
+
+                            </div>
+                        </form>
                     </div>
-                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
-                        <div className="single-input-form">	
-							{showEmailSent === false && (						
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.email}
-                                error={errors.email}
-                                id="email"
-                                type="text"
-                                placeholder="Enter Recovery Email Address"
-                            />	
-							)}		
-							
-                            <span className="text-danger">{errors.email}</span>
-							
-							{showEmailSent === false && (
-                            <button className="wide-button" type="Submit">Send Recovery Email</button>
-							)}
-							
-							{showEmailNotRecognized && (
-							<span className="text-danger">{errors.emailNotFound}</span>
-							)}
-							
-							{showEmailNotRecognized && (
-							<p>{messages.emailNotRecognized}</p>
-							)}
-							
-							{showEmailNotRecognized && (
-							<button className="wide-button" onClick={this.goToRegister}>Register</button>
-							)}
-							
-							{showEmailSent && (
-							<p>{messages.emailSent} to {this.state.email}</p>
-							)}
-														
-                        </div>						
-                    </form>
                 </div>
                 <div className="credits">
                     Photo by Shane Avery on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>

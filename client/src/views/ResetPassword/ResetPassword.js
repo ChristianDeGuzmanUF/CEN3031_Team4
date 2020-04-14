@@ -71,39 +71,41 @@ class ResetPassword extends Component {
         const { errors } = this.state;	
 
         return (
-            <div className="main-theme">
-                <div class="form-container">
-                    <div className="icon">
-                        <a href="/"><img src={reset} alt="Logo" /></a>
-                        <h1>Career Finder</h1>
-                        <h4>Reset Your Password</h4>
-                    </div>
-                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
-                        <div className="single-column-col-1">							
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password1}
-                                error={errors.password1}
-                                id="password1"
-                                placeholder="New Password"
-                                type="password"
-                            />
-                            <span className="text-danger">{errors.password1}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password2}
-                                error={errors.password2}
-                                id="password2"
-                                placeholder="Confirm New Password"
-                                type="password"
-                                className={classnames("Register-input", {
-                                    invalid: errors.password2
-                                })}
-                            />
-                            <span className="text-danger">{errors.password2}</span>
-                            <button className="regular-button" type="submit">Reset Password</button>
+            <div>
+                <div className="main-theme">
+                    <div class="form-container">
+                        <div className="icon">
+                            <a href="/"><img src={reset} alt="Logo" /></a>
+                            <h1>Career Finder</h1>
+                            <h4>Reset Your Password</h4>
                         </div>
-                    </form>
+                        <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                            <div className="single-column-col-1">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.password1}
+                                    error={errors.password1}
+                                    id="password1"
+                                    placeholder="New Password"
+                                    type="password"
+                                />
+                                <span className="text-danger">{errors.password1}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.password2}
+                                    error={errors.password2}
+                                    id="password2"
+                                    placeholder="Confirm New Password"
+                                    type="password"
+                                    className={classnames("Register-input", {
+                                        invalid: errors.password2
+                                    })}
+                                />
+                                <span className="text-danger">{errors.password2}</span>
+                                <button className="regular-button" type="submit">Reset Password</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div className="credits">
                     Photo by Adrià Tormo on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>

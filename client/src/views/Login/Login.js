@@ -66,52 +66,54 @@ class Login extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="main-theme">
-                <div class="form-container">
-                    <div className="icon">
-                        <a href="/"><img src={login} alt="Logo" /></a>
-                        <h1>Career Finder</h1>
-                        <h4>Account Login</h4>
-                    </div>
-                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
-                        <div className="single-column-col-1">
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.userName}
-                                error={errors.userName}
-                                id="userName"
-                                type="text"
-                                placeholder="Username"
-                            />
-                            <span className="text-danger">
-                                {errors.userName}
-                                {errors.userNameNotFound}
-                                </span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password}
-                                error={errors.password}
-                                id="password"
-                                type="password"
-                                placeholder="Password"
-                            />
-                            <span className="text-danger">
-                                {errors.password}
-                                {errors.passwordIncorrect}
-                                </span>
-                            {/* <div class="checkbox mb-3">
-                        <label>
-                        <input type="checkbox" value="remember-me" /> Remember me
-                        </label>
-                    </div> */}
-                            <button className="regular-button" type="submit">Sign in</button>
+            <div>
+                <div className="main-theme">
+                    <div class="form-container">
+                        <div className="icon">
+                            <a href="/"><img src={login} alt="Logo" /></a>
+                            <h1>Career Finder</h1>
+                            <h4>Account Login</h4>
                         </div>
-                    </form>
-                    <div>
-                        <a className="link" href="/Register">Register</a>
-                    </div>
-                    <div>
-                        <a className="link" href="/RecoverPassword">Forgot Username/Password</a>
+                        <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                            <div className="single-column-col-1">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.userName}
+                                    error={errors.userName}
+                                    id="userName"
+                                    type="text"
+                                    placeholder="Username"
+                                />
+                                <span className="text-danger">
+                                    {errors.userName}
+                                    {errors.userNameNotFound}
+                                    </span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.password}
+                                    error={errors.password}
+                                    id="password"
+                                    type="password"
+                                    placeholder="Password"
+                                />
+                                <span className="text-danger">
+                                    {errors.password}
+                                    {errors.passwordIncorrect}
+                                    </span>
+                                {/* <div class="checkbox mb-3">
+                            <label>
+                            <input type="checkbox" value="remember-me" /> Remember me
+                            </label>
+                        </div> */}
+                                <button className="regular-button" type="submit">Sign in</button>
+                            </div>
+                        </form>
+                        <div>
+                            <a className="link" href="/Register">Register</a>
+                        </div>
+                        <div>
+                            <a className="link" href="/RecoverPassword">Forgot Username/Password</a>
+                        </div>
                     </div>
                 </div>
                 <div className="credits">

@@ -51,7 +51,7 @@ a:hover {
     font-family: Verdana;
     display: table;
     min-width: 98vw;
-    min-height: 100vh;
+    min-height: 97vh;
 }
 
 .icon {
@@ -204,19 +204,7 @@ a:hover {
     display: table;
     color: #000032;
     min-width: 50%;
-    min-height: 85vh;
-    padding-top: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-.small-form-container{
-    background-color: ghostwhite;
-    display: table;
-    color: #000032;
-    min-width: 50%;
-    min-height: 65vh;
+    max-height: min-content;
     padding-top: 35px;
     margin-left: auto;
     margin-right: auto;

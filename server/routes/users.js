@@ -151,7 +151,7 @@ router.post("/register", async (req, res) => {
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {
         return res.status(400).json(errors);
-    };
+    }
 
 	User.findOne({email: req.body.email}).then(user => {
 		if (user) {
@@ -185,7 +185,7 @@ router.post("/register", async (req, res) => {
                       .catch(err => console.log(err));
                 });
             });
-        };
+        }
     });
 });
 
@@ -198,9 +198,9 @@ router.post("/resetPassword", async (req, res) => {
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {
         return res.status(400).json(errors);
-    };
+    }
 	
-	let id = req.body.userid
+	let id = req.body.userid;
 	let newpassword = req.body.password1;
 		
     User.findByIdAndUpdate(id, { password: newpassword }, {new: true}).then(user => {
@@ -254,7 +254,7 @@ router.post("/recover", async (req, res) => {
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {
         return res.status(400).json(errors);
-    };
+    }
 
     User.findOneAndUpdate({email: req.body.email}, updateParams, {new: true}).then(user => {
         if (user) {
@@ -275,12 +275,13 @@ router.post("/recover", async (req, res) => {
 				from: `${username}`,
 				to: `${user.email}`,
 				subject: `Link to Reset Password`,
-				text: 
-					`You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n` +
-					`Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n` +
-					`http://localhost:3000/ResetPassword/${token}\n\n` +
+				text:
+					`You are receiving this because you (or someone else) requested the reset of the password for your Career Finder account.\n\n` +
+                    `Your username is ${user.userName}.\n\n` +
+                    `Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n` +
+                    `http://localhost:3000/ResetPassword/${token}\n\n` +
 					`If you did not request this, please ignore this email and your password will remain unchanged.\n`
-			}
+			};
 			
 						
 			transporter.sendMail(mailOptions, (err, response) => {

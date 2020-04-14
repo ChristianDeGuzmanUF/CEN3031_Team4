@@ -60,83 +60,85 @@ class Register extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="main-theme">
-                <div className="form-container">
-                    <div className="icon">
-                        <a href="/"><img src={reg} alt="Logo" /></a>
-                        <h1>Career Finder</h1>
-                        <h4>Register for an Account</h4>
+            <div>
+                <div className="main-theme">
+                    <div className="form-container">
+                        <div className="icon">
+                            <a href="/"><img src={reg} alt="Logo" /></a>
+                            <h1>Career Finder</h1>
+                            <h4>Register for an Account</h4>
+                        </div>
+                        <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
+                            <div className="double-column-col-1">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.firstName}
+                                    error={errors.firstName}
+                                    id="firstName"
+                                    placeholder="First Name"
+                                    type="text"
+                                />
+                                <span className="text-danger">{errors.firstName}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.userName}
+                                    error={errors.userName}
+                                    id="userName"
+                                    placeholder="Username"
+                                    type="text"
+                                />
+                                <span className="text-danger">{errors.userName}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.password1}
+                                    error={errors.password1}
+                                    id="password1"
+                                    placeholder="Password"
+                                    type="password"
+                                />
+                                <span className="text-danger">{errors.password1}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.password2}
+                                    error={errors.password2}
+                                    id="password2"
+                                    placeholder="Confirm Password"
+                                    type="password"
+                                />
+                                <span className="text-danger">{errors.password2}</span>
+                            </div>
+                            <div className="double-column-col-2">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.lastName}
+                                    error={errors.lastName}
+                                    id="lastName"
+                                    placeholder="Last Name"
+                                    type="text"
+                                />
+                                <span className="text-danger">{errors.lastName}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.email}
+                                    error={errors.email}
+                                    id="email"
+                                    placeholder="Email"
+                                    type="email"
+                                />
+                                <span className="text-danger">{errors.email}</span>
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.invitationCode}
+                                    error={errors.invitationCode}
+                                    id="invitationCode"
+                                    placeholder="Invitation Code"
+                                    type="Invitation Code"
+                                />
+                                <span className="text-danger">{errors.invitationCode}</span>
+                                <button className="regular-button" type="submit">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                    <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
-                        <div className="double-column-col-1">
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.firstName}
-                                error={errors.firstName}
-                                id="firstName"
-                                placeholder="First Name"
-                                type="text"
-                            />
-                            <span className="text-danger">{errors.firstName}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.userName}
-                                error={errors.userName}
-                                id="userName"
-                                placeholder="Username"
-                                type="text"
-                            />
-                            <span className="text-danger">{errors.userName}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password1}
-                                error={errors.password1}
-                                id="password1"
-                                placeholder="Password"
-                                type="password"
-                            />
-                            <span className="text-danger">{errors.password1}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password2}
-                                error={errors.password2}
-                                id="password2"
-                                placeholder="Confirm Password"
-                                type="password"
-                            />
-                            <span className="text-danger">{errors.password2}</span>
-                        </div>
-                        <div className="double-column-col-2">
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.lastName}
-                                error={errors.lastName}
-                                id="lastName"
-                                placeholder="Last Name"
-                                type="text"
-                            />
-                            <span className="text-danger">{errors.lastName}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.email}
-                                error={errors.email}
-                                id="email"
-                                placeholder="Email"
-                                type="email"
-                            />
-                            <span className="text-danger">{errors.email}</span>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.invitationCode}
-                                error={errors.invitationCode}
-                                id="invitationCode"
-                                placeholder="Invitation Code"
-                                type="Invitation Code"
-                            />
-                            <span className="text-danger">{errors.invitationCode}</span>
-                            <button className="regular-button" type="submit">Submit</button>
-                        </div>
-                    </form>
                 </div>
                 <div className="credits">
                     Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>

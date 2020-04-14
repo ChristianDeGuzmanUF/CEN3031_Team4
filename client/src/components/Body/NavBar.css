@@ -5,6 +5,7 @@
     font-size: calc(6px + 2vmin);
     padding: 2px;
     min-height: 45px;
+    width: 100vw;
 }
 .take-back-links {
     align-self: left;
