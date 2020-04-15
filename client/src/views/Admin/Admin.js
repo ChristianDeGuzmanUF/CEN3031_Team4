@@ -40,6 +40,9 @@ class Admin extends Component {
     goToClusterEdit = () =>{
         window.location.href = "/Admin/Cluster";
     };
+    goToOccupationEdit = () =>{
+        window.location.href = "/Admin/Occupation";
+    };
     render() {
         return (
             <div className="main-theme">
@@ -55,6 +58,7 @@ class Admin extends Component {
                     <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
                     <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
                     <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
+                    <button className="large-button" onClick={this.goToOccupationEdit}>View or Edit Occupation Information</button>
                 </div>
             </div>
         );

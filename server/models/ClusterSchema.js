@@ -12,33 +12,19 @@ const clusterSchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    studentMessage: {
+        type: String,
+        required: true
+    },
+    picture: {
+        type: String,
+        default: ""
+    },
     skills: [
         {
             type: String
         }
     ],
-    occupations: [
-        {
-            name: {
-                type: String,
-                required: true
-            },
-            description: {
-                type: String
-            },
-            education: {
-                type: String,
-            },
-            averageSalary: {
-                type: Number
-            },
-            skills: [
-                {
-                    type: String
-                }
-            ]
-        }
-    ]
 });
 
-module.exports = Cluster = mongoose.model('clusters', clusterSchema)
+module.exports = Cluster = mongoose.model('clusters', clusterSchema);

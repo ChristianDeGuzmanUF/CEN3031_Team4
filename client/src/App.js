@@ -21,6 +21,7 @@ import StudentEdit from "./views/StudentEdit/StudentEdit.js";
 import AdminEdit from "./views/AdminEdit/AdminEdit.js";
 import ClusterEdit from "./views/ClusterEdit/ClusterEdit";
 import UpdateAccount from "./views/UpdateAccount/UpdateAccount";
+import OccupationEdit from "./views/OccupationEdit/OccupationEdit";
 
 
 // Check for token to keep user logged in
@@ -70,6 +71,7 @@ class App extends Component {
                             <AdminRoute exact path="/Admin/Student" component={StudentEdit} />
                             <AdminRoute exact path="/Admin/Admin" component={AdminEdit} />
                             <AdminRoute exact path="/Admin/Cluster" component={ClusterEdit} />
+                            <AdminRoute exact path="/Admin/Occupation" component={OccupationEdit} />
 							<Route component={NotFound} />
 						</Switch>
 					</div>

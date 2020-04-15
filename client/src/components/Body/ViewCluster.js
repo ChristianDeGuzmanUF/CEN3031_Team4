@@ -10,7 +10,7 @@ class ViewCluster extends Component {
             shortName: "",
             description: "",
             skills: [],
-            occupations: [],
+            studentMessage: "",
             errors: {}
         };
     }
@@ -36,14 +36,22 @@ class ViewCluster extends Component {
         else {
             this.state.description = document.getElementById('description').innerText;
         }
+        if (this.state.studentMessage === "") {
+            this.state.studentMessage = this.props.selectedClusterData.studentMessage;
+        }
+        else {
+            this.state.studentMessage = document.getElementById('studentMessage').innerText;
+        }
 
         const clusterData = {
             clusterName: this.state.clusterName,
             shortName: this.state.shortName,
-            description: this.state.description
+            description: this.state.description,
+            studentMessage: this.state.studentMessage,
         };
 
         clusterService.updateOne(this.props.selectedCluster, clusterData);
+        console.log(clusterData);
         this.props.getClusters();
     };
     render() {
@@ -94,7 +102,6 @@ class ViewCluster extends Component {
                                 <span className="text-danger">
                                         {errors.description}
                                         </span>
-                                {/* TODO find way to display/update
                                 <div className="crud-form-title">
                                     Skills for {theChosenOne.shortName}:
                                 </div>
@@ -106,15 +113,16 @@ class ViewCluster extends Component {
                                         {errors.skills}
                                         </span>
                                 <div className="crud-form-title">
-                                    Occupations in {theChosenOne.shortName}:
+                                    Message for students whose top match is {theChosenOne.shortName}:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
+                                     id = 'studentMessage'
                                      value={this.props.input}
-                                     >{JSON.stringify(theChosenOne.occupations)}</div>
+                                >{theChosenOne.studentMessage}</div>
                                 <span className="text-danger">
-                                        {errors.occupations}
-                                        </span>*/}
+                                        {errors.studentMessage}
+                                        </span>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
                             </div>

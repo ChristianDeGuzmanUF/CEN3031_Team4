@@ -12,7 +12,7 @@ export default {
         return res.data || [];
     },
     updateOne: async (_id, update) => {
-        console.log('get to /api/clusters/' + _id);
+        console.log('put to /api/clusters/' + _id);
         let res = await axios.put(`/api/clusters/`+ _id, update);
         console.log(res);
         return res.data || [];
