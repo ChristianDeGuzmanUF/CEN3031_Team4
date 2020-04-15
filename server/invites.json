@@ -2,12 +2,12 @@
     "invites": [
         {
             "name": "studentInviteCodes",
-            "codes": ["123456789", "987654321"],
+            "codes": ["x7tXns6_94Tx", "keG6@*zfZ2Hx"],
             "adminCode": false
         },
         {
             "name": "adminInviteCodes",
-            "codes": ["00", "11"],
+            "codes": ["N.aEniZFGbd@H@7V", "ZPQFTuL2-Bqmd4oF"],
             "adminCode": true
         }
     ]
