@@ -31,6 +31,27 @@ occupationsRouter.get('/occupations/:occupationID', async (req, res) => {
         });
 });
 
+occupationsRouter.get('/occupationsByCluster', async (req, res) => {
+    Occupations.find({cluster: req.body.cluster})
+        .then(occupations => {
+            if(!occupations) {
+                return res.status(404).send({
+                    message: "Occupation not found with cluster shortName " + req.body.cluster
+                });
+            }
+        res.send(occupations);
+        }).catch(err => {
+            if (err.kind === 'ObjectId') {
+                return res.status(200).send({
+                    error: "Occupations not found with cluster shortName " + req.body.cluster
+                });
+            }
+            return res.status(500).send({
+                error : "Error retrieving occupation with cluster shortName " + req.body.cluster
+            });
+        });
+});
+
 occupationsRouter.put('/occupations/:occupationID', async (req, res) => {
 
     Occupations.findByIdAndUpdate(req.params.occupationID, {

@@ -16,5 +16,9 @@ export default {
         let res = await axios.put(`/api/occupations/`+ _id, update);
         console.log(res);
         return res.data || [];
+    },
+    getByCluster: async (cluster) => {
+        let res = await axios.get(`/api/occupationsByCluster`, cluster);
+        return res.data || [];
     }
 };
