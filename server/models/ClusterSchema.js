@@ -20,11 +20,9 @@ const clusterSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    skills: [
-        {
-            type: String
-        }
-    ],
+    skills: {
+        type: String
+    }
 });
 
 module.exports = Cluster = mongoose.model('clusters', clusterSchema);

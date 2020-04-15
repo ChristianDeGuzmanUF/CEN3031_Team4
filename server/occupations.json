@@ -7,7 +7,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Animal Scientist",
@@ -16,7 +16,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Embryo Technologist",
@@ -25,7 +25,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Feed Sales Representative",
@@ -34,7 +34,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Fish and Game Warden",
@@ -43,7 +43,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Food Scientist",
@@ -52,7 +52,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Livestock Buyer",
@@ -61,7 +61,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Logging Equipment Operator",
@@ -70,7 +70,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Tree Trimmer and Pruner",
@@ -79,7 +79,7 @@
       "cluster": "Agriculture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Architect",
@@ -88,7 +88,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Architectural and Civil Drafter",
@@ -97,7 +97,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Carpenter",
@@ -106,7 +106,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Civil Engineer",
@@ -115,7 +115,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Civil Engineering Technician",
@@ -124,7 +124,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Code Official",
@@ -133,7 +133,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Computer Aided Drafter (CAD)",
@@ -142,7 +142,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Concrete Finisher",
@@ -151,7 +151,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Construction Laborer",
@@ -160,7 +160,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Cost Estimator",
@@ -169,7 +169,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Drywall and Ceiling Tile Installers",
@@ -178,7 +178,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Pipe Layer",
@@ -187,7 +187,7 @@
       "cluster": "Architecture",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Broadcast Technician",
@@ -196,7 +196,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Cinematographer",
@@ -205,7 +205,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Graphics and Printing Equipment Operator",
@@ -214,7 +214,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Publisher, Editor, Journalist or Reporter",
@@ -223,7 +223,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Video Graphics, Special Effects, and Animation Technician",
@@ -232,7 +232,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Video Systems Technician",
@@ -241,7 +241,7 @@
       "cluster": "Arts",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Accounting Manager",
@@ -250,7 +250,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Accounts Payable Manager",
@@ -259,7 +259,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Assistant Credit Manager",
@@ -268,7 +268,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Billing Manager",
@@ -277,7 +277,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Business and Development Manager",
@@ -286,7 +286,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Chief Executive Officer",
@@ -295,7 +295,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Compensation and Benefits Manager",
@@ -304,7 +304,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Credit and Collections Manager",
@@ -313,7 +313,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Entrepreneur",
@@ -322,7 +322,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "General Manager",
@@ -331,7 +331,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Payroll Manager",
@@ -340,7 +340,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Risk Manager",
@@ -349,7 +349,7 @@
       "cluster": "Business",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "College President, Dean, Department Chair, Program Coordinator",
@@ -358,7 +358,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Corporate Trainer",
@@ -367,7 +367,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Curriculum Specialist",
@@ -376,7 +376,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Education Researcher, Test Measurement Specialist/Assessment Specialist",
@@ -385,7 +385,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Elementary and Secondary Superintendent, Principal, Administrator",
@@ -394,7 +394,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Post-Secondary Administrator",
@@ -403,7 +403,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Supervisor and Instructional Coordinator",
@@ -412,7 +412,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Teacher",
@@ -421,7 +421,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Textbook Author",
@@ -430,7 +430,7 @@
       "cluster": "Education",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Brokerage Representative",
@@ -439,7 +439,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Development Officer",
@@ -448,7 +448,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Investment Advisor",
@@ -457,7 +457,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Personal Financial Advisor",
@@ -466,7 +466,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Sales Agent, Securities and Commodities",
@@ -475,7 +475,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Securities/Investments Analyst",
@@ -484,7 +484,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Stock Broker",
@@ -493,7 +493,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Tax Preparation Specialist",
@@ -502,7 +502,7 @@
       "cluster": "Finance",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Air Crew Member",
@@ -511,7 +511,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Aircraft Launch and Recovery Officer",
@@ -520,7 +520,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Assessor",
@@ -529,7 +529,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Congressional Aide",
@@ -538,7 +538,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Detective",
@@ -547,7 +547,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Equal Opportunity Representative",
@@ -556,7 +556,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Legislative Aide",
@@ -565,7 +565,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Postal Service Clerk",
@@ -574,7 +574,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "President",
@@ -583,7 +583,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Radar and Sonar Technician",
@@ -592,7 +592,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Special Forces Officer",
@@ -601,7 +601,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Transportation Inspector",
@@ -610,7 +610,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Vice President",
@@ -619,7 +619,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Urban and Regional Planner",
@@ -628,7 +628,7 @@
       "cluster": "Government",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Acupuncturist",
@@ -637,7 +637,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Anesthesia Technologist/Technician",
@@ -646,7 +646,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Anesthesiologist/Assistant",
@@ -655,7 +655,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Art/Music/Dance Therapist",
@@ -664,7 +664,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Athletic Trainer",
@@ -673,7 +673,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Audiologist",
@@ -682,7 +682,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Certified Nursing Assistant",
@@ -691,7 +691,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Chiropractic Assistant",
@@ -700,7 +700,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Chiropractor",
@@ -709,7 +709,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Dental Assistant/Hygienist",
@@ -718,7 +718,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Dental Lab Technician",
@@ -727,7 +727,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Dietitian/Nutritionist",
@@ -736,7 +736,7 @@
       "cluster": "Health Sciences",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Baggage Porter and Bellhop",
@@ -745,7 +745,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Concierge",
@@ -754,7 +754,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Kitchen Manager",
@@ -763,7 +763,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Catering and Banquet Manager",
@@ -772,7 +772,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Switchboard Operator",
@@ -781,7 +781,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Restaurant Owner",
@@ -790,7 +790,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Animal Trainer",
@@ -799,7 +799,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Museum Curator",
@@ -808,7 +808,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Gaming Dealer",
@@ -817,7 +817,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Convention Planner",
@@ -826,7 +826,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Service Manager",
@@ -835,7 +835,7 @@
       "cluster": "Hospitality",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Barber",
@@ -844,7 +844,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Clergy",
@@ -853,7 +853,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Elementary School Counselor",
@@ -862,7 +862,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Embalmer",
@@ -871,7 +871,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Hairdresser/Cosmetologist",
@@ -880,7 +880,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name" : "Loan Counselor",
@@ -889,7 +889,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Manicurist and Pedicurist",
@@ -898,7 +898,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Sociologist",
@@ -907,7 +907,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Tailor",
@@ -916,7 +916,7 @@
       "cluster": "Human Services",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Computer Programmer",
@@ -925,7 +925,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Network Designer",
@@ -934,7 +934,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Web Administrator",
@@ -943,7 +943,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Administration Associate",
@@ -952,7 +952,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Analyst",
@@ -961,7 +961,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Developer",
@@ -970,7 +970,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Computer Security Specialist",
@@ -979,7 +979,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Modeler",
@@ -988,7 +988,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Network Developer",
@@ -997,7 +997,7 @@
       "cluster": "Information Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Arbitrator, Mediator and Conciliator",
@@ -1006,7 +1006,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Correctional Officer and Jailer",
@@ -1015,7 +1015,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Crossing Guard",
@@ -1024,7 +1024,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Detective and Investigator",
@@ -1033,7 +1033,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Dispatchers",
@@ -1042,7 +1042,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Fire Fighter",
@@ -1051,7 +1051,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Judge",
@@ -1060,7 +1060,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Immigration and Custom Inspector",
@@ -1069,7 +1069,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Lawyer",
@@ -1078,7 +1078,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Paramedic",
@@ -1087,7 +1087,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Police Officer",
@@ -1096,7 +1096,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Social Worker",
@@ -1105,7 +1105,7 @@
       "cluster": "Law",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Market Research Analyst",
@@ -1114,7 +1114,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Fashion Designer",
@@ -1123,7 +1123,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Real Estate Agent",
@@ -1132,7 +1132,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Merchandise Displayer and Window Trimmer",
@@ -1141,7 +1141,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Sales Representative",
@@ -1150,7 +1150,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Telemarketer",
@@ -1159,7 +1159,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Key Account Manager",
@@ -1168,7 +1168,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Wholesale and Retail Buyer",
@@ -1177,7 +1177,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Account Executive",
@@ -1186,7 +1186,7 @@
       "cluster": "Marketing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Assembler",
@@ -1195,7 +1195,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Automated Manufacturing Technician",
@@ -1204,7 +1204,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Bookbinder",
@@ -1213,7 +1213,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Calibration Technician",
@@ -1222,7 +1222,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Electrical Installer and Repairer",
@@ -1231,7 +1231,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Electromechanical Equipment Assembler",
@@ -1240,7 +1240,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Extruding and Drawing Machine Setter/Set-Up Operator",
@@ -1249,7 +1249,7 @@
       "cluster": "Manufacturing",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Anthropologist",
@@ -1258,7 +1258,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Biological Scientist",
@@ -1267,7 +1267,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Food Science Technologist",
@@ -1276,7 +1276,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Mathematician",
@@ -1285,7 +1285,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Microbiologist",
@@ -1294,7 +1294,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Park Naturalist",
@@ -1303,7 +1303,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Physicist",
@@ -1312,7 +1312,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Statistician",
@@ -1321,7 +1321,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Technical Writer",
@@ -1330,7 +1330,7 @@
       "cluster": "Science and Technology",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Parking lot attendant",
@@ -1339,7 +1339,7 @@
       "cluster": "Logistics",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Air traffic controller",
@@ -1348,7 +1348,7 @@
       "cluster": "Logistics",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Taxi driver",
@@ -1357,7 +1357,7 @@
       "cluster": "Logistics",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     },
     {
       "name": "Airplane pilot",
@@ -1366,7 +1366,7 @@
       "cluster": "Logistics",
       "averageSalary": 0,
       "picture": "Add a theme picture for this occupation",
-      "links": []
+      "link": "Add a link for more information for this occupation"
     }
   ]
 }

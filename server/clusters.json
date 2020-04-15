@@ -6,7 +6,7 @@
             "description": "The Agriculture, Food & Natural Resources career cluster is for people interested in the production, processing, marketing, distribution, financing, and development of agricultural commodities and resources. Their interests in the field might include food, fuel, fiber, wood products, natural resources, horticulture, and other plant and animal products/resources.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Architecture and construction",
@@ -14,7 +14,7 @@
             "description": "People in the Architecture & Construction cluster careers design, plan, manage, build, and maintain the built environment. Take a look around you. The houses across the street, the roads that cars drive on, and the parks that you walk through every day were created or maintained by the people performing jobs in this cluster and its pathways.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Arts, audio/video technology, and communications",
@@ -22,7 +22,7 @@
             "description": "Have you ever wanted to design, produce, exhibit, perform, write, and pub- lish anything by making music or creating multimedia visual content? Do you love the performing arts? You could be dreaming of becoming an actress on the stage or television. Or perhaps you would rather be a world- renowned painter. Then again, your interest might be in journalism as the next star anchor of the evening news or a respected blogger, or in communi- cations as a public relations specialist working behind the scenes to guide the careers of the rich and famous. If so, this cluster field is for you.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Business management and administration",
@@ -30,7 +30,7 @@
             "description": "Every business hires individuals to manage its operations. Businesses need office managers and accountants to ensure that the phones get answered and that the books are in order. These businesses can range in size from small convenience stores to large hospitals. They all need employees who ensure that operations run smoothly within the organization. The employees in the jobs and industries of the Business, Management & Administration cluster play this role.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Education and training",
@@ -38,7 +38,7 @@
             "description": "Much thought and care go into planning, managing, and providing educa- tion as well as training and related learning support services. People employed in this field serve children and adults. Workers in this cluster need patience and good customer service skills to be effective in their jobs.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Finance",
@@ -46,7 +46,7 @@
             "description": "Finance is often linked to banking alone, but there are many facets of the industry because there are so many different types of financial institutions. Employees in this field provide services for financial and investment bank- ing, insurance products, business/financial management, and more.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Government and public administration",
@@ -54,7 +54,7 @@
             "description": "Local, state, and federal governments need employees to perform functions that include governance, national security, foreign service, planning, revenue flows and taxation, regulation, and management and administration.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Health science",
@@ -62,7 +62,7 @@
             "description": "Health Science cluster employees plan, manage, and deliver therapeutic serv- ices, diagnostic services, health informatics, support services, and biotech- nology research and development to individuals throughout the United States. They work in cities, suburbs, rural areas, and other communities to provide crucial services to a diverse client base.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Hospitality and tourism",
@@ -70,7 +70,7 @@
             "description": "Hospitality and tourism careers comprise the world’s largest industry. Its workers manage, market, and operate restaurants and other food services, lodging, attractions, recreation events, and travel-related services. They are very busy people who cater to the needs of individuals that visit your town, city, state, and other countries of the world as tourists.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Human services",
@@ -78,7 +78,7 @@
             "description": "Human services careers prepare individuals for employment in pathways that relate to families and human needs. They work in daycare centers, drive the elderly and disabled to their appointments, provide massages in spas, and counsel those in need of emotional support.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Information technology",
@@ -86,7 +86,7 @@
             "description": "Individuals employed in this cluster build the bridges between people and technology. They design, develop, support, and manage hardware, software, multimedia, and systems integration services that allow you to have access to the Internet, operate your remote control device, and use your iPod.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Law, public safety, corrections, and security",
@@ -94,7 +94,7 @@
             "description": "There are individuals who plan, manage, and provide legal, public safety, protective services, and homeland security, including professional and tech- nical support services, in your community. They are police officers, lawyers, security guards, and firefighters, and they deliver the services that make you feel a little safer in times of crisis.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Manufacturing",
@@ -102,7 +102,7 @@
             "description": "Products ranging from plastic bottles to cars are built in factories and devel- oped in manufacturing plants all over the world through specific processes. Those employed in the manufacturing cluster perform the steps that go into intermediate or final products and related professional and technical sup- port activities such as production planning and control, maintenance, and manufacturing/process engineering.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Marketing",
@@ -110,7 +110,7 @@
             "description": "Marketing professionals plan, manage, and perform activities to reach orga- nizational objectives. Their work can range from handing out flyers to publi- cizing an event or working in an office to research consumers’ spending habits.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Science, technology, engineering, and mathematics",
@@ -118,7 +118,7 @@
             "description": "Can you see yourself planning, managing, and providing scientific research as a career? Are you interested in laboratory and testing services or in research and development? If so, are you also willing to earn the certification or advanced education necessary to work in this career cluster? If your answer is a “yes” to any of these questions, then take a closer look at these pathways and occupations.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         },
         {
             "clusterName": "Transportation, distribution, and logistics",
@@ -126,7 +126,7 @@
             "description": "Careers in this cluster involve moving people and products from one place to another.",
             "studentMessage": "Add a message for student's who receive this as their top match that tells them their skills and characteristics that led to this match.",
             "picture": "Add a theme picture for this cluster.",
-            "skills": []
+            "skills": "What skills are important for success in this cluster?"
         }
     ]
 }

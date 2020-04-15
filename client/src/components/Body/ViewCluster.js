@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import clusterService from '../../actions/clusterService';
 
@@ -9,8 +8,9 @@ class ViewCluster extends Component {
             clusterName: "",
             shortName: "",
             description: "",
-            skills: [],
+            skills: "",
             studentMessage: "",
+            picture: "",
             errors: {}
         };
     }
@@ -42,16 +42,29 @@ class ViewCluster extends Component {
         else {
             this.state.studentMessage = document.getElementById('studentMessage').innerText;
         }
+        if (this.state.picture === "") {
+            this.state.picture = this.props.selectedClusterData.picture;
+        }
+        else {
+            this.state.picture = document.getElementById('picture').innerText;
+        }
+        if (this.state.skills === "") {
+            this.state.skills = this.props.selectedClusterData.skills;
+        }
+        else {
+            this.state.skills = document.getElementById('skills').innerText;
+        }
 
         const clusterData = {
             clusterName: this.state.clusterName,
             shortName: this.state.shortName,
             description: this.state.description,
             studentMessage: this.state.studentMessage,
+            picture: this.state.picture,
+            skills: this.state.skills,
         };
 
         clusterService.updateOne(this.props.selectedCluster, clusterData);
-        console.log(clusterData);
         this.props.getClusters();
     };
     render() {
@@ -81,7 +94,10 @@ class ViewCluster extends Component {
                                         {errors.clusterName}
                                         </span>
                                 <div className="crud-form-title">
-                                    Short name for the cluster (appears as the title):
+                                    Short name for the cluster:
+                                </div>
+                                <div className="crud-form-text">
+                                    Appears as the title and is used to connect occupations to this cluster.
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -103,16 +119,6 @@ class ViewCluster extends Component {
                                         {errors.description}
                                         </span>
                                 <div className="crud-form-title">
-                                    Skills for {theChosenOne.shortName}:
-                                </div>
-                                <div className="textareaElement"
-                                     contentEditable="true"
-                                     value={this.props.input}
-                                     >{JSON.stringify(theChosenOne.skills)}</div>
-                                <span className="text-danger">
-                                        {errors.skills}
-                                        </span>
-                                <div className="crud-form-title">
                                     Message for students whose top match is {theChosenOne.shortName}:
                                 </div>
                                 <div className="textareaElement"
@@ -122,6 +128,34 @@ class ViewCluster extends Component {
                                 >{theChosenOne.studentMessage}</div>
                                 <span className="text-danger">
                                         {errors.studentMessage}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Theme picture for {theChosenOne.shortName}:
+                                </div>
+                                <div className="crud-form-text">
+                                    Please add a hyperlink.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'picture'
+                                     value={this.props.input}
+                                >{theChosenOne.picture}</div>
+                                <span className="text-danger">
+                                        {errors.picture}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Skills for {theChosenOne.shortName}:
+                                </div>
+                                <div className="crud-form-text">
+                                    Please add a comma separated list of important skills for this cluster:
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'skills'
+                                     value={this.props.input}
+                                >{(theChosenOne.skills)}</div>
+                                <span className="text-danger">
+                                        {errors.skills}
                                         </span>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>

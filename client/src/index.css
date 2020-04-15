@@ -359,6 +359,11 @@ a:hover {
     padding-bottom: 2px;
     font-weight: bold;
 }
+.crud-form-text {
+    text-align: left;
+    padding-bottom: 2px;
+    font-size: calc(8px + 1vmin);
+}
 .search-bar {
     color: #000032;
     padding: 5px;
@@ -409,4 +414,5 @@ td.user-title {
     max-height: 2500px;
     overflow-x: hidden;
     overflow-y: auto;
+    margin-bottom: 15px;
 }

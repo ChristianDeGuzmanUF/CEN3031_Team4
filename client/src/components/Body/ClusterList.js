@@ -17,7 +17,8 @@ class ClusterList extends Component {
     if (this.props.clusters && this.props.clusters.length > 0) {
         clusterList = this.props.clusters.map(cluster => {
             if(cluster.clusterName.toLowerCase().includes(this.props.filterText.toLowerCase())
-            || cluster.description.toLowerCase().includes(this.props.filterText.toLowerCase())) {
+            || cluster.description.toLowerCase().includes(this.props.filterText.toLowerCase())
+                || cluster.skills.toLowerCase().includes(this.props.filterText.toLowerCase())) {
                 return (
                     <tr key={cluster._id} onClick={(e) => this.clickHandler(cluster._id, e)}>
                         <td>

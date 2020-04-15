@@ -37,7 +37,9 @@ clustersRouter.put('/clusters/:clusterID', async (req, res) => {
         clusterName: req.body.clusterName,
         shortName: req.body.shortName,
         description: req.body.description,
-        studentMessage: req.body.studentMessage
+        studentMessage: req.body.studentMessage,
+        picture: req.body.picture,
+        skills: req.body.skills,
     }, {new: true})
         .then(cluster => {
             if(!cluster) {

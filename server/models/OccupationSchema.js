@@ -26,11 +26,9 @@ const occupationSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    links: [
-        {
+    link: {
             type: String
-        }
-    ]
+    }
 });
 
 module.exports = Occupation = mongoose.model('occupations', occupationSchema);
