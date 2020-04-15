@@ -4,13 +4,14 @@ import clusterService from '../../actions/clusterService';
 class ViewCluster extends Component {
     constructor(props) {
         super(props);
+        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            clusterName: "",
-            shortName: "",
-            description: "",
-            skills: "",
-            studentMessage: "",
-            picture: "",
+            clusterName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            shortName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            description: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            skills: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            studentMessage: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            picture: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             errors: {}
         };
     }
@@ -18,37 +19,37 @@ class ViewCluster extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        if (this.state.clusterName === "") {
+        if (this.state.clusterName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.clusterName = this.props.selectedClusterData.clusterName;
         }
         else {
             this.state.clusterName = document.getElementById('clusterName').innerText;
         }
-        if (this.state.shortName === "") {
+        if (this.state.shortName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.shortName = this.props.selectedClusterData.shortName;
         }
         else {
             this.state.shortName = document.getElementById('shortName').innerText;
         }
-        if (this.state.description === "") {
+        if (this.state.description === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.description = this.props.selectedClusterData.description;
         }
         else {
             this.state.description = document.getElementById('description').innerText;
         }
-        if (this.state.studentMessage === "") {
+        if (this.state.studentMessage === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.studentMessage = this.props.selectedClusterData.studentMessage;
         }
         else {
             this.state.studentMessage = document.getElementById('studentMessage').innerText;
         }
-        if (this.state.picture === "") {
+        if (this.state.picture === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.picture = this.props.selectedClusterData.picture;
         }
         else {
             this.state.picture = document.getElementById('picture').innerText;
         }
-        if (this.state.skills === "") {
+        if (this.state.skills === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.skills = this.props.selectedClusterData.skills;
         }
         else {

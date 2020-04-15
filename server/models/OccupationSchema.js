@@ -14,6 +14,10 @@ const occupationSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    education: {
+        type: String,
+        default: ""
+    },
     cluster: {
         type: String,
         required: true

@@ -5,36 +5,37 @@ import userService from '../../actions/userService';
 class AccountDetails extends Component {
     constructor(props) {
         super(props);
+        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            userName: "",
-            firstName: "",
-            lastName: "",
-            email: "",
+            userName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            firstName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            lastName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            email: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             errors: {}
         };
     }
     onSubmit = e => {
         e.preventDefault();
 
-        if (this.state.userName === "") {
+        if (this.state.userName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.userName = this.props.user.userName;
         }
         else {
             this.state.userName = document.getElementById('userName').innerText;
         }
-        if (this.state.firstName === "") {
+        if (this.state.firstName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.firstName = this.props.user.firstName;
         }
         else {
             this.state.firstName = document.getElementById('firstName').innerText;
         }
-        if (this.state.lastName === "") {
+        if (this.state.lastName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.lastName = this.props.user.lastName;
         }
         else {
             this.state.lastName = document.getElementById('lastName').innerText;
         }
-        if (this.state.email === "") {
+        if (this.state.email === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.email = this.props.user.email;
         }
         else {

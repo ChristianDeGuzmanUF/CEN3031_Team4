@@ -58,7 +58,7 @@ class Admin extends Component {
                     <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
                     <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
                     <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
-                    <button className="large-button" onClick={this.goToOccupationEdit}>View or Edit Occupation Information</button>
+                    <button className="large-button" onClick={this.goToOccupationEdit}>View, Edit, Add, or Delete Occupations</button>
                 </div>
             </div>
         );

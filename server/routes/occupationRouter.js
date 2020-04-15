@@ -52,15 +52,47 @@ occupationsRouter.get('/occupationsByCluster', async (req, res) => {
         });
 });
 
+occupationsRouter.post('/occupations', async (req, res) => {
+    const newOcc = new Occupations;
+    newOcc.name = req.body.name;
+    console.log(req.body.name);
+    newOcc.cluster = req.body.cluster;
+    console.log(req.body.cluster);
+    newOcc.description = req.body.description;
+    console.log(req.body.description);
+    newOcc.courses = req.body.courses;
+    console.log(req.body.courses);
+    newOcc.education = req.body.education;
+    console.log(req.body.education);
+    newOcc.averageSalary = req.body.averageSalary;
+    console.log(req.body.averageSalary);
+    newOcc.picture = req.body.picture;
+    console.log(req.body.picture);
+    newOcc.link = req.body.link;
+    console.log(req.body.picture);
+    newOcc.save()
+        .then(data => {
+            res.send(data);
+        }).catch(err => {
+            console.log(err.message);
+        res.status(404).send({
+            message: err.message || "Some error occurred while creating the new listing."
+        })
+    });
+});
+
 occupationsRouter.put('/occupations/:occupationID', async (req, res) => {
 
     Occupations.findByIdAndUpdate(req.params.occupationID, {
         name: req.body.name,
         occupation: req.body.occupation,
         description: req.body.description,
+        courses: req.body.courses,
+        education: req.body.education,
+        cluster: req.body.cluster,
         averageSalary: req.body.averageSalary,
-        description: req.body.description,
-        picture: req.body.picture
+        picture: req.body.picture,
+        link: req.body.link,
     }, {new: true})
         .then(occupation => {
             if(!occupation) {
@@ -87,6 +119,29 @@ occupationsRouter.get('/occupation/:name', async (req, res) => {
     Occupations.findOne({name: req.params.name})
         .then(occupation => res.send(occupation))
         .catch(err => console.log(err));
+});
+
+occupationsRouter.delete('/occupations/:occupationID', async (req, res) => {
+
+    Occupations.findByIdAndDelete(req.params.occupationID)
+        .then(user => {
+            if(!user) {
+                return res.status(404).send({
+                    error: "ID not found with id " + req.params.userID
+                });
+            }
+            console.log(res);
+            res.send({message: "Occupation successfully deleted."});
+        }).catch(err => {
+        if(err.kind === 'ObjectId' || err.name === "NotFound") {
+            return res.status(404).send({
+                error: "ID not found with id " + req.params.userID
+            });
+        }
+        return res.status(500).send({
+            error: "Error deleting ID with id " + req.params.userID
+        });
+    });
 });
 
 module.exports = occupationsRouter;

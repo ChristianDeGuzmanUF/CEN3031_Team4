@@ -197,6 +197,18 @@ a:hover {
     top: 60px;
     right: 5px;
 }
+.xl-white-centered-button {
+    background: ghostwhite;
+    color: #000032;
+    font-weight: bold;
+    font-size: calc(15px + 2vmin);
+    border: solid 10px #42cd42;
+    box-shadow: 0 3px 10px rgba(0, 0, 0.5, 0.5);
+    border-radius: 3px;
+    outline: none;
+    margin-top: 25px;
+    padding: 25px;
+}
 
 /*forms*/
 .form-container{
@@ -392,6 +404,10 @@ tr.attrib-title{
     font-size: calc(8px + 2vmin);
     font-weight: bold;
     text-decoration: underline;
+}
+tr.attrib-title-tiny {
+    font-size: calc(10px + 1vmin);
+    font-weight: bold;
 }
 tr.attrib-detail {
     font-size: calc(9px + 1vmin);
