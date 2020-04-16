@@ -1,6 +1,5 @@
 const express = require('express');
 const Clusters = require('../models/ClusterSchema');
-
 const clustersRouter = express.Router();
 
 clustersRouter.get('/clusters', async (req, res) => {
@@ -39,7 +38,10 @@ clustersRouter.put('/clusters/:clusterID', async (req, res) => {
         description: req.body.description,
         studentMessage: req.body.studentMessage,
         picture: req.body.picture,
+        pictureCredit: req.body.pictureCredit,
+        pictureCreditLink: req.body.pictureCreditLink,
         skills: req.body.skills,
+        salaryRange: req.body.salaryRange
     }, {new: true})
         .then(cluster => {
             if(!cluster) {

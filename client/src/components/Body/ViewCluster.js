@@ -12,6 +12,9 @@ class ViewCluster extends Component {
             skills: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             studentMessage: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             picture: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            pictureCredit: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            pictureCreditLink: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            salaryRange: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             errors: {}
         };
     }
@@ -49,11 +52,29 @@ class ViewCluster extends Component {
         else {
             this.state.picture = document.getElementById('picture').innerText;
         }
+        if (this.state.pictureCredit === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
+            this.state.pictureCredit = this.props.selectedClusterData.pictureCredit;
+        }
+        else {
+            this.state.pictureCredit = document.getElementById('pictureCredit').innerText;
+        }
+        if (this.state.pictureCreditLink === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
+            this.state.pictureCreditLink = this.props.selectedClusterData.pictureCreditLink;
+        }
+        else {
+            this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;
+        }
         if (this.state.skills === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.skills = this.props.selectedClusterData.skills;
         }
         else {
             this.state.skills = document.getElementById('skills').innerText;
+        }
+        if (this.state.salaryRange === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
+            this.state.salaryRange = this.props.selectedClusterData.salaryRange;
+        }
+        else {
+            this.state.salaryRange = document.getElementById('salaryRange').innerText;
         }
 
         const clusterData = {
@@ -62,7 +83,10 @@ class ViewCluster extends Component {
             description: this.state.description,
             studentMessage: this.state.studentMessage,
             picture: this.state.picture,
+            pictureCredit: this.state.pictureCredit,
+            pictureCreditLink: this.state.pictureCreditLink,
             skills: this.state.skills,
+            salaryRange: this.state.salaryRange,
         };
 
         clusterService.updateOne(this.props.selectedCluster, clusterData);
@@ -122,6 +146,9 @@ class ViewCluster extends Component {
                                 <div className="crud-form-title">
                                     Message for students whose top match is {theChosenOne.shortName}:
                                 </div>
+                                <div className="crud-form-text">
+                                    The student will see this in their dashboard, so it is best to write something like "You got this match because you are good at/enjoy/etc....."
+                                </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'studentMessage'
@@ -134,7 +161,7 @@ class ViewCluster extends Component {
                                     Theme picture for {theChosenOne.shortName}:
                                 </div>
                                 <div className="crud-form-text">
-                                    Please add a hyperlink.
+                                    Add a permanent link to a picture. A typical way to do this is to upload your photos to a cloud storage service (cloudinary is a free example) and copy the link they provide.
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -143,6 +170,34 @@ class ViewCluster extends Component {
                                 >{theChosenOne.picture}</div>
                                 <span className="text-danger">
                                         {errors.picture}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Picture Credit
+                                </div>
+                                <div className="crud-form-text">
+                                    If you need to credit a website or person for your picture, add the name here.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'pictureCredit'
+                                     value={this.props.input}
+                                >{theChosenOne.pictureCredit}</div>
+                                <span className="text-danger">
+                                        {errors.pictureCredit}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Picture Credit Link
+                                </div>
+                                <div className="crud-form-text">
+                                    If you need to add a link to the creator of your picture, add it here.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'pictureCreditLink'
+                                     value={this.props.input}
+                                >{theChosenOne.pictureCreditLink}</div>
+                                <span className="text-danger">
+                                        {errors.pictureCreditLink}
                                         </span>
                                 <div className="crud-form-title">
                                     Skills for {theChosenOne.shortName}:
@@ -157,6 +212,20 @@ class ViewCluster extends Component {
                                 >{(theChosenOne.skills)}</div>
                                 <span className="text-danger">
                                         {errors.skills}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Salary Range:
+                                </div>
+                                <div className="crud-form-text">
+                                    Add the salary range in the form $10,000-$90,000.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'salaryRange'
+                                     value={this.props.input}
+                                >{(theChosenOne.salaryRange)}</div>
+                                <span className="text-danger">
+                                        {errors.salaryRange}
                                         </span>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>

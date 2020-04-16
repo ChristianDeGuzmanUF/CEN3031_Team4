@@ -13,6 +13,8 @@ class ViewOccupation extends Component {
             cluster: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             averageSalary: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             picture: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            pictureCredit: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            pictureCreditLink: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             link: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
             errors: {}
         };
@@ -63,6 +65,18 @@ class ViewOccupation extends Component {
         else {
             this.state.picture = document.getElementById('picture').innerText;
         }
+        if (this.state.pictureCredit === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
+            this.state.pictureCredit = this.props.selectedOccupationData.pictureCredit;
+        }
+        else {
+            this.state.pictureCredit = document.getElementById('pictureCredit').innerText;
+        }
+        if (this.state.pictureCreditLink === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
+            this.state.pictureCreditLink = this.props.selectedOccupationData.pictureCreditLink;
+        }
+        else {
+            this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;
+        }
         if (this.state.link === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.link = this.props.selectedOccupationData.link;
         }
@@ -78,6 +92,8 @@ class ViewOccupation extends Component {
             cluster: this.state.cluster,
             averageSalary: this.state.averageSalary,
             picture: this.state.picture,
+            pictureCredit: this.state.pictureCredit,
+            pictureCreditLink: this.state.pictureCreditLink,
             link: this.state.link,
         };
 
@@ -179,7 +195,7 @@ class ViewOccupation extends Component {
                                     Theme picture for {theChosenOne.name}:
                                 </div>
                                 <div className="crud-form-text">
-                                    Please add a hyperlink.
+                                    Add a permanent link to a picture. A typical way to do this is to upload your photos to a cloud storage service (cloudinary is a free example) and copy the link they provide.
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -188,6 +204,34 @@ class ViewOccupation extends Component {
                                 >{theChosenOne.picture}</div>
                                 <span className="text-danger">
                                         {errors.picture}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Picture Credit
+                                </div>
+                                <div className="crud-form-text">
+                                    If you need to credit a website or person for your picture, add the name here.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'pictureCredit'
+                                     value={this.props.input}
+                                >{theChosenOne.pictureCredit}</div>
+                                <span className="text-danger">
+                                        {errors.pictureCredit}
+                                        </span>
+                                <div className="crud-form-title">
+                                    Picture Credit Link
+                                </div>
+                                <div className="crud-form-text">
+                                    If you need to add a link to the creator of your picture, add it here.
+                                </div>
+                                <div className="textareaElement"
+                                     contentEditable="true"
+                                     id = 'pictureCreditLink'
+                                     value={this.props.input}
+                                >{theChosenOne.pictureCreditLink}</div>
+                                <span className="text-danger">
+                                        {errors.pictureCreditLink}
                                         </span>
                                 <div className="crud-form-title">
                                     A link for {theChosenOne.name}:

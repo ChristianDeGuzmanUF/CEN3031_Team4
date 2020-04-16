@@ -115,7 +115,7 @@ a:hover {
 }
 .description-box {
     background-color: ghostwhite;
-    border: solid 15px #42cd42;
+    border: solid 5px #42cd42;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -307,6 +307,20 @@ a:hover {
     color: ghostwhite;
     text-decoration: underline;
 }
+.credits_small {
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    font-size: calc(2px + 1vmin);
+    text-align: left;
+    color: ghostwhite;
+}
+.credit_link_blue {
+    color: #000032;
+    text-decoration: underline;
+}
 
 /*crud pages*/
 .crud-search {
@@ -478,6 +492,27 @@ table.description {
     margin: 0;
     padding: 0;
 }
+table.description-outer {
+    background-color: ghostwhite;
+    display: flex;
+    border-collapse: inherit;
+    border: none;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+tr.picture {
+    background-color: ghostwhite;
+    display: table;
+    border-collapse: inherit;
+    border: none;
+    border-spacing: 0;
+    margin-left: 8px;
+    margin-right: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0;
+}
 tr.description-rows {
     padding: 0;
     background-color: ghostwhite;
@@ -492,7 +527,7 @@ tr.spacer {
 }
 td.description-title {
     margin: 0;
-    padding: 5px;
+    padding: 0;
     font-size: calc(7px + 2vmin);
     text-align: left;
     vertical-align: top;
@@ -502,7 +537,7 @@ td.description-title {
 }
 td.description-title-small {
     margin: 0;
-    padding: 5px;
+    padding: 0;
     font-size: calc(5px + 2vmin);
     text-align: left;
     vertical-align: top;

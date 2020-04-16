@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import occupationService from '../../actions/occupationService';
 import VisitorNavBar from  '../../components/Body/VisitorNavBar';
 import NavBar from '../../components/Body/NavBar';
+import defaultPic from '../default.jpg'
 
 class OccupationInfo extends Component {
     constructor(props) {
@@ -26,83 +27,105 @@ class OccupationInfo extends Component {
     };
 
     render() {
-        let singleCluster =	<div className="welcome-text">Oops. Nothing to see here.</div>;
+        let singleOccupation =	<div className="welcome-text">One moment please.</div>;
         let navHeader = <VisitorNavBar/>;
+        let source, credit, credit_link;
 
         if (this.props.auth.isAuthenticated) {
             navHeader = <NavBar/>;
         }
 
         if (this.state.occupation != null) {
+
+            if (this.state.occupation.picture === "") {
+                source = defaultPic;
+                credit = "Poster vector created by macrovector - www.freepik.com";
+                credit_link = "https://www.freepik.com/free-photos-vectors/poster";
+            } else {
+                source = this.state.occupation.picture;
+                credit = this.state.occupation.pictureCredit;
+                credit_link = this.state.occupation.pictureCreditLink;
+            }
+
             let linkName = "/Clusters/" + this.state.occupation.cluster;
-            singleCluster =
+            singleOccupation =
                 <div className="main-theme">
                     {navHeader}
                     <div className="header-small">
                         {this.state.occupation.name}
                     </div>
                     <div className="description-box">
-                        <table className="description">
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Description
-                                </td>
-                                <td className="description-content">
-                                    {this.state.occupation.description}
-                                </td>
+                        <table className='description-outer'>
+                            <tr className="picture">
+                                <img src={source}/>
+                                <div className="credits_small">
+                                    <a className="credit_link_blue" href = {credit_link} target="_blank">{credit}</a>
+                                </div>
                             </tr>
-                            <tr className="spacer">&nbsp;</tr>
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Average Salary
-                                </td>
-                                <td className="description-content">
-                                    ${this.state.occupation.averageSalary}
-                                </td>
-                            </tr>
-                            <tr className="spacer">&nbsp;</tr>
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Career Cluster
-                                </td>
-                                <td className="description-content">
-                                    <a href={linkName} className="info-link">{this.state.occupation.cluster}
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr className="spacer">&nbsp;</tr>
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Important Courses
-                                </td>
-                                <td className="description-content">
-                                    {this.state.occupation.courses}
-                                </td>
-                            </tr>
-                            <tr className="spacer">&nbsp;</tr>
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Minimum Education Requirements
-                                </td>
-                                <td className="description-content">
-                                    {this.state.occupation.education}
-                                </td>
-                            </tr>
-                            <tr className="spacer">&nbsp;</tr>
-                            <tr className="description-rows">
-                                <td className="description-title-small">
-                                    Link
-                                </td>
-                                <td className="description-content">
-                                    <a href={this.state.occupation.link} className="info-link">{this.state.occupation.link}
-                                    </a>
-                                </td>
+                            <tr>
+                                <table className="description">
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Description
+                                        </td>
+                                        <td className="description-content">
+                                            {this.state.occupation.description}
+                                        </td>
+                                    </tr>
+                                    <tr className="spacer">&nbsp;</tr>
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Average Salary
+                                        </td>
+                                        <td className="description-content">
+                                            ${this.state.occupation.averageSalary}
+                                        </td>
+                                    </tr>
+                                    <tr className="spacer">&nbsp;</tr>
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Career Cluster
+                                        </td>
+                                        <td className="description-content">
+                                            <a href={linkName} className="info-link">{this.state.occupation.cluster}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr className="spacer">&nbsp;</tr>
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Important Courses
+                                        </td>
+                                        <td className="description-content">
+                                            {this.state.occupation.courses}
+                                        </td>
+                                    </tr>
+                                    <tr className="spacer">&nbsp;</tr>
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Minimum Education Requirements
+                                        </td>
+                                        <td className="description-content">
+                                            {this.state.occupation.education}
+                                        </td>
+                                    </tr>
+                                    <tr className="spacer">&nbsp;</tr>
+                                    <tr className="description-rows">
+                                        <td className="description-title-small">
+                                            Link
+                                        </td>
+                                        <td className="description-content">
+                                            <a href={this.state.occupation.link} className="info-link">{this.state.occupation.link}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </tr>
                         </table>
                     </div>
                 </div>
         }
-        return singleCluster;
+        return singleOccupation;
     };
 }
 

@@ -30,6 +30,14 @@ const occupationSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    pictureCredit: {
+        type: String,
+        default: ""
+    },
+    pictureCreditLink: {
+        type: String,
+        default: ""
+    },
     link: {
             type: String
     }

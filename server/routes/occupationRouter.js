@@ -93,6 +93,8 @@ occupationsRouter.put('/occupations/:occupationID', async (req, res) => {
         cluster: req.body.cluster,
         averageSalary: req.body.averageSalary,
         picture: req.body.picture,
+        pictureCredit: req.body.pictureCredit,
+        pictureCreditLink: req.body.pictureCreditLink,
         link: req.body.link,
     }, {new: true})
         .then(occupation => {

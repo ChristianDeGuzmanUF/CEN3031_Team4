@@ -24,7 +24,7 @@ class ThumbnailOccupations extends Component {
             });
         }
         else {
-            return <div>Oops. Nothing to see here.</div>;
+            return <div>One moment please. If nothing appears, this cluster does not have any related occupations.</div>;
         }
         return <div className="row">{thumbnailOccupations}</div>;
     };

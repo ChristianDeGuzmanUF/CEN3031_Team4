@@ -7,7 +7,7 @@ import occupationService from '../../actions/occupationService';
 import VisitorNavBar from  '../../components/Body/VisitorNavBar';
 import NavBar from '../../components/Body/NavBar';
 import ThumbnailOccupations from "../../components/Body/ThumbnailOccupations";
-
+import defaultPic from '../default.jpg'
 
 class ClusterInfo extends Component {
     constructor(props) {
@@ -41,47 +41,78 @@ class ClusterInfo extends Component {
     };
    
     render() {
-		let singleCluster =	<div className="welcome-text">Oops. Nothing to see here.</div>;
+		let singleCluster =	<div className="welcome-text">One moment please.</div>;
 		let navHeader = <VisitorNavBar/>;
+		let source, credit, credit_link;
 		
 		if (this.props.auth.isAuthenticated) {
 			navHeader = <NavBar/>;
 		}
 
         if (this.state.cluster != null) {
-            singleCluster = 
+
+		    if (this.state.cluster.picture === "") {
+                source = defaultPic;
+                credit = "Poster vector created by macrovector - www.freepik.com";
+                credit_link = "https://www.freepik.com/free-photos-vectors/poster";
+            } else {
+                source = this.state.cluster.picture;
+                credit = this.state.cluster.pictureCredit;
+                credit_link = this.state.cluster.pictureCreditLink;
+            }
+
+            singleCluster =
 				 <div className="main-theme">
 					{navHeader}
 					<div className="header">
                         {this.state.cluster.shortName}
                     </div>
                      <div className="description-box">
-                         <table className="description">
-                             <tr className="description-rows">
-                                 <td className="description-title">
-                                     Full Name
-                                 </td>
-                                 <td className="description-content">
-                                     {this.state.cluster.clusterName}
-                                 </td>
+                         <table className='description-outer'>
+                             <tr className="picture">
+                                 <img src={source}/>
+                                 <div className="credits_small">
+                                     <a className="credit_link_blue" href = {credit_link} target="_blank">{credit}</a>
+                                 </div>
                              </tr>
-                             <tr className="spacer">&nbsp;</tr>
-                             <tr className="description-rows">
-                                 <td className="description-title">
-                                     Description
-                                 </td>
-                                 <td className="description-content">
-                                     {this.state.cluster.description}
-                                 </td>
-                             </tr>
-                             <tr className="spacer">&nbsp;</tr>
-                             <tr className="description-rows">
-                                 <td className="description-title">
-                                     Skills
-                                 </td>
-                                 <td className="description-content">
-                                     {this.state.cluster.skills}
-                                 </td>
+                             <tr>
+                                 <table className="description">
+                                     <tr className="description-rows">
+                                         <td className="description-title">
+                                             Full Name
+                                         </td>
+                                         <td className="description-content">
+                                             {this.state.cluster.clusterName}
+                                         </td>
+                                     </tr>
+                                     <tr className="spacer">&nbsp;</tr>
+                                     <tr className="description-rows">
+                                         <td className="description-title-small">
+                                             Salary Range
+                                         </td>
+                                         <td className="description-content">
+                                             {this.state.cluster.salaryRange}
+                                         </td>
+                                     </tr>
+                                     <tr className="spacer">&nbsp;</tr>
+                                     <tr className="description-rows">
+                                         <td className="description-title">
+                                             Description
+                                         </td>
+                                         <td className="description-content">
+                                             {this.state.cluster.description}
+                                         </td>
+                                     </tr>
+                                     <tr className="spacer">&nbsp;</tr>
+                                     <tr className="description-rows">
+                                         <td className="description-title">
+                                             Skills
+                                         </td>
+                                         <td className="description-content">
+                                             {this.state.cluster.skills}
+                                         </td>
+                                     </tr>
+                                 </table>
                              </tr>
                          </table>
                      </div>

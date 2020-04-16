@@ -24,7 +24,7 @@ class ThumbnailCareers extends Component {
             });
         }
         else {
-            return <div>Oops. Nothing to see here.</div>;
+            return <div>One Moment Please</div>;
         }
         return <div className="row">{thumbnailCareers}</div>;
     };
