@@ -18,7 +18,15 @@ export default {
         return res.data || [];
     },
     getByCluster: async (cluster) => {
-        let res = await axios.get(`/api/occupationsByCluster`, cluster);
+        console.log(`/api/occupationsByCluster with ` + cluster);
+        let res = await axios.get(`/api/occupationsByCluster/`+ cluster);
+        console.log(res);
+        return res.data || [];
+    },
+    getOneByName: async (name) => {
+        console.log('get to /api/occupations/occupation/' + name);
+        let res = await axios.get(`/api/occupations/occupation/` + name);
+        console.log(res);
         return res.data || [];
     },
     deleteOne: async (_id, update) => {

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import './VisitorNavBar.css';
-import { connect } from "react-redux";
+import './NavBar.css';
 
 
 class VisitorNavBar extends Component {

@@ -7,6 +7,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
 import Landing from "./views/Landing/Landing";
 import Clusters from "./views/Clusters/Clusters";
+import Occupations from "./views/Occupations/Occupations";
 import Login from "./views/Login/Login";
 import Register from "./views/Register/Register";
 import RecoverPassword from "./views/RecoverPassword/RecoverPassword";
@@ -61,6 +62,7 @@ class App extends Component {
 						<Switch>
 							<Route exact path="/" component={Landing} />
 							<Route exact path="/Clusters/:shortname" component={Clusters} />
+                            <Route exact path="/Occupations/:name" component={Occupations} />
 							<Route exact path="/Login" component={Login} />
 							<Route exact path="/Register" component={Register} />
 							<Route exact path="/RecoverPassword" component={RecoverPassword} />

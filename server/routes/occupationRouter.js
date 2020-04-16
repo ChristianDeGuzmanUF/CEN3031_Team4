@@ -31,14 +31,15 @@ occupationsRouter.get('/occupations/:occupationID', async (req, res) => {
         });
 });
 
-occupationsRouter.get('/occupationsByCluster', async (req, res) => {
-    Occupations.find({cluster: req.body.cluster})
+occupationsRouter.get('/occupationsByCluster/:clusterName', async (req, res) => {
+    Occupations.find({cluster: req.params.clusterName})
         .then(occupations => {
             if(!occupations) {
                 return res.status(404).send({
                     message: "Occupation not found with cluster shortName " + req.body.cluster
                 });
             }
+            console.log(occupations);
         res.send(occupations);
         }).catch(err => {
             if (err.kind === 'ObjectId') {
@@ -142,6 +143,13 @@ occupationsRouter.delete('/occupations/:occupationID', async (req, res) => {
             error: "Error deleting ID with id " + req.params.userID
         });
     });
+});
+
+occupationsRouter.get('/occupations/occupation/:name', async (req, res) => {
+    console.log(req.params.name);
+    Occupations.findOne({name: req.params.name})
+        .then(occupation => res.send(occupation))
+        .catch(err => console.log(err));
 });
 
 module.exports = occupationsRouter;

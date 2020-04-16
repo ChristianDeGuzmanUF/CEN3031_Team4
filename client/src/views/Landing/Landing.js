@@ -31,7 +31,7 @@ class Landing extends Component {
     render() {
         return (
             <div className="main-theme">
-                <header className="home-header">
+                <header className="header">
                     <p>
                         Welcome to Career Finder
                     </p>
