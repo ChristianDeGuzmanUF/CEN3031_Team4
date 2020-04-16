@@ -279,7 +279,7 @@ router.post("/recover", async (req, res) => {
 					`You are receiving this because you (or someone else) requested the reset of the password for your Career Finder account.\n\n` +
                     `Your username is ${user.userName}.\n\n` +
                     `Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n` +
-                    `http://localhost:3000/ResetPassword/${token}\n\n` +
+                    `https://fant4stic-four.herokuapp.com/ResetPassword/${token}\n\n` +
 					`If you did not request this, please ignore this email and your password will remain unchanged.\n`
 			};
 			
