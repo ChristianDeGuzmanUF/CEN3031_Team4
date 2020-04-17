@@ -90,7 +90,10 @@ class ViewCluster extends Component {
         };
 
         clusterService.updateOne(this.props.selectedCluster, clusterData);
-        this.props.getClusters();
+        this.props.getClusters().then(this.updateSuccess);
+    };
+    updateSuccess = () => {
+        alert('This record has been updated successfully.');
     };
     render() {
         const { errors } = this.state;

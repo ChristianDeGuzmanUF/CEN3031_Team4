@@ -43,7 +43,7 @@ class OccupationEdit extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
-                <div className="welcome-row">
+                <div className="welcome-row space">
                     <button className="xl-white-centered-button" onClick={this.addOccupation}>Add an Occupation</button>
                 </div>
                 <div className="row">
@@ -61,17 +61,19 @@ class OccupationEdit extends Component {
                                     />
                                 </div>
                                 <table>
-                                    <OccupationList
-                                        occupations={this.state.occupations}
-                                        filterText={this.state.filterText}
-                                        selectedOccupation={this.state.selectedOccupation}
-                                        updateSelectedOccupation={this.updateSelectedOccupation}
-                                    />
+                                    <div className="with-scroll">
+                                        <OccupationList
+                                            occupations={this.state.occupations}
+                                            filterText={this.state.filterText}
+                                            selectedOccupation={this.state.selectedOccupation}
+                                            updateSelectedOccupation={this.updateSelectedOccupation}
+                                        />
+                                    </div>
                                 </table>
                             </table>
                         </div>
                     </div>
-                    <div className="column2">
+                    <div className="column2 with-scroll">
                         <ViewOccupation
                             selectedOccupation={this.state.selectedOccupation}
                             selectedOccupationData={this.state.selectedOccupationData}

@@ -34,7 +34,8 @@ class Admin extends Component {
     };
     goToStudentEdit = () =>{
         window.location.href = "/Admin/Student";
-    };goToAdminEdit = () =>{
+    };
+    goToAdminEdit = () =>{
         window.location.href = "/Admin/Admin";
     };
     goToClusterEdit = () =>{

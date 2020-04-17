@@ -50,7 +50,10 @@ class StudentDetails extends Component {
         };
 
         userService.updateOne(this.props.selectedUser, userData);
-        this.props.getUsers();
+        this.props.getUsers().then(this.updateSuccess);
+    };
+    updateSuccess = () => {
+        alert('This record has been updated successfully.');
     };
     deleteUser = e => {
         e.preventDefault();

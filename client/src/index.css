@@ -355,6 +355,9 @@ a:hover {
     font-weight: bold;
     margin-top: 45px;
 }
+.space {
+    margin: 15px;
+}
 .crud-title-tiny {
     text-align: center;
     color: #000032;
@@ -407,7 +410,7 @@ a:hover {
     min-width: 75%;
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 25px;
 }
 .crud-single-column-col-1 {
@@ -438,6 +441,13 @@ a:hover {
     float: left;
     width: 50%;
     padding: 10px;
+}
+.with-scroll {
+    height: 100vh;
+    overflow: auto;
+}
+.with-scroll::-webkit-scrollbar {
+    display: none;
 }
 .column2 {
     float: left;

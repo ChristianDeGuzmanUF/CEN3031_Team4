@@ -53,15 +53,17 @@ class StudentEdit extends Component {
                             />
                         </div>
                         <div className="user-cards-container">
-                            <StudentList
-                                users={this.state.users}
-                                filterText={this.state.filterText}
-                                selectedUser={this.state.selectedUser}
-                                updateSelectedUser={this.updateSelectedUser}
-                            />
+                            <div className="with-scroll">
+                                <StudentList
+                                    users={this.state.users}
+                                    filterText={this.state.filterText}
+                                    selectedUser={this.state.selectedUser}
+                                    updateSelectedUser={this.updateSelectedUser}
+                                />
+                            </div>
                         </div>
                     </div>
-                    <div className="column2">
+                    <div className="column2 with-scroll">
                         <StudentDetails
                             selectedUser={this.state.selectedUser}
                             selectedUserData={this.state.selectedUserData}

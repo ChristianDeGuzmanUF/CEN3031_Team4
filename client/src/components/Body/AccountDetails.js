@@ -50,7 +50,13 @@ class AccountDetails extends Component {
         };
 
         userService.updateOne(this.props.user._id, userData);
-        this.props.getUser(this.props.user._id);
+        this.props.getUser(this.props.user._id).then(this.updateSuccess);
+    };
+    updateSuccess = () => {
+        alert('Your account has been updated successfully.');
+    };
+    goToReset = () =>{
+        window.location.href = "/RecoverPassword";
     };
 
     render() {
@@ -63,9 +69,14 @@ class AccountDetails extends Component {
 
             return (
                 <div>
+                    <div className="space">
+                        <button className="large-button" onClick={this.goToReset}>reset your password by email</button>
+                    </div>
                     <div className="form-container">
-                        <div className="crud-title-tiny">Your Account Details</div>
-                        <div className="update-instructions">To update, type changes into the form below and click the 'update' button at the bottom of the form.</div>
+                        <div className="space">
+                            <div className="crud-title-tiny">Your Account Details</div>
+                            <div className="update-instructions">To update, type changes into the form below and click the 'update' button at the bottom of the form.</div>
+                        </div>
                         <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
                             <div className="crud-single-column-col-1">
                                 <div className="crud-form-title">

@@ -98,7 +98,10 @@ class ViewOccupation extends Component {
         };
 
         occupationService.updateOne(this.props.selectedOccupation, occupationData);
-        this.props.getOccupations();
+        this.props.getOccupations().then(this.updateSuccess);
+    };
+    updateSuccess = () => {
+        alert('This record has been updated successfully.');
     };
     deleteOccupation = e => {
         e.preventDefault();

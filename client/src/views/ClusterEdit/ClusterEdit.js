@@ -55,17 +55,19 @@ class ClusterEdit extends Component {
                                     />
                                 </div>
                                 <table>
-                                    <ClusterList
-                                        clusters={this.state.clusters}
-                                        filterText={this.state.filterText}
-                                        selectedCluster={this.state.selectedCluster}
-                                        updateSelectedCluster={this.updateSelectedCluster}
-                                    />
+                                    <div className="with-scroll">
+                                        <ClusterList
+                                            clusters={this.state.clusters}
+                                            filterText={this.state.filterText}
+                                            selectedCluster={this.state.selectedCluster}
+                                            updateSelectedCluster={this.updateSelectedCluster}
+                                        />
+                                    </div>
                                 </table>
                             </table>
                         </div>
                     </div>
-                    <div className="column2">
+                    <div className="column2 with-scroll">
                         <ViewCluster
                             selectedCluster={this.state.selectedCluster}
                             selectedClusterData={this.state.selectedClusterData}
