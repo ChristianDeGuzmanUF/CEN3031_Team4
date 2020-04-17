@@ -53,7 +53,9 @@ a:hover {
     min-width: 98vw;
     min-height: 97vh;
 }
-
+.admin-pic {
+    background: url("/nav-pic.jpg");
+}
 .icon {
     min-height: 50px;
     display: flex;
@@ -348,12 +350,19 @@ a:hover {
     font-weight: bold;
     margin: 15px;
 }
+.crud-title-xsmall {
+    text-align: center;
+    color: #000032;
+    font-size: calc(8px + 2vmin);
+    font-weight: bold;
+    margin: 15px;
+}
 .options-title-small {
     text-align: center;
     color: ghostwhite;
     font-size: calc(10px + 3vmin);
     font-weight: bold;
-    margin-top: 45px;
+    margin-top: 25px;
 }
 .space {
     margin: 15px;
@@ -383,6 +392,12 @@ a:hover {
     margin: 15px;
     margin-left: 35px;
     margin-right: 35px;
+}
+.right {
+    margin-right: 25px;
+}
+.left {
+    margin-left: 25px;
 }
 .user-tiles {
     display: flex;
@@ -416,6 +431,11 @@ a:hover {
 .crud-single-column-col-1 {
     display: inline-grid;
     width: 90%;
+    padding-top: 8px;
+}
+.crud-single-column-col-1-narrow {
+    display: inline-grid;
+    width: 30%;
     padding-top: 8px;
 }
 .crud-form-title {
@@ -569,4 +589,8 @@ td.description-content {
     font-size: calc(6px + 2vmin);
     text-decoration: underline;
     font-weight: bold;
+    padding-bottom: 50px;
+}
+.space-on-bottom {
+    margin-bottom: 15px;
 }

@@ -95,6 +95,9 @@ class ViewCluster extends Component {
     updateSuccess = () => {
         alert('This record has been updated successfully.');
     };
+    goToPage = () =>{
+        window.location.href = "/Clusters/" + this.props.selectedClusterData.shortName;
+    };
     render() {
         const { errors } = this.state;
         let theChosenOne = null;
@@ -232,6 +235,8 @@ class ViewCluster extends Component {
                                         </span>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
+                                <br></br>
+                                <button className="clear-button" onClick={this.goToPage}>Go to the {theChosenOne.shortName} Page</button>
                             </div>
                         </form>
                     </div>

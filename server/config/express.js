@@ -7,6 +7,7 @@ const path = require('path'),
     users = require('../routes/users'),
     clusters = require('../routes/clusterRouters'),
     occupations = require('../routes/occupationRouter'),
+    invites = require('../routes/invitesRouter'),
     user = require('../routes/userRouters');
 
 module.exports.init = () => {
@@ -38,6 +39,7 @@ module.exports.init = () => {
     app.use('/api/', clusters);
     app.use('/api/', user);
     app.use('/api/', occupations);
+    app.use('/api/', invites);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
@@ -50,6 +52,6 @@ module.exports.init = () => {
     }
 
     return app
-}
+};
 
 

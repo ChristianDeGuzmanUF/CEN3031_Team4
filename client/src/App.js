@@ -24,6 +24,7 @@ import ClusterEdit from "./views/ClusterEdit/ClusterEdit";
 import UpdateAccount from "./views/UpdateAccount/UpdateAccount";
 import OccupationEdit from "./views/OccupationEdit/OccupationEdit";
 import OccupationAdd from "./views/OccupationAdd/OccupationAdd";
+import Invites from "./views/Invites/Invites";
 
 
 // Check for token to keep user logged in
@@ -68,6 +69,7 @@ class App extends Component {
 							<Route exact path="/UpdateAccount" component={UpdateAccount} />
 							<PrivateRoute exact path="/Dashboard" component={Dashboard} />
                             <AdminRoute exact path="/Admin" component={Admin} />
+                            <AdminRoute exact path="/Admin/Invites" component={Invites} />
                             <AdminRoute exact path="/Admin/Student" component={StudentEdit} />
                             <AdminRoute exact path="/Admin/Admin" component={AdminEdit} />
                             <AdminRoute exact path="/Admin/Cluster" component={ClusterEdit} />

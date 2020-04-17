@@ -110,6 +110,9 @@ class ViewOccupation extends Component {
         this.props.getOccupations();
 
     };
+    goToPage = () =>{
+        window.location.href = "/Occupations/" + this.props.selectedOccupationData.name;
+    };
     render() {
         const { errors } = this.state;
         let theChosenOne = null;
@@ -240,7 +243,7 @@ class ViewOccupation extends Component {
                                     A link for {theChosenOne.name}:
                                 </div>
                                 <div className="crud-form-text">
-                                    Add a related link for this occupation, i.e. a video or information page.
+                                    Add a related link for this occupation, i.e. a video or information page. To add more than one link, separate them with a comma; e.g. https://google.com,https://yahoo.com. Be sure to include https:// at the front of the link.
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -253,6 +256,7 @@ class ViewOccupation extends Component {
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
                                 <br></br>
+                                <button className="clear-button" onClick={this.goToPage}>Go to the {theChosenOne.name} Page</button>
                                 <br></br>
                                 <div>
                                     <i className="fa 10x fa-trash" onClick={(e) =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteOccupation(e)}}></i>

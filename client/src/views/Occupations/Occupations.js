@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import occupationService from '../../actions/occupationService';
 import VisitorNavBar from  '../../components/Body/VisitorNavBar';
 import NavBar from '../../components/Body/NavBar';
+import Links from '../../components/Body/Links';
 import defaultPic from '../default.jpg'
 
 class OccupationInfo extends Component {
@@ -112,11 +113,10 @@ class OccupationInfo extends Component {
                                     <tr className="spacer">&nbsp;</tr>
                                     <tr className="description-rows">
                                         <td className="description-title-small">
-                                            Link
+                                            Links
                                         </td>
                                         <td className="description-content">
-                                            <a href={this.state.occupation.link} className="info-link">{this.state.occupation.link}
-                                            </a>
+                                            <Links links={this.state.occupation.link}/>
                                         </td>
                                     </tr>
                                 </table>

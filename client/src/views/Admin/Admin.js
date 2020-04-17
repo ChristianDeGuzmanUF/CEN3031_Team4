@@ -26,11 +26,8 @@ class Admin extends Component {
     updateAccount = () => {
         window.location.href = "UpdateAccount";
     };
-    studentInvite = () => {
-        alert('Your student Invitation Code is: 123456789.');
-    };
-    adminInvite = () => {
-        alert('Your administrator Invitation Code is: 00.');
+    goToInviteEdit = () =>{
+        window.location.href = "/Admin/Invites";
     };
     goToStudentEdit = () =>{
         window.location.href = "/Admin/Student";
@@ -52,14 +49,18 @@ class Admin extends Component {
                     <Welcome user={this.state.user}/>
                     <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                 </div>
-                <div className="options-title-small"> Administrator Control Options</div>
-                <div className="crud-single-column-col-1">
-                    <button className="large-button" onClick={this.studentInvite}>Get A Student Invite Code</button>
-                    <button className="large-button" onClick={this.adminInvite}>Get An Administrator Invite Code</button>
-                    <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
-                    <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
-                    <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
-                    <button className="large-button" onClick={this.goToOccupationEdit}>View, Edit, Add, or Delete Occupations</button>
+                <div className="admin-pic">
+                    <div className="options-title-small"> Administrator Control Options</div>
+                    <div className="crud-single-column-col-1-narrow">
+                        <button className="large-button" onClick={this.goToInviteEdit}>Add or Delete Invite Codes</button>
+                        <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
+                        <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
+                        <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
+                        <button className="large-button" onClick={this.goToOccupationEdit}>View, Edit, Add, or Delete Occupations</button>
+                    </div>
+                </div>
+                <div className="credits">
+                    <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );
