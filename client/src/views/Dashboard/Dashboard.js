@@ -54,16 +54,20 @@ class Dashboard extends Component {
                     <Welcome user={this.state.user}/>
                     <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                 </div>
-                <div className="temp-todo-box2">
-                    <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
-                </div>
-                <div className="temp-todo-box2">
-                    <div>Your top match is 'cluster'</div>
-                    <div>You got this match because you're good at many things.</div>
-                </div>
-                <div>
-                    <div className="temp-todo-box2">
-                        <div>You have '#' points, keep it up!</div>
+                <div className="admin-pic">
+                    <div className="crud-single-column-col-1-narrow">
+                        <div className="temp-todo-box2">
+                            <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
+                        </div>
+                        <div className="temp-todo-box2">
+                            <div>Your top match is 'cluster'</div>
+                            <div>You got this match because you're good at many things.</div>
+                        </div>
+                        <div>
+                            <div className="temp-todo-box2">
+                                <div>You have '#' points, keep it up!</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="career-cards-container">
