@@ -6,18 +6,60 @@ class ViewCluster extends Component {
         super(props);
         /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            clusterName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            shortName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            description: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            skills: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            studentMessage: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            picture: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            pictureCredit: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            pictureCreditLink: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            salaryRange: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            clusterName: "",
+            shortName: "",
+            description: "",
+            skills: "",
+            studentMessage: "",
+            picture: "",
+            pictureCredit: "",
+            pictureCreditLink: "",
+            salaryRange: "",
             errors: {}
         };
     }
+    componentDidMount = async () =>  {
+        if (!this.state.clusterName && this.props.selectedClusterData) {
+            this.setState({clusterName: this.props.selectedClusterData.clusterName});
+        }
+        if (!this.state.shortName && this.props.selectedClusterData) {
+            this.setState({shortName: this.props.selectedClusterData.shortName});
+        }
+        if (!this.state.description && this.props.selectedClusterData) {
+            this.setState({description: this.props.selectedClusterData.description});
+        }
+        if (!this.state.skills && this.props.selectedClusterData) {
+            this.setState({skills: this.props.selectedClusterData.skills});
+        }
+        if (!this.state.studentMessage && this.props.selectedClusterData) {
+            this.setState({studentMessage: this.props.selectedClusterData.studentMessage});
+        }
+        if (!this.state.picture && this.props.selectedClusterData) {
+            this.setState({picture: this.props.selectedClusterData.picture});
+        }
+        if (!this.state.pictureCredit && this.props.selectedClusterData) {
+            this.setState({pictureCredit: this.props.selectedClusterData.pictureCredit});
+        }
+        if (!this.state.pictureCreditLink && this.props.selectedClusterData) {
+            this.setState({pictureCreditLink: this.props.selectedClusterData.pictureCreditLink});
+        }
+        if (!this.state.salaryRange && this.props.selectedClusterData) {
+            this.setState({salaryRange: this.props.selectedClusterData.salaryRange});
+        }
+    };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.selectedClusterData !== this.props.selectedClusterData
+            && this.props.selectedCluster !== nextProps.selectedCluster) {
+            this.props.updateSelectedCluster(nextProps.selectedCluster);
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
 
     onSubmit = e => {
         e.preventDefault();
@@ -89,8 +131,9 @@ class ViewCluster extends Component {
             salaryRange: this.state.salaryRange,
         };
 
-        clusterService.updateOne(this.props.selectedCluster, clusterData);
-        this.props.getClusters().then(this.updateSuccess);
+        clusterService.updateOne(this.props.selectedCluster, clusterData)
+            .then(this.props.updateSelectedCluster(this.props.selectedCluster))
+            .then(this.updateSuccess).then(this.props.getClusters());
     };
     updateSuccess = () => {
         alert('This record has been updated successfully.');
@@ -119,10 +162,9 @@ class ViewCluster extends Component {
                                 <div className="crud-form-text">
                                     This name cannot be changed because it is used by the matching survey.
                                 </div>
-                                <div className="textareaElement"
+                                <div className="textareaElement-no-edit"
                                      contentEditable="false"
                                      id = 'clusterName'
-                                     value={this.props.input}
                                 >{theChosenOne.clusterName}</div>
                                 <span className="text-danger">
                                         {errors.clusterName}
@@ -136,7 +178,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'shortName'
-                                     value={this.props.input}
                                      >{theChosenOne.shortName}</div>
                                 <span className="text-danger">
                                         {errors.shortName}
@@ -147,7 +188,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'description'
-                                     value={this.props.input}
                                      >{theChosenOne.description}</div>
                                 <span className="text-danger">
                                         {errors.description}
@@ -161,7 +201,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'studentMessage'
-                                     value={this.props.input}
                                 >{theChosenOne.studentMessage}</div>
                                 <span className="text-danger">
                                         {errors.studentMessage}
@@ -175,7 +214,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'picture'
-                                     value={this.props.input}
                                 >{theChosenOne.picture}</div>
                                 <span className="text-danger">
                                         {errors.picture}
@@ -189,7 +227,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'pictureCredit'
-                                     value={this.props.input}
                                 >{theChosenOne.pictureCredit}</div>
                                 <span className="text-danger">
                                         {errors.pictureCredit}
@@ -203,7 +240,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'pictureCreditLink'
-                                     value={this.props.input}
                                 >{theChosenOne.pictureCreditLink}</div>
                                 <span className="text-danger">
                                         {errors.pictureCreditLink}
@@ -217,7 +253,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'skills'
-                                     value={this.props.input}
                                 >{(theChosenOne.skills)}</div>
                                 <span className="text-danger">
                                         {errors.skills}
@@ -231,7 +266,6 @@ class ViewCluster extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'salaryRange'
-                                     value={this.props.input}
                                 >{(theChosenOne.salaryRange)}</div>
                                 <span className="text-danger">
                                         {errors.salaryRange}

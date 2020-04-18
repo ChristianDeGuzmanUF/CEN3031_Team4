@@ -15,7 +15,7 @@ class AddStudentInvite extends Component {
         if (this.props.studentInvites.codes.includes(this.state.placeholder)) {
             alert("Code already added.");
         }
-        if (!this.state.placeholder === "" && !this.props.adminInvites.codes.includes(this.state.placeholder)) {
+        else if (this.state.placeholder !== "" && !this.props.studentInvites.codes.includes(this.state.placeholder)) {
             let newCodeArray = this.props.studentInvites.codes;
             console.log('code to add' + this.state.placeholder);
             newCodeArray.push(this.state.placeholder);
@@ -25,7 +25,6 @@ class AddStudentInvite extends Component {
                 adminCode: this.props.studentInvites.adminCode,
             };
             inviteService.updateOne(this.props.studentInvites._id, codeData);
-            document.getElementById("codeToAdd").value = "";
             this.props.getStudentInvites();
         }
     };

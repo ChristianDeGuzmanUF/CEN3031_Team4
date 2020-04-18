@@ -6,6 +6,18 @@ class OccupationList extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.occupations !== nextProps.occupations) {
+            this.props.getOccupations();
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
+
     clickHandler(id, e) {
         e.preventDefault();
         this.props.updateSelectedOccupation(id);

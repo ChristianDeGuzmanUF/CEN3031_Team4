@@ -7,13 +7,40 @@ class AccountDetails extends Component {
         super(props);
         /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            userName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            firstName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            lastName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            email: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            userName: "",
+            firstName: "",
+            lastName: "",
+            email: "",
             errors: {}
         };
     }
+    componentDidMount = async () =>  {
+        if (!this.state.userName && this.props.user) {
+            this.setState({userName: this.props.user.userName});
+        }
+        if (!this.state.firstName && this.props.user) {
+            this.setState({firstName: this.props.user.firstName});
+        }
+        if (!this.state.lastName && this.props.user) {
+            this.setState({lastName: this.props.user.lastName});
+        }
+        if (!this.state.email && this.props.user) {
+            this.setState({email: this.props.user.email});
+        }
+    };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user !== this.props.user
+            && this.props.user !== nextProps.user) {
+            this.props.getUser(nextProps.user._id);
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
     onSubmit = e => {
         e.preventDefault();
 
@@ -49,8 +76,9 @@ class AccountDetails extends Component {
             email: this.state.email
         };
 
-        userService.updateOne(this.props.user._id, userData);
-        this.props.getUser(this.props.user._id).then(this.updateSuccess);
+        userService.updateOne(this.props.user._id, userData)
+            .then(this.props.getUser(this.props.user._id))
+            .then(this.updateSuccess);
     };
     updateSuccess = () => {
         alert('Your account has been updated successfully.');
@@ -85,7 +113,6 @@ class AccountDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'firstName'
-                                     value={this.props.input}
                                 >{thisUser.firstName}</div>
                                 <span className="text-danger">
                                         {errors.firstName}
@@ -96,7 +123,6 @@ class AccountDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'lastName'
-                                     value={this.props.input}
                                 >{thisUser.lastName}</div>
                                 <span className="text-danger">
                                         {errors.lastName}
@@ -107,7 +133,6 @@ class AccountDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'userName'
-                                     value={this.props.input}
                                 >{thisUser.userName}</div>
                                 <span className="text-danger">
                                         {errors.userName}
@@ -118,7 +143,6 @@ class AccountDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'email'
-                                     value={this.props.input}
                                 >{thisUser.email}</div>
                                 <span className="text-danger">
                                         {errors.email}

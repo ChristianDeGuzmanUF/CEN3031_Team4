@@ -7,14 +7,41 @@ class AdminDetails extends Component {
         super(props);
         /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            userName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            id: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            firstName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            lastName: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            email: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            userName: "",
+            id: "",
+            firstName: "",
+            lastName: "",
+            email: "",
             errors: {}
         };
     }
+    componentDidMount = async () =>  {
+        if (!this.state.userName && this.props.selectedUserData) {
+            this.setState({userName: this.props.selectedUserData.userName});
+        }
+        if (!this.state.firstName && this.props.selectedUserData) {
+            this.setState({firstName: this.props.selectedUserData.firstName});
+        }
+        if (!this.state.lastName && this.props.selectedUserData) {
+            this.setState({lastName: this.props.selectedUserData.lastName});
+        }
+        if (!this.state.email && this.props.selectedUserData) {
+            this.setState({email: this.props.selectedUserData.email});
+        }
+    };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.selectedUserData !== this.props.selectedUserData
+            && this.props.selectedUser !== nextProps.selectedUser) {
+            this.props.updateSelectedUser(nextProps.selectedUser);
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
     onSubmit = e => {
         e.preventDefault();
         if (this.state.userName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
@@ -48,9 +75,9 @@ class AdminDetails extends Component {
             lastName: this.state.lastName,
             email: this.state.email
         };
-
-        userService.updateOne(this.props.selectedUser, userData);
-        this.props.getUsers().then(this.updateSuccess);
+        userService.updateOne(this.props.selectedUser, userData)
+            .then(this.props.updateSelectedUser(this.props.selectedUser))
+            .then(this.updateSuccess).then(this.props.getUsers());
     };
     updateSuccess = () => {
         alert('This record has been updated successfully.');
@@ -85,7 +112,6 @@ class AdminDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'firstName'
-                                     value={this.props.input}
                                 >{thisUser.firstName}</div>
                                 <span className="text-danger">
                                         {errors.firstName}
@@ -96,7 +122,6 @@ class AdminDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'lastName'
-                                     value={this.props.input}
                                 >{thisUser.lastName}</div>
                                 <span className="text-danger">
                                         {errors.lastName}
@@ -107,7 +132,6 @@ class AdminDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'userName'
-                                     value={this.props.input}
                                 >{thisUser.userName}</div>
                                 <span className="text-danger">
                                         {errors.userName}
@@ -118,7 +142,6 @@ class AdminDetails extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'email'
-                                     value={this.props.input}
                                 >{thisUser.email}</div>
                                 <span className="text-danger">
                                         {errors.email}

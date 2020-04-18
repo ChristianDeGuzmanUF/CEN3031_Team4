@@ -15,7 +15,7 @@ class AddAdminInvite extends Component {
         if (this.props.adminInvites.codes.includes(this.state.placeholder)) {
             alert("Code already added.");
         }
-        if (!this.state.placeholder === "" && !this.props.adminInvites.codes.includes(this.state.placeholder)) {
+        else if (this.state.placeholder !== "" && !this.props.adminInvites.codes.includes(this.state.placeholder)) {
             let newCodeArray = this.props.adminInvites.codes;
             console.log('code to add' + this.state.placeholder);
             newCodeArray.push(this.state.placeholder);

@@ -60,6 +60,7 @@ class ClusterEdit extends Component {
                                             clusters={this.state.clusters}
                                             filterText={this.state.filterText}
                                             selectedCluster={this.state.selectedCluster}
+                                            getClusters={this.getClusters}
                                             updateSelectedCluster={this.updateSelectedCluster}
                                         />
                                     </div>
@@ -73,6 +74,7 @@ class ClusterEdit extends Component {
                             selectedClusterData={this.state.selectedClusterData}
                             clusters={this.state.clusters}
                             getClusters={this.getClusters}
+                            updateSelectedCluster={this.updateSelectedCluster}
                         />
                     </div>
                 </div>

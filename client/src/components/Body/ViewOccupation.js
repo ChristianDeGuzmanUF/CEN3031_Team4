@@ -6,19 +6,65 @@ class ViewOccupation extends Component {
         super(props);
         /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
         this.state = {
-            name: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            description: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            courses: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            education: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            cluster: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            averageSalary: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            picture: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            pictureCredit: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            pictureCreditLink: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
-            link: "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf",
+            name: "",
+            description: "",
+            courses: "",
+            education: "",
+            cluster: "",
+            averageSalary: "",
+            picture: "",
+            pictureCredit: "",
+            pictureCreditLink: "",
+            link: "",
             errors: {}
         };
     }
+
+    componentDidMount = async () =>  {
+        if (!this.state.name && this.props.selectedOccupationData) {
+            this.setState({name: this.props.selectedOccupationData.name});
+        }
+        if (!this.state.description && this.props.selectedOccupationData) {
+            this.setState({description: this.props.selectedOccupationData.description});
+        }
+        if (!this.state.courses && this.props.selectedOccupationData) {
+            this.setState({courses: this.props.selectedOccupationData.courses});
+        }
+        if (!this.state.education && this.props.selectedOccupationData) {
+            this.setState({education: this.props.selectedOccupationData.education});
+        }
+        if (!this.state.cluster && this.props.selectedOccupationData) {
+            this.setState({cluster: this.props.selectedOccupationData.cluster});
+        }
+        if (!this.state.picture && this.props.selectedOccupationData) {
+            this.setState({picture: this.props.selectedOccupationData.picture});
+        }
+        if (!this.state.pictureCredit && this.props.selectedOccupationData) {
+            this.setState({pictureCredit: this.props.selectedOccupationData.pictureCredit});
+        }
+        if (!this.state.pictureCreditLink && this.props.selectedOccupationData) {
+            this.setState({pictureCreditLink: this.props.selectedOccupationData.pictureCreditLink});
+        }
+        if (!this.state.averageSalary && this.props.selectedOccupationData) {
+            this.setState({averageSalary: this.props.selectedOccupationData.averageSalary});
+        }
+        if (!this.state.link && this.props.selectedOccupationData) {
+            this.setState({link: this.props.selectedOccupationData.link});
+        }
+    };
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.selectedOccupationData !== this.props.selectedOccupationData
+            && this.props.selectedOccupation !== nextProps.selectedOccupation) {
+            this.props.updateSelectedOccupation(nextProps.selectedOccupation);
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
 
     onSubmit = e => {
         e.preventDefault();
@@ -97,8 +143,9 @@ class ViewOccupation extends Component {
             link: this.state.link,
         };
 
-        occupationService.updateOne(this.props.selectedOccupation, occupationData);
-        this.props.getOccupations().then(this.updateSuccess);
+        occupationService.updateOne(this.props.selectedOccupation, occupationData)
+            .then(this.props.updateSelectedOccupation(this.props.selectedOccupation))
+            .then(this.updateSuccess).then(this.props.getOccupations());
     };
     updateSuccess = () => {
         alert('This record has been updated successfully.');
@@ -134,7 +181,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'name'
-                                     value={this.props.input}
                                 >{theChosenOne.name}</div>
                                 <span className="text-danger">
                                         {errors.name}
@@ -145,7 +191,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'description'
-                                     value={this.props.input}
                                 >{theChosenOne.description}</div>
                                 <span className="text-danger">
                                         {errors.description}
@@ -156,7 +201,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'courses'
-                                     value={this.props.input}
                                 >{theChosenOne.courses}</div>
                                 <span className="text-danger">
                                         {errors.courses}
@@ -167,7 +211,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'education'
-                                     value={this.props.input}
                                 >{theChosenOne.education}</div>
                                 <span className="text-danger">
                                         {errors.education}
@@ -178,7 +221,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'cluster'
-                                     value={this.props.input}
                                 >{theChosenOne.cluster}</div>
                                 <span className="text-danger">
                                         {errors.cluster}
@@ -192,7 +234,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'averageSalary'
-                                     value={this.props.input}
                                 >{theChosenOne.averageSalary}</div>
                                 <span className="text-danger">
                                         {errors.averageSalary}
@@ -206,7 +247,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'picture'
-                                     value={this.props.input}
                                 >{theChosenOne.picture}</div>
                                 <span className="text-danger">
                                         {errors.picture}
@@ -220,7 +260,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'pictureCredit'
-                                     value={this.props.input}
                                 >{theChosenOne.pictureCredit}</div>
                                 <span className="text-danger">
                                         {errors.pictureCredit}
@@ -234,7 +273,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'pictureCreditLink'
-                                     value={this.props.input}
                                 >{theChosenOne.pictureCreditLink}</div>
                                 <span className="text-danger">
                                         {errors.pictureCreditLink}
@@ -248,7 +286,6 @@ class ViewOccupation extends Component {
                                 <div className="textareaElement"
                                      contentEditable="true"
                                      id = 'link'
-                                     value={this.props.input}
                                 >{(theChosenOne.link)}</div>
                                 <span className="text-danger">
                                         {errors.link}

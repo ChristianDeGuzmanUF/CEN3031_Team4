@@ -59,6 +59,7 @@ class StudentEdit extends Component {
                                     filterText={this.state.filterText}
                                     selectedUser={this.state.selectedUser}
                                     updateSelectedUser={this.updateSelectedUser}
+                                    getUsers={this.getUsers}
                                 />
                             </div>
                         </div>

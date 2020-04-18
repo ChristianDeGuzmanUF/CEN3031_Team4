@@ -66,6 +66,7 @@ class OccupationEdit extends Component {
                                             occupations={this.state.occupations}
                                             filterText={this.state.filterText}
                                             selectedOccupation={this.state.selectedOccupation}
+                                            getOccupations={this.getOccupations}
                                             updateSelectedOccupation={this.updateSelectedOccupation}
                                         />
                                     </div>

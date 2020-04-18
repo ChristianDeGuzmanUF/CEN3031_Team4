@@ -540,6 +540,16 @@ td.user-title {
     overflow-y: auto;
     margin-bottom: 15px;
 }
+.textareaElement-no-edit{
+    background-color: lightgrey;
+    min-height: 20px;
+    text-align: left;
+    border: 1px solid black;
+    max-height: 2500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
 
 /*Info Pages*/
 table.description {
