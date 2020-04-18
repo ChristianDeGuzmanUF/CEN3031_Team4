@@ -27,8 +27,8 @@ class Login extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.auth.isAuthenticated) {
-            if (this.props.auth.user.admin) {
+        if (nextProps.auth.isAuthenticated) {
+            if (nextProps.auth.user.admin) {
                 this.props.history.push("/admin");
             } else { 
                 this.props.history.push("/dashboard");
