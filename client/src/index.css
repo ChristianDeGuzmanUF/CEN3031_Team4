@@ -55,7 +55,8 @@ a:hover {
 }
 .dash-pic {
     background: url("/dash-pic.jpg");
-    min-height: 65vh;
+    min-height: 95vh;
+    width: 100vw;
 }
 .welcome-row {
     margin-bottom: 15px;
