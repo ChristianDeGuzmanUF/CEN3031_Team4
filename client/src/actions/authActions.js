@@ -25,7 +25,10 @@ export const registerUser = (userData, history) => dispatch => {
 export const resetPassword = (userData, history) => dispatch => {
     axios
         .post("/users/resetPassword", userData)
-        .then(res => history.push("/login")) // re-direct to login on successful register
+        .then(res => {
+			logoutUser();
+			history.push("/login");		
+		}) // re-direct to login on successful register
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,
