@@ -1,4 +1,4 @@
-import React, from 'react';
+import React from 'react';
 import './ClusterSurveyResult.css'
 import parse from 'html-react-parser';
 
