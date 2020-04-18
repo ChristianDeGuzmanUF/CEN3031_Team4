@@ -49,7 +49,7 @@ class Admin extends Component {
                     <Welcome user={this.state.user}/>
                     <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                 </div>
-                <div className="admin-pic">
+                <div className="dash-pic">
                     <div className="options-title-small"> Administrator Control Options</div>
                     <div className="crud-single-column-col-1-narrow">
                         <button className="large-button" onClick={this.goToInviteEdit}>Add or Delete Invite Codes</button>
@@ -60,7 +60,7 @@ class Admin extends Component {
                     </div>
                 </div>
                 <div className="credits">
-                    <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
+                    Photo by <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );

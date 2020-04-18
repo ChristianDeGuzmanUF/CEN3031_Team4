@@ -53,12 +53,12 @@ class Landing extends Component {
                 </div>
                 <div className="career-cards-container">
                     <p>
-                        Imagine the Possibilities
+                        There's a Sea of Possibilities:
                     </p>
                     <ThumbnailCareers clusters={this.state.clusters}/>
                 </div>
                 <div className="credits">
-                    Photo by Marvin Meyer on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                    Photo by <a className="credit_link" href = "https://www.vecteezy.com/free-vector/ocean" target="_blank">Ocean Vectors by Vecteezy</a>
                 </div>
             </div>
         );

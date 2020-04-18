@@ -3,8 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { registerUser } from "../../actions/authActions";
-import classnames from "classnames";
-import reg from '../reg-pic.jpg'
+import reg from '../Captain2.png'
 
 class Register extends Component {
     constructor() {
@@ -141,7 +140,7 @@ class Register extends Component {
                     </div>
                 </div>
                 <div className="credits">
-                    Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                    Photo by <a  className="credit_link" href="https://www.vecteezy.com/free-vector/captain"  target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );

@@ -53,7 +53,7 @@ class AdminEdit extends Component {
                             />
                         </div>
                         <div className="user-cards-container">
-                            <div className="with-scroll">
+                            <div className="with-scroll-short">
                                 <AdminList
                                     users={this.state.users}
                                     filterText={this.state.filterText}

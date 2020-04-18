@@ -51,7 +51,7 @@ class Invites extends Component {
                                             getStudentInvites={this.getStudentInvites}
                                         />
                                     </div>
-                                    <div className="with-scroll">
+                                    <div className="with-scroll-short">
                                         <StudentInviteList
                                             studentInvites={this.state.studentInvites}
                                             getStudentInvites={this.getStudentInvites}
@@ -72,7 +72,7 @@ class Invites extends Component {
                                             getAdminInvites={this.getAdminInvites}
                                         />
                                     </div>
-                                    <div className="with-scroll">
+                                    <div className="with-scroll-short">
                                         <AdminInviteList
                                             adminInvites={this.state.adminInvites}
                                             getAdminInvites={this.getAdminInvites}

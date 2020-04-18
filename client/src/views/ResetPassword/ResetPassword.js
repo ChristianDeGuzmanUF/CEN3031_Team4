@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { resetPassword } from "../../actions/authActions";
 import userService from "../../actions/userService";
 import classnames from "classnames";
-import reset from '../reset-pic.jpg';
+import reset from '../Captain.png';
 
 class ResetPassword extends Component {
     constructor(props) {
@@ -73,7 +72,7 @@ class ResetPassword extends Component {
         return (
             <div>
                 <div className="main-theme">
-                    <div class="form-container">
+                    <div className="form-container">
                         <div className="icon">
                             <a href="/"><img src={reset} alt="Logo" /></a>
                             <h1>Career Finder</h1>
@@ -108,7 +107,7 @@ class ResetPassword extends Component {
                     </div>
                 </div>
                 <div className="credits">
-                    Photo by Adrià Tormo on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                    Photo by <a  className="credit_link" href="https://www.vecteezy.com/free-vector/captain"  target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );

@@ -53,8 +53,8 @@ a:hover {
     min-width: 98vw;
     min-height: 97vh;
 }
-.admin-pic {
-    background: url("/nav-pic.jpg");
+.dash-pic {
+    background: url("/dash-pic.jpg");
 }
 .welcome-row {
     margin-bottom: 15px;
@@ -104,7 +104,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(50px + 2vmin);
+    font-size: calc(45px + 2vmin);
     color: #000032;
     font-weight: bold;
 }
@@ -133,24 +133,9 @@ a:hover {
     margin-left: 75px;
     margin-bottom: 25px;
 }
-
-.temp-todo-box {
+.dash-item-box {
     background-color: ghostwhite;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(8px + 2vmin);
-    color: #000032;
-    padding: 45px;
-    margin-top: 25px;
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-bottom: 25px;
-}
-.temp-todo-box2 {
-    background-color: ghostwhite;
+    border: solid 5px #42cd42;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,19 +145,6 @@ a:hover {
     padding: 25px;
     margin: 30px;
 }
-.detail-box {
-    background-color: ghostwhite;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    text-align: left;
-    font-size: calc(8px + 2vmin);
-    color: #000032;
-    margin-top: 15px;
-    padding: 15px;
-}
-
 /*buttons*/
 .large-button {
     background: #42cd42;
@@ -466,10 +438,17 @@ a:hover {
     padding: 10px;
 }
 .with-scroll {
-    height: 100vh;
+    height: 90vh;
     overflow: auto;
 }
 .with-scroll::-webkit-scrollbar {
+    display: none;
+}
+.with-scroll-short {
+    height: 55vh;
+    overflow: auto;
+}
+.with-scroll-short::-webkit-scrollbar {
     display: none;
 }
 .column2 {

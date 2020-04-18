@@ -61,7 +61,7 @@ class OccupationEdit extends Component {
                                     />
                                 </div>
                                 <table>
-                                    <div className="with-scroll">
+                                    <div className="with-scroll-short">
                                         <OccupationList
                                             occupations={this.state.occupations}
                                             filterText={this.state.filterText}

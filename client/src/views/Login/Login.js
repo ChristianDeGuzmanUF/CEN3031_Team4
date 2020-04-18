@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
-import login from '../reg-pic.jpg'
+import login from '../Captain.png'
 
 class Login extends Component {
     constructor() {
@@ -24,7 +22,7 @@ class Login extends Component {
                 this.props.history.push("/admin");
             } else { 
                 this.props.history.push("/dashboard");
-            };
+            }
         }
     };
 
@@ -34,7 +32,7 @@ class Login extends Component {
                 this.props.history.push("/admin");
             } else { 
                 this.props.history.push("/dashboard");
-            };
+            }
         }
 
         if (nextProps.errors) {
@@ -68,7 +66,7 @@ class Login extends Component {
         return (
             <div>
                 <div className="main-theme">
-                    <div class="form-container">
+                    <div className="form-container">
                         <div className="icon">
                             <a href="/"><img src={login} alt="Logo" /></a>
                             <h1>Career Finder</h1>
@@ -117,7 +115,7 @@ class Login extends Component {
                     </div>
                 </div>
                 <div className="credits">
-                    Photo by Christin Hume on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                    Photo by <a  className="credit_link" href="https://www.vecteezy.com/free-vector/captain"  target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );

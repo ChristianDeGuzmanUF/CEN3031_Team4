@@ -32,7 +32,7 @@ class ClusterEdit extends Component {
         }
     };
     updateSelectedCluster(id) {
-        this.setState({selectedCluster: id})
+        this.setState({selectedCluster: id});
         this.getOneCluster(id).then(res => {this.setState({selectedClusterData: res})})
     };
 
@@ -55,7 +55,7 @@ class ClusterEdit extends Component {
                                     />
                                 </div>
                                 <table>
-                                    <div className="with-scroll">
+                                    <div className="with-scroll-short">
                                         <ClusterList
                                             clusters={this.state.clusters}
                                             filterText={this.state.filterText}

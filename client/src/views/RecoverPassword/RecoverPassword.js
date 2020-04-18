@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { recoverUser } from "../../actions/authActions";
-import classnames from "classnames";
-import recover from '../recover-pic.jpg';
+import recover from '../Captain.png';
 
 class RecoverPassword extends Component {
     constructor() {
@@ -47,18 +45,9 @@ class RecoverPassword extends Component {
 
         this.props.recoverUser(userData, this.props.history); // we are not doing redirect, pass this.props.history as a parameter
     };
-
-    /*What I am thinking is that here we just post "Recovery email sent" the same way that we would show an error
-    and just leave this page a dead end, but jumping to reset for mock up*/
-    goToResetPassword = () => {
-        window.location.href = "/ResetPassword";
-    };
 	
 	goToRegister = () =>{
         window.location.href = "/Register";
-    };
-    goToLogin = () =>{
-        window.location.href = "/Login";
     };
 
     render() {
@@ -79,7 +68,7 @@ class RecoverPassword extends Component {
         return (
             <div>
                 <div className="main-theme">
-                    <div class="form-container">
+                    <div className="form-container">
                         <div className="icon">
                             <a href="/"><img src={recover} alt="Logo" /></a>
                             <h1>Career Finder</h1>
@@ -125,7 +114,7 @@ class RecoverPassword extends Component {
                     </div>
                 </div>
                 <div className="credits">
-                    Photo by Shane Avery on <a className="credit_link" href = "https://Unsplash.com" target="_blank">Unsplash</a>
+                    Photo by <a  className="credit_link" href="https://www.vecteezy.com/free-vector/captain"  target="_blank">Captain Vectors by Vecteezy</a>
                 </div>
             </div>
         );

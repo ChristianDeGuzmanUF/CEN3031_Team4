@@ -54,20 +54,25 @@ class Dashboard extends Component {
                     <Welcome user={this.state.user}/>
                     <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                 </div>
-                <div className="admin-pic">
-                    <div className="crud-single-column-col-1-narrow">
-                        <div className="temp-todo-box2">
-                            <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
-                        </div>
-                        <div className="temp-todo-box2">
-                            <div>Your top match is 'cluster'</div>
-                            <div>You got this match because you're good at many things.</div>
-                        </div>
-                        <div>
-                            <div className="temp-todo-box2">
-                                <div>You have '#' points, keep it up!</div>
+                <div>
+                    <div className="dash-pic">
+                        <div className="crud-single-column-col-1-narrow">
+                            <div className="dash-item-box">
+                                <a href="/ClusterSurvey" className="temp-link">Take the career matching survey!</a>
+                            </div>
+                            <div className="dash-item-box">
+                                <div>Your top match is 'cluster'</div>
+                                <div>You got this match because you're good at many things.</div>
+                            </div>
+                            <div>
+                                <div className="dash-item-box">
+                                    <div>You have '#' points, keep it up!</div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="credits">
+                        Photo by <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
                     </div>
                 </div>
                 <div className="career-cards-container">
@@ -78,7 +83,7 @@ class Dashboard extends Component {
                 </div>
 				<script type="text/javascript"
 					id="botcopy-embedder-d7lcfheammjct"
-					class="botcopy-embedder-d7lcfheammjct"
+					className="botcopy-embedder-d7lcfheammjct"
 					data-botId="5e77c514099273f574d8d4b0">
 				</script>
 				<div className="credits">
