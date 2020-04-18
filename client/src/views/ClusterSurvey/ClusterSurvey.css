@@ -27,5 +27,9 @@ input[type='checkbox'] {
 	margin-bottom: 30px;
 }
 .bottom-marg {
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 100px;
+	margin-left: 100px;
+	display: flex;
 }

@@ -23,6 +23,14 @@ export default {
         console.log(res);
         return res.data || [];
     },
+    updateMatches: async (_id, update) => {
+        console.log('put to /api/users/matches/' + _id);
+        console.log("passed in");
+        console.log(update);
+        let res = await axios.put(`/api/users/matches/`+ _id, update);
+        console.log(res);
+        return res.data || [];
+    },
     getUserClusterViews: async (userName) => {
         console.log('get to /users/clusters/');
         let res = await axios.get(`/users/clusters`, userName);

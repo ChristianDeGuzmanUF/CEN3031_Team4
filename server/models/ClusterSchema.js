@@ -30,6 +30,9 @@ const clusterSchema = new mongoose.Schema({
     },
     skills: {
         type: String
+    },
+    salaryRange: {
+        type: String
     }
 });
 

@@ -70,6 +70,13 @@ clustersRouter.get('/cluster/:shortName', async (req, res) => {
         .catch(err => console.log(err));
 });
 
+clustersRouter.get('/cluster/clusterName/:clusterName', async (req, res) => {
+    Clusters.findOne({clusterName: req.params.clusterName})
+        .then(cluster => {
+            res.send(cluster)})
+        .catch(err => console.log(err));
+});
+
 clustersRouter.put('/clusterupdate/:shortName', async (req, res) => {
 
     Clusters.findOneAndUpdate({shortName: req.params.shortName}, {

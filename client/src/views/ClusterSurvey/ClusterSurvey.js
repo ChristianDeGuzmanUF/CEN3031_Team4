@@ -7,12 +7,14 @@ import ClusterQuestions from "../../components/Body/ClusterQuestions";
 import ClusterSurveyResult from "../../components/Body/ClusterSurveyResult";
 import data from '../../data/clusterSurvey'
 import NavBar from "../../components/Body/NavBar";
+import userService from "../../actions/userService";
 
 
 class ClusterSurvey extends Component {
     constructor() {
         super();
         this.state = {
+        	user: null,
             cluster_top1: "",
 			cluster_top1_name: "",
             cluster_top2: "",
@@ -20,10 +22,17 @@ class ClusterSurvey extends Component {
 			cluster_top3: "",
 			cluster_top3_name: "",
         };
-    }	 
+    }
+
+    getUser = async (id) => {
+        let res = await userService.getOne(id);
+        this.setState({user: res});
+    };
 
     componentDidMount() {
-        
+        if (!this.state.user || this.state.user === null) {
+            this.getUser(this.props.auth.user.id);
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -37,22 +46,22 @@ class ClusterSurvey extends Component {
     onSubmit = e => {
         e.preventDefault();
 		
-		var clusterAnswerCount = [];	
-		var top1Value;
-		var top1Index;
-		var top1Name;		
-		var top2Value;
-		var top2Index;
-		var top2Name;		
-		var top3Value;
-		var top3Index;
-		var top3Name;
-		var clusterAnswered = 0;		
+		let clusterAnswerCount = [];
+		let top1Value;
+		let top1Index;
+		let top1Name;
+		let top2Value;
+		let top2Index;
+		let top2Name;
+		let top3Value;
+		let top3Index;
+		let top3Name;
+		let clusterAnswered = 0;
 		
 		// initialize clusterAnswerCount
-		for (var i = 0; i < 16; i++) {	
-			var inputName = "cluster" + (i + 1) + "[]";			
-			var clusterAnswers = document.querySelectorAll('input[name="' + inputName + '"]:checked');
+		for (let i = 0; i < 16; i++) {
+			let inputName = "cluster" + (i + 1) + "[]";
+			let clusterAnswers = document.querySelectorAll('input[name="' + inputName + '"]:checked');
 					
 			clusterAnswerCount[i] = clusterAnswers.length;		
 			
@@ -80,7 +89,7 @@ class ClusterSurvey extends Component {
 		top3Index = 2;
 				
 		// find top 1
-		for (var i = 0; i < clusterAnswerCount.length; i++) {
+		for (let i = 0; i < clusterAnswerCount.length; i++) {
 			if (clusterAnswerCount[i] > top1Value) {
 				// pass former top1 to top2
 				top2Value = top1Value;
@@ -92,7 +101,7 @@ class ClusterSurvey extends Component {
 		}
 			
 		// find top 2
-		for (var i = 0; i < clusterAnswerCount.length; i++) {
+		for (let i = 0; i < clusterAnswerCount.length; i++) {
 			// skip top 1
 			if (i == top1Index){
 				continue;
@@ -109,7 +118,7 @@ class ClusterSurvey extends Component {
 		}
 		
 		// find top 3
-		for (var i = 0; i < clusterAnswerCount.length; i++) {
+		for (let i = 0; i < clusterAnswerCount.length; i++) {
 			// skip top 1
 			if (i == top1Index){
 				continue;
@@ -155,10 +164,18 @@ class ClusterSurvey extends Component {
 		this.setState({ cluster_top2_name: top2Name });
 		this.setState({ cluster_top3: surveyData.cluster_top3 });
 		this.setState({ cluster_top3_name: top3Name });
-				 
-		// scroll all the way up
-		document.body.scrollTop = 0; // For Safari
-		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+        const userData = {
+		    topMatches: {one: top1Name.toString(), three: top2Name.toString(), two: top3Name.toString()}
+		};
+
+        userService.updateMatches(this.state.user._id, userData).then(()=>{window.location.href = "/Dashboard";})
+
+        // scroll all the way up
+		//document.body.scrollTop = 0; // For Safari
+		//document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
 	};
 
 
@@ -171,15 +188,15 @@ class ClusterSurvey extends Component {
                 <div className="survey-header">
                     Career Cluster Survey
                 </div>
+                <div>
+                    <ClusterSurveyResult surveyResults={this.state} />
+                </div>
 				<div className="instructions-text">
 					<h4>Instructions</h4>
 					<p>For the best career matches, answer all questions below. It is ok to leave a question blank if it does not apply to you, but you must answer one question from at least three of the sections to get matched.</p>
 				</div>
 				<form noValidate onSubmit={this.onSubmit} id="surveryForm">
 					<div>
-						<div>
-							<ClusterSurveyResult surveyResults={this.state} />         
-						</div>
 						<div>              
 							<ClusterQuestions data={data} />              
 						</div>

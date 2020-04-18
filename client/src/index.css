@@ -55,6 +55,7 @@ a:hover {
 }
 .dash-pic {
     background: url("/dash-pic.jpg");
+    min-height: 65vh;
 }
 .welcome-row {
     margin-bottom: 15px;
@@ -77,6 +78,9 @@ a:hover {
     bottom: 0;
     left: 0;
 }
+.matches {
+    font-size: calc(6px + 2vmin);
+}
 .temp-link {
     display: flex;
     font-size: calc(7px + 2vmin);
@@ -85,10 +89,30 @@ a:hover {
     justify-content: left;
     padding: 5px;
     color: #000032;
-    width: max-content;
     position: relative;
     bottom: 0;
     left: 0;
+}
+.matches1-link {
+    font-size: calc(8px + 3vmin);
+    font-weight: bold;
+    justify-content: center;
+    padding: 5px;
+    color: #000032;
+}
+.matches2-link {
+    font-size: calc(8px + 2vmin);
+    font-weight: bold;
+    justify-content: center;
+    padding: 5px;
+    color: #000032;
+    margin-top: 20px;
+}
+.matches-link {
+    font-size: calc(8px + 2vmin);
+    justify-content: center;
+    padding: 5px;
+    color: #000032;
 }
 .user-welcome {
     text-align: left;
@@ -135,15 +159,16 @@ a:hover {
 }
 .dash-item-box {
     background-color: ghostwhite;
-    border: solid 5px #42cd42;
-    display: flex;
+    border: solid 5px #42cd42;;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(8px + 2vmin);
     color: #000032;
-    padding: 25px;
-    margin: 30px;
+    padding: 10px;
+    margin: 10px;
+    width: 38vw;
+    display: inline-grid;
 }
 /*buttons*/
 .large-button {
@@ -325,6 +350,13 @@ a:hover {
     font-weight: bold;
     margin: 15px;
 }
+.crud-title-med-small {
+    text-align: center;
+    color: #000032;
+    font-size: calc(10px + 2vmin);
+    font-weight: bold;
+    text-decoration: underline;
+}
 .crud-title-xsmall {
     text-align: center;
     color: #000032;
@@ -338,6 +370,14 @@ a:hover {
     font-size: calc(10px + 3vmin);
     font-weight: bold;
     margin-top: 25px;
+}
+.options-title-xsmall {
+    text-align: center;
+    color: ghostwhite;
+    font-size: calc(10px + 3vmin);
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 .space {
     margin: 15px;
@@ -410,8 +450,10 @@ a:hover {
 }
 .crud-single-column-col-1-narrow {
     display: inline-grid;
-    width: 30%;
-    padding-top: 8px;
+    width: 35%;
+}
+.crud-single-column-col {
+    display: inline-grid;
 }
 .crud-form-title {
     text-align: left;

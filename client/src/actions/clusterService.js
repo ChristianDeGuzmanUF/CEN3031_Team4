@@ -23,4 +23,11 @@ export default {
         console.log(res);
         return res.data || [];
     },
+    getOneLongName: async (clusterName) => {
+        let escapedClusterName = clusterName.replace(/\//g, '%2F');
+        console.log('get to /api/cluster/' + escapedClusterName);
+        let res = await axios.get(`/api/cluster/clusterName/` + escapedClusterName);
+        console.log(res);
+        return res.data || [];
+    },
 };

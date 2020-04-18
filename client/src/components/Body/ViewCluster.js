@@ -116,8 +116,11 @@ class ViewCluster extends Component {
                                 <div className="crud-form-title">
                                     Cluster Name:
                                 </div>
+                                <div className="crud-form-text">
+                                    This name cannot be changed because it is used by the matching survey.
+                                </div>
                                 <div className="textareaElement"
-                                     contentEditable="true"
+                                     contentEditable="false"
                                      id = 'clusterName'
                                      value={this.props.input}
                                 >{theChosenOne.clusterName}</div>

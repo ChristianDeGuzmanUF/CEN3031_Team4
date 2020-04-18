@@ -42,28 +42,33 @@ class Admin extends Component {
         window.location.href = "/Admin/Occupation";
     };
     render() {
-        return (
-            <div className="main-theme">
-                <Navbar/>
-                <div className="welcome-row">
-                    <Welcome user={this.state.user}/>
-                    <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
-                </div>
-                <div className="dash-pic">
-                    <div className="options-title-small"> Administrator Control Options</div>
-                    <div className="crud-single-column-col-1-narrow">
-                        <button className="large-button" onClick={this.goToInviteEdit}>Add or Delete Invite Codes</button>
-                        <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
-                        <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
-                        <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
-                        <button className="large-button" onClick={this.goToOccupationEdit}>View, Edit, Add, or Delete Occupations</button>
+        if (this.state.user) {
+            return (
+                <div className="main-theme">
+                    <Navbar/>
+                    <div className="welcome-row">
+                        <Welcome user={this.state.user}/>
+                        <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
+                    </div>
+                    <div className="dash-pic">
+                        <div className="options-title-small"> Administrator Control Options</div>
+                        <div className="crud-single-column-col-1-narrow">
+                            <button className="large-button" onClick={this.goToInviteEdit}>Add or Delete Invite Codes</button>
+                            <button className="large-button" onClick={this.goToStudentEdit}>View, Edit, or Delete Students</button>
+                            <button className="large-button" onClick={this.goToAdminEdit}>View, Edit, or Delete Administrators</button>
+                            <button className="large-button" onClick={this.goToClusterEdit}>View or Edit Career Clusters</button>
+                            <button className="large-button" onClick={this.goToOccupationEdit}>View, Edit, Add, or Delete Occupations</button>
+                        </div>
+                    </div>
+                    <div className="credits">
+                        Photo by <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
                     </div>
                 </div>
-                <div className="credits">
-                    Photo by <a className="credit_link" href = "https://www.vecteezy.com/free-vector/captain" target="_blank">Captain Vectors by Vecteezy</a>
-                </div>
-            </div>
-        );
+            );
+        }
+        else {
+            return <div>One Moment Please</div>;
+        }
     };
 }
 Admin.propTypes = {

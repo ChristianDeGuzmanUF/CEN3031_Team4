@@ -88,6 +88,30 @@ usersRouter.put('/users/:userID', async (req, res) => {
     });
 });
 
+usersRouter.put('/users/matches/:userID', async (req, res) => {
+    Users.findByIdAndUpdate(req.params.userID, {
+        topMatches: req.body.topMatches,
+    }, {new: true})
+        .then(user => {
+            if(!user) {
+                return res.status(200).send({
+                    error: "ID not found with id " + req.params.userID
+                });
+            }
+            console.log(req.body.userName);
+            res.send(user);
+        }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(200).send({
+                error: "ID not found with id " + req.params.userID
+            });
+        }
+        return res.status(500).send({
+            error: "Error updating ID with id " + req.params.userID
+        });
+    });
+});
+
 usersRouter.delete('/users/:userID', async (req, res) => {
 
     Users.findByIdAndDelete(req.params.userID)
