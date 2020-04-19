@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import userService from '../../actions/userService';
+const crypto = require('crypto');
 
 
 class AccountDetails extends Component {
@@ -84,7 +85,8 @@ class AccountDetails extends Component {
         alert('Your account has been updated successfully.');
     };
     goToReset = () =>{
-        window.location.href = "/RecoverPassword";
+		const token = crypto.randomBytes(20).toString('hex');
+        window.location.href = "/ResetPassword/" + token;
     };
 
     render() {

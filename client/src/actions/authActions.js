@@ -26,9 +26,18 @@ export const resetPassword = (userData, history) => dispatch => {
     axios
         .post("/users/resetPassword", userData)
         .then(res => {
-			logoutUser();
-			history.push("/login");		
-		}) // re-direct to login on successful register
+			dispatch({
+                type: GET_MESSAGES,              
+                payload: res.data
+            });
+			
+			// clear messases
+			dispatch({
+                type: GET_ERRORS,
+                //payload: err.response.data
+                payload: {}
+            })		
+		})
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,
@@ -103,13 +112,13 @@ export const setUserLoading = () => {
 };
 
 // Log user out
-export const logoutUser = () => dispatch => {
+export const logoutUser = () => dispatch => {	
     // Remove token from local storage
     localStorage.removeItem("jwtToken");
     // Remove auth header for future requests
     setAuthToken(false);
     // Set current user to empty object {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
-    //redirect to home page
+    //redirect to home page	
     window.location.href = "/";
 };

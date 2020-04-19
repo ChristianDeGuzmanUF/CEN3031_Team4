@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { resetPassword } from "../../actions/authActions";
+import { resetPassword, logoutUser } from "../../actions/authActions";
 import userService from "../../actions/userService";
 import classnames from "classnames";
 import reset from '../Captain.png';
 
 class ResetPassword extends Component {
     constructor(props) {
-        super(props);
-		
+        super(props);		
         this.state = {
 			token: props.match.params.token,
 			userid: null,
             password1: "",
             password2: "",
             errors: {},
+			messages: {},
 			user: null
         };
 		
@@ -23,29 +23,41 @@ class ResetPassword extends Component {
     }
 	
 	getUserByToken = async (token) => {
-        let res = await userService.getOneByToken(token);		
-        this.setState({user: res});		
+		if (this.props.auth.isAuthenticated) {
+			this.setState({user: this.props.auth.user});	
+			this.setState({userid: this.props.auth.user.id});	
+		} else {
+			let res = await userService.getOneByToken(token);		
+			this.setState({user: res});	
+			this.setState({userid: this.state.user._id});					
 
-		if (this.state.user.resetPasswordToken == null) {			
-			this.props.history.push("/pagehasexpired");
-        }
+			if (this.state.user.resetPasswordToken == null) {			
+				this.props.history.push("/pagehasexpired");
+			}
+		}        
     };
 	
 	componentDidMount = async () =>  {      
         if (!this.state.user || this.state.user === null) {
             this.getUserByToken(this.state.token);
-        }
+        }		
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.auth.isAuthenticated) {
-            this.props.history.push("/dashboard"); // push user to dashboard when they login
-        }
-
+    componentWillReceiveProps(nextProps) {	
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
+        }
+		
+		if (nextProps.messages) {
+            this.setState({
+                messages: nextProps.messages
+            });
+			
+			if(this.state.messages.logoutUser){				
+				this.props.logoutUser();
+			}
         }
     }
 
@@ -58,17 +70,17 @@ class ResetPassword extends Component {
 		
 		// setup request variables
         const userData = {
-			userid: this.state.user._id,
+			userid: this.state.userid,
             password1: this.state.password1,
             password2: this.state.password2,
         };
-
+		
         this.props.resetPassword(userData, this.props.history);
     };
 
     render() {
-        const { errors } = this.state;	
-
+        const { errors } = this.state;			
+		
         return (
             <div>
                 <div className="main-theme">
@@ -116,16 +128,19 @@ class ResetPassword extends Component {
 
 ResetPassword.propTypes = {
     resetPassword: PropTypes.func.isRequired,
+	logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.object.isRequired,
+	messages: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
     auth: state.auth,
-    errors: state.errors
+    errors: state.errors,
+	messages: state.messages
 });
 
 export default connect(
     mapStateToProps,
-    { resetPassword }
+    { resetPassword, logoutUser }
 )(ResetPassword);

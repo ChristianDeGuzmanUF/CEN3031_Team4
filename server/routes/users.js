@@ -194,6 +194,7 @@ router.post("/resetPassword", async (req, res) => {
     // call function to validate registration input, and store returned errors
     // isValid is a boolean to indicate whether errors are present
     const {errors, isValid} = await validateUserResetPasswordInput(req.body);
+	let messages = {};
 
     // if errors during registration, return 400 and json object of errors written
     if (!isValid) {
@@ -217,7 +218,10 @@ router.post("/resetPassword", async (req, res) => {
                     user.password = hash;					
                     user
                       .save()
-                      .then(user => res.json(user))
+                      .then(user => {
+							messages.logoutUser = "Logout User";			
+							return res.status(200).json(messages);
+					  })
                       .catch(err => console.log(err));
                 });
             });
