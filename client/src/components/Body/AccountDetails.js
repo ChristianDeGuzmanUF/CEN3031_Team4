@@ -87,9 +87,6 @@ class AccountDetails extends Component {
 
             return (
                 <div>
-                    <div className="space">
-                        <button className="large-button" onClick={this.goToReset}>Reset Your Password</button>
-                    </div>
                     <div className="form-container">
                         <div className="space">
                             <div className="crud-title-tiny">Your Account Details</div>
@@ -144,6 +141,9 @@ class AccountDetails extends Component {
                                 <button className="wide-button" type="submit">Update</button>
                             </div>
                         </form>
+                    </div>
+                    <div className="space">
+                        <button className="large-button" onClick={this.goToReset}>Reset Your Password</button>
                     </div>
                 </div>
             );
