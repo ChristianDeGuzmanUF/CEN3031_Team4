@@ -100,7 +100,7 @@ class AccountDetails extends Component {
             return (
                 <div>
                     <div className="space">
-                        <button className="large-button" onClick={this.goToReset}>reset your password by email</button>
+                        <button className="large-button" onClick={this.goToReset}>Reset Your Password</button>
                     </div>
                     <div className="form-container">
                         <div className="space">
