@@ -7,6 +7,7 @@ import NavBar from '../../components/Body/NavBar';
 import clusterService from '../../actions/clusterService';
 import userService from "../../actions/userService";
 import Welcome from '../../components/Body/UserWelcome';
+import ClusterMatches from '../../components/Body/ClusterMatches';
 
 class Dashboard extends Component {
 
@@ -78,14 +79,24 @@ class Dashboard extends Component {
 
     render() {
         if (this.state.user && this.state.match1 && this.state.match2 && this.state.match3) {
-            let message;
+            let message, pointMessage;
 
+            //conditional string assignments
             if (this.state.user.topMatches.one === "") {
                 message = "Take the career matching survey!";
             }
             else {
                 message = "Re-take the career matching survey to reset your matches!";
             }
+
+            /*implement this when points are in, this is just an idea, not sure how it will actually work
+            if (this.state.user.points === 0) {
+                pointMessage = "";
+            }
+            else {
+                pointMessage = "You have {this.state.user.points} points, keep it up!";
+            }*/
+
             return (
                 <div className="main-theme">
                     <NavBar/>
@@ -94,21 +105,16 @@ class Dashboard extends Component {
                         <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                     </div>
                     <div>
-                        <div className="options-title-xsmall">You have '#' points, keep it up!</div>
+                        {/*Add this back in when points are implemented. Needs to be conditionally assigned above.
+                        <div className="options-title-xsmall">{pointMessage}</div>*/}
                         <div className="dash-pic">
                             <div className="crud-single-column-col">
+                                <ClusterMatches
+                                    studentMessage={this.state.studentMessage}
+                                    match1={this.state.match1}
+                                    match2={this.state.match2}
+                                    match3={this.state.match3}/>
                                 <div className="dash-item-box">
-                                    <div className="matches1-link">Your Number One Match is: </div>
-                                    <a className="matches1-link" href={"/Clusters/" + this.state.match1.shortName}>
-                                            {this.state.match1.shortName}</a>
-                                    <div className="matches">{this.state.match1.studentMessage}</div>
-                                    <div className="matches2-link">Second and Third Matches:</div>
-                                    <a className="matches-link" href={"/Clusters/" + this.state.match2.shortName}>
-                                        2: {this.state.match2.shortName}</a>
-                                    <a className="matches-link" href={"/Clusters/" + this.state.match3.shortName}>
-                                        3: {this.state.match3.shortName}</a>
-                                </div>
-                                    <div className="dash-item-box">
                                     <button className="large-button" onClick={this.goToSurvey}>{message}</button>
                                 </div>
                             </div>

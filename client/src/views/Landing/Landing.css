@@ -1,11 +1,11 @@
 .home-welcome {
   background: url("/HighSeas.jpg");
-  min-height: 60px;
+  min-height: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(7px + 2vmin);
+  font-size: calc(6px + 2vmin);
   color: #000032;
   padding-left: 100px;
   padding-right: 100px;
@@ -17,19 +17,18 @@
 }
 .welcome-text {
   background-color: rgba(248, 248, 255, 0.88);
-  min-height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(8px + 2vmin);
+  font-size: calc(6px + 2vmin);
   color: #000032;
   padding-left: 45px;
   padding-right: 45px;
-  margin-top: 100px;
-  margin-right: 100px;
-  margin-left: 100px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-bottom: 15px;
 }
 .nav-links {
   columns: 2;

@@ -55,10 +55,9 @@ a:hover {
 }
 .dash-pic {
     background: url("/dash-pic.jpg");
-    min-height: 95vh;
-    width: 100vw;
+    min-height: 55vh;
+    width: 98vw;
 	background-repeat: no-repeat;
-    background-size: contain;
     background-position-x: center;
     background-position-y: top;
 }
@@ -84,7 +83,7 @@ a:hover {
     left: 0;
 }
 .matches {
-    font-size: calc(6px + 2vmin);
+    font-size: calc(4px + 2vmin);
 }
 .temp-link {
     display: flex;
@@ -99,14 +98,14 @@ a:hover {
     left: 0;
 }
 .matches1-link {
-    font-size: calc(8px + 3vmin);
+    font-size: calc(6px + 3vmin);
     font-weight: bold;
     justify-content: center;
     padding: 5px;
     color: #000032;
 }
 .matches2-link {
-    font-size: calc(8px + 2vmin);
+    font-size: calc(6px + 2vmin);
     font-weight: bold;
     justify-content: center;
     padding: 5px;
@@ -133,7 +132,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(45px + 2vmin);
+    font-size: calc(35px + 2vmin);
     color: #000032;
     font-weight: bold;
 }
@@ -143,7 +142,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(30px + 2vmin);
+    font-size: calc(25px + 2vmin);
     color: #000032;
     font-weight: bold;
 }
@@ -459,6 +458,8 @@ a:hover {
 }
 .crud-single-column-col {
     display: inline-grid;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .crud-form-title {
     text-align: left;

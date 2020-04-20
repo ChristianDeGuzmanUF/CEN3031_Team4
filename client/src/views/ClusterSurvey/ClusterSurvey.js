@@ -193,7 +193,7 @@ class ClusterSurvey extends Component {
                 </div>
 				<div className="instructions-text">
 					<h4>Instructions</h4>
-					<p>For the best career matches, answer all questions below. It is ok to leave a question blank if it does not apply to you, but you must answer one question from at least three of the sections to get matched.</p>
+					<p>For the best career matches, answer all questions below. Each section will determine how well suited you are for a particular career cluster. It is ok to leave questions blank if they do not apply to you, but you must answer one question from at least three of the sections to get matched.</p>
 				</div>
 				<form noValidate onSubmit={this.onSubmit} id="surveryForm">
 					<div>
