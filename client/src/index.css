@@ -489,15 +489,15 @@ a:hover {
     height: 90vh;
     overflow: auto;
 }
-.with-scroll::-webkit-scrollbar {
-    display: none;
-}
 .with-scroll-short {
     height: 55vh;
     overflow: auto;
 }
-.with-scroll-short::-webkit-scrollbar {
-    display: none;
+.required {
+    font-size: calc(5px + 1vmin);
+    font-weight: bold;
+    text-align: left;
+    margin-top: 5px;
 }
 .column2 {
     float: left;
@@ -537,6 +537,15 @@ td.user-title {
     text-align: left;
     border: 1px solid black;
     max-height: 2500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+.selectElement {
+    background-color: white;
+    min-height: 20px;
+    text-align: left;
+    border: 1px solid black;
     overflow-x: hidden;
     overflow-y: auto;
     margin-bottom: 15px;

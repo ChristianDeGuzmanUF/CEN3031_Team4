@@ -4,7 +4,7 @@ const Users = require('../models/UserSchema');
 const usersRouter = express.Router();
 
 usersRouter.get('/users', async (req, res) => {
-    Users.find({})
+    Users.find({}).sort('lastName')
         .then(users => res.send(users)) //TODO: This should NOT send back the passwords
         .catch(err => console.log(err));
 });

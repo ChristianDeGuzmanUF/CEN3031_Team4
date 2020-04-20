@@ -3,7 +3,7 @@ const Clusters = require('../models/ClusterSchema');
 const clustersRouter = express.Router();
 
 clustersRouter.get('/clusters', async (req, res) => {
-    Clusters.find({})
+    Clusters.find({}).sort('shortName')
         .then(clusters => res.send(clusters))
         .catch(err => console.log(err));
 });

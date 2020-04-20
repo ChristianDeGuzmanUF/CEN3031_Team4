@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import occupationService from '../../actions/occupationService';
+import clusterService from '../../actions/clusterService';
 import OccupationList from '../../components/Body/OccupationList';
 import ViewOccupation from '../../components/Body/ViewOccupation';
 import Navbar from  '../../components/Body/NavBar';
@@ -12,23 +13,30 @@ class OccupationEdit extends Component {
         super(props);
         this.state = {
             occupations: null,
+            clusters: null,
             filterText: "",
             selectedOccupation: null,
             selectedOccupationData: null
         };
         this.getOccupations = this.getOccupations.bind(this);
+        this.getClusters = this.getClusters.bind(this);
         this.updateSelectedOccupation = this.updateSelectedOccupation.bind(this);
     }
     getOccupations = async () => {
         let res = await occupationService.getAll();
         this.setState({occupations: res});
     };
+    getClusters = async () => {
+        let res = await clusterService.getAll();
+        this.setState({clusters: res});
+    };
     getOneOccupation = async (id) => {
         return await occupationService.getOne(id);
     };
     componentDidMount = async () => {
-        if (!this.state.occupations) {
+        if (!this.state.occupations || !this.state.clusters) {
             this.getOccupations();
+            this.getClusters();
         }
     };
     updateSelectedOccupation(id) {
@@ -79,6 +87,7 @@ class OccupationEdit extends Component {
                             selectedOccupation={this.state.selectedOccupation}
                             selectedOccupationData={this.state.selectedOccupationData}
                             occupations={this.state.occupations}
+                            clusters={this.state.clusters}
                             getOccupations={this.getOccupations}
                             updateSelectedOccupation={this.updateSelectedOccupation}
                         />

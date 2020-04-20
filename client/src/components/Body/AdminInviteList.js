@@ -16,6 +16,18 @@ class AdminInviteList extends Component {
         this.props.getAdminInvites();
     };
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.adminInvites !== nextProps.adminInvites) {
+            this.props.getAdminInvites();
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
+
     render() {
         let adminInvitesList, adminCodes = null;
 

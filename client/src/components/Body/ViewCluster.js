@@ -170,7 +170,7 @@ class ViewCluster extends Component {
                                         {errors.clusterName}
                                         </span>
                                 <div className="crud-form-title">
-                                    Short name for the cluster:
+                                    *Short name for the cluster:
                                 </div>
                                 <div className="crud-form-text">
                                     Appears as the title and is used to connect occupations to this cluster.
@@ -193,10 +193,10 @@ class ViewCluster extends Component {
                                         {errors.description}
                                         </span>
                                 <div className="crud-form-title">
-                                    Message for students whose top match is {theChosenOne.shortName}:
+                                    *Message for students whose top match is {theChosenOne.shortName}:
                                 </div>
                                 <div className="crud-form-text">
-                                    The student will see this in their dashboard, so it is best to write something like "You got this match because you are good at/enjoy/etc....."
+                                    The student will see this in their dashboard, so it is best to write something like "People who work in "this-cluster" are good at/enjoy/etc....."
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -270,6 +270,9 @@ class ViewCluster extends Component {
                                 <span className="text-danger">
                                         {errors.salaryRange}
                                         </span>
+                                <div className="required">
+                                    *Indicates required field
+                                </div>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
                                 <br></br>

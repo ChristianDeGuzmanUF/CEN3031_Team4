@@ -4,7 +4,7 @@ const Occupations = require('../models/OccupationSchema');
 const occupationsRouter = express.Router();
 
 occupationsRouter.get('/occupations', async (req, res) => {
-    Occupations.find({})
+    Occupations.find({}).sort('name')
         .then(occupations => res.send(occupations))
         .catch(err => console.log(err));
 });

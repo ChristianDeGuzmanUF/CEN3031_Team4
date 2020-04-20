@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import occupationService from '../../actions/occupationService';
+import ClustersForDropdown from './ClustersForDropDown'
 
 class ViewOccupation extends Component {
     constructor(props) {
@@ -97,7 +98,7 @@ class ViewOccupation extends Component {
             this.state.cluster = this.props.selectedOccupationData.cluster;
         }
         else {
-            this.state.cluster = document.getElementById('cluster').innerText;
+            this.state.cluster = document.getElementById('cluster').value;
         }
         if (this.state.averageSalary === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
             this.state.averageSalary = this.props.selectedOccupationData.averageSalary;
@@ -176,7 +177,7 @@ class ViewOccupation extends Component {
                         <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
                             <div className="crud-single-column-col-1">
                                 <div className="crud-form-title">
-                                    Occupation Name:
+                                    *Occupation Name:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -184,6 +185,16 @@ class ViewOccupation extends Component {
                                 >{theChosenOne.name}</div>
                                 <span className="text-danger">
                                         {errors.name}
+                                        </span>
+                                <div className="crud-form-title">
+                                    *Cluster this occupation belongs to:
+                                </div>
+                                <ClustersForDropdown
+                                    clusters={this.props.clusters}
+                                    thisCluster = {theChosenOne.cluster}
+                                />
+                                <span className="text-danger">
+                                        {errors.cluster}
                                         </span>
                                 <div className="crud-form-title">
                                     Occupation Description:
@@ -214,16 +225,6 @@ class ViewOccupation extends Component {
                                 >{theChosenOne.education}</div>
                                 <span className="text-danger">
                                         {errors.education}
-                                        </span>
-                                <div className="crud-form-title">
-                                    Cluster this occupation belongs to:
-                                </div>
-                                <div className="textareaElement"
-                                     contentEditable="true"
-                                     id = 'cluster'
-                                >{theChosenOne.cluster}</div>
-                                <span className="text-danger">
-                                        {errors.cluster}
                                         </span>
                                 <div className="crud-form-title">
                                     Average salary of this occupation:
@@ -290,6 +291,9 @@ class ViewOccupation extends Component {
                                 <span className="text-danger">
                                         {errors.link}
                                         </span>
+                                <div className="required">
+                                    *Indicates required field
+                                </div>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>
                                 <br></br>

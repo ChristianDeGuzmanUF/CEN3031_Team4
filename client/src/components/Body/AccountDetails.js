@@ -95,7 +95,7 @@ class AccountDetails extends Component {
                         <form className="general-form-area" noValidate onSubmit={this.onSubmit}>
                             <div className="crud-single-column-col-1">
                                 <div className="crud-form-title">
-                                    First Name:
+                                    *First Name:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -105,7 +105,7 @@ class AccountDetails extends Component {
                                         {errors.firstName}
                                         </span>
                                 <div className="crud-form-title">
-                                    Last Name:
+                                    *Last Name:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -115,7 +115,7 @@ class AccountDetails extends Component {
                                         {errors.lastName}
                                         </span>
                                 <div className="crud-form-title">
-                                    User Name:
+                                    *User Name:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -125,7 +125,7 @@ class AccountDetails extends Component {
                                         {errors.userName}
                                         </span>
                                 <div className="crud-form-title">
-                                    Email Address:
+                                    *Email Address:
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
@@ -136,6 +136,9 @@ class AccountDetails extends Component {
                                         </span>
                                 <div className="crud-form-title">
                                     Is a site administrator: {admin}
+                                </div>
+                                <div className="required">
+                                    *Indicates required field
                                 </div>
                                 <br></br>
                                 <button className="wide-button" type="submit">Update</button>

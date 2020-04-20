@@ -16,6 +16,18 @@ class StudentInviteList extends Component {
         this.props.getStudentInvites();
     };
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.studentInvites !== nextProps.studentInvites) {
+            this.props.getStudentInvites();
+        }
+
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
+        }
+    };
+
     render() {
         let studentInvitesList, studentCodes = null;
 
