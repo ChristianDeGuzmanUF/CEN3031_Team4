@@ -1,5 +1,6 @@
 const express = require('express');
 const Users = require('../models/UserSchema');
+const validateUserUpdate = require('../controllers/updateUser');
 
 const usersRouter = express.Router();
 
@@ -61,6 +62,12 @@ usersRouter.get('/usersByToken/:token', async (req, res) => {
 });
 
 usersRouter.put('/users/:userID', async (req, res) => {
+
+    const {errors, isValid} = await validateUserUpdate(req.body, req.params.userID);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
 
     Users.findByIdAndUpdate(req.params.userID, {
         firstName: req.body.firstName,
