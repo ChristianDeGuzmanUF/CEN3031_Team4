@@ -79,23 +79,34 @@ class Dashboard extends Component {
 
     render() {
         if (this.state.user && this.state.match1 && this.state.match2 && this.state.match3) {
-            let message, pointMessage;
+            let message, pointMessage;			
+			let points = 0;
 
             //conditional string assignments
             if (this.state.user.topMatches.one === "") {
                 message = "Take the career matching survey!";
             }
-            else {
+            else {	
+				// survey completed
+				points += 20;		
                 message = "Re-take the career matching survey to reset your matches!";
-            }
-
-            /*implement this when points are in, this is just an idea, not sure how it will actually work
-            if (this.state.user.points === 0) {
-                pointMessage = "";
+            }			
+			
+			let clusters = this.state.user.clusters;	
+			
+			Object.keys(clusters).forEach(function(key) {
+				if(clusters[key] == true){
+					// cluster visited						
+					points += 5;
+				}
+			});				
+            
+            if (points > 0) {
+				pointMessage = `You have ${points} points, keep it up!`;                
             }
             else {
-                pointMessage = "You have {this.state.user.points} points, keep it up!";
-            }*/
+				pointMessage = `Let's start exploring career clusters to earn points!`;                
+            }
 
             return (
                 <div className="main-theme">
@@ -105,8 +116,11 @@ class Dashboard extends Component {
                         <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                     </div>
                     <div>
-                        {/*Add this back in when points are implemented. Needs to be conditionally assigned above.
-                        <div className="options-title-xsmall">{pointMessage}</div>*/}
+						<h6 className="color-ghost">Start earning points that your teacher can convert to class incentives at his/her discretion.</h6>
+						<h5 className="color-ghost">How to Earn Points:</h5>	
+						<h6 className="color-ghost">Each career cluster visit = 5 points</h6>	
+						<h6 className="color-ghost">Take the career cluster match survey = 20 points</h6>
+                        <div className="options-title-xsmall">{pointMessage}</div>
                         <div className="dash-pic">
                             <div className="crud-single-column-col">
                                 <ClusterMatches

@@ -643,3 +643,7 @@ td.description-content {
 .space-on-bottom {
     margin-bottom: 15px;
 }
+
+.color-ghost {
+	color: ghostwhite;
+}
