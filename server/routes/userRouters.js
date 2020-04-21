@@ -88,6 +88,35 @@ usersRouter.put('/users/:userID', async (req, res) => {
     });
 });
 
+usersRouter.put('/users/selectcluster/:userID', async (req, res) => {
+	let  update = {};
+	update["clusters." + req.body.clusterId] = true;
+	
+	console.log(update);
+	console.log({$set:update});
+	console.log(req.params.userID);
+
+    Users.findByIdAndUpdate(req.params.userID, {$set:update}, {new: true})
+        .then(user => {
+            if(!user) {
+                return res.status(200).send({
+                    error: "ID not found with id " + req.params.userID
+                });
+            }
+            console.log(res);
+            res.send(user);
+        }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(200).send({
+                error: "ID not found with id " + req.params.userID
+            });
+        }
+        return res.status(500).send({
+            error: "Error updating ID with id " + req.params.userID
+        });
+    });
+});
+
 usersRouter.put('/users/matches/:userID', async (req, res) => {
     Users.findByIdAndUpdate(req.params.userID, {
         topMatches: req.body.topMatches,

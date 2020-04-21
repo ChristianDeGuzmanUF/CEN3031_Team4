@@ -23,6 +23,12 @@ export default {
         console.log(res);
         return res.data || [];
     },
+	checkOneCluster: async (_id, update) => {
+        console.log('put to /api/users/selectcluster/' + _id);
+        let res = await axios.put(`/api/users/selectcluster/`+ _id, update);
+        console.log(res);
+        return res.data || [];
+    },
     updateMatches: async (_id, update) => {
         console.log('put to /api/users/matches/' + _id);
         console.log("passed in");

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const clusterSchema = new mongoose.Schema({
+	clusterid: {
+		type: String,
+		default: ""
+	},
     clusterName: {
         type: String,
         required: true

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import userService from "../../actions/userService";
 import clusterService from '../../actions/clusterService';
 import occupationService from '../../actions/occupationService';
 import VisitorNavBar from  '../../components/Body/VisitorNavBar';
@@ -25,6 +26,18 @@ class ClusterInfo extends Component {
     getCluster = async () => {
         let res = await clusterService.getOneShortname(this.state.shortname);
         this.setState({cluster: res});
+		
+		if(this.props.auth.user.userName && this.props.auth.user.admin == false){
+			//review me, student is logged in
+			let userId = this.props.auth.user.id;
+			let clusterId = this.state.cluster.clusterid;
+						
+			const userData = {
+				clusterId: clusterId				
+			};
+
+			userService.checkOneCluster(userId, userData);
+		}
     };
 
     getOccupations = async () => {
