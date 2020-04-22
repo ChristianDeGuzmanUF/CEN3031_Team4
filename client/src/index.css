@@ -376,10 +376,13 @@ a:hover {
     margin-top: 25px;
 }
 .options-title-xsmall {
+    width: 65vw;
     text-align: center;
     color: ghostwhite;
     font-size: calc(10px + 3vmin);
     font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 5px;
     margin-bottom: 15px;
 }

@@ -105,7 +105,7 @@ class Dashboard extends Component {
 				pointMessage = `You have ${points} points, keep it up!`;                
             }
             else {
-				pointMessage = `Let's start exploring career clusters to earn points!`;                
+				pointMessage = `Start earning points by taking the career matching survey or exploring career clusters!`;
             }
 
             return (
@@ -116,10 +116,11 @@ class Dashboard extends Component {
                         <button className="account-update-button" onClick={this.updateAccount}>Update Your Account Details</button>
                     </div>
                     <div>
-						<h6 className="color-ghost">Start earning points that your teacher can convert to class incentives at his/her discretion.</h6>
+                        {/* Can we move this into the chatbot?
+                        <h6 className="color-ghost">Start earning points that your teacher can convert to class incentives at his/her discretion.</h6>
 						<h5 className="color-ghost">How to Earn Points:</h5>	
 						<h6 className="color-ghost">Each career cluster visit = 5 points</h6>	
-						<h6 className="color-ghost">Take the career cluster match survey = 20 points</h6>
+						<h6 className="color-ghost">Take the career cluster match survey = 20 points</h6>*/}
                         <div className="options-title-xsmall">{pointMessage}</div>
                         <div className="dash-pic">
                             <div className="crud-single-column-col">
