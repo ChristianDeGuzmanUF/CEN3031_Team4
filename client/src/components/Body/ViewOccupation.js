@@ -279,7 +279,7 @@ class ViewOccupation extends Component {
                                         {errors.pictureCreditLink}
                                         </span>
                                 <div className="crud-form-title">
-                                    A link for {theChosenOne.name}:
+                                    Link(s) for {theChosenOne.name}:
                                 </div>
                                 <div className="crud-form-text">
                                     Add a related link for this occupation, i.e. a video or information page. To add more than one link, separate them with a comma; e.g. https://google.com,https://yahoo.com. Be sure to include https:// at the front of the link.
