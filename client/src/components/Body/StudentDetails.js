@@ -100,6 +100,20 @@ class StudentDetails extends Component {
             && this.props.selectedUserData !== null && this.props.selectedUserData !== {}) {
             thisUser = this.props.selectedUserData;
             let admin = thisUser.isAdmin ? "Yes" : "No";
+            let points = 0;
+
+            //conditional string assignments
+            if (thisUser.topMatches.one !== "") {
+                points += 20;
+            }
+            let clusters = thisUser.clusters;
+
+            Object.keys(clusters).forEach(function(key) {
+                if(clusters[key] === true){
+                    // cluster visited
+                    points += 5;
+                }
+            });
             return (
                 <div>
                     <div className="crud-form-container">
@@ -165,6 +179,15 @@ class StudentDetails extends Component {
                                 </div>
                             </div>
                         </form>
+                        <div className="student-item-box">
+                            <div className="crud-title-tiny">Top Matches:</div>
+                            <tr className="attrib-detail">1. {thisUser.topMatches.one !== "" ? thisUser.topMatches.one : 'N/A'}</tr>
+                            <tr className="attrib-detail">2. {thisUser.topMatches.two !== "" ? thisUser.topMatches.two : 'N/A'}</tr>
+                            <tr className="attrib-detail">3. {thisUser.topMatches.three !== "" ? thisUser.topMatches.three : 'N/A'}</tr>
+                            <tr className="crud-title-tiny">
+                                Points: {points}
+                            </tr>
+                        </div>
                     </div>
                 </div>
             );

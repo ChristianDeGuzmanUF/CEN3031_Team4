@@ -174,6 +174,18 @@ a:hover {
     width: 38vw;
     display: inline-grid;
 }
+.student-item-box {
+    background-color: white;
+    border: solid 5px #42cd42;;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(8px + 2vmin);
+    color: #000032;
+    margin: 25px;
+    width: 25vw;
+    display: inline-grid;
+}
 /*buttons*/
 .large-button {
     background: #42cd42;
@@ -523,6 +535,7 @@ tr.attrib-title-tiny {
 }
 tr.attrib-detail {
     font-size: calc(9px + 1vmin);
+    font-weight: normal;
 }
 tr.user-titles {
     font-size: calc(8px + 2vmin);
@@ -649,4 +662,13 @@ td.description-content {
 
 .color-ghost {
 	color: ghostwhite;
+}
+.student-cards-container {
+    min-height: 15vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 35px;
+    margin-right: 35px;
 }

@@ -95,7 +95,7 @@ class Dashboard extends Component {
 			let clusters = this.state.user.clusters;	
 			
 			Object.keys(clusters).forEach(function(key) {
-				if(clusters[key] == true){
+				if(clusters[key] === true){
 					// cluster visited						
 					points += 5;
 				}

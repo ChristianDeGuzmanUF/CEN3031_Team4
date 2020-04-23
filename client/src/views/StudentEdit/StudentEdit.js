@@ -40,28 +40,35 @@ class StudentEdit extends Component {
         return (
             <div className="main-theme">
                 <Navbar/>
+
                 <div className="row">
                     <div className="column1">
-                        <div className="crud-search">
-                            <div className="crud-title">Students</div>
-                            <input className="search-bar"
-                                   placeholder="type a keyword to filter items below"
-                                   value={this.props.input}
-                                   onChange={(e) => {
-                                       this.setState({filterText: e.target.value})
-                                   }}
-                            />
-                        </div>
-                        <div className="user-cards-container">
-                            <div className="with-scroll-short">
-                                <StudentList
-                                    users={this.state.users}
-                                    filterText={this.state.filterText}
-                                    selectedUser={this.state.selectedUser}
-                                    updateSelectedUser={this.updateSelectedUser}
-                                    getUsers={this.getUsers}
-                                />
-                            </div>
+                        <div className="tableWrapper">
+                            <table className="table table-striped table-hover">
+                                <div className="crud-search">
+                                    <div className="crud-title">Students</div>
+                                    <input className="search-bar"
+                                           placeholder="type a keyword to filter items below"
+                                           value={this.props.input}
+                                           onChange={(e) => {
+                                               this.setState({filterText: e.target.value})
+                                           }}
+                                    />
+                                </div>
+                                <table>
+                                    <div className="student-cards-container">
+                                        <div className="with-scroll-short">
+                                            <StudentList
+                                                users={this.state.users}
+                                                filterText={this.state.filterText}
+                                                selectedUser={this.state.selectedUser}
+                                                updateSelectedUser={this.updateSelectedUser}
+                                                getUsers={this.getUsers}
+                                            />
+                                        </div>
+                                    </div>
+                                </table>
+                            </table>
                         </div>
                     </div>
                     <div className="column2 with-scroll">
