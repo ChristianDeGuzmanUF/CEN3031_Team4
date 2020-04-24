@@ -6,10 +6,7 @@ class ClusterList extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.clusters !== nextProps.clusters) {
-            this.props.getClusters();
-        }
+    componentWillReceiveProps(nextProps) {       
 
         if (nextProps.errors) {
             this.setState({
@@ -20,7 +17,7 @@ class ClusterList extends Component {
 
     clickHandler(id, e) {
         e.preventDefault();
-        this.props.updateSelectedCluster(id);
+        this.props.onSelectClusterClick(id);
     };
 
     render() {

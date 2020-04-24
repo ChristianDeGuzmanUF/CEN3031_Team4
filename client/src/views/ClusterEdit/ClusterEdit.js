@@ -13,29 +13,65 @@ class ClusterEdit extends Component {
         this.state = {
             clusters: null,
             filterText: "",
-            selectedCluster: null,
-            selectedClusterData: null
+			selectedClusterID: null,
+            selectedCluster: null           
         };
-        this.getClusters = this.getClusters.bind(this);
-        this.updateSelectedCluster = this.updateSelectedCluster.bind(this);
+        this.getClusters = this.getClusters.bind(this);  
+		this.selectClusterClick = this.selectClusterClick.bind(this);	
+		this.updateClusterSuccess = this.updateClusterSuccess.bind(this);	
     }
     getClusters = async () => {
         let res = await clusterService.getAll();
         this.setState({clusters: res});
-    };
-    getOneCluster = async (id) => {
+    };  
+	getOneCluster = async (id) => {
         return await clusterService.getOne(id);
-    };
+    };	
     componentDidMount = async () => {
         if (!this.state.clusters) {
             this.getClusters();
         }
+    }; 
+	
+	onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
     };
-    updateSelectedCluster(id) {
-        this.setState({selectedCluster: id});
-        this.getOneCluster(id).then(res => {this.setState({selectedClusterData: res})})
+  
+	selectClusterClick(id)  {		
+		this.setState({selectedClusterID: id});
+        this.getOneCluster(id).then(res => {this.setState({selectedCluster: res})})
+    };
+	
+	updateClusterSuccess()  {
+		this.getClusters();
+    };
+	
+	/*
+	deleteClusterClick = async (id) => {
+		alert(id);
+		alert('delete not working');
+		return;
+		// set cluster selected id
+		this.setState({selectedClusterID: id})
+		
+		let res = await clusterService.getOne(this.state.selectedClusterID);
+		// set cluster selected
+        this.setState({selectedCluster: res});
+    };
+	
+	updateClusterClick = async (updatedCluster) => {
+		alert(updatedCluster);
+		alert('update not working');
+		return;
+		// set cluster selected id
+		this.setState({selectedClusterID: id})
+		
+		let res = await clusterService.getOne(this.state.selectedClusterID);
+		// set cluster selected
+        this.setState({selectedCluster: res});
     };
 
+*/
     render() {
         return (
             <div className="main-theme">
@@ -47,21 +83,18 @@ class ClusterEdit extends Component {
                                 <div className="crud-search">
                                     <div className="crud-title">Career Clusters</div>
                                     <input className="search-bar"
-                                           placeholder="type a keyword to filter items below"
-                                           value={this.props.input}
-                                           onChange={(e) => {
-                                               this.setState({filterText: e.target.value})
-                                           }}
+                                           placeholder="type a keyword to filter items below"  
+										   onChange={this.onChange}
+										   value={this.state.filterText}	
+										   id="filterText"
                                     />
                                 </div>
                                 <table>
                                     <div className="with-scroll-short">
                                         <ClusterList
                                             clusters={this.state.clusters}
-                                            filterText={this.state.filterText}
-                                            selectedCluster={this.state.selectedCluster}
-                                            getClusters={this.getClusters}
-                                            updateSelectedCluster={this.updateSelectedCluster}
+                                            filterText={this.state.filterText}                                          
+											onSelectClusterClick={this.selectClusterClick} 
                                         />
                                     </div>
                                 </table>
@@ -71,10 +104,7 @@ class ClusterEdit extends Component {
                     <div className="column2 with-scroll">
                         <ViewCluster
                             selectedCluster={this.state.selectedCluster}
-                            selectedClusterData={this.state.selectedClusterData}
-                            clusters={this.state.clusters}
-                            getClusters={this.getClusters}
-                            updateSelectedCluster={this.updateSelectedCluster}
+                            onUpdateClusterSuccess={this.updateClusterSuccess}    
                         />
                     </div>
                 </div>

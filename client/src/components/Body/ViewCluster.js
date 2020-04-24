@@ -3,8 +3,7 @@ import clusterService from '../../actions/clusterService';
 
 class ViewCluster extends Component {
     constructor(props) {
-        super(props);
-        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
+        super(props);		
         this.state = {
             clusterName: "",
             shortName: "",
@@ -17,43 +16,9 @@ class ViewCluster extends Component {
             salaryRange: "",
             errors: {}
         };
-    }
-    componentDidMount = async () =>  {
-        if (!this.state.clusterName && this.props.selectedClusterData) {
-            this.setState({clusterName: this.props.selectedClusterData.clusterName});
-        }
-        if (!this.state.shortName && this.props.selectedClusterData) {
-            this.setState({shortName: this.props.selectedClusterData.shortName});
-        }
-        if (!this.state.description && this.props.selectedClusterData) {
-            this.setState({description: this.props.selectedClusterData.description});
-        }
-        if (!this.state.skills && this.props.selectedClusterData) {
-            this.setState({skills: this.props.selectedClusterData.skills});
-        }
-        if (!this.state.studentMessage && this.props.selectedClusterData) {
-            this.setState({studentMessage: this.props.selectedClusterData.studentMessage});
-        }
-        if (!this.state.picture && this.props.selectedClusterData) {
-            this.setState({picture: this.props.selectedClusterData.picture});
-        }
-        if (!this.state.pictureCredit && this.props.selectedClusterData) {
-            this.setState({pictureCredit: this.props.selectedClusterData.pictureCredit});
-        }
-        if (!this.state.pictureCreditLink && this.props.selectedClusterData) {
-            this.setState({pictureCreditLink: this.props.selectedClusterData.pictureCreditLink});
-        }
-        if (!this.state.salaryRange && this.props.selectedClusterData) {
-            this.setState({salaryRange: this.props.selectedClusterData.salaryRange});
-        }
-    };
+    }	
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.selectedClusterData !== this.props.selectedClusterData
-            && this.props.selectedCluster !== nextProps.selectedCluster) {
-            this.props.updateSelectedCluster(nextProps.selectedCluster);
-        }
-
+    componentWillReceiveProps(nextProps) {			
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -63,62 +28,17 @@ class ViewCluster extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-
-        if (this.state.clusterName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.clusterName = this.props.selectedClusterData.clusterName;
-        }
-        else {
-            this.state.clusterName = document.getElementById('clusterName').innerText;
-        }
-        if (this.state.shortName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.shortName = this.props.selectedClusterData.shortName;
-        }
-        else {
-            this.state.shortName = document.getElementById('shortName').innerText;
-        }
-        if (this.state.description === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.description = this.props.selectedClusterData.description;
-        }
-        else {
-            this.state.description = document.getElementById('description').innerText;
-        }
-        if (this.state.studentMessage === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.studentMessage = this.props.selectedClusterData.studentMessage;
-        }
-        else {
-            this.state.studentMessage = document.getElementById('studentMessage').innerText;
-        }
-        if (this.state.picture === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.picture = this.props.selectedClusterData.picture;
-        }
-        else {
-            this.state.picture = document.getElementById('picture').innerText;
-        }
-        if (this.state.pictureCredit === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.pictureCredit = this.props.selectedClusterData.pictureCredit;
-        }
-        else {
-            this.state.pictureCredit = document.getElementById('pictureCredit').innerText;
-        }
-        if (this.state.pictureCreditLink === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.pictureCreditLink = this.props.selectedClusterData.pictureCreditLink;
-        }
-        else {
-            this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;
-        }
-        if (this.state.skills === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.skills = this.props.selectedClusterData.skills;
-        }
-        else {
-            this.state.skills = document.getElementById('skills').innerText;
-        }
-        if (this.state.salaryRange === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.salaryRange = this.props.selectedClusterData.salaryRange;
-        }
-        else {
-            this.state.salaryRange = document.getElementById('salaryRange').innerText;
-        }
-
+      
+		this.state.clusterName = document.getElementById('clusterName').innerText;
+		this.state.shortName = document.getElementById('shortName').innerText;
+		this.state.description = document.getElementById('description').innerText;
+		this.state.studentMessage = document.getElementById('studentMessage').innerText;
+		this.state.picture = document.getElementById('picture').innerText;
+		this.state.pictureCredit = document.getElementById('pictureCredit').innerText;
+		this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;
+		this.state.skills = document.getElementById('skills').innerText;
+		this.state.salaryRange = document.getElementById('salaryRange').innerText;
+        
         const clusterData = {
             clusterName: this.state.clusterName,
             shortName: this.state.shortName,
@@ -129,26 +49,29 @@ class ViewCluster extends Component {
             pictureCreditLink: this.state.pictureCreditLink,
             skills: this.state.skills,
             salaryRange: this.state.salaryRange,
-        };
-
-        clusterService.updateOne(this.props.selectedCluster, clusterData)
-            .then(this.props.updateSelectedCluster(this.props.selectedCluster))
-            .then(this.updateSuccess).then(this.props.getClusters());
+        };		
+		
+        clusterService.updateOne(this.props.selectedCluster._id, clusterData)          
+            .then(this.updateSuccess)
+			.then(this.props.onUpdateClusterSuccess);
+			
     };
+	
+	
     updateSuccess = () => {
         alert('This record has been updated successfully.');
     };
     goToPage = () =>{
-        window.location.href = "/Clusters/" + this.props.selectedClusterData.shortName;
+        window.location.href = "/Clusters/" + this.props.selectedCluster.shortName;
     };
     render() {
         const { errors } = this.state;
         let theChosenOne = null;
 
-        if (this.props.clusters && this.props.clusters.length > 0 &&
-            this.props.selectedCluster !== null && this.props.selectedCluster !== ""
-            && this.props.selectedClusterData !== null && this.props.selectedClusterData !== {}) {
-            theChosenOne = this.props.selectedClusterData;
+        if (this.props.selectedCluster !== null) {			
+				
+            theChosenOne = this.props.selectedCluster;
+			
             return (
                 <div>
                     <div className="crud-form-container">
@@ -177,7 +100,7 @@ class ViewCluster extends Component {
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
-                                     id = 'shortName'
+                                     id = 'shortName'									 
                                      >{theChosenOne.shortName}</div>
                                 <span className="text-danger">
                                         {errors.shortName}
@@ -187,7 +110,7 @@ class ViewCluster extends Component {
                                 </div>
                                 <div className="textareaElement"
                                      contentEditable="true"
-                                     id = 'description'
+                                     id = 'description'									 
                                      >{theChosenOne.description}</div>
                                 <span className="text-danger">
                                         {errors.description}
