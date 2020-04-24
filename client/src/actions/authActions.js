@@ -21,6 +21,31 @@ export const registerUser = (userData, history) => dispatch => {
         );
 };
 
+// Update User
+export const updateUser = (userData, history) => dispatch => {
+    axios
+        .post("/users/update", userData)     
+		.then(res => {		
+			dispatch({
+                type: GET_MESSAGES,              
+                payload: res.data
+            });			
+			
+			// clear messases
+			dispatch({
+                type: GET_ERRORS,
+                //payload: err.response.data
+                payload: {}
+            })		
+		})		
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+};
+
 // Reset Password
 export const resetPassword = (userData, history) => dispatch => {
     axios

@@ -19,7 +19,7 @@ module.exports = async function validateUserUpdate(input, userID) {
         errors.firstName = "First name is required";
     };
     if (validator.isEmpty(input.lastName)) {
-        errors.LastName = "Last name is required";
+        errors.lastName = "Last name is required";
     };
     if (validator.isEmpty(input.userName)) {
         errors.userName = "Username is required";
@@ -32,7 +32,7 @@ module.exports = async function validateUserUpdate(input, userID) {
     };
 
     if (validator.isEmpty(input.email)) {
-        errors.invitationCode = "Email is required";
+        errors.email = "Email is required";
     } else if (!validator.isEmail(input.email)) {
         errors.email = "Email address is invalid";
     } else {

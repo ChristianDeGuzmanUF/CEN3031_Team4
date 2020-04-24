@@ -1,73 +1,60 @@
 import React, { Component } from 'react';
-import userService from '../../actions/userService';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { updateUser } from "../../actions/authActions";
 const crypto = require('crypto');
 
 
 class AccountDetails extends Component {
     constructor(props) {
-        super(props);
-        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
+        super(props);       
         this.state = {
             userName: "",
             firstName: "",
             lastName: "",
             email: "",
-            errors: {}
+            errors: {},
+			messages: {}
         };
     }
-    componentDidMount = async () =>  {
-        if (!this.state.userName && this.props.user) {
-            this.setState({userName: this.props.user.userName});
+	
+	componentWillReceiveProps(nextProps) {	
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            });
         }
-        if (!this.state.firstName && this.props.user) {
-            this.setState({firstName: this.props.user.firstName});
+		
+		if (nextProps.messages) {
+            this.setState({
+                messages: nextProps.messages
+            });
+			
+			if(this.state.messages.updateSuccess){						
+				this.updateSuccess();
+			}
         }
-        if (!this.state.lastName && this.props.user) {
-            this.setState({lastName: this.props.user.lastName});
-        }
-        if (!this.state.email && this.props.user) {
-            this.setState({email: this.props.user.email});
-        }
-    };
+    }
 
     onSubmit = e => {
         e.preventDefault();
-
-        if (this.state.userName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.userName = this.props.user.userName;
-        }
-        else {
-            this.state.userName = document.getElementById('userName').innerText;
-        }
-        if (this.state.firstName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.firstName = this.props.user.firstName;
-        }
-        else {
-            this.state.firstName = document.getElementById('firstName').innerText;
-        }
-        if (this.state.lastName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.lastName = this.props.user.lastName;
-        }
-        else {
-            this.state.lastName = document.getElementById('lastName').innerText;
-        }
-        if (this.state.email === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.email = this.props.user.email;
-        }
-        else {
-            this.state.email = document.getElementById('email').innerText;
-        }
-
+       
+	    this.state.messages = {};
+		this.state.userName = document.getElementById('userName').innerText;       
+		this.state.firstName = document.getElementById('firstName').innerText;       
+		this.state.lastName = document.getElementById('lastName').innerText;    
+		this.state.email = document.getElementById('email').innerText;
+        
         const userData = {
+			userID: this.props.user._id,
             userName: this.state.userName,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email
         };
 
-        userService.updateOne(this.props.user._id, userData)
-            .then(this.props.getUser(this.props.user._id))
-            .then(this.updateSuccess);
+		this.props.updateUser(userData, this.props.history);			
     };
     updateSuccess = () => {
         alert('Your account has been updated successfully.');
@@ -80,7 +67,7 @@ class AccountDetails extends Component {
     render() {
         const { errors } = this.state;
         let thisUser = null;
-
+		
         if (this.props.user && this.props.user !== null) {
             thisUser = this.props.user;
             let admin = thisUser.isAdmin ? "Yes" : "No";
@@ -163,4 +150,20 @@ class AccountDetails extends Component {
     };
 }
 
-export default AccountDetails;
+AccountDetails.propTypes = {
+    updateUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired,
+	messages: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+	messages: state.messages
+});
+
+export default connect(
+    mapStateToProps,
+    { updateUser }
+)(withRouter(AccountDetails));

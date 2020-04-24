@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const validateUserRegInput = require('../controllers/registerUser');
+const validateUserUpdate = require('../controllers/updateUser');
 const validateUserRecoverInput = require('../controllers/recoverUser');
 const validateUserResetPasswordInput = require('../controllers/resetPasswordUser');
 const validateUserLoginInput = require('../controllers/login');
@@ -186,6 +187,46 @@ router.post("/register", async (req, res) => {
                 });
             });
         }
+    });
+});
+
+router.post("/update", async (req, res) => {
+
+    // call function to validate registration input, and store returned errors
+    // isValid is a boolean to indicate whether errors are present
+    const {errors, isValid} = await validateUserUpdate(req.body, req.body.userID);
+	let messages = {};
+
+    // if errors during registration, return 400 and json object of errors written
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }	
+	
+	User.findByIdAndUpdate(req.body.userID, {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
+        email: req.body.email
+    }, {new: true})
+        .then(user => {
+            if(!user) {
+                return res.status(200).send({
+                    error: "ID not found with id " + req.body.userID
+                });
+            }
+            console.log(res);
+            //res.send(user);
+			messages.updateSuccess = "Update Success";			
+			return res.status(200).json(messages);
+        }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(200).send({
+                error: "ID not found with id " + req.body.userID
+            });
+        }
+        return res.status(500).send({
+            error: "Error updating ID with id " + req.body.userID
+        });
     });
 });
 
