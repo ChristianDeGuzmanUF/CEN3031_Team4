@@ -13,11 +13,13 @@ class StudentEdit extends Component {
         this.state = {
             users: null,
             filterText: "",
-            selectedUser: null,
-            selectedUserData: null
+            selectedStudentID: null,
+            selectedStudent: null
         };
-        this.getUsers = this.getUsers.bind(this);
-        this.updateSelectedUser = this.updateSelectedUser.bind(this);
+        this.getUsers = this.getUsers.bind(this);        
+		this.selectStudentClick = this.selectStudentClick.bind(this);	
+		this.updateStudentSuccess = this.updateStudentSuccess.bind(this);	 
+		this.deleteStudentSuccess = this.deleteStudentSuccess.bind(this);	
     }
     getUsers = async () => {
         let res = await userService.getAll();
@@ -31,11 +33,24 @@ class StudentEdit extends Component {
             this.getUsers();
         }
     };
-    updateSelectedUser(id) {
-        this.setState({selectedUser: id});
-        this.getOneUser(id).then(res => {this.setState({selectedUserData: res})})
+	
+	onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
     };
-
+	
+	selectStudentClick(id)  {		
+		this.setState({selectedStudentID: id});
+        this.getOneUser(id).then(res => {this.setState({selectedStudent: res})})
+    };
+	
+	updateStudentSuccess()  {
+		this.getUsers();
+    };
+	
+	deleteStudentSuccess()  {
+		this.getUsers();
+    };	
+    
     render() {
         return (
             <div className="main-theme">
@@ -49,10 +64,9 @@ class StudentEdit extends Component {
                                     <div className="crud-title">Students</div>
                                     <input className="search-bar"
                                            placeholder="type a keyword to filter items below"
-                                           value={this.props.input}
-                                           onChange={(e) => {
-                                               this.setState({filterText: e.target.value})
-                                           }}
+										   onChange={this.onChange}
+                                           value={this.state.filterText}
+										   id="filterText"                                          
                                     />
                                 </div>
                                 <table>
@@ -61,9 +75,7 @@ class StudentEdit extends Component {
                                             <StudentList
                                                 users={this.state.users}
                                                 filterText={this.state.filterText}
-                                                selectedUser={this.state.selectedUser}
-                                                updateSelectedUser={this.updateSelectedUser}
-                                                getUsers={this.getUsers}
+												onSelectStudentClick={this.selectStudentClick}
                                             />
                                         </div>
                                     </div>
@@ -73,11 +85,10 @@ class StudentEdit extends Component {
                     </div>
                     <div className="column2 with-scroll">
                         <StudentDetails
-                            selectedUser={this.state.selectedUser}
-                            selectedUserData={this.state.selectedUserData}
-                            users={this.state.users}
-                            getUsers={this.getUsers}
-                            updateSelectedUser={this.updateSelectedUser}
+							users={this.state.users}
+							selectedStudent={this.state.selectedStudent}
+                            onUpdateStudentSuccess={this.updateStudentSuccess} 
+							onDeleteStudentSuccess={this.deleteStudentSuccess} 
                         />
                     </div>
                 </div>
