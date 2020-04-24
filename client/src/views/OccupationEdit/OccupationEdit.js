@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import occupationService from '../../actions/occupationService';
 import clusterService from '../../actions/clusterService';
+import occupationService from '../../actions/occupationService';
 import OccupationList from '../../components/Body/OccupationList';
 import ViewOccupation from '../../components/Body/ViewOccupation';
 import Navbar from  '../../components/Body/NavBar';
@@ -12,37 +12,55 @@ class OccupationEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            occupations: null,
-            clusters: null,
+			clusters: null,
+            occupations: null,           
             filterText: "",
-            selectedOccupation: null,
-            selectedOccupationData: null
+            selectedOccupationID: null,
+            selectedOccupation: null
         };
+		this.getClusters = this.getClusters.bind(this);  
         this.getOccupations = this.getOccupations.bind(this);
-        this.getClusters = this.getClusters.bind(this);
-        this.updateSelectedOccupation = this.updateSelectedOccupation.bind(this);
+        this.selectOccupationClick = this.selectOccupationClick.bind(this);	
+		this.updateOccupationSuccess = this.updateOccupationSuccess.bind(this);	 
+		this.deleteOccupationSuccess = this.deleteOccupationSuccess.bind(this);	 		
     }
+	getClusters = async () => {
+        let res = await clusterService.getAll();
+        this.setState({clusters: res});
+    };  
     getOccupations = async () => {
         let res = await occupationService.getAll();
         this.setState({occupations: res});
-    };
-    getClusters = async () => {
-        let res = await clusterService.getAll();
-        this.setState({clusters: res});
-    };
+    };    
     getOneOccupation = async (id) => {
         return await occupationService.getOne(id);
     };
     componentDidMount = async () => {
-        if (!this.state.occupations || !this.state.clusters) {
-            this.getOccupations();
-            this.getClusters();
+		if (!this.state.clusters) {
+            this.getClusters();            
+        }
+        if (!this.state.occupations) {
+            this.getOccupations();            
         }
     };
-    updateSelectedOccupation(id) {
-        this.setState({selectedOccupation: id});
-        this.getOneOccupation(id).then(res => {this.setState({selectedOccupationData: res})})
+	
+	onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
     };
+	
+	selectOccupationClick(id)  {		
+		this.setState({selectedOccupationID: id});
+        this.getOneOccupation(id).then(res => {this.setState({selectedOccupation: res})})
+    };
+	
+	updateOccupationSuccess()  {
+		this.getOccupations();
+    };
+	
+	deleteOccupationSuccess()  {
+		this.getOccupations();
+    };
+	  
     addOccupation = () =>{
         window.location.href = "/Admin/Occupation/Add";
     };
@@ -62,10 +80,9 @@ class OccupationEdit extends Component {
                                     <div className="crud-title">Occupations</div>
                                     <input className="search-bar"
                                            placeholder="type a keyword to filter items below"
-                                           value={this.props.input}
-                                           onChange={(e) => {
-                                               this.setState({filterText: e.target.value})
-                                           }}
+										   onChange={this.onChange}
+                                           value={this.state.filterText}
+                                           id="filterText"
                                     />
                                 </div>
                                 <table>
@@ -73,9 +90,7 @@ class OccupationEdit extends Component {
                                         <OccupationList
                                             occupations={this.state.occupations}
                                             filterText={this.state.filterText}
-                                            selectedOccupation={this.state.selectedOccupation}
-                                            getOccupations={this.getOccupations}
-                                            updateSelectedOccupation={this.updateSelectedOccupation}
+											onSelectOccupationClick={this.selectOccupationClick} 
                                         />
                                     </div>
                                 </table>
@@ -84,12 +99,10 @@ class OccupationEdit extends Component {
                     </div>
                     <div className="column2 with-scroll">
                         <ViewOccupation
-                            selectedOccupation={this.state.selectedOccupation}
-                            selectedOccupationData={this.state.selectedOccupationData}
-                            occupations={this.state.occupations}
-                            clusters={this.state.clusters}
-                            getOccupations={this.getOccupations}
-                            updateSelectedOccupation={this.updateSelectedOccupation}
+							clusters={this.state.clusters}
+							selectedOccupation={this.state.selectedOccupation}
+                            onUpdateOccupationSuccess={this.updateOccupationSuccess} 
+							onDeleteOccupationSuccess={this.deleteOccupationSuccess} 
                         />
                     </div>
                 </div>

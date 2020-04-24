@@ -7,10 +7,7 @@ class OccupationList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.occupations !== nextProps.occupations) {
-            this.props.getOccupations();
-        }
-
+        
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -20,7 +17,7 @@ class OccupationList extends Component {
 
     clickHandler(id, e) {
         e.preventDefault();
-        this.props.updateSelectedOccupation(id);
+        this.props.onSelectOccupationClick(id);
     };
 
     render() {

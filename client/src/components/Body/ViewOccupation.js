@@ -4,8 +4,7 @@ import ClustersForDropdown from './ClustersForDropDown'
 
 class ViewOccupation extends Component {
     constructor(props) {
-        super(props);
-        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
+        super(props);       
         this.state = {
             name: "",
             description: "",
@@ -20,46 +19,8 @@ class ViewOccupation extends Component {
             errors: {}
         };
     }
-
-    componentDidMount = async () =>  {
-        if (!this.state.name && this.props.selectedOccupationData) {
-            this.setState({name: this.props.selectedOccupationData.name});
-        }
-        if (!this.state.description && this.props.selectedOccupationData) {
-            this.setState({description: this.props.selectedOccupationData.description});
-        }
-        if (!this.state.courses && this.props.selectedOccupationData) {
-            this.setState({courses: this.props.selectedOccupationData.courses});
-        }
-        if (!this.state.education && this.props.selectedOccupationData) {
-            this.setState({education: this.props.selectedOccupationData.education});
-        }
-        if (!this.state.cluster && this.props.selectedOccupationData) {
-            this.setState({cluster: this.props.selectedOccupationData.cluster});
-        }
-        if (!this.state.picture && this.props.selectedOccupationData) {
-            this.setState({picture: this.props.selectedOccupationData.picture});
-        }
-        if (!this.state.pictureCredit && this.props.selectedOccupationData) {
-            this.setState({pictureCredit: this.props.selectedOccupationData.pictureCredit});
-        }
-        if (!this.state.pictureCreditLink && this.props.selectedOccupationData) {
-            this.setState({pictureCreditLink: this.props.selectedOccupationData.pictureCreditLink});
-        }
-        if (!this.state.averageSalary && this.props.selectedOccupationData) {
-            this.setState({averageSalary: this.props.selectedOccupationData.averageSalary});
-        }
-        if (!this.state.link && this.props.selectedOccupationData) {
-            this.setState({link: this.props.selectedOccupationData.link});
-        }
-    };
-
+   
     componentWillReceiveProps(nextProps) {
-        if (nextProps.selectedOccupationData !== this.props.selectedOccupationData
-            && this.props.selectedOccupation !== nextProps.selectedOccupation) {
-            this.props.updateSelectedOccupation(nextProps.selectedOccupation);
-        }
-
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -69,68 +30,18 @@ class ViewOccupation extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-
-        if (this.state.name === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.name = this.props.selectedOccupationData.name;
-        }
-        else {
-            this.state.name = document.getElementById('name').innerText;
-        }
-        if (this.state.description === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.description = this.props.selectedOccupationData.description;
-        }
-        else {
-            this.state.description = document.getElementById('description').innerText;
-        }
-        if (this.state.courses === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.courses = this.props.selectedOccupationData.courses;
-        }
-        else {
-            this.state.courses = document.getElementById('courses').innerText;
-        }
-        if (this.state.education === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.education = this.props.selectedOccupationData.education;
-        }
-        else {
-            this.state.education = document.getElementById('education').innerText;
-        }
-        if (this.state.cluster === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.cluster = this.props.selectedOccupationData.cluster;
-        }
-        else {
-            this.state.cluster = document.getElementById('cluster').value;
-        }
-        if (this.state.averageSalary === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.averageSalary = this.props.selectedOccupationData.averageSalary;
-        }
-        else {
-            this.state.averageSalary = document.getElementById('averageSalary').innerText;
-        }
-        if (this.state.picture === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.picture = this.props.selectedOccupationData.picture;
-        }
-        else {
-            this.state.picture = document.getElementById('picture').innerText;
-        }
-        if (this.state.pictureCredit === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.pictureCredit = this.props.selectedOccupationData.pictureCredit;
-        }
-        else {
-            this.state.pictureCredit = document.getElementById('pictureCredit').innerText;
-        }
-        if (this.state.pictureCreditLink === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.pictureCreditLink = this.props.selectedOccupationData.pictureCreditLink;
-        }
-        else {
-            this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;
-        }
-        if (this.state.link === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.link = this.props.selectedOccupationData.link;
-        }
-        else {
-            this.state.link = document.getElementById('link').innerText;
-        }
-
+        
+		this.state.name = document.getElementById('name').innerText;	
+		this.state.description = document.getElementById('description').innerText;	
+		this.state.courses = document.getElementById('courses').innerText;	
+		this.state.education = document.getElementById('education').innerText;	
+		this.state.cluster = document.getElementById('cluster').value;	
+		this.state.averageSalary = document.getElementById('averageSalary').innerText;	
+		this.state.picture = document.getElementById('picture').innerText;	
+		this.state.pictureCredit = document.getElementById('pictureCredit').innerText;	
+		this.state.pictureCreditLink = document.getElementById('pictureCreditLink').innerText;	
+		this.state.link = document.getElementById('link').innerText;
+        
         const occupationData = {
             name: this.state.name,
             description: this.state.description,
@@ -144,31 +55,32 @@ class ViewOccupation extends Component {
             link: this.state.link,
         };
 
-        occupationService.updateOne(this.props.selectedOccupation, occupationData)
-            .then(this.props.updateSelectedOccupation(this.props.selectedOccupation))
-            .then(this.updateSuccess).then(this.props.getOccupations());
+        occupationService.updateOne(this.props.selectedOccupation._id, occupationData)
+            .then(this.updateSuccess)
+			.then(this.props.onUpdateOccupationSuccess);			
     };
+	
     updateSuccess = () => {
         alert('This record has been updated successfully.');
     };
     deleteOccupation = e => {
         e.preventDefault();
-        occupationService.deleteOne(this.props.selectedOccupation);
-        this.props.updateSelectedOccupation(null);
-        this.props.getOccupations();
-
-    };
+		
+        occupationService.deleteOne(this.props.selectedOccupation._id)
+			.then(this.updateSuccess)
+			.then(this.props.onDeleteOccupationSuccess);
+    };	
     goToPage = () =>{
-        window.location.href = "/Occupations/" + this.props.selectedOccupationData.name;
+        window.location.href = "/Occupations/" + this.props.selectedOccupation.name;
     };
     render() {
         const { errors } = this.state;
         let theChosenOne = null;
 
-        if (this.props.occupations && this.props.occupations.length > 0 &&
-            this.props.selectedOccupation !== null && this.props.selectedOccupation !== ""
-            && this.props.selectedOccupationData !== null && this.props.selectedOccupationData !== {}) {
-            theChosenOne = this.props.selectedOccupationData;
+        if (this.props.selectedOccupation !== null) {
+			
+            theChosenOne = this.props.selectedOccupation;
+			
             return (
                 <div>
                     <div className="crud-form-container">
