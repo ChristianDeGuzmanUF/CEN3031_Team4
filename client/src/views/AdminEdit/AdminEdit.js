@@ -13,11 +13,13 @@ class AdminEdit extends Component {
         this.state = {
             users: null,
             filterText: "",
-            selectedUser: null,
-            selectedUserData: null
+            selectedAdminID: null,
+            selectedAdmin: null
         };
-        this.getUsers = this.getUsers.bind(this);
-        this.updateSelectedUser = this.updateSelectedUser.bind(this);
+        this.getUsers = this.getUsers.bind(this);        
+		this.selectAdminClick = this.selectAdminClick.bind(this);	
+		this.updateAdminSuccess = this.updateAdminSuccess.bind(this);	 
+		this.deleteAdminSuccess = this.deleteAdminSuccess.bind(this);	
     }
     getUsers = async () => {
         let res = await userService.getAll();
@@ -31,25 +33,40 @@ class AdminEdit extends Component {
             this.getUsers();
         }
     };
-    updateSelectedUser(id) {
-        this.setState({selectedUser: id});
-        this.getOneUser(id).then(res => {this.setState({selectedUserData: res})})
+	
+	onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
     };
+	
+	selectAdminClick(id)  {		
+		this.setState({selectedAdminID: id});
+        this.getOneUser(id).then(res => {this.setState({selectedAdmin: res})})
+    };
+	
+	updateAdminSuccess()  {
+		this.getUsers();
+    };
+	
+	deleteAdminSuccess()  {
+		this.getUsers();
+		this.setState({selectedAdminID: null});
+		this.setState({selectedAdmin: null});        
+    };	
 
     render() {
         return (
             <div className="main-theme">
                 <Navbar/>
+				
                 <div className="row">
                     <div className="column1">
                         <div className="crud-search">
                             <div className="crud-title">Administrators</div>
                             <input className="search-bar"
                                    placeholder="type a keyword to filter items below"
-                                   value={this.props.input}
-                                   onChange={(e) => {
-                                       this.setState({filterText: e.target.value})
-                                   }}
+                                   onChange={this.onChange}
+								   value={this.state.filterText}
+								   id="filterText"              
                             />
                         </div>
                         <div className="user-cards-container">
@@ -57,20 +74,17 @@ class AdminEdit extends Component {
                                 <AdminList
                                     users={this.state.users}
                                     filterText={this.state.filterText}
-                                    selectedUser={this.state.selectedUser}
-                                    updateSelectedUser={this.updateSelectedUser}
-                                    getUsers={this.getUsers}
+									onSelectAdminClick={this.selectAdminClick}
                                 />
                             </div>
                         </div>
                     </div>
                     <div className="column2 with-scroll">
                         <AdminDetails
-                            selectedUser={this.state.selectedUser}
-                            selectedUserData={this.state.selectedUserData}
-                            updateSelectedUser={this.updateSelectedUser}
-                            users={this.state.users}
-                            getUsers={this.getUsers}
+							users={this.state.users}
+							selectedAdmin={this.state.selectedAdmin}
+                            onUpdateAdminSuccess={this.updateAdminSuccess} 
+							onDeleteAdminSuccess={this.deleteAdminSuccess} 
                         />
                     </div>
                 </div>

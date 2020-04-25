@@ -7,10 +7,7 @@ class AdminList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.users !== nextProps.users) {
-            this.props.getUsers();
-        }
-
+        
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -20,7 +17,7 @@ class AdminList extends Component {
 
     clickHandler(id, e) {
         e.preventDefault();
-        this.props.updateSelectedUser(id);
+        this.props.onSelectAdminClick(id);
     };
 
     render() {

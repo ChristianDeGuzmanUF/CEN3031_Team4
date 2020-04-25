@@ -1,103 +1,92 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { updateUser } from "../../actions/authActions";
 import userService from '../../actions/userService';
-
 
 class AdminDetails extends Component {
     constructor(props) {
-        super(props);
-        /*Initializing with a random garbage string b/c if the user accidentally hits update with no text, you're stuck in permanent loop of just setting back to nothing.*/
+        super(props);       
         this.state = {
             userName: "",
             id: "",
             firstName: "",
             lastName: "",
             email: "",
-            errors: {}
+            errors: {},
+			messages: {},
+			postbackUpdate: "",
         };
     }
-    componentDidMount = async () =>  {
-        if (!this.state.userName && this.props.selectedUserData) {
-            this.setState({userName: this.props.selectedUserData.userName});
-        }
-        if (!this.state.firstName && this.props.selectedUserData) {
-            this.setState({firstName: this.props.selectedUserData.firstName});
-        }
-        if (!this.state.lastName && this.props.selectedUserData) {
-            this.setState({lastName: this.props.selectedUserData.lastName});
-        }
-        if (!this.state.email && this.props.selectedUserData) {
-            this.setState({email: this.props.selectedUserData.email});
-        }
-    };
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.selectedUserData !== this.props.selectedUserData
-            && this.props.selectedUser !== nextProps.selectedUser) {
-            this.props.updateSelectedUser(nextProps.selectedUser);
-        }
-
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
         }
-    };
-    onSubmit = e => {
-        e.preventDefault();
-        if (this.state.userName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.userName = this.props.selectedUserData.userName;
-        }
-        else {
-            this.state.userName = document.getElementById('userName').innerText;
-        }
-        if (this.state.firstName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.firstName = this.props.selectedUserData.firstName;
-        }
-        else {
-            this.state.firstName = document.getElementById('firstName').innerText;
-        }
-        if (this.state.lastName === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.lastName = this.props.selectedUserData.lastName;
-        }
-        else {
-            this.state.lastName = document.getElementById('lastName').innerText;
-        }
-        if (this.state.email === "1248qfhaefh982q3ryq2h4fg89q24ty1824tyyhq2984ytfghf") {
-            this.state.email = this.props.selectedUserData.email;
-        }
-        else {
-            this.state.email = document.getElementById('email').innerText;
+		
+		if (nextProps.messages) {
+            this.setState({
+                messages: nextProps.messages
+            });
+			
+			if(this.state.messages.updateSuccess == "Update Success" && this.state.postbackUpdate == "yes")
+			{
+				this.updateSuccess();
+				this.props.onUpdateAdminSuccess();
+				this.state.messages.updateSuccess = "";
+			}			
         }
 
+		if( nextProps.selectedAdmin && this.props.selectedAdmin) {
+			if( nextProps.selectedAdmin._id !== this.props.selectedAdmin._id) {
+				//admin changed, reset errors	
+				this.setState({
+					errors: {}
+				});
+			}
+		}
+    }
+	
+    onSubmit = e => {
+        e.preventDefault();
+        
+		this.state.postbackUpdate = "yes";
+		this.state.userName = document.getElementById('userName').innerText;        
+		this.state.firstName = document.getElementById('firstName').innerText;        
+		this.state.lastName = document.getElementById('lastName').innerText;        
+		this.state.email = document.getElementById('email').innerText;        
+
         const userData = {
+			userID: this.props.selectedAdmin._id,
             userName: this.state.userName,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email
         };
-        userService.updateOne(this.props.selectedUser, userData)
-            .then(this.props.updateSelectedUser(this.props.selectedUser))
-            .then(this.updateSuccess).then(this.props.getUsers());
+		
+		this.props.updateUser(userData, this.props.history);
     };
     updateSuccess = () => {
         alert('This record has been updated successfully.');
     };
     deleteUser = e => {
         e.preventDefault();
-        userService.deleteOne(this.props.selectedUser);
-        this.props.updateSelectedUser(null);
-        this.props.getUsers();
-
+		
+		userService.deleteOne(this.props.selectedAdmin._id)
+			.then(this.updateSuccess)
+			.then(this.props.onDeleteAdminSuccess);		
     };
 
     render() {
         const { errors } = this.state;
         let thisUser = null;
 
-        if (this.props.users && this.props.users.length > 0 &&
-            this.props.selectedUser !== null && this.props.selectedUser !== ""
-            && this.props.selectedUserData !== null && this.props.selectedUserData !== {}) {
-            thisUser = this.props.selectedUserData;
+        if (this.props.selectedAdmin !== null) {
+			
+            thisUser = this.props.selectedAdmin;
             let admin = thisUser.isAdmin ? "Yes" : "No";
             return (
                 <div>
@@ -180,4 +169,20 @@ class AdminDetails extends Component {
     };
 }
 
-export default AdminDetails;
+AdminDetails.propTypes = {
+    updateUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired,
+	messages: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+	messages: state.messages
+});
+
+export default connect(
+    mapStateToProps,
+    { updateUser }
+)(withRouter(AdminDetails));
