@@ -147,7 +147,7 @@ class Dashboard extends Component {
                     <script type="text/javascript"
                             id="botcopy-embedder-d7lcfheammjct"
                             className="botcopy-embedder-d7lcfheammjct"
-                            data-botId="5e77c514099273f574d8d4b0">
+                            data-botId="5ea4688bf40ea60008fdaffd">
                     </script>
                     <div className="credits">
                         Chatbot icon by &nbsp;
