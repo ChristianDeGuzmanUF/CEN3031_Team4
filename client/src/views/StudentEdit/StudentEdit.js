@@ -49,6 +49,8 @@ class StudentEdit extends Component {
 	
 	deleteStudentSuccess()  {
 		this.getUsers();
+		this.setState({selectedStudentID: null});
+		this.setState({selectedStudent: null});        
     };	
     
     render() {

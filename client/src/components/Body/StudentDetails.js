@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { updateUser } from "../../actions/authActions";
 import userService from '../../actions/userService';
 
 class StudentDetails extends Component {
@@ -10,47 +14,69 @@ class StudentDetails extends Component {
             firstName: "",
             lastName: "",
             email: "",
-            errors: {}
+            errors: {},
+			messages: {},
+			postbackUpdate: "",
         };
     }
 	
-    componentWillReceiveProps(nextProps) {			
+   componentWillReceiveProps(nextProps) {	
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
         }
-    };
+		
+		if (nextProps.messages) {
+            this.setState({
+                messages: nextProps.messages
+            });
+			
+			if(this.state.messages.updateSuccess == "Update Success" && this.state.postbackUpdate == "yes")
+			{
+				this.updateSuccess();
+				this.props.onUpdateStudentSuccess();
+				this.state.messages.updateSuccess = "";
+			}			
+        }
+		
+		if( nextProps.selectedStudent && this.props.selectedStudent) {
+			if( nextProps.selectedStudent._id !== this.props.selectedStudent._id) {
+				//student changed, reset errors	
+				this.setState({
+					errors: {}
+				});
+			}
+		}
+    }
     
     onSubmit = e => {
         e.preventDefault();
        
+	    //this.state.messages = {};
+		this.state.postbackUpdate = "yes";
 		this.state.userName = document.getElementById('userName').innerText;        
 		this.state.firstName = document.getElementById('firstName').innerText;        
 		this.state.lastName = document.getElementById('lastName').innerText;        
 		this.state.email = document.getElementById('email').innerText;        
 
         const userData = {
+			userID: this.props.selectedStudent._id,
             userName: this.state.userName,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email
         };
 		
-        userService.updateOne(this.props.selectedStudent._id, userData)
-            .then(this.updateSuccess)
-			.then(this.props.onUpdateStudentSuccess);
-			
+        this.props.updateUser(userData, this.props.history);
     };
-	
-	
     updateSuccess = () => {
         alert('This record has been updated successfully.');
     };
     deleteUser = e => {
         e.preventDefault();
 		
-        userService.deleteOne(this.props.selectedUser._id)
+        userService.deleteOne(this.props.selectedStudent._id)
 			.then(this.updateSuccess)
 			.then(this.props.onDeleteStudentSuccess);
     };
@@ -167,4 +193,20 @@ class StudentDetails extends Component {
     };
 }
 
-export default StudentDetails;
+StudentDetails.propTypes = {
+    updateUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired,
+	messages: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors,
+	messages: state.messages
+});
+
+export default connect(
+    mapStateToProps,
+    { updateUser }
+)(withRouter(StudentDetails));
