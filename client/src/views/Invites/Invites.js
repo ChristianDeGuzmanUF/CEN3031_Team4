@@ -16,6 +16,12 @@ class Invites extends Component {
             studentInvites: null,
             adminInvites: null
         };
+		this.getStudentInvites = this.getStudentInvites.bind(this);  
+		this.getAdminInvites = this.getAdminInvites.bind(this);  
+		this.deleteStudentInviteSuccess = this.deleteStudentInviteSuccess.bind(this);
+		this.deleteAdminInviteSuccess = this.deleteAdminInviteSuccess.bind(this);
+		this.addStudentInviteSuccess = this.addStudentInviteSuccess.bind(this);
+		this.addAdminInviteSuccess = this.addAdminInviteSuccess.bind(this);
     }
     getStudentInvites = async () => {
         let res = await inviteService.getOneAdminCode(false);
@@ -25,7 +31,6 @@ class Invites extends Component {
         let res = await inviteService.getOneAdminCode(true);
         this.setState({adminInvites: res});
     };
-
     componentDidMount = async () => {
         if (!this.state.studentInvites) {
             this.getStudentInvites();
@@ -34,6 +39,22 @@ class Invites extends Component {
             this.getAdminInvites();
         }
     };
+	
+	deleteStudentInviteSuccess() {
+		this.getStudentInvites();		   
+    };	
+	
+	deleteAdminInviteSuccess() {
+		this.getAdminInvites();		   
+    };
+
+	addStudentInviteSuccess() {
+		this.getStudentInvites();		   
+    };	
+	
+	addAdminInviteSuccess() {
+		this.getAdminInvites();		   
+    };	
 
     render() {
         return (
@@ -48,13 +69,13 @@ class Invites extends Component {
                                     <div>
                                         <AddStudentInvite
                                             studentInvites={this.state.studentInvites}
-                                            getStudentInvites={this.getStudentInvites}
+                                            onAddStudentInviteSuccess={this.addStudentInviteSuccess} 
                                         />
                                     </div>
                                     <div className="with-scroll-short">
                                         <StudentInviteList
-                                            studentInvites={this.state.studentInvites}
-                                            getStudentInvites={this.getStudentInvites}
+                                            studentInvites={this.state.studentInvites}                                            
+											onDeleteStudentInviteSuccess={this.deleteStudentInviteSuccess} 
                                         />
                                     </div>
                                 </div>
@@ -69,13 +90,13 @@ class Invites extends Component {
                                     <div>
                                         <AddAdminInvite
                                             adminInvites={this.state.adminInvites}
-                                            getAdminInvites={this.getAdminInvites}
+                                            onAddAdminInviteSuccess={this.addAdminInviteSuccess} 
                                         />
                                     </div>
                                     <div className="with-scroll-short">
                                         <AdminInviteList
                                             adminInvites={this.state.adminInvites}
-                                            getAdminInvites={this.getAdminInvites}
+                                            onDeleteAdminInviteSuccess={this.deleteAdminInviteSuccess} 
                                         />
                                     </div>
                                 </div>

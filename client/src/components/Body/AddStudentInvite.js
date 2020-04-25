@@ -8,7 +8,8 @@ class AddStudentInvite extends Component {
             placeholder: "" //forces input back to blank on re-render
         }
     }
-    addOccupation = () => {
+	
+    addInvite = () => {
         if (this.state.placeholder === "") {
             alert("Cannot add an empty code.");
         }
@@ -25,7 +26,7 @@ class AddStudentInvite extends Component {
                 adminCode: this.props.studentInvites.adminCode,
             };
             inviteService.updateOne(this.props.studentInvites._id, codeData);
-            this.props.getStudentInvites();
+            this.props.onAddStudentInviteSuccess();
         }
     };
 
@@ -50,7 +51,7 @@ class AddStudentInvite extends Component {
                             />
                         </div>
                         <div className="left">
-                            <button className="clear-button" onClick={this.addOccupation}>Add</button>
+                            <button className="clear-button" onClick={this.addInvite}>Add</button>
                         </div>
                     </div>
                 </div>

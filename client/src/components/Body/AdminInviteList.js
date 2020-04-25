@@ -5,7 +5,8 @@ class AdminInviteList extends Component {
     constructor(props) {
         super(props);
     }
-    deleteOccupation = (code) => {
+
+    deleteInvite = (code) => {
         let newCodeArray = this.props.adminInvites.codes.filter(thisCode => thisCode !== code);  //remove the unwanted code
         const codeData = {
             name: this.props.adminInvites.name,
@@ -13,14 +14,10 @@ class AdminInviteList extends Component {
             adminCode: this.props.adminInvites.adminCode,
         };
         inviteService.updateOne(this.props.adminInvites._id, codeData);
-        this.props.getAdminInvites();
+        this.props.onDeleteAdminInviteSuccess();
     };
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.adminInvites !== nextProps.adminInvites) {
-            this.props.getAdminInvites();
-        }
-
         if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -40,8 +37,8 @@ class AdminInviteList extends Component {
                             {code}
                         </div>
                         <div className="left">
-                            <i className="fa 10x fa-trash" onClick={() =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteOccupation(code)}}></i>
-                            <button className="clear-button" onClick={() =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteOccupation(code)}}>Delete</button>
+                            <i className="fa 10x fa-trash" onClick={() =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteInvite(code)}}></i>
+                            <button className="clear-button" onClick={() =>{ if (window.confirm('Are you sure you wish to delete this item?')) this.deleteInvite(code)}}>Delete</button>
                         </div>
                     </div>
                 );
