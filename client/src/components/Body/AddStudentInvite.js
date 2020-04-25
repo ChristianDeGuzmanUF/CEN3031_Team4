@@ -25,6 +25,7 @@ class AddStudentInvite extends Component {
                 codes: newCodeArray,
                 adminCode: this.props.studentInvites.adminCode,
             };
+            document.getElementById('codeToAdd').value = "";
             inviteService.updateOne(this.props.studentInvites._id, codeData);
             this.props.onAddStudentInviteSuccess();
         }

@@ -49,7 +49,7 @@ class Invites extends Component {
     };
 
 	addStudentInviteSuccess() {
-		this.getStudentInvites();		   
+		this.getStudentInvites();
     };	
 	
 	addAdminInviteSuccess() {
@@ -74,8 +74,8 @@ class Invites extends Component {
                                     </div>
                                     <div className="with-scroll-short">
                                         <StudentInviteList
-                                            studentInvites={this.state.studentInvites}                                            
-											onDeleteStudentInviteSuccess={this.deleteStudentInviteSuccess} 
+                                            studentInvites={this.state.studentInvites}
+                                            onDeleteStudentInviteSuccess={this.deleteStudentInviteSuccess}
                                         />
                                     </div>
                                 </div>

@@ -25,7 +25,8 @@ class AddAdminInvite extends Component {
                 codes: newCodeArray,
                 adminCode: this.props.adminInvites.adminCode,
             };
-            inviteService.updateOne(this.props.adminInvites._id, codeData)
+            document.getElementById('codeToAddAdmin').value = "";
+            inviteService.updateOne(this.props.adminInvites._id, codeData);
             this.props.onAddAdminInviteSuccess();
         }
     };
@@ -46,7 +47,7 @@ class AddAdminInvite extends Component {
                         <div className="right">
                             <input
                                 onChange={this.onChange}
-                                id="codeToAdd"
+                                id="codeToAddAdmin"
                                 type="text"
                             />
                         </div>
