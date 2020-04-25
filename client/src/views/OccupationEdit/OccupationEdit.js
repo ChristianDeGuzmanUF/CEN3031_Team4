@@ -58,7 +58,8 @@ class OccupationEdit extends Component {
     };
 	
 	deleteOccupationSuccess()  {
-		this.getOccupations();
+        this.getOccupations();
+        this.setState({selectedOccupation: null});
     };
 	  
     addOccupation = () =>{
@@ -80,7 +81,7 @@ class OccupationEdit extends Component {
                                     <div className="crud-title">Occupations</div>
                                     <input className="search-bar"
                                            placeholder="type a keyword to filter items below"
-										   onChange={this.onChange}
+                                           onChange={this.onChange}
                                            value={this.state.filterText}
                                            id="filterText"
                                     />
@@ -90,7 +91,7 @@ class OccupationEdit extends Component {
                                         <OccupationList
                                             occupations={this.state.occupations}
                                             filterText={this.state.filterText}
-											onSelectOccupationClick={this.selectOccupationClick} 
+                                            onSelectOccupationClick={this.selectOccupationClick}
                                         />
                                     </div>
                                 </table>
@@ -99,10 +100,10 @@ class OccupationEdit extends Component {
                     </div>
                     <div className="column2 with-scroll">
                         <ViewOccupation
-							clusters={this.state.clusters}
-							selectedOccupation={this.state.selectedOccupation}
-                            onUpdateOccupationSuccess={this.updateOccupationSuccess} 
-							onDeleteOccupationSuccess={this.deleteOccupationSuccess} 
+                            clusters={this.state.clusters}
+                            selectedOccupation={this.state.selectedOccupation}
+                            onUpdateOccupationSuccess={this.updateOccupationSuccess}
+                            onDeleteOccupationSuccess={this.deleteOccupationSuccess}
                         />
                     </div>
                 </div>
